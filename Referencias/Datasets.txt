@@ -1,9 +1,5 @@
-Datasets de vídeos
+V-Libras
 	https://www.kaggle.com/datasets/davimedio01/v-librasil
-	https://zenodo.org/records/2667329
-	
 
-Dataset de Imagens
-	https://www.kaggle.com/code/letciamilan/librai
-	https://zenodo.org/records/10635628
-
+Alfabeto (complementar)
+	https://www.kaggle.com/datasets/williansoliveira/libras/data
