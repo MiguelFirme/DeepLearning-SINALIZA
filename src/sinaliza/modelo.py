@@ -23,3 +23,25 @@ def construir_modelo_gru(sequence_length: int, feature_dim: int, class_count: in
         metrics=["accuracy"],
     )
     return model
+
+
+def construir_modelo_bilstm(
+    sequence_length: int, feature_dim: int, class_count: int
+) -> keras.Model:
+    """Cria o BiLSTM usado no experimento que veio do notebook."""
+    inputs = keras.Input(shape=(sequence_length, feature_dim), name="landmarks")
+    x = keras.layers.Masking(mask_value=0.0)(inputs)
+    x = keras.layers.Bidirectional(keras.layers.LSTM(64, return_sequences=True))(x)
+    x = keras.layers.Dropout(0.3)(x)
+    x = keras.layers.Bidirectional(keras.layers.LSTM(64))(x)
+    x = keras.layers.Dropout(0.3)(x)
+    x = keras.layers.Dense(128, activation="relu")(x)
+    outputs = keras.layers.Dense(class_count, activation="softmax", name="class")(x)
+
+    model = keras.Model(inputs, outputs, name="sinaliza_bilstm")
+    model.compile(
+        optimizer="adam",
+        loss="sparse_categorical_crossentropy",
+        metrics=["accuracy"],
+    )
+    return model

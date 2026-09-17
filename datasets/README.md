@@ -23,6 +23,10 @@ Os downloads podem ser colocados diretamente nas pastas `brutos`, mantendo a
 estrutura fornecida pelo Kaggle. Os adaptadores são responsáveis por localizar
 os arquivos e criar manifestos com nomes de campos consistentes.
 
+O V-LIBRASIL também pode ser baixado diretamente para a pasta correta com
+`python scripts/baixar_vlibrasil.py`. O KaggleHub reutiliza o download local nas
+execuções seguintes.
+
 ## V-LIBRASIL
 
 O adaptador aceita preferencialmente um `annotations.csv`. Se o CSV não estiver

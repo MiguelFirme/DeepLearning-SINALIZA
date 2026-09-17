@@ -30,12 +30,12 @@ MediaPipe: mãos, pose e face
         ↓
 Sequência temporal de landmarks
         ↓
-Baseline GRU
+BiLSTM (padrão) ou GRU
         ↓
 Sinal reconhecido
 ```
 
-O GRU é o modelo inicial usado para validar o processamento. Depois será comparado com o Transformer 1D proposto.
+O BiLSTM trazido do experimento em Colab é o modelo padrão. O GRU anterior continua disponível para comparação e, depois, ambos poderão ser comparados com o Transformer 1D proposto.
 
 ## Tecnologias
 
@@ -69,9 +69,11 @@ DeepLearning-SINALIZA/
 │   └── Datasets.txt
 ├── scripts/
 │   ├── indexar_alfabeto.py             # cataloga o dataset auxiliar
+│   ├── baixar_vlibrasil.py              # baixa o dataset pela API do Kaggle
+│   ├── executar_pipeline.py             # download, processamento e treino
 │   ├── processar_vlibrasil.py          # cataloga e processa o principal
 │   ├── prever_video.py                 # reconhece um sinal em vídeo
-│   └── treinar.py                      # treina o baseline GRU
+│   └── treinar.py                       # treina e avalia BiLSTM ou GRU
 ├── src/
 │   └── sinaliza/
 │       ├── datasets/
@@ -106,13 +108,13 @@ python -m pip install --upgrade pip
 pip install -r requirements-dev.txt
 ```
 
-Copie a configuração de exemplo:
+Os caminhos padrão já apontam para as pastas em `datasets/brutos`. O arquivo de configuração é necessário apenas se os dados estiverem em outro local:
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-Depois informe os caminhos dos datasets no arquivo `.env`:
+Nesse caso, descomente e informe os caminhos no arquivo `.env`:
 
 ```env
 VLIBRASIL_DIR=C:/caminho/para/v-librasil
@@ -122,6 +124,18 @@ ALFABETO_LIBRAS_DIR=C:/caminho/para/alfabeto-libras
 O caminho do alfabeto é necessário somente quando o pipeline auxiliar for utilizado. O arquivo `.env` não é versionado.
 
 ## Colocando os datasets no projeto
+
+### Download direto do Kaggle
+
+É possível baixar o V-LIBRASIL sem abrir o site nem usar o Colab:
+
+```powershell
+python scripts/baixar_vlibrasil.py
+```
+
+O comando usa o `kagglehub` e grava os arquivos em `datasets/brutos/v_librasil`. O dataset continua ocupando espaço no computador: fora do ambiente Kaggle, a biblioteca precisa baixar os vídeos localmente. Execuções posteriores reutilizam a cópia já baixada; use `--forcar` somente para baixar novamente.
+
+Datasets públicos normalmente não exigem login. Se o Kaggle solicitar autenticação ou aceite de termos, gere um token nas configurações da conta Kaggle e siga a autenticação indicada pela mensagem da biblioteca.
 
 O download do V-LIBRASIL pode ser descompactado diretamente em:
 
@@ -147,9 +161,17 @@ Nesse caso, a pasta imediatamente acima de cada imagem será considerada seu ró
 
 ## Executando o pipeline principal
 
+Para executar todo o fluxo com o BiLSTM do notebook:
+
+```powershell
+python scripts/executar_pipeline.py --epocas 30
+```
+
+Se os vídeos já estiverem na pasta bruta, acrescente `--sem-download`.
+
 ### 1. Processar o V-LIBRASIL
 
-Usando o caminho definido no `.env`:
+Usando a pasta padrão do projeto (ou o caminho definido no `.env`):
 
 ```powershell
 python scripts/processar_vlibrasil.py
@@ -159,6 +181,13 @@ Ou informando outro caminho:
 
 ```powershell
 python scripts/processar_vlibrasil.py --entrada "C:/caminho/para/v-librasil"
+```
+
+Por padrão, a extração usa até quatro processos em paralelo e reaproveita arquivos
+de landmarks válidos de execuções anteriores. Para controlar o paralelismo:
+
+```powershell
+python scripts/processar_vlibrasil.py --processos 4
 ```
 
 Esse comando:
@@ -171,17 +200,23 @@ Esse comando:
 
 O comprimento pode ser alterado com `--comprimento-sequencia`.
 
-### 2. Treinar o baseline
+### 2. Treinar e avaliar
 
 ```powershell
-python scripts/treinar.py --epocas 50
+python scripts/treinar.py --epocas 30
 ```
 
-O treinamento utiliza somente o manifesto processado do V-LIBRASIL e salva:
+O BiLSTM é a arquitetura padrão. Para comparar com o baseline anterior, use `--arquitetura gru`. O treinamento utiliza somente o manifesto processado do V-LIBRASIL e salva:
 
 ```text
-models/modelo_gru.keras
+models/modelo_bilstm.keras
 models/rotulos.json
+models/modelo_atual.json
+models/avaliacao/metricas.json
+models/avaliacao/historico.json
+models/avaliacao/curvas_aprendizado.png
+models/avaliacao/matriz_confusao.npy
+models/avaliacao/matriz_confusao.png
 ```
 
 ### 3. Reconhecer um vídeo

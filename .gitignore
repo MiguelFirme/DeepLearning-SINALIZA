@@ -16,6 +16,7 @@ datasets/processados/alfabeto_libras/manifesto.csv
 datasets/divisoes/v_librasil/*.csv
 datasets/divisoes/alfabeto_libras/*.csv
 models/*
+*.h5
 !datasets/brutos/v_librasil/.gitkeep
 !datasets/brutos/alfabeto_libras/.gitkeep
 !datasets/processados/v_librasil/landmarks/.gitkeep

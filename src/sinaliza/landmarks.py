@@ -39,32 +39,43 @@ def resultado_para_vetor(results: object) -> np.ndarray:
     )
 
 
-def extrair_video(video_path: Path) -> np.ndarray:
-    """Extrai uma matriz no formato (frames, features) de um arquivo de vídeo."""
+def criar_holistic() -> object:
+    """Cria um detector que pode ser reutilizado entre vários vídeos."""
+    return mp.solutions.holistic.Holistic(
+        static_image_mode=False,
+        model_complexity=1,
+        refine_face_landmarks=False,
+        min_detection_confidence=0.5,
+        min_tracking_confidence=0.5,
+    )
+
+
+def _extrair_com_holistic(video_path: Path, holistic: object) -> np.ndarray:
     capture = cv2.VideoCapture(str(video_path))
     if not capture.isOpened():
         raise ValueError(f"Não foi possível abrir o vídeo: {video_path}")
 
     frames: list[np.ndarray] = []
-    holistic_api = mp.solutions.holistic
     try:
-        with holistic_api.Holistic(
-            static_image_mode=False,
-            model_complexity=1,
-            refine_face_landmarks=False,
-            min_detection_confidence=0.5,
-            min_tracking_confidence=0.5,
-        ) as holistic:
-            while True:
-                success, frame = capture.read()
-                if not success:
-                    break
-                rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                rgb_frame.flags.writeable = False
-                frames.append(resultado_para_vetor(holistic.process(rgb_frame)))
+        while True:
+            success, frame = capture.read()
+            if not success:
+                break
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            rgb_frame.flags.writeable = False
+            frames.append(resultado_para_vetor(holistic.process(rgb_frame)))
     finally:
         capture.release()
 
     if not frames:
         raise ValueError(f"O vídeo não contém frames legíveis: {video_path}")
     return np.stack(frames).astype(np.float32)
+
+
+def extrair_video(video_path: Path, holistic: object | None = None) -> np.ndarray:
+    """Extrai uma matriz no formato (frames, features) de um arquivo de vídeo."""
+    if holistic is not None:
+        return _extrair_com_holistic(video_path, holistic)
+
+    with criar_holistic() as detector:
+        return _extrair_com_holistic(video_path, detector)

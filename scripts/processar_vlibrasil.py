@@ -22,6 +22,11 @@ def ler_argumentos() -> argparse.Namespace:
     analisador.add_argument("--entrada", type=Path, help="Diretório bruto do V-LIBRASIL")
     analisador.add_argument("--saida", type=Path, default=DIR_VLIBRASIL_PROCESSADO)
     analisador.add_argument("--comprimento-sequencia", type=int, default=60)
+    analisador.add_argument(
+        "--processos",
+        type=int,
+        help="Processos paralelos (padrão automático, limitado a 4)",
+    )
     return analisador.parse_args()
 
 
@@ -35,9 +40,9 @@ def main() -> None:
         amostras,
         argumentos.saida.resolve(),
         argumentos.comprimento_sequencia,
+        argumentos.processos,
     )
 
 
 if __name__ == "__main__":
     main()
-
