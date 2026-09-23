@@ -1,0 +1,17 @@
+# ======================================================
+# Sinaliza — Configuração Modelo C: TCN
+# ======================================================
+
+_base_: "default.yaml"
+
+model:
+  type: "tcn"
+  input_dim: 346
+  num_channels: [128, 128, 256, 256]
+  kernel_size: 3
+  dropout: 0.25
+
+training:
+  learning_rate: 0.001
+  epochs: 100
+  batch_size: 32

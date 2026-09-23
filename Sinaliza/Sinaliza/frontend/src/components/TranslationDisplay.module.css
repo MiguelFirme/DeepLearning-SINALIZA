@@ -1,0 +1,140 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.status {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card {
+  padding: 20px;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.cardIcon {
+  font-size: 18px;
+}
+
+.signText {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  min-height: 28px;
+}
+
+.speakBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Confidence meter */
+.meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.meterLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+  min-width: 80px;
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.meterValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Stats grid */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.statValue {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Top-K list */
+.topList {
+  list-style: none;
+}
+
+.topItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.topItem:last-child {
+  border-bottom: none;
+}
+
+.rank {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 24px;
+}
+
+.topSign {
+  flex: 1;
+  font-size: 14px;
+}
+
+.topConf {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}

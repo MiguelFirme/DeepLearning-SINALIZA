@@ -1,5 +1,0 @@
-V-Libras
-	https://www.kaggle.com/datasets/davimedio01/v-librasil
-
-Alfabeto (complementar)
-	https://www.kaggle.com/datasets/williansoliveira/libras/data

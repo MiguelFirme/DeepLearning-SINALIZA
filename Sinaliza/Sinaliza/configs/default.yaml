@@ -1,0 +1,65 @@
+# ======================================================
+# Sinaliza — Configuração base de treinamento
+# ======================================================
+
+# ---------- Dados ----------
+data:
+  data_dir: "data/processed"
+  label_map: "data/processed/label_map.json"
+  target_frames: 48
+  feature_dim: 346
+  batch_size: 32
+  num_workers: 4
+  pin_memory: true
+  train_split: 0.75
+  val_split: 0.15
+  test_split: 0.10
+  stratified: true
+
+# ---------- Augmentação ----------
+augmentation:
+  enabled: true
+  speed_warp: { prob: 0.3, min_rate: 0.8, max_rate: 1.2 }
+  temporal_crop: { prob: 0.2, min_ratio: 0.8 }
+  gaussian_noise: { prob: 0.3, std: 0.01 }
+  scale_jitter: { prob: 0.2, min_scale: 0.9, max_scale: 1.1 }
+  rotation_jitter: { prob: 0.2, max_angle: 10 }
+  frame_drop: { prob: 0.15, max_drop_ratio: 0.1 }
+  channel_drop: { prob: 0.1 }
+  temporal_shift: { prob: 0.2, max_shift: 3 }
+  cutout: { prob: 0.1, max_frames: 5 }
+
+# ---------- Treinamento ----------
+training:
+  epochs: 100
+  optimizer: "adamw"
+  learning_rate: 0.001
+  weight_decay: 0.01
+  scheduler: "cosine"
+  warmup_epochs: 5
+  patience: 15
+  min_delta: 0.001
+  gradient_clip: 1.0
+  accumulation_steps: 1
+  use_amp: true
+  loss: "label_smoothing"
+  label_smoothing: 0.1
+  class_weight_method: "effective"
+  effective_beta: 0.999
+
+# ---------- Checkpoints ----------
+checkpoint:
+  dir: "artifacts/checkpoints"
+  save_top_k: 3
+  monitor: "val_acc"
+  mode: "max"
+
+# ---------- Logging ----------
+logging:
+  log_dir: "artifacts/logs"
+  log_every_n_steps: 10
+  save_confusion_matrix: true
+
+# ---------- Seed ----------
+seed: 42
+device: "auto"

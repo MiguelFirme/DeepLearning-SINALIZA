@@ -1,0 +1,27 @@
+{
+  "name": "sinaliza-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx"
+  },
+  "dependencies": {
+    "@mediapipe/holistic": "^0.5.1675471629",
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "lucide-react": "^0.441.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3"
+  }
+}

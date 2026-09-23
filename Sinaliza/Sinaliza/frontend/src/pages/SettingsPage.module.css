@@ -1,0 +1,151 @@
+.page {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar tabs */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  text-align: left;
+  transition: all var(--transition);
+}
+
+.tabBtn:hover {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+
+.tabActive {
+  background: var(--primary) !important;
+  color: white !important;
+}
+
+/* Content cards */
+.content {
+  min-height: 300px;
+}
+
+.card {
+  padding: 28px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.features {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.features li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.origin {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Contact items */
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--primary-bg);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.contactItem:hover {
+  background: var(--secondary);
+}
+
+.contactIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contactItem strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.contactItem span {
+  font-size: 13px;
+  color: var(--primary);
+}

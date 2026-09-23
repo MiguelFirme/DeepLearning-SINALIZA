@@ -1,0 +1,22 @@
+# ======================================================
+# Sinaliza — Configuração Modelo B: Transformer 1D
+# ======================================================
+
+_base_: "default.yaml"
+
+model:
+  type: "transformer"
+  input_dim: 346
+  d_model: 256
+  nhead: 8
+  num_layers: 4
+  dim_feedforward: 512
+  dropout: 0.2
+  max_len: 128
+  use_cls_token: true
+
+training:
+  learning_rate: 0.0005
+  epochs: 120
+  batch_size: 32
+  warmup_epochs: 8

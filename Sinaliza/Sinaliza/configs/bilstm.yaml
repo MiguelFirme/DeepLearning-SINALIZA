@@ -1,0 +1,21 @@
+# ======================================================
+# Sinaliza — Configuração Modelo A: Bi-LSTM
+# ======================================================
+# Herda de default.yaml e sobrescreve apenas o modelo.
+
+_base_: "default.yaml"
+
+model:
+  type: "bilstm"
+  input_dim: 346
+  hidden_dim: 256
+  num_layers: 3
+  dropout: 0.3
+  bidirectional: true
+  use_attention: true
+  projection_dim: 128
+
+training:
+  learning_rate: 0.001
+  epochs: 100
+  batch_size: 32
