@@ -1,0 +1,29 @@
+# Experimento de diagnóstico para vocabulário filtrado.
+_base_: "default.yaml"
+
+data:
+  num_workers: 0
+
+model:
+  type: bilstm
+  hidden_dim: 128
+  num_layers: 2
+  projection_dim: 128
+  dropout: 0.2
+
+training:
+  epochs: 120
+  batch_size: 32
+  learning_rate: 0.0003
+  weight_decay: 0.001
+  warmup_epochs: 3
+  scheduler: cosine
+  loss: ce_standard
+  label_smoothing: 0.0
+  class_weight_method: none
+  early_stopping: false
+
+# Com dois exemplos por classe, aplicar aumento somente após confirmar que
+# o modelo consegue aprender o treino sem ele.
+augmentation:
+  enabled: false

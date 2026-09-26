@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "config": {
+    "config": "configs\\bilstm_augmented.yaml",
+    "data_dir": "data\\landmarks",
+    "processed_root": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\processed\\signer_cv\\bilstm_augmented_signer_cv_allclasses_120epochs_seed42",
+    "run_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\experiments\\bilstm_augmented_signer_cv_allclasses_120epochs_seed42",
+    "max_classes": null,
+    "annotations": "data/annotations.csv",
+    "extra_keep": [],
+    "epochs": 120,
+    "seed": 42,
+    "selected_rounds": [
+      2
+    ],
+    "signers": [
+      "Articulador1",
+      "Articulador2",
+      "Articulador3"
+    ]
+  },
+  "rounds": {
+    "Articulador2": {
+      "status": "completed",
+      "train_signers": [
+        "Articulador1",
+        "Articulador3"
+      ],
+      "test_signer": "Articulador2",
+      "processed_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\processed\\signer_cv\\bilstm_augmented_signer_cv_allclasses_120epochs_seed42\\articulador2",
+      "experiment_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\experiments\\bilstm_augmented_signer_cv_allclasses_120epochs_seed42\\articulador2",
+      "process_warning": "Processo retornou 3221226505 após gravar todos os artefatos obrigatórios. Resultados preservados."
+    }
+  },
+  "updated_at": "2026-09-26T13:26:16"
+}

@@ -1,0 +1,88 @@
+{
+  "run_config": {
+    "config": "configs\\bilstm_augmented.yaml",
+    "data_dir": "data\\landmarks",
+    "processed_root": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\processed\\signer_cv\\bilstm_augmented_signer_cv_allclasses_120epochs_seed42",
+    "run_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\experiments\\bilstm_augmented_signer_cv_allclasses_120epochs_seed42",
+    "max_classes": null,
+    "annotations": "data/annotations.csv",
+    "extra_keep": [],
+    "epochs": 120,
+    "seed": 42,
+    "selected_rounds": [
+      2
+    ],
+    "signers": [
+      "Articulador1",
+      "Articulador2",
+      "Articulador3"
+    ]
+  },
+  "completed_rounds": [
+    "Articulador2"
+  ],
+  "rounds": {
+    "Articulador2": {
+      "loss": 8.413213009197706,
+      "top1": 0.02518891687657431,
+      "top3": 0.06801007556675064,
+      "top5": 0.10579345088161209,
+      "f1_macro": 0.015571330432791389,
+      "f1_weighted": 0.015571330432791389,
+      "precision_macro": 0.012510495382031906,
+      "recall_macro": 0.02518891687657431,
+      "total_samples": 397
+    }
+  },
+  "aggregate": {
+    "loss": {
+      "mean": 8.413213009197706,
+      "std": 0.0,
+      "min": 8.413213009197706,
+      "max": 8.413213009197706
+    },
+    "top1": {
+      "mean": 0.02518891687657431,
+      "std": 0.0,
+      "min": 0.02518891687657431,
+      "max": 0.02518891687657431
+    },
+    "top3": {
+      "mean": 0.06801007556675064,
+      "std": 0.0,
+      "min": 0.06801007556675064,
+      "max": 0.06801007556675064
+    },
+    "top5": {
+      "mean": 0.10579345088161209,
+      "std": 0.0,
+      "min": 0.10579345088161209,
+      "max": 0.10579345088161209
+    },
+    "f1_macro": {
+      "mean": 0.015571330432791389,
+      "std": 0.0,
+      "min": 0.015571330432791389,
+      "max": 0.015571330432791389
+    },
+    "f1_weighted": {
+      "mean": 0.015571330432791389,
+      "std": 0.0,
+      "min": 0.015571330432791389,
+      "max": 0.015571330432791389
+    },
+    "precision_macro": {
+      "mean": 0.012510495382031906,
+      "std": 0.0,
+      "min": 0.012510495382031906,
+      "max": 0.012510495382031906
+    },
+    "recall_macro": {
+      "mean": 0.02518891687657431,
+      "std": 0.0,
+      "min": 0.02518891687657431,
+      "max": 0.02518891687657431
+    }
+  },
+  "updated_at": "2026-09-26T13:26:16"
+}

@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.so
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dados (não versionar dataset)
+data/raw/
+data/landmarks/
+data/processed/
+*.npz
+
+# Artefatos de treino
+artifacts/
+*.pt
+*.pth
+*.onnx
+*.torchscript
+
+# Logs
+*.log
+wandb/
+mlruns/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Docker
+*.tar
+
+# Env
+.env
+.env.local
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Coverage
+.pytest_cache/
+.coverage
+htmlcov/
