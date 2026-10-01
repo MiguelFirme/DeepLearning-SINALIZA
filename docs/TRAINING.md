@@ -226,3 +226,6 @@ O experimento de variações sintéticas está documentado em
 [`PLANO_AUMENTACAO_LANDMARKS.md`](PLANO_AUMENTACAO_LANDMARKS.md). Na rodada
 com Articulador2 reservado, a configuração testada reduziu top-1 de 3,78%
 para 2,52%; ela não foi adotada como padrão.
+A lista exata das 398 classes usadas nesses dois treinos, seus IDs e contagens
+por split está em
+[`VOCABULARIO_TREINOS_398_CLASSES.md`](VOCABULARIO_TREINOS_398_CLASSES.md).

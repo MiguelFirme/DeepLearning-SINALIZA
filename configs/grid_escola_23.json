@@ -1,0 +1,18 @@
+{
+  "run_name": "grid_escola_23_synthetic_seed42",
+  "base_config": "configs/bilstm_focus.yaml",
+  "data_dir": "data/augmented/escola_10",
+  "annotations": "data/annotations.csv",
+  "categories": ["escola"],
+  "expected_classes": 23,
+  "train_signer": "Articulador1",
+  "validation_signer": "Articulador2",
+  "test_signer": "Articulador3",
+  "seed": 42,
+  "epochs": 120,
+  "hidden_sizes": [64, 128],
+  "num_layers": [1, 2],
+  "learning_rates": [0.00015, 0.0003],
+  "initial_dropout": 0.2,
+  "dropout_candidates": [0.0, 0.2, 0.4]
+}

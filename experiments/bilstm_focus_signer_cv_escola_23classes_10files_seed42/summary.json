@@ -1,0 +1,118 @@
+{
+  "run_config": {
+    "config": "configs\\bilstm_focus.yaml",
+    "data_dir": "data\\augmented\\escola_10",
+    "processed_root": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\processed\\signer_cv\\bilstm_focus_signer_cv_escola_23classes_10files_seed42",
+    "run_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\experiments\\bilstm_focus_signer_cv_escola_23classes_10files_seed42",
+    "max_classes": 23,
+    "annotations": "data/annotations.csv",
+    "class_list": null,
+    "essential_categories": [
+      "escola"
+    ],
+    "extra_keep": [],
+    "epochs": 120,
+    "seed": 42,
+    "selected_rounds": [
+      1,
+      2,
+      3
+    ],
+    "signers": [
+      "Articulador1",
+      "Articulador2",
+      "Articulador3"
+    ]
+  },
+  "completed_rounds": [
+    "Articulador1",
+    "Articulador2",
+    "Articulador3"
+  ],
+  "rounds": {
+    "Articulador1": {
+      "loss": 7.734532833099365,
+      "top1": 0.08695652173913043,
+      "top3": 0.17391304347826086,
+      "top5": 0.2608695652173913,
+      "f1_macro": 0.043478260869565216,
+      "f1_weighted": 0.043478260869565216,
+      "precision_macro": 0.02898550724637681,
+      "recall_macro": 0.08695652173913043,
+      "total_samples": 23
+    },
+    "Articulador2": {
+      "loss": 7.6197509765625,
+      "top1": 0.21739130434782608,
+      "top3": 0.30434782608695654,
+      "top5": 0.34782608695652173,
+      "f1_macro": 0.14855072463768115,
+      "f1_weighted": 0.14855072463768115,
+      "precision_macro": 0.12939958592132506,
+      "recall_macro": 0.21739130434782608,
+      "total_samples": 23
+    },
+    "Articulador3": {
+      "loss": 6.625837802886963,
+      "top1": 0.13043478260869565,
+      "top3": 0.2608695652173913,
+      "top5": 0.391304347826087,
+      "f1_macro": 0.0898550724637681,
+      "f1_weighted": 0.0898550724637681,
+      "precision_macro": 0.07608695652173914,
+      "recall_macro": 0.13043478260869565,
+      "total_samples": 23
+    }
+  },
+  "aggregate": {
+    "loss": {
+      "mean": 7.326707204182942,
+      "std": 0.49779993096440617,
+      "min": 6.625837802886963,
+      "max": 7.734532833099365
+    },
+    "top1": {
+      "mean": 0.14492753623188406,
+      "std": 0.0542269186488977,
+      "min": 0.08695652173913043,
+      "max": 0.21739130434782608
+    },
+    "top3": {
+      "mean": 0.24637681159420288,
+      "std": 0.054226918648897705,
+      "min": 0.17391304347826086,
+      "max": 0.30434782608695654
+    },
+    "top5": {
+      "mean": 0.3333333333333333,
+      "std": 0.05422691864889771,
+      "min": 0.2608695652173913,
+      "max": 0.391304347826087
+    },
+    "f1_macro": {
+      "mean": 0.09396135265700482,
+      "std": 0.042993812061307424,
+      "min": 0.043478260869565216,
+      "max": 0.14855072463768115
+    },
+    "f1_weighted": {
+      "mean": 0.09396135265700482,
+      "std": 0.042993812061307424,
+      "min": 0.043478260869565216,
+      "max": 0.14855072463768115
+    },
+    "precision_macro": {
+      "mean": 0.07815734989648034,
+      "std": 0.04102000890280501,
+      "min": 0.02898550724637681,
+      "max": 0.12939958592132506
+    },
+    "recall_macro": {
+      "mean": 0.14492753623188406,
+      "std": 0.0542269186488977,
+      "min": 0.08695652173913043,
+      "max": 0.21739130434782608
+    }
+  },
+  "updated_at": "2026-09-30T20:32:32"
+}

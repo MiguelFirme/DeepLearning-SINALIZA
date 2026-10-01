@@ -1,0 +1,10 @@
+_base_: C:\Users\migue\DeepLearning-SINALIZA\configs\bilstm_focus.yaml
+model:
+  hidden_dim: 64
+  num_layers: 1
+  dropout: 0.0
+training:
+  epochs: 120
+  learning_rate: 0.0003
+  monitor: val_loss
+  early_stopping: false

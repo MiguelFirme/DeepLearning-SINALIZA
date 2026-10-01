@@ -25,6 +25,7 @@ Thumbs.db
 # Dados (não versionar dataset)
 data/raw/
 data/landmarks/
+data/augmented/
 data/processed/
 *.npz
 
@@ -37,6 +38,7 @@ artifacts/
 
 # Logs
 *.log
+logs/
 wandb/
 mlruns/
 

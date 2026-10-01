@@ -39,11 +39,17 @@ def main():
                         help="CSV original usado para selecionar as classes em tempo de execução")
     parser.add_argument("--extra-keep", nargs="*", default=[],
                         help="Classes adicionais preservadas literalmente")
+    parser.add_argument("--class-list", type=Path,
+                        help="JSON de grupos com rótulos exatos para um experimento fechado")
+    parser.add_argument("--essential-categories", nargs="+", default=[],
+                        help="Categorias de ESSENTIAL_BY_CATEGORY usadas como vocabulário fechado")
     parser.add_argument(
         "--test-signer",
         type=str,
         help="Articulador reservado exclusivamente para teste em signer_holdout",
     )
+    parser.add_argument("--val-signer", type=str,
+                        help="Articulador de validação, apenas vídeos reais")
     parser.add_argument(
         "--train-signers",
         nargs="+",
@@ -58,7 +64,8 @@ def main():
     args = parser.parse_args()
 
     from ml.data.split import DataSplitter, SplitConfig
-    from ml.data.vocabulary import read_annotations, select_vocabulary
+    from ml.data.vocabulary import (read_annotations, read_curated_vocabulary,
+                                    select_essential_categories, select_vocabulary)
     landmarks_dir = Path(args.landmarks)
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -72,19 +79,46 @@ def main():
     with open(manifest_path, encoding="utf-8") as f:
         samples = json.load(f)
 
+    paths = {sample["path"]: sample for sample in samples}
+    if len(paths) != len(samples):
+        parser.error("Manifesto contém caminhos duplicados")
+    synthetic_samples = [sample for sample in samples if sample.get("is_synthetic", False)]
+    if synthetic_samples and args.strategy != "signer_holdout":
+        parser.error("Landmarks sintéticos exigem --strategy signer_holdout")
+    for sample in synthetic_samples:
+        source = paths.get(sample.get("source_path"))
+        if (source is None or source.get("is_synthetic", False)
+                or source["label"] != sample["label"]
+                or source.get("signer") != sample.get("signer")):
+            parser.error(f"Origem sintética inválida: {sample['path']}")
+
     logger.info(f"Total de amostras: {len(samples)}")
     annotations = read_annotations(args.annotations)
+    if sum(bool(value) for value in (args.class_list, args.essential_categories, args.extra_keep)) > 1:
+        parser.error("--class-list, --essential-categories e --extra-keep não podem ser combinados")
     unknown_extra = set(args.extra_keep) - set(annotations)
     if unknown_extra:
         parser.error(f"--extra-keep contém classes ausentes do CSV: {sorted(unknown_extra)}")
-    selected = select_vocabulary(set(annotations), set(args.extra_keep))
+    if args.class_list:
+        selected = read_curated_vocabulary(args.class_list)
+    elif args.essential_categories:
+        try:
+            selected = select_essential_categories(set(annotations), args.essential_categories)
+        except ValueError as error:
+            parser.error(str(error))
+    else:
+        selected = select_vocabulary(set(annotations), set(args.extra_keep))
+    absent_csv = set(selected) - set(annotations)
+    if absent_csv:
+        parser.error(f"Classes de --class-list ausentes do CSV: {sorted(absent_csv)}")
     manifest_labels = {sample["label"] for sample in samples}
     selected_labels = set(selected)
     absent = selected_labels - manifest_labels
     if absent:
         parser.error(f"Classes protegidas ausentes dos landmarks: {sorted(absent)[:12]}")
     manifest_counts = Counter((sample["label"], sample.get("signer", "unknown"))
-                              for sample in samples if sample["label"] in selected_labels)
+                              for sample in samples
+                              if sample["label"] in selected_labels and not sample.get("is_synthetic", False))
     count_mismatches = [
         (label, signer, count, manifest_counts[label, signer])
         for label in selected_labels for signer, count in annotations[label].items()
@@ -100,6 +134,8 @@ def main():
             f"--max-classes={args.max_classes} excluiria classes protegidas "
             f"({len(selected_labels)} selecionadas). Aumente o limite ou omita a opção."
         )
+    if (args.class_list or args.essential_categories) and args.max_classes is not None and args.max_classes != len(selected_labels):
+        parser.error(f"Vocabulário fechado contém {len(selected_labels)} classes, mas --max-classes={args.max_classes}")
     logger.info("Vocabulário protegido: %s classes de %s no CSV", len(selected), len(annotations))
 
     # Split
@@ -125,9 +161,11 @@ def main():
         train_signers = args.train_signers or [
             signer for signer in available_signers if signer != args.test_signer
         ]
-        required_signers = list(dict.fromkeys([*train_signers, args.test_signer]))
+        required_signers = list(dict.fromkeys([*train_signers, *([args.val_signer] if args.val_signer else []), args.test_signer]))
         covered = set(splitter.labels_with_signer_coverage(samples, required_signers))
         missing_coverage = selected_labels - covered
+        if (args.class_list or args.essential_categories) and missing_coverage:
+            parser.error(f"Classes curadas sem cobertura completa dos articuladores: {sorted(missing_coverage)}")
         if missing_coverage:
             logger.warning(
                 "%s classes protegidas sem cobertura completa; permanecem no "
@@ -140,10 +178,11 @@ def main():
             test_signer=args.test_signer,
             train_signers=train_signers,
             allowed_labels=set(labels),
+            val_signer=args.val_signer,
         )
         split_metadata = {
             "train_signers": train_signers,
-            "val_signers": [],
+            "val_signers": [args.val_signer] if args.val_signer else [],
             "test_signer": args.test_signer,
             "available_signers": available_signers,
             "required_signers": required_signers,
@@ -180,6 +219,8 @@ def main():
         "included": selected,
         "excluded": sorted(set(annotations) - selected_labels),
         "extra_keep": args.extra_keep,
+        "class_list": str(args.class_list.resolve()) if args.class_list else None,
+        "essential_categories": args.essential_categories,
         "annotation_counts": {label: dict(annotations[label]) for label in labels},
     }
     with open(output_dir / "vocabulary_report.json", "w", encoding="utf-8") as f:
@@ -195,6 +236,9 @@ def main():
         "class_counts_by_split": class_counts,
         "seed": args.seed,
         "selected_classes": labels,
+        "synthetic_samples_in_manifest": len(synthetic_samples),
+        "class_list": str(args.class_list.resolve()) if args.class_list else None,
+        "essential_categories": args.essential_categories,
         **split_metadata,
     }
     with open(output_dir / "dataset_meta.json", "w", encoding="utf-8") as f:

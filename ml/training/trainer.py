@@ -56,7 +56,7 @@ class TrainingConfig:
     # Early stopping
     early_stopping: bool = True
     patience: int = 15
-    monitor: str = "val_loss"  # val_loss | val_f1
+    monitor: str = "val_loss"  # val_loss | val_f1 | val_top1
     mode: str = "min"  # min (loss) | max (f1)
 
     # Checkpointing
@@ -245,7 +245,7 @@ class Trainer:
             monitor_val = (
                 val_metrics["loss"]
                 if self.config.monitor == "val_loss"
-                else val_metrics.get("f1_macro", 0)
+                else val_metrics.get("top1" if self.config.monitor == "val_top1" else "f1_macro", 0)
             ) if self.has_validation else train_metrics["loss"]
             if self.early_stop and self.early_stop.step(monitor_val):
                 logger.info(f"Early stopping na época {epoch+1}.")
@@ -359,7 +359,7 @@ class Trainer:
                 self.best_epoch = len(self.history) - 1
                 return True
         else:
-            current = val_metrics.get("f1_macro", 0)
+            current = val_metrics.get("top1" if self.config.monitor == "val_top1" else "f1_macro", 0)
             if self.best_metric is None or current > self.best_metric:
                 self.best_metric = current
                 self.best_epoch = len(self.history) - 1
@@ -396,6 +396,13 @@ class Trainer:
     def load_best_weights(self):
         """Carrega o checkpoint escolhido sem consultar o conjunto de teste."""
         path = self.save_dir / "best.pt"
+        checkpoint = torch.load(path, map_location=self.device, weights_only=False)
+        self.model.load_state_dict(checkpoint["model_state_dict"], strict=True)
+        return checkpoint
+
+    def load_last_weights(self):
+        """Carrega a última época, útil no reajuste com duração já escolhida."""
+        path = self.save_dir / "last.pt"
         checkpoint = torch.load(path, map_location=self.device, weights_only=False)
         self.model.load_state_dict(checkpoint["model_state_dict"], strict=True)
         return checkpoint

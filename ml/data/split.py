@@ -61,6 +61,7 @@ class DataSplitter:
         test_signer: str,
         train_signers: list[str] | tuple[str, ...] | None = None,
         allowed_labels: set[str] | None = None,
+        val_signer: str | None = None,
     ) -> dict[str, list[int]]:
         """Separa articuladores de treino e teste sem criar validação vazada.
 
@@ -80,7 +81,7 @@ class DataSplitter:
             )
 
         if train_signers is None:
-            selected_train_signers = [s for s in available_signers if s != test_signer]
+            selected_train_signers = [s for s in available_signers if s not in {test_signer, val_signer}]
         else:
             selected_train_signers = list(dict.fromkeys(train_signers))
 
@@ -88,6 +89,10 @@ class DataSplitter:
             raise ValueError("Informe ao menos um articulador de treino.")
         if test_signer in selected_train_signers:
             raise ValueError("O articulador de teste não pode aparecer no treino.")
+        if val_signer is not None and (val_signer == test_signer or val_signer in selected_train_signers):
+            raise ValueError("O articulador de validação deve ser distinto dos de treino e teste.")
+        if val_signer is not None and val_signer not in available_signers:
+            raise ValueError(f"Articulador de validação desconhecido: {val_signer}")
 
         unknown_train = sorted(set(selected_train_signers) - set(available_signers))
         if unknown_train:
@@ -99,6 +104,7 @@ class DataSplitter:
         labels_filter = set(allowed_labels) if allowed_labels is not None else None
         train_signers_set = set(selected_train_signers)
         train_idx: list[int] = []
+        val_idx: list[int] = []
         test_idx: list[int] = []
         for index, sample in enumerate(samples):
             label = sample["label"]
@@ -107,10 +113,12 @@ class DataSplitter:
             signer = sample.get(self.config.group_key, "unknown")
             if signer in train_signers_set:
                 train_idx.append(index)
-            elif signer == test_signer:
+            elif signer == val_signer and not sample.get("is_synthetic", False):
+                val_idx.append(index)
+            elif signer == test_signer and not sample.get("is_synthetic", False):
                 test_idx.append(index)
 
-        result = {"train": train_idx, "val": [], "test": test_idx}
+        result = {"train": train_idx, "val": val_idx, "test": test_idx}
         if not train_idx or not test_idx:
             raise ValueError(
                 "Split por articulador vazio: "
@@ -124,13 +132,15 @@ class DataSplitter:
         test_groups = {
             samples[index].get(self.config.group_key, "unknown") for index in test_idx
         }
-        group_overlap = train_groups & test_groups
+        val_groups = {samples[index].get(self.config.group_key, "unknown") for index in val_idx}
+        group_overlap = (train_groups & test_groups) | (train_groups & val_groups) | (test_groups & val_groups)
         if group_overlap:
             raise ValueError(f"Vazamento de articuladores: {sorted(group_overlap)}")
 
         logger.info(
-            "Signer holdout: train=%s, val=[], test=%s",
+            "Signer holdout: train=%s, val=%s, test=%s",
             sorted(train_groups),
+            sorted(val_groups),
             sorted(test_groups),
         )
         self._log_stats(result, [s["label"] for s in samples])

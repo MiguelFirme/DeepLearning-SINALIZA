@@ -88,6 +88,10 @@ def parse_args():
     parser.add_argument("--run-name", default=None)
     parser.add_argument("--max-classes", type=int, default=None)
     parser.add_argument("--annotations", default="data/annotations.csv")
+    parser.add_argument("--class-list", default=None,
+                        help="JSON de grupos com classes exatas para o experimento")
+    parser.add_argument("--essential-categories", nargs="+", default=[],
+                        help="Categorias de ESSENTIAL_BY_CATEGORY usadas como vocabulário fechado")
     parser.add_argument("--extra-keep", nargs="*", default=[])
     parser.add_argument("--epochs", type=int, default=120)
     parser.add_argument("--seed", type=int, default=42)
@@ -119,11 +123,14 @@ def main():
         raise SystemExit("--max-classes deve ser maior que zero")
     if args.epochs <= 0:
         raise SystemExit("--epochs deve ser maior que zero")
+    if sum(bool(value) for value in (args.class_list, args.essential_categories, args.extra_keep)) > 1:
+        raise SystemExit("--class-list, --essential-categories e --extra-keep não podem ser combinados")
 
     class_tag = str(args.max_classes) if args.max_classes is not None else "all"
     config_tag = Path(args.config).stem
+    category_tag = "_".join(args.essential_categories) + "_" if args.essential_categories else ""
     run_name = args.run_name or (
-        f"{config_tag}_signer_cv_{class_tag}classes_{args.epochs}epochs_seed{args.seed}"
+        f"{config_tag}_signer_cv_{category_tag}{class_tag}classes_{args.epochs}epochs_seed{args.seed}"
     )
     processed_root = Path(args.processed_root).expanduser().resolve() / run_name
     run_dir = Path(args.run_root).expanduser().resolve() / run_name
@@ -136,6 +143,8 @@ def main():
         "run_dir": str(run_dir),
         "max_classes": args.max_classes,
         "annotations": args.annotations,
+        "class_list": args.class_list,
+        "essential_categories": args.essential_categories,
         "extra_keep": args.extra_keep,
         "epochs": args.epochs,
         "seed": args.seed,
@@ -192,6 +201,10 @@ def main():
             ]
             if args.extra_keep:
                 build_command.extend(["--extra-keep", *args.extra_keep])
+            if args.class_list:
+                build_command.extend(["--class-list", str(Path(args.class_list))])
+            if args.essential_categories:
+                build_command.extend(["--essential-categories", *args.essential_categories])
             if args.max_classes is not None:
                 build_command.extend(["--max-classes", str(args.max_classes)])
             run_command(build_command, args.dry_run)

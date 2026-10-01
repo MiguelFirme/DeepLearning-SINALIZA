@@ -7,9 +7,13 @@ Uso:
     python scripts/train.py --model bilstm --epochs 100 --lr 1e-3
 """
 import argparse
+from datetime import datetime
+import hashlib
 import json
 import logging
+import platform
 import random
+import shutil
 import sys
 from pathlib import Path
 
@@ -23,6 +27,20 @@ if str(PROJECT_ROOT) not in sys.path:
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _save_run_record(path: Path, record: dict):
+    temporary = path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8")
+    temporary.replace(path)
 
 
 def merge_config(base: dict, override: dict) -> dict:
@@ -62,6 +80,11 @@ def main():
     parser.add_argument("--target-frames", type=int, default=None)
     parser.add_argument("--experiment", type=str, default=None)
     parser.add_argument("--save-dir", type=str, default="experiments")
+    parser.add_argument("--log-dir", type=str, default="logs")
+    parser.add_argument("--skip-test", action="store_true",
+                        help="Não avaliar o conjunto de teste (uso durante busca de hiperparâmetros)")
+    parser.add_argument("--test-checkpoint", choices=["best", "last"], default="best",
+                        help="Checkpoint usado no teste final; padrão: best")
     parser.add_argument("--loss", type=str, default=None, choices=["cross_entropy", "focal", "ce_standard"])
     parser.add_argument("--label-smoothing", type=float, default=None)
     parser.add_argument("--focal-gamma", type=float, default=None)
@@ -95,6 +118,12 @@ def main():
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
     experiment_name = args.experiment or f"{model_type}_{target_frames}f"
+    log_dir = Path(args.log_dir) / Path(args.save_dir).name / experiment_name
+    log_dir.mkdir(parents=True, exist_ok=True)
+    file_handler = logging.FileHandler(log_dir / "train.log", encoding="utf-8")
+    file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(message)s"))
+    logging.getLogger().addHandler(file_handler)
+    logger.info("Log persistente: %s", log_dir / "train.log")
 
     # Device
     if args.device:
@@ -190,6 +219,50 @@ def main():
     param_count = sum(p.numel() for p in model.parameters())
     logger.info(f"Modelo: {model_type} | input_dim={input_dim} | params={param_count:,}")
 
+    run_record = {
+        "status": "running",
+        "started_at": datetime.now().isoformat(timespec="seconds"),
+        "command": sys.argv,
+        "config_file": str(Path(args.config).resolve()) if args.config else None,
+        "config_effective": cfg,
+        "resolved": {
+            "model_type": model_type, "model_kwargs": model_cfg,
+            "input_dim": input_dim, "num_classes": num_classes,
+            "parameter_count": param_count, "target_frames": target_frames,
+            "batch_size": batch_size, "num_workers": num_workers,
+            "epochs": epochs, "learning_rate": learning_rate,
+            "seed": seed, "device": str(device),
+            "optimizer": "AdamW",
+            "skip_test": args.skip_test,
+            "test_checkpoint": args.test_checkpoint,
+        },
+        "environment": {
+            "python": platform.python_version(), "torch": torch.__version__,
+            "numpy": np.__version__, "cuda": torch.version.cuda,
+            "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
+        },
+        "dataset": {
+            "data_dir": str(Path(args.data_dir).resolve()),
+            "processed_dir": str(processed_dir.resolve()),
+            "manifest_sha256": _sha256(Path(args.data_dir) / "manifest.json"),
+            "splits_sha256": _sha256(splits_path),
+            "label_map_sha256": _sha256(label_map_path),
+            "split_sizes": {name: len(indices) for name, indices in splits.items()},
+            "synthetic_by_split": {
+                name: sum(bool(manifest[i].get("is_synthetic", False)) for i in indices)
+                for name, indices in splits.items()
+            },
+            "signers_by_split": {
+                name: sorted({manifest[i].get("signer", "unknown") for i in indices})
+                for name, indices in splits.items()
+            },
+            "classes": sorted(label_map),
+        },
+        "artifacts": {"checkpoint_dir": str((Path(args.save_dir) / experiment_name).resolve())},
+    }
+    run_record_path = log_dir / "run_record.json"
+    _save_run_record(run_record_path, run_record)
+
     # Loss
     from ml.training.losses import create_loss, compute_class_weights
     weights_strategy = train_cfg_dict.get(
@@ -209,6 +282,14 @@ def main():
     )
     logger.info("Loss=%s | class_weight_method=%s | smoothing=%s", loss_type,
                 weights_strategy, label_smoothing)
+    run_record["resolved"].update({
+        "loss": loss_type, "class_weight_method": weights_strategy,
+        "label_smoothing": label_smoothing,
+        "weight_decay": train_cfg_dict.get("weight_decay", 1e-4),
+        "scheduler": train_cfg_dict.get("scheduler", "cosine"),
+        "dropout": model_cfg.get("dropout"),
+    })
+    _save_run_record(run_record_path, run_record)
 
     # Trainer
     from ml.training.trainer import Trainer, TrainingConfig
@@ -221,6 +302,8 @@ def main():
         warmup_epochs=train_cfg_dict.get("warmup_epochs", 3),
         patience=train_cfg_dict.get("patience", 15),
         early_stopping=train_cfg_dict.get("early_stopping", True),
+        monitor=train_cfg_dict.get("monitor", "val_loss"),
+        mode="min" if train_cfg_dict.get("monitor", "val_loss") == "val_loss" else "max",
         gradient_clip_val=train_cfg_dict.get("gradient_clip", 1.0),
         gradient_accumulation_steps=train_cfg_dict.get("accumulation_steps", 1),
         use_amp=train_cfg_dict.get("use_amp", True),
@@ -233,36 +316,46 @@ def main():
                       config=train_config, label_names=inv_label, device=device)
 
     # Treinar
-    result = trainer.train()
+    try:
+        result = trainer.train()
+        shutil.copy2(trainer.save_dir / "history.json", log_dir / "history.json")
 
-    # O articulador retido não participa de nenhuma decisão durante as épocas.
-    # Ele só é carregado e avaliado depois que o treino e a seleção terminaram.
-    test_indices = splits.get("test", [])
-    if test_indices:
-        test_ds = LibrasDataset(
-            data_dir,
-            label_map=label_map,
-            target_frames=target_frames,
-            seq_config=seq_cfg,
-            split_indices=test_indices,
-        )
-        test_loader = DataLoader(
-            test_ds,
-            batch_size=batch_size,
-            shuffle=False,
-            num_workers=num_workers,
-            pin_memory=device.type == "cuda",
-        )
-        trainer.load_best_weights()
-        test_metrics = trainer.evaluate_loader(test_loader)
-        test_metrics_path = trainer.save_dir / "test_metrics.json"
-        with open(test_metrics_path, "w", encoding="utf-8") as f:
-            json.dump(test_metrics, f, indent=2, ensure_ascii=False)
-        result["test_metrics"] = test_metrics
-        result["test_metrics_path"] = str(test_metrics_path)
-        logger.info(f"Teste final: {json.dumps(test_metrics, ensure_ascii=False)}")
+        # O articulador retido só é avaliado após o treino e a seleção.
+        test_indices = splits.get("test", [])
+        if test_indices and not args.skip_test:
+            test_ds = LibrasDataset(
+                data_dir, label_map=label_map, target_frames=target_frames,
+                seq_config=seq_cfg, split_indices=test_indices,
+            )
+            test_loader = DataLoader(
+                test_ds, batch_size=batch_size, shuffle=False,
+                num_workers=num_workers, pin_memory=device.type == "cuda",
+            )
+            if args.test_checkpoint == "last":
+                trainer.load_last_weights()
+            else:
+                trainer.load_best_weights()
+            test_metrics = trainer.evaluate_loader(test_loader)
+            test_metrics_path = trainer.save_dir / "test_metrics.json"
+            with open(test_metrics_path, "w", encoding="utf-8") as f:
+                json.dump(test_metrics, f, indent=2, ensure_ascii=False)
+            shutil.copy2(test_metrics_path, log_dir / "test_metrics.json")
+            result["test_metrics"] = test_metrics
+            result["test_metrics_path"] = str(test_metrics_path)
+            logger.info(f"Teste final: {json.dumps(test_metrics, ensure_ascii=False)}")
 
-    logger.info(f"Resultado: {json.dumps(result, indent=2)}")
+        run_record["status"] = "completed"
+        run_record["finished_at"] = datetime.now().isoformat(timespec="seconds")
+        run_record["result"] = result
+        _save_run_record(run_record_path, run_record)
+        logger.info(f"Resultado: {json.dumps(result, indent=2)}")
+    except BaseException as error:
+        run_record["status"] = "failed"
+        run_record["finished_at"] = datetime.now().isoformat(timespec="seconds")
+        run_record["error"] = repr(error)
+        _save_run_record(run_record_path, run_record)
+        logger.exception("Treino falhou")
+        raise
 
 
 if __name__ == "__main__":

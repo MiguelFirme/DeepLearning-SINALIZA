@@ -1,0 +1,22 @@
+{
+  "pedidos_acoes": [
+    "Necessário", "Quer", "Vai", "Ir", "Poder", "Não poder", "Pedir", "Ajudar", "Esperar", "Espere",
+    "Explicar", "Compreender", "Saber", "Dizer", "Ouvir", "Ver", "Escrever", "Imprimir", "Pegar", "Levar"
+  ],
+  "localizacao_deslocamento": [
+    "Onde", "Aqui", "Adiante", "Esquerda", "Centro", "Escola", "Colégio", "Biblioteca", "Banheiro", "Hospital",
+    "Casa", "Dormitório", "Escada", "Elevador", "Janela", "Entrar", "Sair", "Chegar", "Abrir a porta", "Fechar a porta"
+  ],
+  "saude_urgencia": [
+    "Fome", "Com sede", "Água", "Bebida", "Almoço", "Alimentação", "Comer", "Doente", "Dor de cabeça", "Dor de garganta",
+    "Dor de ouvido", "Medicamento", "Médico (doutor)", "Emergência", "Perigo", "Acidente", "Machucar", "Enfermeira", "Pessoa doente", "Policial"
+  ],
+  "interacao_recepcao": [
+    "Oi", "Com licença", "Por favor", "Obrigado", "Desculpa", "Sim", "Não", "Quem", "Qual", "Que",
+    "Como", "Quando", "Nome", "Documento", "Assinatura", "Formulário", "Ficha de registro", "Telefone", "Aviso", "Dúvida (incerteza)"
+  ],
+  "rotina_escolar_domestica": [
+    "Agora", "Amanhã", "Depois (mais tarde)", "Hora", "Atividade", "Dever de casa", "Livro", "Papel", "Computador", "Computador portátil",
+    "Cadeira de rodas", "Secretária", "Secretário", "Identificar documento", "Enviar mensagem de texto", "Ir pra casa", "Trazer", "Ligar", "Dinheiro", "Cuidado"
+  ]
+}

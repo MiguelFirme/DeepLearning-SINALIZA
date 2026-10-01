@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import re
 import unicodedata
 from collections import Counter
@@ -108,3 +109,41 @@ def read_annotations(path: str | Path) -> dict[str, Counter]:
 def select_vocabulary(labels: set[str], extra_keep: set[str] | None = None) -> dict[str, str]:
     return {label: reason for label in sorted(labels)
             if (reason := classify_label(label, extra_keep)) is not None}
+
+
+def select_essential_categories(labels: set[str], categories: list[str]) -> dict[str, str]:
+    """Seleciona os rótulos do CSV que pertencem às categorias indicadas."""
+    if not categories:
+        raise ValueError("Informe pelo menos uma categoria")
+    unknown = set(categories) - set(ESSENTIAL_BY_CATEGORY)
+    if unknown:
+        raise ValueError(f"Categorias desconhecidas: {sorted(unknown)}")
+    selected: dict[str, str] = {}
+    for label in sorted(labels):
+        key = normalize_label(label)
+        matches = [category for category in dict.fromkeys(categories)
+                   if key in {normalize_label(word) for word in ESSENTIAL_BY_CATEGORY[category]}]
+        if matches:
+            selected[label] = "categoria:" + ",".join(matches)
+    return selected
+
+
+def read_curated_vocabulary(path: str | Path) -> dict[str, str]:
+    """Lê grupos de rótulos exatos de um JSON e marca a origem de cada classe."""
+    with open(path, encoding="utf-8") as handle:
+        groups = json.load(handle)
+    if not isinstance(groups, dict) or not groups:
+        raise ValueError("--class-list precisa ser um objeto JSON de grupos não vazios")
+    selected: dict[str, str] = {}
+    for category, labels in groups.items():
+        if not isinstance(category, str) or not category.strip():
+            raise ValueError("--class-list contém categoria inválida")
+        if not isinstance(labels, list) or not labels:
+            raise ValueError(f"Categoria {category!r} precisa de uma lista não vazia")
+        for label in labels:
+            if not isinstance(label, str) or not label.strip() or label != label.strip():
+                raise ValueError(f"Categoria {category!r} contém rótulo inválido")
+            if label in selected:
+                raise ValueError(f"Classe duplicada em --class-list: {label!r}")
+            selected[label] = f"curado:{category}"
+    return selected
