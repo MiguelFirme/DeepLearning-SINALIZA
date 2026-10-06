@@ -76,6 +76,7 @@ def main():
         label_map=label_map,
         target_frames=target_frames,
         split_indices=splits["test"],
+        feature_mode=ckpt.get("feature_mode", "full"),
     )
     test_loader = DataLoader(test_ds, batch_size=args.batch_size, shuffle=False, num_workers=0)
     logger.info(f"Test set: {len(test_ds)} amostras")

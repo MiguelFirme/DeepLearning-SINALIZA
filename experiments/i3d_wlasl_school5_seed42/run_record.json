@@ -1,0 +1,111 @@
+{
+  "model": "I3D_RGB_WLASL2000_frozen_logistic_regression",
+  "identity": {
+    "checkpoint_sha256": "243a19e6deef3becffbfc5b7dd8adb32916c8bee482565ca243c082584732620",
+    "source_sha256": "7ba3afc48e4bb7f27063bf67ad0578dacdace5fc8c29d30ed152c8721859f0dd",
+    "manifest_sha256": "f5af4876759b1fb1a1496f9ca2f3902440aa217f75fa11113f942946d938e42b",
+    "splits_sha256": "5bc10b76684f407adf797f7ffb3243af3419d6d95378c5f0e5063df3cf593537",
+    "label_map_sha256": "82a18135d226e3610a50382c77b086f3c59c29775a391772acb3ec5744ff280c",
+    "frames": 16,
+    "image_size": 224,
+    "sampling": "uniform_full_video",
+    "crop": "center_square",
+    "pixels": "RGB_-1_to_1"
+  },
+  "classes": {
+    "Aluno": 0,
+    "Banheiro": 1,
+    "Conhecer": 2,
+    "Medo": 3,
+    "Vontade": 4
+  },
+  "train": {
+    "top1": 1.0,
+    "f1_macro": 1.0,
+    "loss": 0.0049841818399727345,
+    "confusion_matrix": [
+      [
+        30,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        30,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        30,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        30,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        30
+      ]
+    ],
+    "total_samples": 150
+  },
+  "val": {
+    "top1": 0.4,
+    "f1_macro": 0.32666666666666666,
+    "loss": 3.081268072128296,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        4,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        3,
+        1
+      ]
+    ],
+    "total_samples": 25
+  },
+  "test_evaluated": false,
+  "duration_seconds": 301.9,
+  "torch": "2.14.0+cu130"
+}

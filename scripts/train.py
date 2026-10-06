@@ -149,6 +149,9 @@ def main():
         manifest = json.load(f)
     with open(processed_dir / "manifest.json", encoding="utf-8") as f:
         split_manifest = json.load(f)
+    from ml.data.split import DataSplitter, SplitConfig
+    split_meta_path = processed_dir / "dataset_meta.json"
+    split_meta = json.loads(split_meta_path.read_text(encoding="utf-8")) if split_meta_path.exists() else {}
     if manifest != split_manifest:
         raise ValueError("O manifesto de landmarks mudou após gerar os splits; reconstrua o dataset")
     all_indices = [i for indices in splits.values() for i in indices]
@@ -160,6 +163,12 @@ def main():
         unknown = {manifest[i]["label"] for i in indices} - set(label_map)
         if unknown:
             raise ValueError(f"Classes do split {split_name} ausentes de label_map: {sorted(unknown)}")
+        if split_name in ("val", "test") and any(manifest[i].get("is_synthetic", False) for i in indices):
+            raise ValueError(f"{split_name} contém arquivos sintéticos")
+    splitter = DataSplitter(SplitConfig(group_key=split_meta.get("group_key", "video")))
+    splitter.verify_group_isolation(manifest, splits, group_key="video")
+    if split_meta.get("split_strategy") == "group":
+        splitter.verify_group_isolation(manifest, splits)
     if not splits["train"]:
         raise ValueError("Split de treino vazio")
     missing_train = set(label_map) - {manifest[i]["label"] for i in splits["train"]}
@@ -176,12 +185,14 @@ def main():
 
     seq_cfg = SequenceConfig(target_frames=target_frames)
     augmentation_config = AugmentationConfig.from_mapping(cfg.get("augmentation", {}))
+    feature_mode = data_cfg.get("feature_mode", "full")
     aug = (SequenceAugmentor(augmentation_config, rng=np.random.default_rng(seed))
            if augmentation_config.enabled else None)
 
     data_dir = Path(args.data_dir)
     train_ds = LibrasDataset(data_dir, label_map=label_map, target_frames=target_frames,
-                             seq_config=seq_cfg, augmentor=aug, split_indices=splits["train"])
+                             seq_config=seq_cfg, augmentor=aug, augmentation_seed=seed,
+                             split_indices=splits["train"], feature_mode=feature_mode)
     val_indices = splits.get("val", [])
     val_ds = None
     if val_indices:
@@ -191,6 +202,7 @@ def main():
             target_frames=target_frames,
             seq_config=seq_cfg,
             split_indices=val_indices,
+            feature_mode=feature_mode,
         )
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True,
@@ -216,6 +228,7 @@ def main():
     model.sinaliza_model_type = model_type
     model.sinaliza_model_kwargs = model_cfg
     model.sinaliza_target_frames = target_frames
+    model.sinaliza_feature_mode = feature_mode
     param_count = sum(p.numel() for p in model.parameters())
     logger.info(f"Modelo: {model_type} | input_dim={input_dim} | params={param_count:,}")
 
@@ -229,10 +242,12 @@ def main():
             "model_type": model_type, "model_kwargs": model_cfg,
             "input_dim": input_dim, "num_classes": num_classes,
             "parameter_count": param_count, "target_frames": target_frames,
+            "feature_mode": feature_mode,
             "batch_size": batch_size, "num_workers": num_workers,
             "epochs": epochs, "learning_rate": learning_rate,
             "seed": seed, "device": str(device),
-            "optimizer": "AdamW",
+            "optimizer": train_cfg_dict.get("optimizer", "adamw"),
+            "augmentation": vars(augmentation_config),
             "skip_test": args.skip_test,
             "test_checkpoint": args.test_checkpoint,
         },
@@ -248,6 +263,8 @@ def main():
             "splits_sha256": _sha256(splits_path),
             "label_map_sha256": _sha256(label_map_path),
             "split_sizes": {name: len(indices) for name, indices in splits.items()},
+            "split_strategy": split_meta.get("split_strategy"),
+            "group_key": split_meta.get("group_key", "video"),
             "synthetic_by_split": {
                 name: sum(bool(manifest[i].get("is_synthetic", False)) for i in indices)
                 for name, indices in splits.items()
@@ -294,11 +311,14 @@ def main():
     # Trainer
     from ml.training.trainer import Trainer, TrainingConfig
     train_config = TrainingConfig(
+        optimizer_type=train_cfg_dict.get("optimizer", "adamw"),
         learning_rate=learning_rate,
         epochs=epochs,
         weight_decay=train_cfg_dict.get("weight_decay", 1e-4),
         betas=tuple(train_cfg_dict.get("betas", (0.9, 0.999))),
         scheduler_type=train_cfg_dict.get("scheduler", "cosine"),
+        plateau_patience=train_cfg_dict.get("plateau_patience", 5),
+        plateau_factor=train_cfg_dict.get("plateau_factor", 0.5),
         warmup_epochs=train_cfg_dict.get("warmup_epochs", 3),
         patience=train_cfg_dict.get("patience", 15),
         early_stopping=train_cfg_dict.get("early_stopping", True),
@@ -326,6 +346,7 @@ def main():
             test_ds = LibrasDataset(
                 data_dir, label_map=label_map, target_frames=target_frames,
                 seq_config=seq_cfg, split_indices=test_indices,
+                feature_mode=feature_mode,
             )
             test_loader = DataLoader(
                 test_ds, batch_size=batch_size, shuffle=False,

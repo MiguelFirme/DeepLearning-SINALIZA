@@ -1,0 +1,10 @@
+{
+  "Acontecer": 0,
+  "Aluno": 1,
+  "Banheiro": 2,
+  "Barulho": 3,
+  "Conhecer": 4,
+  "Medo": 5,
+  "Ruim": 6,
+  "Vontade": 7
+}

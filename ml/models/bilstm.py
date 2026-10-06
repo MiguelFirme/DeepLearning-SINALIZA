@@ -50,14 +50,17 @@ class BiLSTMModel(BaseSignModel):
         dropout: float = 0.3,
         projection_dim: int = 128,
         classifier_hidden: int = 256,
+        regularized: bool = False,
         **kwargs,
     ):
         super().__init__(input_dim, num_classes)
         self.norm = nn.LayerNorm(input_dim)
+        self.regularized = regularized
         self.projection = nn.Sequential(
             nn.Linear(input_dim, projection_dim),
+            *( [nn.LayerNorm(projection_dim)] if regularized else [] ),
             nn.GELU(),
-            nn.Dropout(dropout * 0.5),
+            nn.Dropout(dropout if regularized else dropout * 0.5),
         )
         self.lstm = nn.LSTM(
             input_size=projection_dim,
@@ -69,12 +72,14 @@ class BiLSTMModel(BaseSignModel):
         )
         lstm_out_dim = hidden_size * 2
         self.attention = TemporalAttention(lstm_out_dim)
+        self.recurrent_dropout = nn.Dropout(dropout) if regularized else nn.Identity()
         self.classifier = nn.Sequential(
             nn.LayerNorm(lstm_out_dim),
             nn.Dropout(dropout),
             nn.Linear(lstm_out_dim, classifier_hidden),
+            *( [nn.LayerNorm(classifier_hidden)] if regularized else [] ),
             nn.GELU(),
-            nn.Dropout(dropout * 0.5),
+            nn.Dropout(dropout if regularized else dropout * 0.5),
             nn.Linear(classifier_hidden, num_classes),
         )
         self._init_weights()
@@ -114,5 +119,5 @@ class BiLSTMModel(BaseSignModel):
         else:
             lstm_out, _ = self.lstm(x)
 
-        context, _ = self.attention(lstm_out, mask)
+        context, _ = self.attention(self.recurrent_dropout(lstm_out), mask)
         return self.classifier(context)

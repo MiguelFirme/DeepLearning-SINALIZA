@@ -28,12 +28,14 @@ def main():
     parser.add_argument(
         "--strategy",
         type=str,
-        default="stratified",
+        default="group",
         choices=["stratified", "group", "signer_holdout"],
     )
     parser.add_argument("--train-ratio", type=float, default=0.75)
     parser.add_argument("--val-ratio", type=float, default=0.15)
     parser.add_argument("--test-ratio", type=float, default=0.10)
+    parser.add_argument("--group-key", choices=["video", "session", "signer"], default="video",
+                        help="Origem usada no GroupShuffleSplit (padrão: vídeo original)")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--annotations", type=Path, default=PROJECT_ROOT / "data" / "annotations.csv",
                         help="CSV original usado para selecionar as classes em tempo de execução")
@@ -83,8 +85,8 @@ def main():
     if len(paths) != len(samples):
         parser.error("Manifesto contém caminhos duplicados")
     synthetic_samples = [sample for sample in samples if sample.get("is_synthetic", False)]
-    if synthetic_samples and args.strategy != "signer_holdout":
-        parser.error("Landmarks sintéticos exigem --strategy signer_holdout")
+    if synthetic_samples and args.strategy == "stratified":
+        parser.error("Landmarks sintéticos exigem divisão por grupo ou articulador")
     for sample in synthetic_samples:
         source = paths.get(sample.get("source_path"))
         if (source is None or source.get("is_synthetic", False)
@@ -145,6 +147,7 @@ def main():
         val_ratio=args.val_ratio,
         test_ratio=args.test_ratio,
         random_seed=args.seed,
+        group_key=args.group_key,
     )
     splitter = DataSplitter(split_config)
 
@@ -196,6 +199,14 @@ def main():
         splits = {name: [eligible_indices[i] for i in indices]
                   for name, indices in relative.items()}
 
+    if args.strategy == "group":
+        for name in ("val", "test"):
+            splits[name] = [i for i in splits[name] if not samples[i].get("is_synthetic", False)]
+        splitter.verify_group_isolation(samples, splits, group_key=args.group_key)
+    if (not splits["train"] or not splits["test"]
+            or ((args.strategy == "group" or args.val_signer) and not splits["val"])):
+        parser.error("Os splits solicitados precisam conter vídeos reais; ajuste grupos ou proporções")
+
     label_map = {label: idx for idx, label in enumerate(labels)}
     class_counts = {
         name: dict(sorted(Counter(samples[i]["label"] for i in indices).items()))
@@ -232,6 +243,7 @@ def main():
         "num_samples": len(samples),
         "num_classes": len(label_map),
         "split_strategy": args.strategy,
+        "group_key": args.group_key,
         "split_sizes": {k: len(v) for k, v in splits.items()},
         "class_counts_by_split": class_counts,
         "seed": args.seed,

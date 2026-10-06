@@ -1,0 +1,231 @@
+{
+  "annotations": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\annotations.csv",
+  "included": {
+    "Acontecer": "curado:todas_as_classes_minds_libras",
+    "Aluno": "curado:todas_as_classes_minds_libras",
+    "Amarelo": "curado:todas_as_classes_minds_libras",
+    "America": "curado:todas_as_classes_minds_libras",
+    "Aproveitar": "curado:todas_as_classes_minds_libras",
+    "Bala": "curado:todas_as_classes_minds_libras",
+    "Banco": "curado:todas_as_classes_minds_libras",
+    "Banheiro": "curado:todas_as_classes_minds_libras",
+    "Barulho": "curado:todas_as_classes_minds_libras",
+    "Cinco": "curado:todas_as_classes_minds_libras",
+    "Conhecer": "curado:todas_as_classes_minds_libras",
+    "Espelho": "curado:todas_as_classes_minds_libras",
+    "Esquina": "curado:todas_as_classes_minds_libras",
+    "Filho": "curado:todas_as_classes_minds_libras",
+    "Maca": "curado:todas_as_classes_minds_libras",
+    "Medo": "curado:todas_as_classes_minds_libras",
+    "Ruim": "curado:todas_as_classes_minds_libras",
+    "Sapo": "curado:todas_as_classes_minds_libras",
+    "Vacina": "curado:todas_as_classes_minds_libras",
+    "Vontade": "curado:todas_as_classes_minds_libras"
+  },
+  "excluded": [],
+  "extra_keep": [],
+  "class_list": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\minds_libras_all20.json",
+  "essential_categories": [],
+  "annotation_counts": {
+    "Acontecer": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Aluno": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Amarelo": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "America": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Aproveitar": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Bala": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Banco": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Banheiro": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Barulho": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Cinco": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Conhecer": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Espelho": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Esquina": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Filho": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Maca": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Medo": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Ruim": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Sapo": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Vacina": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Vontade": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    }
+  }
+}

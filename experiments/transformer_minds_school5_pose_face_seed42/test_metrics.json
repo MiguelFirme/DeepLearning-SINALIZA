@@ -1,0 +1,60 @@
+{
+  "split": "test",
+  "checkpoint": "experiments\\transformer_minds_school5_pose_face_seed42\\best.pt",
+  "feature_mode": "pose_face",
+  "loss": 0.36226667404174806,
+  "top1": 0.8,
+  "f1_macro": 0.7333333333333333,
+  "total_samples": 25,
+  "classes": {
+    "Aluno": 0,
+    "Banheiro": 1,
+    "Conhecer": 2,
+    "Medo": 3,
+    "Vontade": 4
+  },
+  "confusion_matrix": [
+    [
+      5,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      0,
+      0
+    ]
+  ],
+  "per_class_accuracy": {
+    "0": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 0.0
+  }
+}

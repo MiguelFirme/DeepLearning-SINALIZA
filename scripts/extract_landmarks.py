@@ -75,8 +75,21 @@ def collect_tasks(input_dir: Path, output_dir: Path) -> list[tuple]:
     return tasks
 
 
-def build_manifest(output_dir: Path):
+def build_manifest(output_dir: Path, dataset_format: str = "vlibrasil",
+                   input_dir: Path | None = None):
     """Constrói manifesto JSON das amostras extraídas."""
+    if dataset_format == "minds_libras":
+        from ml.data.minds_libras import build_manifest as build_minds_manifest
+        from ml.data.minds_libras import write_manifest_and_annotations
+
+        samples = build_minds_manifest(output_dir, input_dir)
+        write_manifest_and_annotations(
+            samples, output_dir / "manifest.json", output_dir / "annotations.csv"
+        )
+        logger.info("MINDS-Libras: %s amostras, %s classes, %s sinalizadores",
+                    len(samples), len({s["label"] for s in samples}),
+                    len({s["signer"] for s in samples}))
+        return
     samples = []
     for npz_path in sorted(output_dir.rglob("*.npz")):
         match = re.match(
@@ -117,6 +130,8 @@ def main():
         help="Diretório de saída .npz",
     )
     parser.add_argument("--workers", type=int, default=1, help="Workers paralelos")
+    parser.add_argument("--dataset-format", choices=["vlibrasil", "minds_libras"],
+                        default="vlibrasil")
     args = parser.parse_args()
 
     input_dir = Path(args.input).expanduser().resolve()
@@ -158,7 +173,7 @@ def main():
                 logger.warning(f"  ERRO: {r['path']} — {r.get('error', '?')}")
 
     # Construir manifesto
-    build_manifest(output_dir)
+    build_manifest(output_dir, args.dataset_format, input_dir)
 
 
 if __name__ == "__main__":

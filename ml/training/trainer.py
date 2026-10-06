@@ -34,6 +34,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class TrainingConfig:
     # Otimizador
+    optimizer_type: str = "adamw"  # adam | adamw
     learning_rate: float = 1e-3
     weight_decay: float = 1e-4
     betas: tuple[float, float] = (0.9, 0.999)
@@ -129,7 +130,10 @@ class Trainer:
         self.num_classes = num_classes
 
         # Otimizador
-        self.optimizer = torch.optim.AdamW(
+        optimizers = {"adam": torch.optim.Adam, "adamw": torch.optim.AdamW}
+        if self.config.optimizer_type not in optimizers:
+            raise ValueError(f"Otimizador desconhecido: {self.config.optimizer_type}")
+        self.optimizer = optimizers[self.config.optimizer_type](
             self.model.parameters(),
             lr=self.config.learning_rate,
             weight_decay=self.config.weight_decay,
@@ -265,6 +269,8 @@ class Trainer:
         return result
 
     def _train_epoch(self, epoch: int) -> dict:
+        if hasattr(self.train_loader.dataset, "set_epoch"):
+            self.train_loader.dataset.set_epoch(epoch)
         self.model.train()
         total_loss = 0.0
         total_samples = 0
@@ -387,6 +393,7 @@ class Trainer:
             "model_type": getattr(self.model, "sinaliza_model_type", None),
             "model_kwargs": getattr(self.model, "sinaliza_model_kwargs", {}),
             "target_frames": getattr(self.model, "sinaliza_target_frames", 48),
+            "feature_mode": getattr(self.model, "sinaliza_feature_mode", "full"),
             "num_classes": self.num_classes,
         }
         if self.scheduler is not None:

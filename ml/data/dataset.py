@@ -14,7 +14,7 @@ from typing import Optional
 
 import numpy as np
 import torch
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, get_worker_info
 
 from ml.features.normalization import LandmarkNormalizer, NormalizationConfig
 from ml.features.sequence import SequenceProcessor, SequenceConfig
@@ -34,13 +34,21 @@ class LibrasDataset(Dataset):
         norm_config: NormalizationConfig | None = None,
         seq_config: SequenceConfig | None = None,
         augmentor=None,
+        augmentation_seed: int = 42,
         split_indices: list[int] | None = None,
+        feature_mode: str = "full",
     ):
+        if feature_mode not in {"full", "pose_face"}:
+            raise ValueError(f"feature_mode desconhecido: {feature_mode}")
         self.data_dir = Path(data_dir)
         self.target_frames = target_frames
         self.normalize = normalize
         self.augmentor = augmentor
+        self.augmentation_seed = augmentation_seed
+        self.epoch = 0
+        self._augmentation_worker = None
         self.label_map = label_map
+        self.feature_mode = feature_mode
 
         # Carregar manifesto ou escanear diretório
         self.samples: list[dict] = []
@@ -114,9 +122,23 @@ class LibrasDataset(Dataset):
         else:
             part_mask = None
 
+        if self.feature_mode == "pose_face":
+            if landmarks.shape[1] != 346 or part_mask is None or part_mask.shape[1] != 4:
+                raise ValueError("pose_face requer landmarks (T, 346) e máscara (T, 4)")
+            landmarks[:, :126] = 0.0
+            part_mask[:, :2] = False
+
         # Aumentação deve agir somente nos landmarks brutos. Cortes e mudanças
         # temporais precisam manter a máscara de detecção sincronizada.
         if self.augmentor is not None:
+            worker = get_worker_info()
+            worker_id = worker.id if worker is not None else 0
+            worker_epoch = (self.epoch, worker_id)
+            if self._augmentation_worker != worker_epoch:
+                self.augmentor.rng = np.random.default_rng(
+                    self.augmentation_seed + self.epoch * 100_003 + worker_id
+                )
+                self._augmentation_worker = worker_epoch
             landmarks, part_mask = self.augmentor.augment_with_mask(landmarks, part_mask)
 
         # Normalizar
@@ -137,6 +159,11 @@ class LibrasDataset(Dataset):
             "path": sample["path"],
             "sign_name": sample["label"],
         }
+
+    def set_epoch(self, epoch: int) -> None:
+        """Muda a sequência aleatória da augmentation a cada época de treino."""
+        self.epoch = epoch
+        self._augmentation_worker = None
 
     def get_labels(self) -> list[int]:
         """Retorna lista de labels (int) para todas as amostras."""

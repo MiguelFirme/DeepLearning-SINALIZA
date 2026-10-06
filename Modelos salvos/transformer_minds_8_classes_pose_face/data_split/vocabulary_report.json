@@ -1,0 +1,99 @@
+{
+  "annotations": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_school8\\annotations.csv",
+  "included": {
+    "Acontecer": "curado:escola_casa_saude",
+    "Aluno": "curado:escola_casa_saude",
+    "Banheiro": "curado:escola_casa_saude",
+    "Barulho": "curado:escola_casa_saude",
+    "Conhecer": "curado:escola_casa_saude",
+    "Medo": "curado:escola_casa_saude",
+    "Ruim": "curado:escola_casa_saude",
+    "Vontade": "curado:escola_casa_saude"
+  },
+  "excluded": [],
+  "extra_keep": [],
+  "class_list": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\minds_libras_school8.json",
+  "essential_categories": [],
+  "annotation_counts": {
+    "Acontecer": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Aluno": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Banheiro": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Barulho": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Conhecer": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Medo": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Ruim": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    },
+    "Vontade": {
+      "Sinalizador01": 5,
+      "Sinalizador02": 5,
+      "Sinalizador05": 5,
+      "Sinalizador06": 5,
+      "Sinalizador08": 5,
+      "Sinalizador10": 5,
+      "Sinalizador11": 5,
+      "Sinalizador12": 5
+    }
+  }
+}

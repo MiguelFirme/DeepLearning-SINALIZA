@@ -35,6 +35,8 @@ artifacts/
 *.pth
 *.onnx
 *.torchscript
+# Checkpoints finais documentados para arquivamento no projeto.
+!Modelos salvos/**/best.pt
 
 # Logs
 *.log

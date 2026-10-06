@@ -1,0 +1,4 @@
+_base_: "bilstm_regularized_school.yaml"
+
+data:
+  feature_mode: pose_face

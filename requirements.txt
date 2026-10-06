@@ -34,6 +34,7 @@ optuna>=3.4.0
 
 # --- Dataset Download ---
 kaggle>=1.6.0
+gdown>=6.4.1  # checkpoint oficial I3D/WLASL hospedado no Google Drive
 
 # --- Testing ---
 pytest>=7.4.0
