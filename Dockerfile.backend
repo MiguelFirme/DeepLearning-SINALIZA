@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ml/ ml/
 COPY backend/ backend/
 COPY configs/ configs/
+COPY ["Modelos salvos/transformer_minds_8_classes_pose_face", "/app/Modelos salvos/transformer_minds_8_classes_pose_face"]
 
 # Criar diretórios para artefatos
 RUN mkdir -p artifacts data

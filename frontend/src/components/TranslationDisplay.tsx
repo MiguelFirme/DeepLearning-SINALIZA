@@ -6,10 +6,14 @@ interface Props {
   prediction: PredictResponse | null;
   latency: number;
   connected: boolean;
+  error: string | null;
 }
 
-export default function TranslationDisplay({ prediction, latency, connected }: Props) {
-  const sign = prediction?.sign ?? "—";
+export default function TranslationDisplay({ prediction, latency, connected, error }: Props) {
+  const sign = prediction?.status === "idle" ? "Nenhum sinal detectado"
+    : prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
+    : prediction?.status === "uncertain" ? "Sinal incerto"
+    : prediction?.sign ?? "—";
   const confidence = prediction?.confidence ?? 0;
   const pct = Math.round(confidence * 100);
 
@@ -33,8 +37,9 @@ export default function TranslationDisplay({ prediction, latency, connected }: P
             className={styles.dot}
             style={{ background: connected ? "#10b981" : "#ef4444" }}
           />
-          {connected ? "Model Ready" : "Disconnected"}
+          {connected ? "Modelo pronto" : "Desconectado"}
         </span>
+        {error && <p role="alert">{error}</p>}
       </div>
 
       {/* Última Tradução */}
@@ -86,7 +91,7 @@ export default function TranslationDisplay({ prediction, latency, connected }: P
       </div>
 
       {/* Top-K */}
-      {prediction && prediction.top_k.length > 1 && (
+      {prediction?.sign && prediction.top_k.length > 1 && (
         <div className={`card ${styles.card}`}>
           <h3 className={styles.cardTitle}>Top Candidatos</h3>
           <ul className={styles.topList}>

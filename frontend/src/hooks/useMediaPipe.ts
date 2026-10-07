@@ -137,7 +137,6 @@ export function useMediaPipe(opts: UseMediaPipeOptions = {}): UseMediaPipeReturn
 
   /* Iniciar MediaPipe Holistic */
   const initHolistic = useCallback(async () => {
-    /* @ts-expect-error — import CDN global */
     const { Holistic } = await import("@mediapipe/holistic");
 
     const holistic = new Holistic({

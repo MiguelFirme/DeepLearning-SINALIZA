@@ -5,30 +5,13 @@ import TranslationDisplay from "../components/TranslationDisplay";
 import { useWebSocket } from "../hooks/useWebSocket";
 import styles from "./HomePage.module.css";
 
-const SEQUENCE_LEN = 48;
-const FEATURES_PER_FRAME = 346;
-
 export default function HomePage() {
   const webcamRef = useRef<WebcamViewHandle>(null!);
   const ws = useWebSocket();
 
   const [cameraOn, setCameraOn] = useState(false);
   const [sentence, setSentence] = useState<string[]>([]);
-  const bufferRef = useRef<number[][]>([]);
-
-  /* Acumular frames e enviar quando buffer cheio */
-  const handleLandmarks = useCallback(
-    (flat: number[]) => {
-      if (flat.length !== FEATURES_PER_FRAME) return;
-      bufferRef.current.push(flat);
-
-      if (bufferRef.current.length >= SEQUENCE_LEN) {
-        ws.sendLandmarks(bufferRef.current);
-        bufferRef.current = [];
-      }
-    },
-    [ws]
-  );
+  const handleFrame = useCallback((jpeg: Blob) => ws.sendFrame(jpeg), [ws.sendFrame]);
 
   /* Montar frase progressivamente */
   useEffect(() => {
@@ -47,7 +30,6 @@ export default function HomePage() {
       webcamRef.current?.stop();
       ws.disconnect();
       setCameraOn(false);
-      bufferRef.current = [];
     } else {
       await webcamRef.current?.start();
       ws.connect();
@@ -56,14 +38,17 @@ export default function HomePage() {
     }
   };
 
-  const displaySentence = sentence.join(", ");
+  const displaySentence = ws.prediction?.status === "idle" ? "Nenhum sinal detectado"
+    : ws.prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
+    : ws.prediction?.status === "uncertain" ? "Sinal incerto"
+    : sentence.join(", ");
 
   return (
     <div className={`container ${styles.page}`}>
       <div className={styles.grid}>
         {/* Coluna esquerda — Vídeo */}
         <div className={styles.videoCol}>
-          <WebcamView ref={webcamRef} onLandmarks={handleLandmarks} />
+          <WebcamView ref={webcamRef} onFrame={handleFrame} />
 
           {/* Sentence overlay */}
           <div className={styles.sentenceBar}>
@@ -107,6 +92,7 @@ export default function HomePage() {
             prediction={ws.prediction}
             latency={ws.latency}
             connected={ws.connected}
+            error={ws.error}
           />
         </div>
       </div>

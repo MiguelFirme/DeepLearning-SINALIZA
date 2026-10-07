@@ -1,9 +1,9 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { useMediaPipe } from "../hooks/useMediaPipe";
+import { useCameraFrames } from "../hooks/useCameraFrames";
 import styles from "./WebcamView.module.css";
 
 interface WebcamViewProps {
-  onLandmarks?: (flat: number[]) => void;
+  onFrame?: (jpeg: Blob) => void;
   width?: number;
   height?: number;
 }
@@ -19,8 +19,8 @@ export interface WebcamViewHandle {
 }
 
 const WebcamView = forwardRef<WebcamViewHandle, WebcamViewProps>(
-  ({ onLandmarks, width = 640, height = 480 }, ref) => {
-    const mp = useMediaPipe({ width, height, onLandmarks, targetFps: 15 });
+  ({ onFrame, width = 640, height = 480 }, ref) => {
+    const mp = useCameraFrames({ width, height, onFrame, targetFps: 15 });
 
     useImperativeHandle(ref, () => ({
       start: () => mp.start(),

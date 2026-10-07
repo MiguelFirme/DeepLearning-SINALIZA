@@ -10,9 +10,10 @@ class Settings(BaseSettings):
     debug: bool = False
 
     # Modelo
-    model_path: str = "artifacts/sinaliza_model.pt"
+    model_path: str = "Modelos salvos/transformer_minds_8_classes_pose_face/best.pt"
     device: str = "cpu"
-    confidence_threshold: float = 0.3
+    confidence_threshold: float = 0.5
+    min_arm_motion: float = 0.35
     top_k: int = 5
     smoothing_type: str = "ema"
     ema_alpha: float = 0.6
