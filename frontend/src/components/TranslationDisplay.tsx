@@ -10,8 +10,7 @@ interface Props {
 }
 
 export default function TranslationDisplay({ prediction, latency, connected, error }: Props) {
-  const sign = prediction?.status === "idle" ? "Nenhum sinal detectado"
-    : prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
+  const sign = prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
     : prediction?.status === "uncertain" ? "Sinal incerto"
     : prediction?.sign ?? "—";
   const confidence = prediction?.confidence ?? 0;

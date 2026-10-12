@@ -38,8 +38,7 @@ export default function HomePage() {
     }
   };
 
-  const displaySentence = ws.prediction?.status === "idle" ? "Nenhum sinal detectado"
-    : ws.prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
+  const displaySentence = ws.prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
     : ws.prediction?.status === "uncertain" ? "Sinal incerto"
     : sentence.join(", ");
 

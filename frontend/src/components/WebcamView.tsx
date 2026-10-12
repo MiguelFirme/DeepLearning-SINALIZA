@@ -20,7 +20,7 @@ export interface WebcamViewHandle {
 
 const WebcamView = forwardRef<WebcamViewHandle, WebcamViewProps>(
   ({ onFrame, width = 640, height = 480 }, ref) => {
-    const mp = useCameraFrames({ width, height, onFrame, targetFps: 15 });
+    const mp = useCameraFrames({ width, height, onFrame });
 
     useImperativeHandle(ref, () => ({
       start: () => mp.start(),
@@ -52,7 +52,7 @@ const WebcamView = forwardRef<WebcamViewHandle, WebcamViewProps>(
         {/* HUD overlay */}
         {mp.isRunning && (
           <div className={styles.hud}>
-            <span>FPS: {mp.fps}</span>
+            <span>FPS câmera: {mp.fps}</span>
           </div>
         )}
       </div>

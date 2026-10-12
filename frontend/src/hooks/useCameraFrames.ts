@@ -3,16 +3,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 interface Options {
   width?: number;
   height?: number;
-  targetFps?: number;
   onFrame?: (jpeg: Blob) => void;
 }
 
 /** Captura JPEGs da webcam. O MediaPipe roda no backend, como no treinamento. */
-export function useCameraFrames({ width = 640, height = 480, targetFps = 10, onFrame }: Options) {
+export function useCameraFrames({ width = 640, height = 480, onFrame }: Options) {
   const videoRef = useRef<HTMLVideoElement>(null!);
   const canvasRef = useRef<HTMLCanvasElement>(null!);
   const streamRef = useRef<MediaStream | null>(null);
-  const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const videoFrameIdRef = useRef<number>();
+  const animationFrameIdRef = useRef<number>();
   const encodingRef = useRef(false);
   const onFrameRef = useRef(onFrame);
   onFrameRef.current = onFrame;
@@ -23,13 +23,20 @@ export function useCameraFrames({ width = 640, height = 480, targetFps = 10, onF
   const [currentDeviceId, setCurrentDeviceId] = useState("");
 
   const stop = useCallback(() => {
-    clearInterval(timerRef.current);
-    timerRef.current = undefined;
+    if (videoFrameIdRef.current !== undefined && videoRef.current) {
+      videoRef.current.cancelVideoFrameCallback(videoFrameIdRef.current);
+    }
+    if (animationFrameIdRef.current !== undefined) {
+      cancelAnimationFrame(animationFrameIdRef.current);
+    }
+    videoFrameIdRef.current = undefined;
+    animationFrameIdRef.current = undefined;
     streamRef.current?.getTracks().forEach((track) => track.stop());
     streamRef.current = null;
     if (videoRef.current) videoRef.current.srcObject = null;
     setIsRunning(false);
     setFps(0);
+    encodingRef.current = false;
   }, []);
 
   const start = useCallback(async (deviceId?: string) => {
@@ -37,6 +44,7 @@ export function useCameraFrames({ width = 640, height = 480, targetFps = 10, onF
       video: {
         width: { ideal: width },
         height: { ideal: height },
+        frameRate: { ideal: 30 },
         ...(deviceId ? { deviceId: { exact: deviceId } } : {}),
       },
     });
@@ -63,24 +71,45 @@ export function useCameraFrames({ width = 640, height = 480, targetFps = 10, onF
     const ctx = capture.getContext("2d");
     let frames = 0;
     let fpsStarted = performance.now();
-    timerRef.current = setInterval(() => {
+    let lastMediaTime = -1;
+    const onNewFrame = (now: number) => {
+      if (streamRef.current !== stream) return;
+      frames += 1;
+      const elapsed = now - fpsStarted;
+      if (elapsed >= 1000) {
+        setFps(Math.round(frames * 1000 / elapsed));
+        frames = 0;
+        fpsStarted = now;
+      }
       if (!ctx || video.readyState < 2 || encodingRef.current) return;
       ctx.drawImage(video, 0, 0, width, height);
       encodingRef.current = true;
       capture.toBlob((blob) => {
+        if (streamRef.current !== stream) return;
         encodingRef.current = false;
-        if (blob && streamRef.current === stream) onFrameRef.current?.(blob);
+        if (blob) onFrameRef.current?.(blob);
       }, "image/jpeg", 0.72);
-      frames += 1;
-      const now = performance.now();
-      if (now - fpsStarted >= 1000) {
-        setFps(frames);
-        frames = 0;
-        fpsStarted = now;
-      }
-    }, 1000 / targetFps);
+    };
+    if (typeof video.requestVideoFrameCallback === "function") {
+      const onVideoFrame: VideoFrameRequestCallback = (now) => {
+        if (streamRef.current !== stream) return;
+        videoFrameIdRef.current = video.requestVideoFrameCallback(onVideoFrame);
+        onNewFrame(now);
+      };
+      videoFrameIdRef.current = video.requestVideoFrameCallback(onVideoFrame);
+    } else {
+      // Navegadores antigos: observar o tempo do video para nao duplicar quadros.
+      const onAnimationFrame = (now: number) => {
+        if (streamRef.current !== stream) return;
+        animationFrameIdRef.current = requestAnimationFrame(onAnimationFrame);
+        if (video.currentTime === lastMediaTime) return;
+        lastMediaTime = video.currentTime;
+        onNewFrame(now);
+      };
+      animationFrameIdRef.current = requestAnimationFrame(onAnimationFrame);
+    }
     setIsRunning(true);
-  }, [width, height, targetFps, stop]);
+  }, [width, height, stop]);
 
   const switchCamera = useCallback(async (deviceId: string) => {
     stop();

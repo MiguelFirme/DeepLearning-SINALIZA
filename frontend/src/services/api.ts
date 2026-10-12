@@ -26,8 +26,7 @@ export interface PredictResponse {
   top_k: PredictionItem[];
   is_cooldown: boolean;
   processing_time_ms: number;
-  status?: "recognized" | "idle" | "poor_tracking" | "uncertain";
-  activity_score?: number;
+  status?: "recognized" | "poor_tracking" | "uncertain";
 }
 
 export interface DictionaryEntry {
