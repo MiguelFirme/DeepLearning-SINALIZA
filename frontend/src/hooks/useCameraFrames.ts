@@ -37,6 +37,8 @@ export function useCameraFrames({ width = 640, height = 480, onFrame }: Options)
     setIsRunning(false);
     setFps(0);
     encodingRef.current = false;
+    const overlayContext = canvasRef.current?.getContext("2d");
+    if (overlayContext && canvasRef.current) overlayContext.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
   }, []);
 
   const start = useCallback(async (deviceId?: string) => {

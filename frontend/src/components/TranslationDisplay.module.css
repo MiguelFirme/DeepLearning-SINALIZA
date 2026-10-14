@@ -138,3 +138,29 @@
   border-radius: 50%;
   display: inline-block;
 }
+
+
+/* Estado atual da tradução */
+.stateCard {
+  border-left: 4px solid var(--primary);
+}
+
+.stateTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.stateDetail {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.stateCard[data-tone="success"] { border-left-color: #10b981; }
+.stateCard[data-tone="warning"] { border-left-color: #f59e0b; }
+.stateCard[data-tone="error"] { border-left-color: #ef4444; }
+.stateCard[data-tone="neutral"] { border-left-color: var(--text-muted); }
+.stateCard[data-tone="active"] { border-left-color: #3b82f6; }

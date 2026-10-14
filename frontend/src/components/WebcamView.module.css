@@ -38,3 +38,39 @@
   border-radius: 8px;
   backdrop-filter: blur(4px);
 }
+
+
+.legend {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  max-width: calc(100% - 24px);
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.4;
+  backdrop-filter: blur(4px);
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.handLeft { background: #00e676; }
+.handRight { background: #ff4081; }
+.pose { background: #38bdf8; }
+.face { background: #fbbf24; }

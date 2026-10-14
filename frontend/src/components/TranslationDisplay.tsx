@@ -5,11 +5,29 @@ import styles from "./TranslationDisplay.module.css";
 interface Props {
   prediction: PredictResponse | null;
   latency: number;
+  frameProcessingMs: number;
   connected: boolean;
   error: string | null;
+  cameraOn: boolean;
 }
 
-export default function TranslationDisplay({ prediction, latency, connected, error }: Props) {
+export default function TranslationDisplay({ prediction, latency, frameProcessingMs, connected, error, cameraOn }: Props) {
+  const translationStatus = error
+    ? { label: "Erro na tradução", detail: error, tone: "error" }
+    : !cameraOn
+      ? { label: "Câmera desligada", detail: "Inicie a câmera para começar a tradução.", tone: "neutral" }
+      : !connected
+        ? { label: "Conectando", detail: "Estabelecendo conexão com o serviço de tradução.", tone: "warning" }
+        : prediction?.status === "poor_tracking"
+          ? { label: "Rastreamento insuficiente", detail: "Mantenha o tronco e o rosto visíveis e ajuste o enquadramento.", tone: "warning" }
+          : prediction?.status === "idle"
+            ? { label: "Aguardando sinal", detail: "Faça o sinal em frente à câmera.", tone: "neutral" }
+            : prediction?.status === "recognized" && prediction.sign
+              ? { label: "Tradução identificada", detail: "O modelo reconheceu um sinal.", tone: "success" }
+              : prediction?.status === "uncertain"
+                ? { label: "Analisando sinal", detail: "O sinal ainda não foi identificado com confiança suficiente.", tone: "warning" }
+                : { label: "Capturando sinais", detail: "Câmera ativa. Os quadros estão sendo enviados para análise.", tone: "active" };
+
   const sign = prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
     : prediction?.status === "uncertain" ? "Sinal incerto"
     : prediction?.sign ?? "—";
@@ -41,6 +59,16 @@ export default function TranslationDisplay({ prediction, latency, connected, err
         {error && <p role="alert">{error}</p>}
       </div>
 
+      {/* Estado explícito da tradução */}
+      <div className={`card ${styles.card} ${styles.stateCard}`} data-tone={translationStatus.tone} aria-live="polite">
+        <h3 className={styles.cardTitle}>
+          <span className={styles.cardIcon}>●</span>
+          Estado da tradução
+        </h3>
+        <p className={styles.stateTitle}>{translationStatus.label}</p>
+        <p className={styles.stateDetail}>{translationStatus.detail}</p>
+      </div>
+
       {/* Última Tradução */}
       <div className={`card ${styles.card}`}>
         <h3 className={styles.cardTitle}>
@@ -57,15 +85,15 @@ export default function TranslationDisplay({ prediction, latency, connected, err
         )}
       </div>
 
-      {/* Confidence + Latência */}
+      {/* Confiança + Latência */}
       <div className={`card ${styles.card}`}>
         <h3 className={styles.cardTitle}>
           <span className={styles.cardIcon}>⚙️</span>
-          Camera Controls
+          Controles da câmera
         </h3>
 
         <div className={styles.meter}>
-          <span className={styles.meterLabel}>Confidence</span>
+          <span className={styles.meterLabel}>Confiança</span>
           <div className={styles.bar}>
             <div
               className={styles.barFill}
@@ -77,14 +105,18 @@ export default function TranslationDisplay({ prediction, latency, connected, err
 
         <div className={styles.stats}>
           <div>
-            <span className={styles.statLabel}>Latency</span>
+            <span className={styles.statLabel}>Ida e volta/quadro</span>
             <span className={styles.statValue}>{latency}ms</span>
           </div>
           <div>
-            <span className={styles.statLabel}>Processing</span>
+            <span className={styles.statLabel}>Transformer</span>
             <span className={styles.statValue}>
               {prediction?.processing_time_ms?.toFixed(0) ?? 0}ms
             </span>
+          </div>
+          <div>
+            <span className={styles.statLabel}>Backend/quadro</span>
+            <span className={styles.statValue}>{frameProcessingMs}ms</span>
           </div>
         </div>
       </div>

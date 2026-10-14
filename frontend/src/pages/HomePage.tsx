@@ -7,7 +7,10 @@ import styles from "./HomePage.module.css";
 
 export default function HomePage() {
   const webcamRef = useRef<WebcamViewHandle>(null!);
-  const ws = useWebSocket();
+  const handleOverlay = useCallback((overlay: Parameters<WebcamViewHandle["drawOverlay"]>[0]) => {
+    webcamRef.current?.drawOverlay(overlay);
+  }, []);
+  const ws = useWebSocket(handleOverlay);
 
   const [cameraOn, setCameraOn] = useState(false);
   const [sentence, setSentence] = useState<string[]>([]);
@@ -31,10 +34,14 @@ export default function HomePage() {
       ws.disconnect();
       setCameraOn(false);
     } else {
-      await webcamRef.current?.start();
-      ws.connect();
-      setCameraOn(true);
-      setSentence([]);
+      try {
+        await webcamRef.current?.start();
+        ws.connect();
+        setCameraOn(true);
+        setSentence([]);
+      } catch (err) {
+        console.error("Não foi possível iniciar a câmera:", err);
+      }
     }
   };
 
@@ -47,7 +54,7 @@ export default function HomePage() {
       <div className={styles.grid}>
         {/* Coluna esquerda — Vídeo */}
         <div className={styles.videoCol}>
-          <WebcamView ref={webcamRef} onFrame={handleFrame} />
+          <WebcamView ref={webcamRef} onFrame={handleFrame} backendFps={ws.backendFps} />
 
           {/* Sentence overlay */}
           <div className={styles.sentenceBar}>
@@ -55,7 +62,19 @@ export default function HomePage() {
               {displaySentence || "Aguardando tradução..."}
             </p>
             <span className={styles.sentenceHint}>
-              {cameraOn ? "translating real-time…" : "câmera desligada"}
+              {cameraOn
+                ? !ws.connected
+                  ? "Conectando ao serviço de tradução…"
+                  : ws.prediction?.status === "poor_tracking"
+                    ? "Não foi possível rastrear o corpo — ajuste o enquadramento"
+                    : ws.prediction?.status === "idle"
+                      ? "Aguardando movimento das mãos e braços"
+                      : ws.prediction?.status === "recognized"
+                        ? "Sinal reconhecido"
+                        : ws.prediction?.status === "uncertain"
+                          ? "Sinal não identificado com confiança suficiente"
+                          : "Capturando sinais e analisando movimentos…"
+                : "Câmera desligada"}
             </span>
           </div>
 
@@ -90,8 +109,10 @@ export default function HomePage() {
           <TranslationDisplay
             prediction={ws.prediction}
             latency={ws.latency}
+            frameProcessingMs={ws.frameProcessingMs}
             connected={ws.connected}
             error={ws.error}
+            cameraOn={cameraOn}
           />
         </div>
       </div>
