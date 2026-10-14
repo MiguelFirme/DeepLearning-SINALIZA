@@ -15,17 +15,11 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
     monkeypatch.setattr(LandmarkExtractor, "__enter__", lambda self: self)
     monkeypatch.setattr(LandmarkExtractor, "__exit__", lambda self, *args: None)
 
-    state = {"moving": False, "frame": 0}
-
     def fake_extract(self, frame):
         assert frame.shape == (64, 64, 3)
         landmarks = np.zeros(346, dtype=np.float32)
         landmarks[126 + 5 * 4:126 + 5 * 4 + 3] = (0.4, 0.5, 0.0)
         landmarks[126 + 6 * 4:126 + 6 * 4 + 3] = (0.6, 0.5, 0.0)
-        landmarks[126 + 9 * 4:126 + 9 * 4 + 3] = (
-            0.4 + (0.5 * state["frame"] / 47 if state["moving"] else 0), 0.7, 0.0
-        )
-        state["frame"] += 1
         return landmarks, np.array([False, False, True, True])
 
     monkeypatch.setattr(LandmarkExtractor, "extract_frame", fake_extract)
@@ -45,18 +39,5 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
                 assert ws.receive_json()["type"] == "frame_ack"
             reply = ws.receive_json()
             assert reply["type"] == "prediction"
-            assert reply["data"]["status"] == "idle"
-            assert reply["data"]["sign"] is None
-            assert reply["data"]["top_k"] == []
-
-            ws.send_json({"type": "control", "data": {"action": "reset"}})
-            assert ws.receive_json()["type"] == "control"
-            state.update(moving=True, frame=0)
-            for _ in range(48):
-                ws.send_bytes(encoded.tobytes())
-            for _ in range(48):
-                assert ws.receive_json()["type"] == "frame_ack"
-            reply = ws.receive_json()
-            assert reply["type"] == "prediction"
-            assert reply["data"]["activity_score"] > 0.35
             assert reply["data"]["status"] in {"recognized", "uncertain"}
+            assert reply["data"]["processing_time_ms"] > 0

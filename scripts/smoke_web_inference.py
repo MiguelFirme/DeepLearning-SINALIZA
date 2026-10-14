@@ -48,7 +48,6 @@ def main():
                     if result is not None:
                         predictions.append({
                             "status": result.get("status"),
-                            "activity_score": result.get("activity_score"),
                             "sign": result["sign"],
                             "confidence": result["confidence"],
                             "top_k": result["top_k"],

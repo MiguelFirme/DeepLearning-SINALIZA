@@ -1,5 +1,7 @@
 # Rejeição de cenas paradas na aplicação web
 
+**Estado em 07/10/2026: experimento revertido a pedido do usuário.** O backend voltou a enviar janelas com pose/face detectada ao Transformer mesmo quando os braços estão parados. A confiança mínima voltou a **0,30**. Este documento preserva o plano e as medições históricas, não descreve um filtro ativo.
+
 ## Problema observado
 
 Em 07/10/2026, o usuário relatou que a aplicação atribui palavras mesmo quando ele fica parado diante da câmera. O Transformer foi treinado apenas com oito classes positivas, sem a classe "nenhum sinal". A função softmax sempre distribui probabilidade entre as oito classes; por isso confiança alta não comprova que houve um sinal.
@@ -15,7 +17,7 @@ Em 07/10/2026, o usuário relatou que a aplicação atribui palavras mesmo quand
 
 ### Medição
 
-Métrica: amplitude robusta (percentis 10 e 90) da posição dos cotovelos e pulsos relativa ao ombro do mesmo lado, dividida pela largura dos ombros. Os landmarks vêm da pose de 25 pontos do extrator do projeto. A métrica vale zero quando a pose válida é insuficiente. O limiar inicial é **0,35** (`SINALIZA_MIN_ARM_MOTION`). A confiança mínima de exibição passou de 0,30 para **0,50** (`SINALIZA_CONFIDENCE_THRESHOLD`); a menor confiança dos 40 vídeos de validação foi 0,583. Confiança softmax não é probabilidade calibrada de que houve um sinal.
+Métrica estudada: amplitude robusta (percentis 10 e 90) da posição dos cotovelos e pulsos relativa ao ombro do mesmo lado, dividida pela largura dos ombros. Os landmarks vêm da pose de 25 pontos do extrator do projeto. O limiar experimental foi **0,35** e a confiança mínima experimental foi **0,50**; ambos foram revertidos. A menor confiança dos 40 vídeos de validação foi 0,583. Confiança softmax não é probabilidade calibrada de que houve um sinal.
 
 - Treino MINDS-Libras, 240 clipes: amplitude mínima **1,536**, mediana **2,468**.
 - Validação MINDS-Libras, 40 clipes: mínima **2,239**, mediana **2,641**.
@@ -30,16 +32,16 @@ Reproduzir as medições no Git Bash:
 ./.venv/Scripts/python.exe scripts/audit_motion_gate.py --still-video data/raw/minds_libras/08BanheiroSinalizador11-1.mp4
 ```
 
-### Comportamento implementado
+### Comportamento durante o experimento, agora revertido
 
-Antes de chamar o Transformer, o backend mede a presença de pose/face e a amplitude de braços dos 48 quadros. Se faltar detecção, devolve `status: poor_tracking`; se a amplitude for menor que 0,35, devolve `status: idle`. Ambos têm `sign: null` e `top_k: []`, e zeram a suavização anterior. O frontend apresenta uma mensagem de espera no lugar de palavras. Janelas com atividade seguem para o modelo. Se a confiança do modelo não atingir o limiar atual, a resposta é `uncertain` e a lista de candidatos não aparece.
+Durante a experiência, o backend media a amplitude dos braços antes do Transformer e devolvia `status: idle` em janelas abaixo de 0,35. O frontend mostrava “Nenhum sinal detectado”. Esse caminho foi removido porque, no teste do usuário com a webcam, restringiu demais as palavras reconhecidas. Permanece a verificação anterior de detecção de pose/face (`poor_tracking`). O limiar de confiança ativo é novamente 0,30 (`SINALIZA_CONFIDENCE_THRESHOLD`).
 
 ### Verificação
 
-- Teste WebSocket com 48 JPEGs estáticos: resposta `idle`, sem palavra ou candidatos. Depois de `reset` e 48 quadros com pulso móvel, a janela segue para o Transformer.
-- Oito testes direcionados passaram e `npm run build` concluiu.
-- `08BanheiroSinalizador11-1.mp4`, recodificado como quadros JPEG: o filtro preservou a predição **Banheiro** com confiança aproximada de **79,2%**.
+- Na versão experimental, 48 JPEGs estáticos produziam `idle`; esse resultado não é mais esperado.
+- A versão experimental passou em oito testes direcionados e no build do frontend.
+- `08BanheiroSinalizador11-1.mp4`, recodificado como quadros JPEG, manteve a predição **Banheiro** com confiança aproximada de **79,2%** durante o experimento. Isso não substituiu o teste com a webcam do usuário.
 
 ### Limites e próximo dado necessário
 
-Uma pessoa mexendo braços sem sinalizar ainda pode provocar uma classificação; o Transformer não recebeu exemplos de "nenhum sinal" nem de gestos fora das oito classes. Para melhorar a rejeição, gravar exemplos negativos reais com a mesma webcam (pessoa parada, falando, acenando, arrumando óculos, movimentos incompletos) e avaliar taxa de falsos positivos por minuto antes de calibrar outro limiar ou treinar uma classe de rejeição. O score atual pode precisar de ajuste conforme câmera, luz, enquadramento e velocidade dos sinais.
+O Transformer não recebeu exemplos de "nenhum sinal" nem de gestos fora das oito classes. Sem o filtro de movimento, cenas paradas ou gestos aleatórios podem produzir palavras. Para uma solução futura, gravar exemplos negativos reais com a mesma webcam (pessoa parada, falando, acenando, arrumando óculos, movimentos incompletos) e avaliar taxa de falsos positivos por minuto antes de treinar uma classe de rejeição ou calibrar uma regra nova.

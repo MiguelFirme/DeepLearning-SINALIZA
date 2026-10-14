@@ -7,9 +7,7 @@ import cv2
 import numpy as np
 
 from ml.features.landmarks import LandmarkExtractor
-from ml.inference.activity import pose_arm_motion
 from backend.services.prediction import PredictionService
-from backend.config import settings
 
 
 MAX_JPEG_BYTES = 1_000_000
@@ -64,21 +62,12 @@ class VideoStreamSession:
         if np.mean(part_mask[:, 2] | part_mask[:, 3]) < 0.4:
             self.predictor.reset_state()
             return {"sign": None, "confidence": 0.0, "top_k": [], "is_cooldown": False,
-                    "processing_time_ms": 0.0, "status": "poor_tracking", "activity_score": 0.0}
+                    "processing_time_ms": 0.0, "status": "poor_tracking"}
 
-        window = np.stack(self.landmarks)
-        activity = pose_arm_motion(window, part_mask)
-        if activity < settings.min_arm_motion:
-            self.predictor.reset_state()
-            return {"sign": None, "confidence": 0.0, "top_k": [], "is_cooldown": False,
-                    "processing_time_ms": 0.0, "status": "idle", "activity_score": activity}
-
-        result = self.service.predict(window, part_mask, predictor=self.predictor)
+        result = self.service.predict(np.stack(self.landmarks), part_mask, predictor=self.predictor)
         if result.get("is_cooldown"):
             return None
         result["status"] = "recognized" if result.get("sign") else "uncertain"
-        result["activity_score"] = activity
         if not result.get("sign"):
             result["top_k"] = []
-            self.predictor.reset_state()
         return result

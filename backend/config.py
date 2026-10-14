@@ -12,8 +12,7 @@ class Settings(BaseSettings):
     # Modelo
     model_path: str = "Modelos salvos/transformer_minds_8_classes_pose_face/best.pt"
     device: str = "cpu"
-    confidence_threshold: float = 0.5
-    min_arm_motion: float = 0.35
+    confidence_threshold: float = 0.3
     top_k: int = 5
     smoothing_type: str = "ema"
     ema_alpha: float = 0.6

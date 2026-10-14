@@ -7,7 +7,7 @@ Protótipo de um projeto de extensão para reconhecer **sinais isolados de Libra
 - A aplicação web usa **React/Vite** no frontend e **FastAPI** no backend.
 - O backend carrega por padrão o [Transformer MINDS-Libras de 8 classes](Modelos%20salvos/transformer_minds_8_classes_pose_face/README.md), salvo em `Modelos salvos/transformer_minds_8_classes_pose_face/best.pt`.
 - A webcam envia quadros JPEG pelo WebSocket. O backend extrai landmarks com MediaPipe Holistic, prepara sequências de 48 quadros e devolve o sinal, a confiança e os candidatos.
-- Um filtro de atividade responde **“Nenhum sinal detectado”** quando a pessoa está parada. Ele reduz palpites em cenas estáticas, mas movimentos sem sinal ainda podem ser classificados incorretamente.
+- Não há filtro de movimento para cenas paradas: uma janela com pose/face detectada pode receber uma das oito palavras mesmo sem um sinal. O experimento anterior de rejeição por movimento foi revertido a pedido do usuário.
 - O dicionário da interface é um catálogo separado e **não indica quais palavras o modelo reconhece**. No estado atual, a API do dicionário lê `data/processed/label_map.json` quando presente, que pertence ao histórico do V-Librasil.
 
 ### Palavras reconhecidas pelo modelo ativo
@@ -62,13 +62,13 @@ Esse MP4 é opcional e pode não estar presente em outra instalação. O [guia d
 Webcam → JPEG via WebSocket → MediaPipe Holistic no backend
        → 346 valores brutos por quadro → pose e face → normalização pelos ombros
        → velocidades e distâncias: 697 features por quadro
-       → janela de 48 quadros → filtro de presença e movimento
+       → janela de 48 quadros → verificação de presença de pose/face
        → Transformer temporal → palavra e confiança → frontend
 ```
 
-O modo `pose_face` **zera os pontos detalhados das mãos** antes do modelo, mas preserva braços, cotovelos, pulsos e face. A primeira predição usa 48 quadros; depois, a janela avança 24 quadros. O frontend tenta capturar até 15 JPEGs por segundo, com controle de fila para acompanhar a capacidade de processamento do backend.
+O modo `pose_face` **zera os pontos detalhados das mãos** antes do modelo, mas preserva braços, cotovelos, pulsos e face. A primeira predição usa 48 quadros; depois, a janela avança 24 quadros. O frontend captura cada quadro novo entregue pelo navegador, solicita 30 FPS como preferência da câmera e controla a fila para acompanhar o backend. O indicador "FPS câmera" mede quadros recebidos pelo navegador, não quadros processados pelo modelo. Veja [PLANO_FPS_WEBCAM.md](docs/PLANO_FPS_WEBCAM.md).
 
-O filtro rejeita janelas com pouca detecção ou movimento dos braços abaixo de **0,35 largura de ombro**. A confiança mínima para mostrar uma palavra é **0,50**. Esses valores podem ser configurados por `SINALIZA_MIN_ARM_MOTION` e `SINALIZA_CONFIDENCE_THRESHOLD`. Eles foram escolhidos com vídeos do dataset e cenas repetidas, não com um conjunto representativo de webcams. Veja a [medição e as limitações do filtro](docs/PLANO_REJEICAO_SEM_SINAL.md).
+O backend não classifica janelas com detecção insuficiente de pose/face. Para as demais, a confiança mínima para mostrar uma palavra é **0,30**, configurável por `SINALIZA_CONFIDENCE_THRESHOLD`. O modelo não possui uma classe treinada de “nenhum sinal”; portanto, pode atribuir palavras a uma pessoa parada. A [experiência anterior com filtro de movimento](docs/PLANO_REJEICAO_SEM_SINAL.md) foi documentada e revertida.
 
 ## Dados e modelos
 
@@ -81,7 +81,7 @@ O experimento ativo usa o **MINDS-Libras**: 20 classes, 800 vídeos, 8 sinalizad
 
 O checkpoint de 8 classes foi selecionado pela menor perda de validação, na época 94. A arquitetura tem duas camadas Transformer, quatro cabeças de atenção, dimensão 64, dropout 0,45 e 121.018 parâmetros. O treino usou Adam com `weight_decay=1e-4`, augmentation apenas no treino, scheduler por perda de validação e early stopping. Os detalhes e comandos completos estão no [README do modelo](Modelos%20salvos/transformer_minds_8_classes_pose_face/README.md).
 
-**Essas métricas são exploratórias.** Os vídeos de teste pertencem ao mesmo dataset, e o Sinalizador12 já havia sido consultado em experimentos anteriores. Os resultados não medem o desempenho com usuários, câmeras, iluminação ou frases novas. O modelo também não aprendeu uma classe explícita de “nenhum sinal”; o filtro de movimento é uma proteção provisória. Gravar exemplos negativos reais e avaliar falsos positivos por minuto é um próximo passo.
+**Essas métricas são exploratórias.** Os vídeos de teste pertencem ao mesmo dataset, e o Sinalizador12 já havia sido consultado em experimentos anteriores. Os resultados não medem o desempenho com usuários, câmeras, iluminação ou frases novas. O modelo não aprendeu uma classe explícita de “nenhum sinal”; gravar exemplos negativos reais e avaliar falsos positivos por minuto é um próximo passo.
 
 O projeto mantém dados e experimentos anteriores com **V-Librasil** e outras arquiteturas, incluindo código de Bi-LSTM, TCN e I3D. Eles não são o modelo carregado pela aplicação web atual. Os MP4 do MINDS-Libras ficam em `data/raw/minds_libras/`; os landmarks `.npz`, em `data/landmarks/`; os splits, em `data/processed/`. Modelos e métricas ficam em `Modelos salvos/` e `experiments/`; logs de treinamento, em `logs/`.
 
@@ -129,7 +129,7 @@ Há configuração de Docker Compose no repositório, mas a execução em contê
 
 - [Como rodar a aplicação web](docs/COMO_RODAR_APLICACAO_WEB.md)
 - [Integração do modelo com a webcam](docs/PLANO_INTEGRACAO_WEB_8_CLASSES.md)
-- [Filtro de cenas paradas](docs/PLANO_REJEICAO_SEM_SINAL.md)
+- [Experimento revertido de filtro de cenas paradas](docs/PLANO_REJEICAO_SEM_SINAL.md)
 - [Modelos arquivados e reprodução](Modelos%20salvos/README.md)
 - [Treinamento e experimentos anteriores](docs/TRAINING.md)
 - [Localização dos vídeos originais](docs/LOCALIZACAO_VIDEOS_ORIGINAIS.md)

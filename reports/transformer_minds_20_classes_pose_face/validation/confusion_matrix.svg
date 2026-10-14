@@ -1,0 +1,475 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1910" height="1900" viewBox="0 0 955 950">
+<rect width="100%" height="100%" fill="white"/>
+<text x="180" y="35" font-size="21" font-family="Arial" font-weight="bold">Transformer MINDS-Libras — 20 classes — Validação</text>
+<text x="180" y="60" font-size="13" font-family="Arial">Matriz de confusão | 100 vídeos; 37 acertos (37.0%)</text>
+<text x="520" y="935" text-anchor="middle" font-size="16" font-family="Arial">Classe prevista</text>
+<text transform="translate(25 530) rotate(-90)" text-anchor="middle" font-size="16" font-family="Arial">Classe real</text>
+<text x="170" y="212" text-anchor="end" font-size="12" font-family="Arial">Acontecer</text>
+<text transform="translate(201 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Acontecer</text>
+<rect x="180" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Acontecer: 0</title></rect>
+<rect x="214" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Aluno: 0</title></rect>
+<rect x="248" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Amarelo: 0</title></rect>
+<rect x="282" y="190" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Acontecer → America: 5</title></rect>
+<text x="299" y="212" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="316" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Aproveitar: 0</title></rect>
+<rect x="350" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Bala: 0</title></rect>
+<rect x="384" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Banco: 0</title></rect>
+<rect x="418" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Banheiro: 0</title></rect>
+<rect x="452" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Barulho: 0</title></rect>
+<rect x="486" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Cinco: 0</title></rect>
+<rect x="520" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Conhecer: 0</title></rect>
+<rect x="554" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Espelho: 0</title></rect>
+<rect x="588" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Esquina: 0</title></rect>
+<rect x="622" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Filho: 0</title></rect>
+<rect x="656" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Maca: 0</title></rect>
+<rect x="690" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Medo: 0</title></rect>
+<rect x="724" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Ruim: 0</title></rect>
+<rect x="758" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Sapo: 0</title></rect>
+<rect x="792" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Vacina: 0</title></rect>
+<rect x="826" y="190" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Acontecer → Vontade: 0</title></rect>
+<text x="170" y="246" text-anchor="end" font-size="12" font-family="Arial">Aluno</text>
+<text transform="translate(235 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Aluno</text>
+<rect x="180" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Acontecer: 0</title></rect>
+<rect x="214" y="224" width="34" height="34" fill="rgb(206,216,244)" stroke="#d8dee8"><title>Aluno → Aluno: 1</title></rect>
+<text x="231" y="246" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">1</text>
+<rect x="248" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Amarelo: 0</title></rect>
+<rect x="282" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → America: 0</title></rect>
+<rect x="316" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Aproveitar: 0</title></rect>
+<rect x="350" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Bala: 0</title></rect>
+<rect x="384" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Banco: 0</title></rect>
+<rect x="418" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Banheiro: 0</title></rect>
+<rect x="452" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Barulho: 0</title></rect>
+<rect x="486" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Cinco: 0</title></rect>
+<rect x="520" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Conhecer: 0</title></rect>
+<rect x="554" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Espelho: 0</title></rect>
+<rect x="588" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Esquina: 0</title></rect>
+<rect x="622" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Filho: 0</title></rect>
+<rect x="656" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Maca: 0</title></rect>
+<rect x="690" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Medo: 0</title></rect>
+<rect x="724" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Ruim: 0</title></rect>
+<rect x="758" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Sapo: 0</title></rect>
+<rect x="792" y="224" width="34" height="34" fill="rgb(80,114,211)" stroke="#d8dee8"><title>Aluno → Vacina: 4</title></rect>
+<text x="809" y="246" text-anchor="middle" font-size="13" font-family="Arial" fill="white">4</text>
+<rect x="826" y="224" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aluno → Vontade: 0</title></rect>
+<text x="170" y="280" text-anchor="end" font-size="12" font-family="Arial">Amarelo</text>
+<text transform="translate(269 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Amarelo</text>
+<rect x="180" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Acontecer: 0</title></rect>
+<rect x="214" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Aluno: 0</title></rect>
+<rect x="248" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Amarelo: 0</title></rect>
+<rect x="282" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → America: 0</title></rect>
+<rect x="316" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Aproveitar: 0</title></rect>
+<rect x="350" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Bala: 0</title></rect>
+<rect x="384" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Banco: 0</title></rect>
+<rect x="418" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Banheiro: 0</title></rect>
+<rect x="452" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Barulho: 0</title></rect>
+<rect x="486" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Cinco: 0</title></rect>
+<rect x="520" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Conhecer: 0</title></rect>
+<rect x="554" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Espelho: 0</title></rect>
+<rect x="588" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Esquina: 0</title></rect>
+<rect x="622" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Filho: 0</title></rect>
+<rect x="656" y="258" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Amarelo → Maca: 5</title></rect>
+<text x="673" y="280" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="690" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Medo: 0</title></rect>
+<rect x="724" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Ruim: 0</title></rect>
+<rect x="758" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Sapo: 0</title></rect>
+<rect x="792" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Vacina: 0</title></rect>
+<rect x="826" y="258" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Amarelo → Vontade: 0</title></rect>
+<text x="170" y="314" text-anchor="end" font-size="12" font-family="Arial">America</text>
+<text transform="translate(303 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">America</text>
+<rect x="180" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Acontecer: 0</title></rect>
+<rect x="214" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Aluno: 0</title></rect>
+<rect x="248" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Amarelo: 0</title></rect>
+<rect x="282" y="292" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>America → America: 5</title></rect>
+<text x="299" y="314" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="316" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Aproveitar: 0</title></rect>
+<rect x="350" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Bala: 0</title></rect>
+<rect x="384" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Banco: 0</title></rect>
+<rect x="418" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Banheiro: 0</title></rect>
+<rect x="452" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Barulho: 0</title></rect>
+<rect x="486" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Cinco: 0</title></rect>
+<rect x="520" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Conhecer: 0</title></rect>
+<rect x="554" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Espelho: 0</title></rect>
+<rect x="588" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Esquina: 0</title></rect>
+<rect x="622" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Filho: 0</title></rect>
+<rect x="656" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Maca: 0</title></rect>
+<rect x="690" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Medo: 0</title></rect>
+<rect x="724" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Ruim: 0</title></rect>
+<rect x="758" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Sapo: 0</title></rect>
+<rect x="792" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Vacina: 0</title></rect>
+<rect x="826" y="292" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>America → Vontade: 0</title></rect>
+<text x="170" y="348" text-anchor="end" font-size="12" font-family="Arial">Aproveitar</text>
+<text transform="translate(337 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Aproveitar</text>
+<rect x="180" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Acontecer: 0</title></rect>
+<rect x="214" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Aluno: 0</title></rect>
+<rect x="248" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Amarelo: 0</title></rect>
+<rect x="282" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → America: 0</title></rect>
+<rect x="316" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Aproveitar: 0</title></rect>
+<rect x="350" y="326" width="34" height="34" fill="rgb(164,182,233)" stroke="#d8dee8"><title>Aproveitar → Bala: 2</title></rect>
+<text x="367" y="348" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">2</text>
+<rect x="384" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Banco: 0</title></rect>
+<rect x="418" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Banheiro: 0</title></rect>
+<rect x="452" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Barulho: 0</title></rect>
+<rect x="486" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Cinco: 0</title></rect>
+<rect x="520" y="326" width="34" height="34" fill="rgb(206,216,244)" stroke="#d8dee8"><title>Aproveitar → Conhecer: 1</title></rect>
+<text x="537" y="348" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">1</text>
+<rect x="554" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Espelho: 0</title></rect>
+<rect x="588" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Esquina: 0</title></rect>
+<rect x="622" y="326" width="34" height="34" fill="rgb(206,216,244)" stroke="#d8dee8"><title>Aproveitar → Filho: 1</title></rect>
+<text x="639" y="348" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">1</text>
+<rect x="656" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Maca: 0</title></rect>
+<rect x="690" y="326" width="34" height="34" fill="rgb(206,216,244)" stroke="#d8dee8"><title>Aproveitar → Medo: 1</title></rect>
+<text x="707" y="348" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">1</text>
+<rect x="724" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Ruim: 0</title></rect>
+<rect x="758" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Sapo: 0</title></rect>
+<rect x="792" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Vacina: 0</title></rect>
+<rect x="826" y="326" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Aproveitar → Vontade: 0</title></rect>
+<text x="170" y="382" text-anchor="end" font-size="12" font-family="Arial">Bala</text>
+<text transform="translate(371 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Bala</text>
+<rect x="180" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Acontecer: 0</title></rect>
+<rect x="214" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Aluno: 0</title></rect>
+<rect x="248" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Amarelo: 0</title></rect>
+<rect x="282" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → America: 0</title></rect>
+<rect x="316" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Aproveitar: 0</title></rect>
+<rect x="350" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Bala: 0</title></rect>
+<rect x="384" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Banco: 0</title></rect>
+<rect x="418" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Banheiro: 0</title></rect>
+<rect x="452" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Barulho: 0</title></rect>
+<rect x="486" y="360" width="34" height="34" fill="rgb(80,114,211)" stroke="#d8dee8"><title>Bala → Cinco: 4</title></rect>
+<text x="503" y="382" text-anchor="middle" font-size="13" font-family="Arial" fill="white">4</text>
+<rect x="520" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Conhecer: 0</title></rect>
+<rect x="554" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Espelho: 0</title></rect>
+<rect x="588" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Esquina: 0</title></rect>
+<rect x="622" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Filho: 0</title></rect>
+<rect x="656" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Maca: 0</title></rect>
+<rect x="690" y="360" width="34" height="34" fill="rgb(206,216,244)" stroke="#d8dee8"><title>Bala → Medo: 1</title></rect>
+<text x="707" y="382" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">1</text>
+<rect x="724" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Ruim: 0</title></rect>
+<rect x="758" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Sapo: 0</title></rect>
+<rect x="792" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Vacina: 0</title></rect>
+<rect x="826" y="360" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Bala → Vontade: 0</title></rect>
+<text x="170" y="416" text-anchor="end" font-size="12" font-family="Arial">Banco</text>
+<text transform="translate(405 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Banco</text>
+<rect x="180" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Acontecer: 0</title></rect>
+<rect x="214" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Aluno: 0</title></rect>
+<rect x="248" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Amarelo: 0</title></rect>
+<rect x="282" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → America: 0</title></rect>
+<rect x="316" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Aproveitar: 0</title></rect>
+<rect x="350" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Bala: 0</title></rect>
+<rect x="384" y="394" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Banco → Banco: 5</title></rect>
+<text x="401" y="416" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="418" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Banheiro: 0</title></rect>
+<rect x="452" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Barulho: 0</title></rect>
+<rect x="486" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Cinco: 0</title></rect>
+<rect x="520" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Conhecer: 0</title></rect>
+<rect x="554" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Espelho: 0</title></rect>
+<rect x="588" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Esquina: 0</title></rect>
+<rect x="622" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Filho: 0</title></rect>
+<rect x="656" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Maca: 0</title></rect>
+<rect x="690" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Medo: 0</title></rect>
+<rect x="724" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Ruim: 0</title></rect>
+<rect x="758" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Sapo: 0</title></rect>
+<rect x="792" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Vacina: 0</title></rect>
+<rect x="826" y="394" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banco → Vontade: 0</title></rect>
+<text x="170" y="450" text-anchor="end" font-size="12" font-family="Arial">Banheiro</text>
+<text transform="translate(439 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Banheiro</text>
+<rect x="180" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Acontecer: 0</title></rect>
+<rect x="214" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Aluno: 0</title></rect>
+<rect x="248" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Amarelo: 0</title></rect>
+<rect x="282" y="428" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Banheiro → America: 5</title></rect>
+<text x="299" y="450" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="316" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Aproveitar: 0</title></rect>
+<rect x="350" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Bala: 0</title></rect>
+<rect x="384" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Banco: 0</title></rect>
+<rect x="418" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Banheiro: 0</title></rect>
+<rect x="452" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Barulho: 0</title></rect>
+<rect x="486" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Cinco: 0</title></rect>
+<rect x="520" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Conhecer: 0</title></rect>
+<rect x="554" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Espelho: 0</title></rect>
+<rect x="588" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Esquina: 0</title></rect>
+<rect x="622" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Filho: 0</title></rect>
+<rect x="656" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Maca: 0</title></rect>
+<rect x="690" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Medo: 0</title></rect>
+<rect x="724" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Ruim: 0</title></rect>
+<rect x="758" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Sapo: 0</title></rect>
+<rect x="792" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Vacina: 0</title></rect>
+<rect x="826" y="428" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Banheiro → Vontade: 0</title></rect>
+<text x="170" y="484" text-anchor="end" font-size="12" font-family="Arial">Barulho</text>
+<text transform="translate(473 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Barulho</text>
+<rect x="180" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Acontecer: 0</title></rect>
+<rect x="214" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Aluno: 0</title></rect>
+<rect x="248" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Amarelo: 0</title></rect>
+<rect x="282" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → America: 0</title></rect>
+<rect x="316" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Aproveitar: 0</title></rect>
+<rect x="350" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Bala: 0</title></rect>
+<rect x="384" y="462" width="34" height="34" fill="rgb(206,216,244)" stroke="#d8dee8"><title>Barulho → Banco: 1</title></rect>
+<text x="401" y="484" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">1</text>
+<rect x="418" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Banheiro: 0</title></rect>
+<rect x="452" y="462" width="34" height="34" fill="rgb(80,114,211)" stroke="#d8dee8"><title>Barulho → Barulho: 4</title></rect>
+<text x="469" y="484" text-anchor="middle" font-size="13" font-family="Arial" fill="white">4</text>
+<rect x="486" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Cinco: 0</title></rect>
+<rect x="520" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Conhecer: 0</title></rect>
+<rect x="554" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Espelho: 0</title></rect>
+<rect x="588" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Esquina: 0</title></rect>
+<rect x="622" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Filho: 0</title></rect>
+<rect x="656" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Maca: 0</title></rect>
+<rect x="690" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Medo: 0</title></rect>
+<rect x="724" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Ruim: 0</title></rect>
+<rect x="758" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Sapo: 0</title></rect>
+<rect x="792" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Vacina: 0</title></rect>
+<rect x="826" y="462" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Barulho → Vontade: 0</title></rect>
+<text x="170" y="518" text-anchor="end" font-size="12" font-family="Arial">Cinco</text>
+<text transform="translate(507 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Cinco</text>
+<rect x="180" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Acontecer: 0</title></rect>
+<rect x="214" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Aluno: 0</title></rect>
+<rect x="248" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Amarelo: 0</title></rect>
+<rect x="282" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → America: 0</title></rect>
+<rect x="316" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Aproveitar: 0</title></rect>
+<rect x="350" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Bala: 0</title></rect>
+<rect x="384" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Banco: 0</title></rect>
+<rect x="418" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Banheiro: 0</title></rect>
+<rect x="452" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Barulho: 0</title></rect>
+<rect x="486" y="496" width="34" height="34" fill="rgb(164,182,233)" stroke="#d8dee8"><title>Cinco → Cinco: 2</title></rect>
+<text x="503" y="518" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">2</text>
+<rect x="520" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Conhecer: 0</title></rect>
+<rect x="554" y="496" width="34" height="34" fill="rgb(122,148,222)" stroke="#d8dee8"><title>Cinco → Espelho: 3</title></rect>
+<text x="571" y="518" text-anchor="middle" font-size="13" font-family="Arial" fill="white">3</text>
+<rect x="588" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Esquina: 0</title></rect>
+<rect x="622" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Filho: 0</title></rect>
+<rect x="656" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Maca: 0</title></rect>
+<rect x="690" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Medo: 0</title></rect>
+<rect x="724" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Ruim: 0</title></rect>
+<rect x="758" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Sapo: 0</title></rect>
+<rect x="792" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Vacina: 0</title></rect>
+<rect x="826" y="496" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Cinco → Vontade: 0</title></rect>
+<text x="170" y="552" text-anchor="end" font-size="12" font-family="Arial">Conhecer</text>
+<text transform="translate(541 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Conhecer</text>
+<rect x="180" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Acontecer: 0</title></rect>
+<rect x="214" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Aluno: 0</title></rect>
+<rect x="248" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Amarelo: 0</title></rect>
+<rect x="282" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → America: 0</title></rect>
+<rect x="316" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Aproveitar: 0</title></rect>
+<rect x="350" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Bala: 0</title></rect>
+<rect x="384" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Banco: 0</title></rect>
+<rect x="418" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Banheiro: 0</title></rect>
+<rect x="452" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Barulho: 0</title></rect>
+<rect x="486" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Cinco: 0</title></rect>
+<rect x="520" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Conhecer: 0</title></rect>
+<rect x="554" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Espelho: 0</title></rect>
+<rect x="588" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Esquina: 0</title></rect>
+<rect x="622" y="530" width="34" height="34" fill="rgb(164,182,233)" stroke="#d8dee8"><title>Conhecer → Filho: 2</title></rect>
+<text x="639" y="552" text-anchor="middle" font-size="13" font-family="Arial" fill="#172033">2</text>
+<rect x="656" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Maca: 0</title></rect>
+<rect x="690" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Medo: 0</title></rect>
+<rect x="724" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Ruim: 0</title></rect>
+<rect x="758" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Sapo: 0</title></rect>
+<rect x="792" y="530" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Conhecer → Vacina: 0</title></rect>
+<rect x="826" y="530" width="34" height="34" fill="rgb(122,148,222)" stroke="#d8dee8"><title>Conhecer → Vontade: 3</title></rect>
+<text x="843" y="552" text-anchor="middle" font-size="13" font-family="Arial" fill="white">3</text>
+<text x="170" y="586" text-anchor="end" font-size="12" font-family="Arial">Espelho</text>
+<text transform="translate(575 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Espelho</text>
+<rect x="180" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Acontecer: 0</title></rect>
+<rect x="214" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Aluno: 0</title></rect>
+<rect x="248" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Amarelo: 0</title></rect>
+<rect x="282" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → America: 0</title></rect>
+<rect x="316" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Aproveitar: 0</title></rect>
+<rect x="350" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Bala: 0</title></rect>
+<rect x="384" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Banco: 0</title></rect>
+<rect x="418" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Banheiro: 0</title></rect>
+<rect x="452" y="564" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Espelho → Barulho: 5</title></rect>
+<text x="469" y="586" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="486" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Cinco: 0</title></rect>
+<rect x="520" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Conhecer: 0</title></rect>
+<rect x="554" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Espelho: 0</title></rect>
+<rect x="588" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Esquina: 0</title></rect>
+<rect x="622" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Filho: 0</title></rect>
+<rect x="656" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Maca: 0</title></rect>
+<rect x="690" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Medo: 0</title></rect>
+<rect x="724" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Ruim: 0</title></rect>
+<rect x="758" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Sapo: 0</title></rect>
+<rect x="792" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Vacina: 0</title></rect>
+<rect x="826" y="564" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Espelho → Vontade: 0</title></rect>
+<text x="170" y="620" text-anchor="end" font-size="12" font-family="Arial">Esquina</text>
+<text transform="translate(609 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Esquina</text>
+<rect x="180" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Acontecer: 0</title></rect>
+<rect x="214" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Aluno: 0</title></rect>
+<rect x="248" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Amarelo: 0</title></rect>
+<rect x="282" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → America: 0</title></rect>
+<rect x="316" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Aproveitar: 0</title></rect>
+<rect x="350" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Bala: 0</title></rect>
+<rect x="384" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Banco: 0</title></rect>
+<rect x="418" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Banheiro: 0</title></rect>
+<rect x="452" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Barulho: 0</title></rect>
+<rect x="486" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Cinco: 0</title></rect>
+<rect x="520" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Conhecer: 0</title></rect>
+<rect x="554" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Espelho: 0</title></rect>
+<rect x="588" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Esquina: 0</title></rect>
+<rect x="622" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Filho: 0</title></rect>
+<rect x="656" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Maca: 0</title></rect>
+<rect x="690" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Medo: 0</title></rect>
+<rect x="724" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Ruim: 0</title></rect>
+<rect x="758" y="598" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Esquina → Sapo: 5</title></rect>
+<text x="775" y="620" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="792" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Vacina: 0</title></rect>
+<rect x="826" y="598" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Esquina → Vontade: 0</title></rect>
+<text x="170" y="654" text-anchor="end" font-size="12" font-family="Arial">Filho</text>
+<text transform="translate(643 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Filho</text>
+<rect x="180" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Acontecer: 0</title></rect>
+<rect x="214" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Aluno: 0</title></rect>
+<rect x="248" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Amarelo: 0</title></rect>
+<rect x="282" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → America: 0</title></rect>
+<rect x="316" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Aproveitar: 0</title></rect>
+<rect x="350" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Bala: 0</title></rect>
+<rect x="384" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Banco: 0</title></rect>
+<rect x="418" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Banheiro: 0</title></rect>
+<rect x="452" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Barulho: 0</title></rect>
+<rect x="486" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Cinco: 0</title></rect>
+<rect x="520" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Conhecer: 0</title></rect>
+<rect x="554" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Espelho: 0</title></rect>
+<rect x="588" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Esquina: 0</title></rect>
+<rect x="622" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Filho: 0</title></rect>
+<rect x="656" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Maca: 0</title></rect>
+<rect x="690" y="632" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Filho → Medo: 5</title></rect>
+<text x="707" y="654" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="724" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Ruim: 0</title></rect>
+<rect x="758" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Sapo: 0</title></rect>
+<rect x="792" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Vacina: 0</title></rect>
+<rect x="826" y="632" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Filho → Vontade: 0</title></rect>
+<text x="170" y="688" text-anchor="end" font-size="12" font-family="Arial">Maca</text>
+<text transform="translate(677 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Maca</text>
+<rect x="180" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Acontecer: 0</title></rect>
+<rect x="214" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Aluno: 0</title></rect>
+<rect x="248" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Amarelo: 0</title></rect>
+<rect x="282" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → America: 0</title></rect>
+<rect x="316" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Aproveitar: 0</title></rect>
+<rect x="350" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Bala: 0</title></rect>
+<rect x="384" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Banco: 0</title></rect>
+<rect x="418" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Banheiro: 0</title></rect>
+<rect x="452" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Barulho: 0</title></rect>
+<rect x="486" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Cinco: 0</title></rect>
+<rect x="520" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Conhecer: 0</title></rect>
+<rect x="554" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Espelho: 0</title></rect>
+<rect x="588" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Esquina: 0</title></rect>
+<rect x="622" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Filho: 0</title></rect>
+<rect x="656" y="666" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Maca → Maca: 5</title></rect>
+<text x="673" y="688" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="690" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Medo: 0</title></rect>
+<rect x="724" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Ruim: 0</title></rect>
+<rect x="758" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Sapo: 0</title></rect>
+<rect x="792" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Vacina: 0</title></rect>
+<rect x="826" y="666" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Maca → Vontade: 0</title></rect>
+<text x="170" y="722" text-anchor="end" font-size="12" font-family="Arial">Medo</text>
+<text transform="translate(711 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Medo</text>
+<rect x="180" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Acontecer: 0</title></rect>
+<rect x="214" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Aluno: 0</title></rect>
+<rect x="248" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Amarelo: 0</title></rect>
+<rect x="282" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → America: 0</title></rect>
+<rect x="316" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Aproveitar: 0</title></rect>
+<rect x="350" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Bala: 0</title></rect>
+<rect x="384" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Banco: 0</title></rect>
+<rect x="418" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Banheiro: 0</title></rect>
+<rect x="452" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Barulho: 0</title></rect>
+<rect x="486" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Cinco: 0</title></rect>
+<rect x="520" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Conhecer: 0</title></rect>
+<rect x="554" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Espelho: 0</title></rect>
+<rect x="588" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Esquina: 0</title></rect>
+<rect x="622" y="700" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Medo → Filho: 5</title></rect>
+<text x="639" y="722" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="656" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Maca: 0</title></rect>
+<rect x="690" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Medo: 0</title></rect>
+<rect x="724" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Ruim: 0</title></rect>
+<rect x="758" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Sapo: 0</title></rect>
+<rect x="792" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Vacina: 0</title></rect>
+<rect x="826" y="700" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Medo → Vontade: 0</title></rect>
+<text x="170" y="756" text-anchor="end" font-size="12" font-family="Arial">Ruim</text>
+<text transform="translate(745 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Ruim</text>
+<rect x="180" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Acontecer: 0</title></rect>
+<rect x="214" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Aluno: 0</title></rect>
+<rect x="248" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Amarelo: 0</title></rect>
+<rect x="282" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → America: 0</title></rect>
+<rect x="316" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Aproveitar: 0</title></rect>
+<rect x="350" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Bala: 0</title></rect>
+<rect x="384" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Banco: 0</title></rect>
+<rect x="418" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Banheiro: 0</title></rect>
+<rect x="452" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Barulho: 0</title></rect>
+<rect x="486" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Cinco: 0</title></rect>
+<rect x="520" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Conhecer: 0</title></rect>
+<rect x="554" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Espelho: 0</title></rect>
+<rect x="588" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Esquina: 0</title></rect>
+<rect x="622" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Filho: 0</title></rect>
+<rect x="656" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Maca: 0</title></rect>
+<rect x="690" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Medo: 0</title></rect>
+<rect x="724" y="734" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Ruim → Ruim: 5</title></rect>
+<text x="741" y="756" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="758" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Sapo: 0</title></rect>
+<rect x="792" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Vacina: 0</title></rect>
+<rect x="826" y="734" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Ruim → Vontade: 0</title></rect>
+<text x="170" y="790" text-anchor="end" font-size="12" font-family="Arial">Sapo</text>
+<text transform="translate(779 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Sapo</text>
+<rect x="180" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Acontecer: 0</title></rect>
+<rect x="214" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Aluno: 0</title></rect>
+<rect x="248" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Amarelo: 0</title></rect>
+<rect x="282" y="768" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Sapo → America: 5</title></rect>
+<text x="299" y="790" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="316" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Aproveitar: 0</title></rect>
+<rect x="350" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Bala: 0</title></rect>
+<rect x="384" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Banco: 0</title></rect>
+<rect x="418" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Banheiro: 0</title></rect>
+<rect x="452" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Barulho: 0</title></rect>
+<rect x="486" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Cinco: 0</title></rect>
+<rect x="520" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Conhecer: 0</title></rect>
+<rect x="554" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Espelho: 0</title></rect>
+<rect x="588" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Esquina: 0</title></rect>
+<rect x="622" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Filho: 0</title></rect>
+<rect x="656" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Maca: 0</title></rect>
+<rect x="690" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Medo: 0</title></rect>
+<rect x="724" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Ruim: 0</title></rect>
+<rect x="758" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Sapo: 0</title></rect>
+<rect x="792" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Vacina: 0</title></rect>
+<rect x="826" y="768" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Sapo → Vontade: 0</title></rect>
+<text x="170" y="824" text-anchor="end" font-size="12" font-family="Arial">Vacina</text>
+<text transform="translate(813 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Vacina</text>
+<rect x="180" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Acontecer: 0</title></rect>
+<rect x="214" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Aluno: 0</title></rect>
+<rect x="248" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Amarelo: 0</title></rect>
+<rect x="282" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → America: 0</title></rect>
+<rect x="316" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Aproveitar: 0</title></rect>
+<rect x="350" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Bala: 0</title></rect>
+<rect x="384" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Banco: 0</title></rect>
+<rect x="418" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Banheiro: 0</title></rect>
+<rect x="452" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Barulho: 0</title></rect>
+<rect x="486" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Cinco: 0</title></rect>
+<rect x="520" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Conhecer: 0</title></rect>
+<rect x="554" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Espelho: 0</title></rect>
+<rect x="588" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Esquina: 0</title></rect>
+<rect x="622" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Filho: 0</title></rect>
+<rect x="656" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Maca: 0</title></rect>
+<rect x="690" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Medo: 0</title></rect>
+<rect x="724" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Ruim: 0</title></rect>
+<rect x="758" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Sapo: 0</title></rect>
+<rect x="792" y="802" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Vacina → Vacina: 5</title></rect>
+<text x="809" y="824" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+<rect x="826" y="802" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vacina → Vontade: 0</title></rect>
+<text x="170" y="858" text-anchor="end" font-size="12" font-family="Arial">Vontade</text>
+<text transform="translate(847 180) rotate(-55)" text-anchor="start" font-size="12" font-family="Arial">Vontade</text>
+<rect x="180" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Acontecer: 0</title></rect>
+<rect x="214" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Aluno: 0</title></rect>
+<rect x="248" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Amarelo: 0</title></rect>
+<rect x="282" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → America: 0</title></rect>
+<rect x="316" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Aproveitar: 0</title></rect>
+<rect x="350" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Bala: 0</title></rect>
+<rect x="384" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Banco: 0</title></rect>
+<rect x="418" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Banheiro: 0</title></rect>
+<rect x="452" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Barulho: 0</title></rect>
+<rect x="486" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Cinco: 0</title></rect>
+<rect x="520" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Conhecer: 0</title></rect>
+<rect x="554" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Espelho: 0</title></rect>
+<rect x="588" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Esquina: 0</title></rect>
+<rect x="622" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Filho: 0</title></rect>
+<rect x="656" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Maca: 0</title></rect>
+<rect x="690" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Medo: 0</title></rect>
+<rect x="724" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Ruim: 0</title></rect>
+<rect x="758" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Sapo: 0</title></rect>
+<rect x="792" y="836" width="34" height="34" fill="rgb(248,250,255)" stroke="#d8dee8"><title>Vontade → Vacina: 0</title></rect>
+<rect x="826" y="836" width="34" height="34" fill="rgb(38,80,200)" stroke="#d8dee8"><title>Vontade → Vontade: 5</title></rect>
+<text x="843" y="858" text-anchor="middle" font-size="13" font-family="Arial" fill="white">5</text>
+</svg>

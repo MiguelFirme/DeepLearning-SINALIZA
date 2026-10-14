@@ -48,7 +48,6 @@ async def websocket_predict(ws: WebSocket):
                             "is_cooldown": result.get("is_cooldown", False),
                             "processing_time_ms": result.get("processing_time_ms", 0.0),
                             "status": result.get("status", "uncertain"),
-                            "activity_score": result.get("activity_score", 0.0),
                         }})
                     continue
 

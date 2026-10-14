@@ -63,5 +63,5 @@ Para parar, pressione `Ctrl+C` em cada terminal.
 - O backend agora carrega automaticamente `Modelos salvos/transformer_minds_8_classes_pose_face/best.pt`; não é preciso copiar o checkpoint. Confira `model_loaded: true` e `num_classes: 8` em `/api/health`.
 - O frontend envia JPEGs da câmera a `/api/ws/predict`; o MediaPipe e o pré-processamento do treinamento rodam no backend. Aguarde 48 quadros processados para a primeira classificação.
 - A integração e o teste com vídeo gravado estão documentados em [PLANO_INTEGRACAO_WEB_8_CLASSES.md](PLANO_INTEGRACAO_WEB_8_CLASSES.md). A avaliação com a webcam do usuário ainda precisa ser feita no navegador.
-- Cenas paradas agora recebem `Nenhum sinal detectado`. A medição do filtro, os testes e as limitações estão em [PLANO_REJEICAO_SEM_SINAL.md](PLANO_REJEICAO_SEM_SINAL.md).
+- O filtro de movimento para cenas paradas foi revertido; a confiança mínima voltou a 30%. O histórico da experiência está em [PLANO_REJEICAO_SEM_SINAL.md](PLANO_REJEICAO_SEM_SINAL.md).
 - Docker Compose foi ajustado para incluir o checkpoint e encaminhar o WebSocket, mas não foi executado neste ambiente.

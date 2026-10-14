@@ -17,7 +17,7 @@
 
 O modelo classifica apenas oito sinais isolados: Acontecer, Aluno, Banheiro, Barulho, Conhecer, Medo, Ruim e Vontade. Não traduz frases nem foi validado em pessoas e webcams novas. A métrica do conjunto MINDS-Libras não mede a qualidade da demonstração ao vivo; predições fora dessas oito classes devem ser tratadas como desconhecidas pelo usuário.
 
-Para cenas paradas, a aplicação agora aplica um filtro de atividade antes do Transformer. Medição, testes e limites estão em [PLANO_REJEICAO_SEM_SINAL.md](PLANO_REJEICAO_SEM_SINAL.md).
+O filtro de atividade para cenas paradas foi testado e depois revertido a pedido do usuário. A aplicação mantém apenas a verificação de detecção de pose/face antes do Transformer. O histórico está em [PLANO_REJEICAO_SEM_SINAL.md](PLANO_REJEICAO_SEM_SINAL.md).
 
 ## Execução local no Git Bash
 
@@ -33,7 +33,7 @@ npm install
 npm run dev
 ```
 
-Abra `http://localhost:5173`, clique em **Iniciar Câmera** e permita o acesso à webcam. `http://127.0.0.1:8000/api/health` deve mostrar `model_loaded: true` e `num_classes: 8`. A câmera envia até 15 JPEGs por segundo, mas a capacidade de processamento do MediaPipe pode reduzir a taxa efetiva. A primeira predição demanda 48 quadros efetivamente processados. O frontend usa o proxy WebSocket `/api/ws/predict` do Vite.
+Abra `http://localhost:5173`, clique em **Iniciar Câmera** e permita o acesso à webcam. `http://127.0.0.1:8000/api/health` deve mostrar `model_loaded: true` e `num_classes: 8`. O frontend captura os quadros novos entregues pelo navegador e solicita 30 FPS como preferência, sem limite fixo de 15 FPS. O controle de fila pode reduzir os quadros efetivamente enviados e processados pelo MediaPipe. A primeira predição demanda 48 quadros efetivamente processados. O frontend usa o proxy WebSocket `/api/ws/predict` do Vite. Mudança documentada em [PLANO_FPS_WEBCAM.md](PLANO_FPS_WEBCAM.md).
 
 Para testar o mesmo pipeline sem webcam:
 
