@@ -8,11 +8,13 @@ const PAGE_SIZE = 12;
 
 /* Categorias padrão caso a API não retorne */
 const DEFAULT_CATEGORIES = [
-  "Saudações",
-  "Família",
-  "Tempo",
-  "Emoções",
+  "Alfabeto",
   "Educação",
+  "Emoções",
+  "Família",
+  "Números",
+  "Saudações",
+  "Tempo",
 ];
 
 const CATEGORY_ICONS: Record<string, string> = {
@@ -21,6 +23,8 @@ const CATEGORY_ICONS: Record<string, string> = {
   Tempo: "⏰",
   Emoções: "😊",
   Educação: "📚",
+  Alfabeto: "🔤",
+  Números: "🔢",
 };
 
 export default function DictionaryPage() {
@@ -49,7 +53,13 @@ export default function DictionaryPage() {
           setEntries((prev) => [...prev, ...res.entries]);
         }
         setTotal(res.total);
-        if (res.categories.length > 0) setCategories(res.categories);
+        if (res.categories.length > 0) {
+          setCategories(res.categories);
+          // se a categoria atual não existe (ex.: dicionário sem a pasta), vai para a primeira
+          if (!res.categories.includes(activeCategory)) {
+            setActiveCategory(res.categories[0]);
+          }
+        }
         setSkip(offset + res.entries.length);
       } catch (err) {
         console.error("Erro ao buscar dicionário:", err);
@@ -73,6 +83,8 @@ export default function DictionaryPage() {
     Tempo: "Sinais relacionados a tempo, datas e horários",
     Emoções: "Sinais para expressar sentimentos e emoções",
     Educação: "Sinais do ambiente escolar e acadêmico",
+    Alfabeto: "O alfabeto manual: uma letra por vez",
+    Números: "Sinais dos números",
   };
 
   return (

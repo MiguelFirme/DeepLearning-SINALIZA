@@ -9,10 +9,12 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from backend.config import settings
 from backend.middleware.cors import RequestLoggingMiddleware
 from backend.routers import health_router, predict_router, dictionary_router, websocket_router
+from backend.routers.dictionary import DICTIONARY_DIR, MEDIA_URL_PREFIX
 from backend.services.prediction import prediction_service
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -50,6 +52,10 @@ app.include_router(health_router, prefix="/api")
 app.include_router(predict_router, prefix="/api")
 app.include_router(dictionary_router, prefix="/api")
 app.include_router(websocket_router, prefix="/api")
+
+# Mídia do dicionário (vídeos e imagens). A pasta pode estar vazia; o app continua funcionando.
+DICTIONARY_DIR.mkdir(parents=True, exist_ok=True)
+app.mount(MEDIA_URL_PREFIX, StaticFiles(directory=DICTIONARY_DIR), name="dictionary-media")
 
 
 @app.get("/")

@@ -24,6 +24,13 @@
   font-size: 48px;
 }
 
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* não corta mãos/braços do sinalizador */
+  display: block;
+}
+
 .body {
   padding: 12px;
   text-align: center;
