@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 
@@ -27,6 +28,7 @@ async def websocket_predict(ws: WebSocket):
                 "num_classes": session.predictor.num_classes,
                 "target_frames": prediction_service.target_frames,
                 "feature_mode": prediction_service.feature_mode,
+                "overlay": True,
             }})
             while True:
                 message = await ws.receive()
@@ -34,12 +36,16 @@ async def websocket_predict(ws: WebSocket):
                     break
                 if message.get("bytes") is not None:
                     try:
+                        frame_started = time.perf_counter()
                         result = session.process_jpeg(message["bytes"])
                     except ValueError as exc:
                         await ws.send_json({"type": "error", "data": {"message": str(exc)}})
                         await ws.send_json({"type": "frame_ack", "data": {}})
                         continue
-                    await ws.send_json({"type": "frame_ack", "data": {}})
+                    await ws.send_json({"type": "frame_ack", "data": {
+                        "overlay": session.last_overlay,
+                        "frame_processing_ms": (time.perf_counter() - frame_started) * 1000,
+                    }})
                     if result is not None:
                         await ws.send_json({"type": "prediction", "data": {
                             "sign": result.get("sign"),

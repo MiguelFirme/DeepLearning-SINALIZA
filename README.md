@@ -109,7 +109,7 @@ O nome do experimento evita sobrescrever o treino original. `--skip-test` preser
 | POST | `/api/predict` | Inferência a partir de landmarks brutos `(T, 346)` |
 | POST | `/api/predict/reset` | Limpa a suavização da inferência REST |
 | GET | `/api/dictionary` | Catálogo de palavras, separado do checkpoint ativo |
-| WebSocket | `/api/ws/predict` | Recebe JPEG binário; envia `ready`, `frame_ack`, `prediction` e `error` |
+| WebSocket | `/api/ws/predict` | Recebe JPEG binário; envia `ready`, `frame_ack` com landmarks para o overlay, `prediction` e `error` |
 
 Documentação interativa da API: **http://127.0.0.1:8000/docs**. O [plano de integração web](docs/PLANO_INTEGRACAO_WEB_8_CLASSES.md) registra o contrato WebSocket e os testes realizados.
 

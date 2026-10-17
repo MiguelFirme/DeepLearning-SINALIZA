@@ -3,9 +3,12 @@ from __future__ import annotations
 
 import cv2
 import numpy as np
+import pytest
 from fastapi.testclient import TestClient
 
 from backend.main import app
+from backend.services.prediction import prediction_service
+from backend.services.video_stream import VideoStreamSession
 from ml.features.landmarks import LandmarkExtractor
 
 
@@ -33,10 +36,19 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
             assert ready["type"] == "ready"
             assert ready["data"]["num_classes"] == 8
             assert ready["data"]["target_frames"] == 48
+            assert ready["data"]["overlay"] is True
+            # O primeiro resultado conserva 48 quadros; os seguintes usam 12.
+            assert VideoStreamSession(prediction_service).stride == 12
             for _ in range(48):
                 ws.send_bytes(encoded.tobytes())
             for _ in range(48):
-                assert ws.receive_json()["type"] == "frame_ack"
+                ack = ws.receive_json()
+                assert ack["type"] == "frame_ack"
+                assert ack["data"]["frame_processing_ms"] > 0
+                overlay = ack["data"]["overlay"]
+                assert len(overlay["landmarks"]) == 346
+                assert overlay["mask"] == [False, False, True, True]
+                assert overlay["landmarks"][126 + 5 * 4:126 + 5 * 4 + 2] == pytest.approx([0.4, 0.5])
             reply = ws.receive_json()
             assert reply["type"] == "prediction"
             assert reply["data"]["status"] in {"recognized", "uncertain"}

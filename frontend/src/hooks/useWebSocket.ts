@@ -44,7 +44,7 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null) => vo
           roundTripTotal.current = 0;
           onOverlayRef.current?.(null);
           setConnected(true);
-          setError(null);
+          setError(message.data?.overlay === true ? null : "Backend sem dados dos pontos. Atualize o repositório e reinicie o backend.");
         } else if (message.type === "frame_ack") {
           framesInFlight.current = Math.max(0, framesInFlight.current - 1);
           const started = sentAt.current.shift();
