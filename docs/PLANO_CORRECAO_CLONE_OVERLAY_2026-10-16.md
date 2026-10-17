@@ -33,4 +33,4 @@ Reiniciar **backend e frontend** apos atualizar. No navegador, abrir o console o
 
 ## Publicacao
 
-A preencher com o commit remoto apos o push.
+O commit `0e69de4` foi publicado em `origin/main` em 16/10/2026. Ele inclui o backend, o aviso de incompatibilidade no frontend, o teste e esta documentacao. O build passou; a validacao com a webcam das colegas ainda depende de elas atualizarem e reiniciarem os processos.
