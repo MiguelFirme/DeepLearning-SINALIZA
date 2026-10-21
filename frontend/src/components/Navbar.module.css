@@ -4,14 +4,16 @@
   left: 0;
   right: 0;
   z-index: 100;
+  width: 100%;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  height: 64px;
+  height: 72px;
 }
 
 .inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 0 24px;
   height: 100%;
   display: flex;
@@ -22,11 +24,16 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-.logoIcon {
-  font-size: 24px;
+.logoImage {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .logoText {
@@ -48,13 +55,14 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 500;
   color: var(--text-secondary);
   transition: all var(--transition);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .link:hover {
@@ -65,4 +73,38 @@
 .active {
   color: white !important;
   background: var(--primary) !important;
+}
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 0 12px;
+  }
+
+  .logo {
+    gap: 6px;
+  }
+
+  .logoImage {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+  .nav {
+    gap: 2px;
+  }
+
+  .link {
+    padding: 8px;
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .link svg {
+    width: 14px;
+    height: 14px;
+  }
 }

@@ -41,6 +41,8 @@ export interface DictionaryEntry {
   category: string;
   description: string;
   example_video_url: string | null;
+  poster_url: string | null;
+  image_url: string | null;
 }
 
 export interface DictionaryResponse {
@@ -96,7 +98,7 @@ export const api = {
     const sp = new URLSearchParams();
     if (params?.category) sp.set("category", params.category);
     if (params?.search) sp.set("search", params.search);
-    if (params?.skip !== undefined) sp.set("skip", String(params.skip));
+    if (params?.skip !== undefined) sp.set("offset", String(params.skip));
     if (params?.limit !== undefined) sp.set("limit", String(params.limit));
     const qs = sp.toString();
     return request<DictionaryResponse>(`/dictionary${qs ? `?${qs}` : ""}`);

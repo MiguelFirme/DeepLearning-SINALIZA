@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="app">
       <Navbar />
-      <main style={{ paddingTop: 72 }}>
+      <main style={{ paddingTop: 80 }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dictionary" element={<DictionaryPage />} />

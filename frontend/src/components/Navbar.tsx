@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 import { Home, BookOpen, Settings } from "lucide-react";
 import styles from "./Navbar.module.css";
@@ -6,23 +7,27 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        {/* Logo */}
-        <div className={styles.logo}>
-          <span className={styles.logoIcon}>✋</span>
+        <NavLink to="/" className={styles.logo} aria-label="Sinaliza - Início">
+          <img
+            src="/logos/Logo%20Maos.jpeg"
+            alt="Logo Sinaliza"
+            className={styles.logoImage}
+          />
           <span className={styles.logoText}>Sinaliza</span>
-        </div>
+        </NavLink>
 
-        {/* Navigation */}
-        <nav className={styles.nav}>
+        <nav className={styles.nav} aria-label="Navegação principal">
           <NavLink
             to="/"
+            end
             className={({ isActive }) =>
               `${styles.link} ${isActive ? styles.active : ""}`
             }
           >
             <Home size={16} />
-            Home
+            <span>Início</span>
           </NavLink>
+
           <NavLink
             to="/dictionary"
             className={({ isActive }) =>
@@ -30,8 +35,9 @@ export default function Navbar() {
             }
           >
             <BookOpen size={16} />
-            Dictionary
+            <span>Dicionário</span>
           </NavLink>
+
           <NavLink
             to="/settings"
             className={({ isActive }) =>
@@ -39,7 +45,7 @@ export default function Navbar() {
             }
           >
             <Settings size={16} />
-            Settings
+            <span>Configurações</span>
           </NavLink>
         </nav>
       </div>

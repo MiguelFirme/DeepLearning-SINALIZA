@@ -1,18 +1,26 @@
+
 .page {
+  width: 100%;
+  max-width: none;
   padding-top: 24px;
   padding-bottom: 48px;
+  min-height: calc(100vh - 80px); /* Subtrai a altura do header se ele for fixo */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  /* Troca o 360px fixo por uma proporção flexível que acompanha melhor a tela/zoom */
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 28vw);
   gap: 24px;
   align-items: start;
+  width: 100%;
+  max-width: 1400px; /* Limita a largura máxima para a grade inteira não ficar gigante em telas ultrawide ou com zoom muito baixo */
+  margin: 0 auto;    /* Centraliza a grade na tela */
 }
 
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -20,6 +28,8 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  min-width: 0;
+  width: 100%;
 }
 
 .sentenceBar {
@@ -69,4 +79,6 @@
 .sideCol {
   position: sticky;
   top: 80px;
+  min-width: 0;
+  width: 100%;
 }

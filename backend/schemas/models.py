@@ -36,6 +36,8 @@ class DictionaryEntry(BaseModel):
     category: str = ""
     description: str = ""
     example_video_url: str | None = None
+    poster_url: str | None = None
+    image_url: str | None = None
 
 
 class DictionaryResponse(BaseModel):
