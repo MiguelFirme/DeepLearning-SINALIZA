@@ -19,4 +19,4 @@ Resolver a rejeição `non-fast-forward` do `git push origin main` sem descartar
 
 ## Publicação
 
-O resultado do `push` e a igualdade entre `main` local e `origin/main` são verificados após o commit de merge, antes de considerar a integração concluída.
+O merge foi registrado no commit `12affde` (`Integra atualizacoes de origin/main`). O comando `git push origin main` foi aceito pelo GitHub: `f7a7199..12affde main -> main`. Logo após o envio, `git status --short --branch` mostrou `main...origin/main` sem divergência nem alterações locais, e `HEAD` e `origin/main` apontaram para o mesmo hash `12affde8440d7a3420e9d206f238b5d8a007e899`. Esta anotação final é enviada em um commit documental subsequente.
