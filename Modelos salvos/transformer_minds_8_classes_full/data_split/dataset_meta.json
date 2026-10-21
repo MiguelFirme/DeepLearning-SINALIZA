@@ -1,0 +1,92 @@
+{
+  "landmarks_dir": "data\\landmarks\\minds_libras_school8",
+  "num_samples": 320,
+  "num_classes": 8,
+  "split_strategy": "signer_holdout",
+  "group_key": "video",
+  "split_sizes": {
+    "train": 240,
+    "val": 40,
+    "test": 40
+  },
+  "class_counts_by_split": {
+    "train": {
+      "Acontecer": 30,
+      "Aluno": 30,
+      "Banheiro": 30,
+      "Barulho": 30,
+      "Conhecer": 30,
+      "Medo": 30,
+      "Ruim": 30,
+      "Vontade": 30
+    },
+    "val": {
+      "Acontecer": 5,
+      "Aluno": 5,
+      "Banheiro": 5,
+      "Barulho": 5,
+      "Conhecer": 5,
+      "Medo": 5,
+      "Ruim": 5,
+      "Vontade": 5
+    },
+    "test": {
+      "Acontecer": 5,
+      "Aluno": 5,
+      "Banheiro": 5,
+      "Barulho": 5,
+      "Conhecer": 5,
+      "Medo": 5,
+      "Ruim": 5,
+      "Vontade": 5
+    }
+  },
+  "seed": 42,
+  "selected_classes": [
+    "Acontecer",
+    "Aluno",
+    "Banheiro",
+    "Barulho",
+    "Conhecer",
+    "Medo",
+    "Ruim",
+    "Vontade"
+  ],
+  "synthetic_samples_in_manifest": 0,
+  "class_list": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\minds_libras_school8.json",
+  "essential_categories": [],
+  "train_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador08",
+    "Sinalizador10"
+  ],
+  "val_signers": [
+    "Sinalizador11"
+  ],
+  "test_signer": "Sinalizador12",
+  "available_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador08",
+    "Sinalizador10",
+    "Sinalizador11",
+    "Sinalizador12"
+  ],
+  "required_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador08",
+    "Sinalizador10",
+    "Sinalizador11",
+    "Sinalizador12"
+  ],
+  "max_classes": null,
+  "classes_without_full_signer_coverage": []
+}

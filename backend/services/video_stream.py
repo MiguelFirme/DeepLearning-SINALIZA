@@ -21,7 +21,9 @@ class VideoStreamSession:
         self.landmarks: deque[np.ndarray] = deque(maxlen=service.target_frames)
         self.masks: deque[np.ndarray] = deque(maxlen=service.target_frames)
         self.frames_since_prediction = 0
-        self.stride = max(1, service.target_frames // 2)
+        self.last_overlay: dict | None = None
+        # Janelas de 48 quadros continuam intactas; atualizar a cada 12 quadros.
+        self.stride = max(1, service.target_frames // 4)
 
     def __enter__(self):
         self.extractor.__enter__()
@@ -34,6 +36,7 @@ class VideoStreamSession:
         self.landmarks.clear()
         self.masks.clear()
         self.frames_since_prediction = 0
+        self.last_overlay = None
         self.predictor.reset_state()
 
     def process_jpeg(self, jpeg: bytes) -> dict | None:
@@ -47,6 +50,8 @@ class VideoStreamSession:
             raise ValueError("Resolução máxima: 1920x1080")
 
         landmarks, mask = self.extractor.extract_frame(frame)
+        # Coordenadas brutas da mesma extracao usada pelo classificador.
+        self.last_overlay = {"landmarks": landmarks.tolist(), "mask": mask.tolist()}
         self.landmarks.append(landmarks)
         self.masks.append(mask)
         self.frames_since_prediction += 1

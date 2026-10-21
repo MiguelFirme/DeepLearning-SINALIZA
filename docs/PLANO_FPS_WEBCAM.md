@@ -17,3 +17,7 @@ O Transformer recebe janelas de 48 quadros. Esse numero e o comprimento da seque
 - `getUserMedia` pede `frameRate.ideal = 30`; o navegador pode entregar outra taxa. O HUD `FPS camera` conta quadros novos recebidos pelo elemento de video, mesmo quando a codificacao JPEG ou o envio ficam ocupados.
 - O WebSocket ainda permite no maximo dois quadros sem confirmacao. Assim, o FPS de quadros processados pelo backend pode ser menor que o valor no HUD.
 - `npm run build` concluiu, incluindo TypeScript e Vite. Ainda e necessario medir o stream da Canon R100 no navegador do usuario; nao ha teste de hardware automatizado neste ambiente.
+
+## Correcao do frontend em 14/10/2026
+
+Plano: conferir a importacao de `WebcamView.tsx`, restaurar somente o hook ausente e compilar o frontend. O Vite falhava ao resolver `../hooks/useCameraFrames` porque `frontend/src/hooks/useCameraFrames.ts` havia sido removido do disco, embora continuasse referenciado no componente. O hook foi restaurado com o conteudo da versao registrada no Git, mantendo a captura por `requestVideoFrameCallback` e `frameRate.ideal = 30`. As demais alteracoes locais do frontend foram preservadas. `npm run build` passou (TypeScript e Vite, 1585 modulos). Para conferir no navegador, reiniciar `npm run dev` dentro de `frontend/` e atualizar a pagina.

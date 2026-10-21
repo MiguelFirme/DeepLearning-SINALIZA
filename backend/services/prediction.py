@@ -10,6 +10,7 @@ import numpy as np
 from ml.inference.predictor import SignPredictor, PredictorConfig
 from ml.features.normalization import LandmarkNormalizer, NormalizationConfig
 from ml.features.sequence import SequenceProcessor, SequenceConfig
+from ml.features.feature_modes import FEATURE_MODES, select_feature_mode
 from backend.config import settings
 
 logger = logging.getLogger(__name__)
@@ -80,7 +81,7 @@ class PredictionService:
         self._predictor = predictor
 
         self.feature_mode = artifact.get("feature_mode", "full")
-        if self.feature_mode not in {"full", "pose_face"}:
+        if self.feature_mode not in FEATURE_MODES:
             raise ValueError(f"feature_mode desconhecido: {self.feature_mode}")
         self.target_frames = int(artifact.get("target_frames", settings.target_frames))
         if input_dim != LandmarkNormalizer(346, NormalizationConfig()).get_output_dim():
@@ -113,12 +114,7 @@ class PredictionService:
 
         if landmarks.ndim != 2 or landmarks.shape[1] != 346:
             raise ValueError(f"Esperado landmarks (T, 346), recebido {landmarks.shape}")
-        if self.feature_mode == "pose_face":
-            landmarks = landmarks.copy()
-            landmarks[:, :126] = 0.0
-            if mask is not None and mask.ndim == 2 and mask.shape[1] == 4:
-                mask = mask.copy()
-                mask[:, :2] = False
+        landmarks, mask = select_feature_mode(landmarks, mask, self.feature_mode)
 
         # Normalizar
         if self._normalizer:

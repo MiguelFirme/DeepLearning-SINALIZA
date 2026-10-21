@@ -1,0 +1,120 @@
+{
+  "landmarks_dir": "data\\landmarks\\minds_libras_all20",
+  "num_samples": 800,
+  "num_classes": 15,
+  "split_strategy": "signer_holdout",
+  "group_key": "video",
+  "split_sizes": {
+    "train": 450,
+    "val": 75,
+    "test": 75
+  },
+  "class_counts_by_split": {
+    "train": {
+      "Acontecer": 30,
+      "Aluno": 30,
+      "Amarelo": 30,
+      "Aproveitar": 30,
+      "Banco": 30,
+      "Banheiro": 30,
+      "Barulho": 30,
+      "Cinco": 30,
+      "Conhecer": 30,
+      "Espelho": 30,
+      "Filho": 30,
+      "Medo": 30,
+      "Ruim": 30,
+      "Vacina": 30,
+      "Vontade": 30
+    },
+    "val": {
+      "Acontecer": 5,
+      "Aluno": 5,
+      "Amarelo": 5,
+      "Aproveitar": 5,
+      "Banco": 5,
+      "Banheiro": 5,
+      "Barulho": 5,
+      "Cinco": 5,
+      "Conhecer": 5,
+      "Espelho": 5,
+      "Filho": 5,
+      "Medo": 5,
+      "Ruim": 5,
+      "Vacina": 5,
+      "Vontade": 5
+    },
+    "test": {
+      "Acontecer": 5,
+      "Aluno": 5,
+      "Amarelo": 5,
+      "Aproveitar": 5,
+      "Banco": 5,
+      "Banheiro": 5,
+      "Barulho": 5,
+      "Cinco": 5,
+      "Conhecer": 5,
+      "Espelho": 5,
+      "Filho": 5,
+      "Medo": 5,
+      "Ruim": 5,
+      "Vacina": 5,
+      "Vontade": 5
+    }
+  },
+  "seed": 42,
+  "selected_classes": [
+    "Acontecer",
+    "Aluno",
+    "Amarelo",
+    "Aproveitar",
+    "Banco",
+    "Banheiro",
+    "Barulho",
+    "Cinco",
+    "Conhecer",
+    "Espelho",
+    "Filho",
+    "Medo",
+    "Ruim",
+    "Vacina",
+    "Vontade"
+  ],
+  "synthetic_samples_in_manifest": 0,
+  "class_list": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\minds_libras_15_sem_cinco.json",
+  "essential_categories": [],
+  "train_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador08",
+    "Sinalizador10"
+  ],
+  "val_signers": [
+    "Sinalizador11"
+  ],
+  "test_signer": "Sinalizador12",
+  "available_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador08",
+    "Sinalizador10",
+    "Sinalizador11",
+    "Sinalizador12"
+  ],
+  "required_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador08",
+    "Sinalizador10",
+    "Sinalizador11",
+    "Sinalizador12"
+  ],
+  "max_classes": null,
+  "classes_without_full_signer_coverage": []
+}

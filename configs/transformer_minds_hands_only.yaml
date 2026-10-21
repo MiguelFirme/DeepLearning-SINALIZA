@@ -1,0 +1,6 @@
+_base_: "transformer_minds_pose_face.yaml"
+
+# Mesmos dados, arquitetura, augmentation, otimizador e selecao por val_loss.
+# A unica mudanca de treinamento e a modalidade de entrada.
+data:
+  feature_mode: hands_only

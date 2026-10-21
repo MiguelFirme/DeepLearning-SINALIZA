@@ -30,6 +30,7 @@ def main():
     source_fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
     step = max(1, round(source_fps / args.fps))
     sampled = 0
+    detected_frames = [0, 0, 0, 0]
     predictions = []
     try:
         with VideoStreamSession(prediction_service) as session:
@@ -45,6 +46,8 @@ def main():
                         raise RuntimeError("Falha ao codificar JPEG")
                     result = session.process_jpeg(jpeg.tobytes())
                     sampled += 1
+                    for index, detected in enumerate(session.last_overlay["mask"]):
+                        detected_frames[index] += int(detected)
                     if result is not None:
                         predictions.append({
                             "status": result.get("status"),
@@ -56,7 +59,9 @@ def main():
     finally:
         cap.release()
     print(json.dumps({"video": str(args.video), "source_fps": source_fps,
-                      "sampled_frames": sampled, "predictions": predictions},
+                      "sampled_frames": sampled,
+                      "detected_frames": dict(zip(("left_hand", "right_hand", "pose", "face"), detected_frames)),
+                      "predictions": predictions},
                      ensure_ascii=False, indent=2))
 
 

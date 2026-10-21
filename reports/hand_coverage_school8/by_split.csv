@@ -1,0 +1,4 @@
+﻿"group","videos","frames","left_pct","right_pct","both_pct","any_pct","none_pct","left_only_pct","right_only_pct","mean_video_both_pct","videos_at_least_half_both","videos_without_any_hand"
+"test","40","6504","88.58","82.41","74.42","96.57","3.43","14.16","8","74.52","35","0"
+"train","240","31591","12.81","45.89","9.93","48.77","51.23","2.88","35.95","10.17","8","0"
+"val","40","5916","99.49","95.69","95.44","99.75","0.25","4.06","0.25","95.39","40","0"

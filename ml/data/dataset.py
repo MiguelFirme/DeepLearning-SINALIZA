@@ -18,6 +18,7 @@ from torch.utils.data import Dataset, get_worker_info
 
 from ml.features.normalization import LandmarkNormalizer, NormalizationConfig
 from ml.features.sequence import SequenceProcessor, SequenceConfig
+from ml.features.feature_modes import FEATURE_MODES, select_feature_mode
 
 logger = logging.getLogger(__name__)
 
@@ -38,7 +39,7 @@ class LibrasDataset(Dataset):
         split_indices: list[int] | None = None,
         feature_mode: str = "full",
     ):
-        if feature_mode not in {"full", "pose_face"}:
+        if feature_mode not in FEATURE_MODES:
             raise ValueError(f"feature_mode desconhecido: {feature_mode}")
         self.data_dir = Path(data_dir)
         self.target_frames = target_frames
@@ -122,11 +123,7 @@ class LibrasDataset(Dataset):
         else:
             part_mask = None
 
-        if self.feature_mode == "pose_face":
-            if landmarks.shape[1] != 346 or part_mask is None or part_mask.shape[1] != 4:
-                raise ValueError("pose_face requer landmarks (T, 346) e máscara (T, 4)")
-            landmarks[:, :126] = 0.0
-            part_mask[:, :2] = False
+        landmarks, part_mask = select_feature_mode(landmarks, part_mask, self.feature_mode)
 
         # Aumentação deve agir somente nos landmarks brutos. Cortes e mudanças
         # temporais precisam manter a máscara de detecção sincronizada.

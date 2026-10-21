@@ -77,6 +77,7 @@ O experimento ativo usa o **MINDS-Libras**: 20 classes, 800 vídeos, 8 sinalizad
 | Checkpoint arquivado | Vídeos treino/validação/teste | Validação top-1 | Teste top-1 | Uso atual |
 |---|---:|---:|---:|---|
 | [Transformer `pose_face`, 8 classes](Modelos%20salvos/transformer_minds_8_classes_pose_face/README.md) | 240 / 40 / 40 | 40/40 (100%) | 37/40 (92,5%) | Aplicação web |
+| [Transformer `pose_face`, 15 classes](Modelos%20salvos/transformer_minds_15_classes_pose_face/README.md) | 450 / 75 / 75 | 49/75 (65,3%) | 41/75 (54,7%), exploratório | Experimento arquivado |
 | [Transformer `pose_face`, 20 classes](Modelos%20salvos/transformer_minds_20_classes_pose_face/README.md) | 600 / 100 / 100 | 37/100 (37%) | Não executado | Experimento arquivado |
 
 O checkpoint de 8 classes foi selecionado pela menor perda de validação, na época 94. A arquitetura tem duas camadas Transformer, quatro cabeças de atenção, dimensão 64, dropout 0,45 e 121.018 parâmetros. O treino usou Adam com `weight_decay=1e-4`, augmentation apenas no treino, scheduler por perda de validação e early stopping. Os detalhes e comandos completos estão no [README do modelo](Modelos%20salvos/transformer_minds_8_classes_pose_face/README.md).
@@ -109,7 +110,7 @@ O nome do experimento evita sobrescrever o treino original. `--skip-test` preser
 | POST | `/api/predict` | Inferência a partir de landmarks brutos `(T, 346)` |
 | POST | `/api/predict/reset` | Limpa a suavização da inferência REST |
 | GET | `/api/dictionary` | Catálogo de palavras, separado do checkpoint ativo |
-| WebSocket | `/api/ws/predict` | Recebe JPEG binário; envia `ready`, `frame_ack`, `prediction` e `error` |
+| WebSocket | `/api/ws/predict` | Recebe JPEG binário; envia `ready`, `frame_ack` com landmarks para o overlay, `prediction` e `error` |
 
 Documentação interativa da API: **http://127.0.0.1:8000/docs**. O [plano de integração web](docs/PLANO_INTEGRACAO_WEB_8_CLASSES.md) registra o contrato WebSocket e os testes realizados.
 

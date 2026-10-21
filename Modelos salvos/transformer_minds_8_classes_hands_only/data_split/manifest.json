@@ -1,0 +1,2562 @@
+[
+  {
+    "path": "01AcontecerSinalizador01-1.npz",
+    "video_id": "01AcontecerSinalizador01-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador01-2.npz",
+    "video_id": "01AcontecerSinalizador01-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador01-3.npz",
+    "video_id": "01AcontecerSinalizador01-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador01-4.npz",
+    "video_id": "01AcontecerSinalizador01-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador01-5.npz",
+    "video_id": "01AcontecerSinalizador01-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "01AcontecerSinalizador02-1.npz",
+    "video_id": "01AcontecerSinalizador02-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador02-2.npz",
+    "video_id": "01AcontecerSinalizador02-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador02-3.npz",
+    "video_id": "01AcontecerSinalizador02-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador02-4.npz",
+    "video_id": "01AcontecerSinalizador02-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador02-5.npz",
+    "video_id": "01AcontecerSinalizador02-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "01AcontecerSinalizador05-1.npz",
+    "video_id": "01AcontecerSinalizador05-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador05-2.npz",
+    "video_id": "01AcontecerSinalizador05-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador05-3.npz",
+    "video_id": "01AcontecerSinalizador05-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador05-4.npz",
+    "video_id": "01AcontecerSinalizador05-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador05-5.npz",
+    "video_id": "01AcontecerSinalizador05-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "01AcontecerSinalizador06-1.npz",
+    "video_id": "01AcontecerSinalizador06-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador06-2.npz",
+    "video_id": "01AcontecerSinalizador06-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador06-3.npz",
+    "video_id": "01AcontecerSinalizador06-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador06-4.npz",
+    "video_id": "01AcontecerSinalizador06-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador06-5.npz",
+    "video_id": "01AcontecerSinalizador06-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "01AcontecerSinalizador08-1.npz",
+    "video_id": "01AcontecerSinalizador08-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador08-2.npz",
+    "video_id": "01AcontecerSinalizador08-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador08-3.npz",
+    "video_id": "01AcontecerSinalizador08-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador08-4.npz",
+    "video_id": "01AcontecerSinalizador08-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador08-5.npz",
+    "video_id": "01AcontecerSinalizador08-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "01AcontecerSinalizador10-1.npz",
+    "video_id": "01AcontecerSinalizador10-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador10-2.npz",
+    "video_id": "01AcontecerSinalizador10-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador10-3.npz",
+    "video_id": "01AcontecerSinalizador10-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador10-4.npz",
+    "video_id": "01AcontecerSinalizador10-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador10-5.npz",
+    "video_id": "01AcontecerSinalizador10-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "01AcontecerSinalizador11-1.npz",
+    "video_id": "01AcontecerSinalizador11-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador11-2.npz",
+    "video_id": "01AcontecerSinalizador11-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador11-3.npz",
+    "video_id": "01AcontecerSinalizador11-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador11-4.npz",
+    "video_id": "01AcontecerSinalizador11-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador11-5.npz",
+    "video_id": "01AcontecerSinalizador11-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "01AcontecerSinalizador12-1.npz",
+    "video_id": "01AcontecerSinalizador12-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "01AcontecerSinalizador12-2.npz",
+    "video_id": "01AcontecerSinalizador12-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "01AcontecerSinalizador12-3.npz",
+    "video_id": "01AcontecerSinalizador12-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "01AcontecerSinalizador12-4.npz",
+    "video_id": "01AcontecerSinalizador12-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "01AcontecerSinalizador12-5.npz",
+    "video_id": "01AcontecerSinalizador12-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "Sinalizador12",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador01-1.npz",
+    "video_id": "02AlunoSinalizador01-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador01-2.npz",
+    "video_id": "02AlunoSinalizador01-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador01-3.npz",
+    "video_id": "02AlunoSinalizador01-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador01-4.npz",
+    "video_id": "02AlunoSinalizador01-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador01-5.npz",
+    "video_id": "02AlunoSinalizador01-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador02-1.npz",
+    "video_id": "02AlunoSinalizador02-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador02-2.npz",
+    "video_id": "02AlunoSinalizador02-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador02-3.npz",
+    "video_id": "02AlunoSinalizador02-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador02-4.npz",
+    "video_id": "02AlunoSinalizador02-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador02-5.npz",
+    "video_id": "02AlunoSinalizador02-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador05-1.npz",
+    "video_id": "02AlunoSinalizador05-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador05-2.npz",
+    "video_id": "02AlunoSinalizador05-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador05-3.npz",
+    "video_id": "02AlunoSinalizador05-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador05-4.npz",
+    "video_id": "02AlunoSinalizador05-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador05-5.npz",
+    "video_id": "02AlunoSinalizador05-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador06-1.npz",
+    "video_id": "02AlunoSinalizador06-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador06-2.npz",
+    "video_id": "02AlunoSinalizador06-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador06-3.npz",
+    "video_id": "02AlunoSinalizador06-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador06-4.npz",
+    "video_id": "02AlunoSinalizador06-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador06-5.npz",
+    "video_id": "02AlunoSinalizador06-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador08-1.npz",
+    "video_id": "02AlunoSinalizador08-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador08-2.npz",
+    "video_id": "02AlunoSinalizador08-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador08-3.npz",
+    "video_id": "02AlunoSinalizador08-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador08-4.npz",
+    "video_id": "02AlunoSinalizador08-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador08-5.npz",
+    "video_id": "02AlunoSinalizador08-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador10-1.npz",
+    "video_id": "02AlunoSinalizador10-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador10-2.npz",
+    "video_id": "02AlunoSinalizador10-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador10-3.npz",
+    "video_id": "02AlunoSinalizador10-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador10-4.npz",
+    "video_id": "02AlunoSinalizador10-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador10-5.npz",
+    "video_id": "02AlunoSinalizador10-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador11-1.npz",
+    "video_id": "02AlunoSinalizador11-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador11-2.npz",
+    "video_id": "02AlunoSinalizador11-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador11-3.npz",
+    "video_id": "02AlunoSinalizador11-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador11-4.npz",
+    "video_id": "02AlunoSinalizador11-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador11-5.npz",
+    "video_id": "02AlunoSinalizador11-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "02AlunoSinalizador12-1.npz",
+    "video_id": "02AlunoSinalizador12-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "02AlunoSinalizador12-2.npz",
+    "video_id": "02AlunoSinalizador12-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "02AlunoSinalizador12-3.npz",
+    "video_id": "02AlunoSinalizador12-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "02AlunoSinalizador12-4.npz",
+    "video_id": "02AlunoSinalizador12-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "02AlunoSinalizador12-5.npz",
+    "video_id": "02AlunoSinalizador12-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "Sinalizador12",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador01-1.npz",
+    "video_id": "08BanheiroSinalizador01-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador01-2.npz",
+    "video_id": "08BanheiroSinalizador01-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador01-3.npz",
+    "video_id": "08BanheiroSinalizador01-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador01-4.npz",
+    "video_id": "08BanheiroSinalizador01-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador01-5.npz",
+    "video_id": "08BanheiroSinalizador01-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador02-1.npz",
+    "video_id": "08BanheiroSinalizador02-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador02-2.npz",
+    "video_id": "08BanheiroSinalizador02-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador02-3.npz",
+    "video_id": "08BanheiroSinalizador02-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador02-4.npz",
+    "video_id": "08BanheiroSinalizador02-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador02-5.npz",
+    "video_id": "08BanheiroSinalizador02-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador05-1.npz",
+    "video_id": "08BanheiroSinalizador05-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador05-2.npz",
+    "video_id": "08BanheiroSinalizador05-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador05-3.npz",
+    "video_id": "08BanheiroSinalizador05-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador05-4.npz",
+    "video_id": "08BanheiroSinalizador05-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador05-5.npz",
+    "video_id": "08BanheiroSinalizador05-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador06-1.npz",
+    "video_id": "08BanheiroSinalizador06-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador06-2.npz",
+    "video_id": "08BanheiroSinalizador06-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador06-3.npz",
+    "video_id": "08BanheiroSinalizador06-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador06-4.npz",
+    "video_id": "08BanheiroSinalizador06-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador06-5.npz",
+    "video_id": "08BanheiroSinalizador06-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador08-1.npz",
+    "video_id": "08BanheiroSinalizador08-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador08-2.npz",
+    "video_id": "08BanheiroSinalizador08-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador08-3.npz",
+    "video_id": "08BanheiroSinalizador08-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador08-4.npz",
+    "video_id": "08BanheiroSinalizador08-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador08-5.npz",
+    "video_id": "08BanheiroSinalizador08-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador10-1.npz",
+    "video_id": "08BanheiroSinalizador10-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador10-2.npz",
+    "video_id": "08BanheiroSinalizador10-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador10-3.npz",
+    "video_id": "08BanheiroSinalizador10-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador10-4.npz",
+    "video_id": "08BanheiroSinalizador10-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador10-5.npz",
+    "video_id": "08BanheiroSinalizador10-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador11-1.npz",
+    "video_id": "08BanheiroSinalizador11-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador11-2.npz",
+    "video_id": "08BanheiroSinalizador11-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador11-3.npz",
+    "video_id": "08BanheiroSinalizador11-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador11-4.npz",
+    "video_id": "08BanheiroSinalizador11-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador11-5.npz",
+    "video_id": "08BanheiroSinalizador11-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "08BanheiroSinalizador12-1.npz",
+    "video_id": "08BanheiroSinalizador12-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "08BanheiroSinalizador12-2.npz",
+    "video_id": "08BanheiroSinalizador12-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "08BanheiroSinalizador12-3.npz",
+    "video_id": "08BanheiroSinalizador12-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "08BanheiroSinalizador12-4.npz",
+    "video_id": "08BanheiroSinalizador12-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "08BanheiroSinalizador12-5.npz",
+    "video_id": "08BanheiroSinalizador12-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "Sinalizador12",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador01-1.npz",
+    "video_id": "09BarulhoSinalizador01-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador01-2.npz",
+    "video_id": "09BarulhoSinalizador01-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador01-3.npz",
+    "video_id": "09BarulhoSinalizador01-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador01-4.npz",
+    "video_id": "09BarulhoSinalizador01-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador01-5.npz",
+    "video_id": "09BarulhoSinalizador01-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador02-1.npz",
+    "video_id": "09BarulhoSinalizador02-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador02-2.npz",
+    "video_id": "09BarulhoSinalizador02-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador02-3.npz",
+    "video_id": "09BarulhoSinalizador02-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador02-4.npz",
+    "video_id": "09BarulhoSinalizador02-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador02-5.npz",
+    "video_id": "09BarulhoSinalizador02-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador05-1.npz",
+    "video_id": "09BarulhoSinalizador05-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador05-2.npz",
+    "video_id": "09BarulhoSinalizador05-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador05-3.npz",
+    "video_id": "09BarulhoSinalizador05-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador05-4.npz",
+    "video_id": "09BarulhoSinalizador05-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador05-5.npz",
+    "video_id": "09BarulhoSinalizador05-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador06-1.npz",
+    "video_id": "09BarulhoSinalizador06-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador06-2.npz",
+    "video_id": "09BarulhoSinalizador06-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador06-3.npz",
+    "video_id": "09BarulhoSinalizador06-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador06-4.npz",
+    "video_id": "09BarulhoSinalizador06-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador06-5.npz",
+    "video_id": "09BarulhoSinalizador06-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador08-1.npz",
+    "video_id": "09BarulhoSinalizador08-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador08-2.npz",
+    "video_id": "09BarulhoSinalizador08-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador08-3.npz",
+    "video_id": "09BarulhoSinalizador08-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador08-4.npz",
+    "video_id": "09BarulhoSinalizador08-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador08-5.npz",
+    "video_id": "09BarulhoSinalizador08-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador10-1.npz",
+    "video_id": "09BarulhoSinalizador10-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador10-2.npz",
+    "video_id": "09BarulhoSinalizador10-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador10-3.npz",
+    "video_id": "09BarulhoSinalizador10-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador10-4.npz",
+    "video_id": "09BarulhoSinalizador10-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador10-5.npz",
+    "video_id": "09BarulhoSinalizador10-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador11-1.npz",
+    "video_id": "09BarulhoSinalizador11-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador11-2.npz",
+    "video_id": "09BarulhoSinalizador11-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador11-3.npz",
+    "video_id": "09BarulhoSinalizador11-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador11-4.npz",
+    "video_id": "09BarulhoSinalizador11-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador11-5.npz",
+    "video_id": "09BarulhoSinalizador11-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "09BarulhoSinalizador12-1.npz",
+    "video_id": "09BarulhoSinalizador12-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "09BarulhoSinalizador12-2.npz",
+    "video_id": "09BarulhoSinalizador12-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "09BarulhoSinalizador12-3.npz",
+    "video_id": "09BarulhoSinalizador12-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "09BarulhoSinalizador12-4.npz",
+    "video_id": "09BarulhoSinalizador12-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "09BarulhoSinalizador12-5.npz",
+    "video_id": "09BarulhoSinalizador12-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "Sinalizador12",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador01-1.npz",
+    "video_id": "11ConhecerSinalizador01-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador01-2.npz",
+    "video_id": "11ConhecerSinalizador01-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador01-3.npz",
+    "video_id": "11ConhecerSinalizador01-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador01-4.npz",
+    "video_id": "11ConhecerSinalizador01-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador01-5.npz",
+    "video_id": "11ConhecerSinalizador01-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador02-1.npz",
+    "video_id": "11ConhecerSinalizador02-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador02-2.npz",
+    "video_id": "11ConhecerSinalizador02-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador02-3.npz",
+    "video_id": "11ConhecerSinalizador02-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador02-4.npz",
+    "video_id": "11ConhecerSinalizador02-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador02-5.npz",
+    "video_id": "11ConhecerSinalizador02-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador05-1.npz",
+    "video_id": "11ConhecerSinalizador05-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador05-2.npz",
+    "video_id": "11ConhecerSinalizador05-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador05-3.npz",
+    "video_id": "11ConhecerSinalizador05-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador05-4.npz",
+    "video_id": "11ConhecerSinalizador05-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador05-5.npz",
+    "video_id": "11ConhecerSinalizador05-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador06-1.npz",
+    "video_id": "11ConhecerSinalizador06-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador06-2.npz",
+    "video_id": "11ConhecerSinalizador06-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador06-3.npz",
+    "video_id": "11ConhecerSinalizador06-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador06-4.npz",
+    "video_id": "11ConhecerSinalizador06-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador06-5.npz",
+    "video_id": "11ConhecerSinalizador06-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador08-1.npz",
+    "video_id": "11ConhecerSinalizador08-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador08-2.npz",
+    "video_id": "11ConhecerSinalizador08-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador08-3.npz",
+    "video_id": "11ConhecerSinalizador08-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador08-4.npz",
+    "video_id": "11ConhecerSinalizador08-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador08-5.npz",
+    "video_id": "11ConhecerSinalizador08-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador10-1.npz",
+    "video_id": "11ConhecerSinalizador10-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador10-2.npz",
+    "video_id": "11ConhecerSinalizador10-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador10-3.npz",
+    "video_id": "11ConhecerSinalizador10-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador10-4.npz",
+    "video_id": "11ConhecerSinalizador10-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador10-5.npz",
+    "video_id": "11ConhecerSinalizador10-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador11-1.npz",
+    "video_id": "11ConhecerSinalizador11-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador11-2.npz",
+    "video_id": "11ConhecerSinalizador11-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador11-3.npz",
+    "video_id": "11ConhecerSinalizador11-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador11-4.npz",
+    "video_id": "11ConhecerSinalizador11-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador11-5.npz",
+    "video_id": "11ConhecerSinalizador11-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "11ConhecerSinalizador12-1.npz",
+    "video_id": "11ConhecerSinalizador12-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "11ConhecerSinalizador12-2.npz",
+    "video_id": "11ConhecerSinalizador12-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "11ConhecerSinalizador12-3.npz",
+    "video_id": "11ConhecerSinalizador12-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "11ConhecerSinalizador12-4.npz",
+    "video_id": "11ConhecerSinalizador12-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "11ConhecerSinalizador12-5.npz",
+    "video_id": "11ConhecerSinalizador12-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "Sinalizador12",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador01-1.npz",
+    "video_id": "16MedoSinalizador01-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador01-2.npz",
+    "video_id": "16MedoSinalizador01-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador01-3.npz",
+    "video_id": "16MedoSinalizador01-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador01-4.npz",
+    "video_id": "16MedoSinalizador01-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador01-5.npz",
+    "video_id": "16MedoSinalizador01-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador02-1.npz",
+    "video_id": "16MedoSinalizador02-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador02-2.npz",
+    "video_id": "16MedoSinalizador02-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador02-3.npz",
+    "video_id": "16MedoSinalizador02-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador02-4.npz",
+    "video_id": "16MedoSinalizador02-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador02-5.npz",
+    "video_id": "16MedoSinalizador02-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador05-1.npz",
+    "video_id": "16MedoSinalizador05-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador05-2.npz",
+    "video_id": "16MedoSinalizador05-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador05-3.npz",
+    "video_id": "16MedoSinalizador05-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador05-4.npz",
+    "video_id": "16MedoSinalizador05-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador05-5.npz",
+    "video_id": "16MedoSinalizador05-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador06-1.npz",
+    "video_id": "16MedoSinalizador06-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador06-2.npz",
+    "video_id": "16MedoSinalizador06-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador06-3.npz",
+    "video_id": "16MedoSinalizador06-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador06-4.npz",
+    "video_id": "16MedoSinalizador06-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador06-5.npz",
+    "video_id": "16MedoSinalizador06-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador08-1.npz",
+    "video_id": "16MedoSinalizador08-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador08-2.npz",
+    "video_id": "16MedoSinalizador08-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador08-3.npz",
+    "video_id": "16MedoSinalizador08-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador08-4.npz",
+    "video_id": "16MedoSinalizador08-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador08-5.npz",
+    "video_id": "16MedoSinalizador08-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador10-1.npz",
+    "video_id": "16MedoSinalizador10-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador10-2.npz",
+    "video_id": "16MedoSinalizador10-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador10-3.npz",
+    "video_id": "16MedoSinalizador10-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador10-4.npz",
+    "video_id": "16MedoSinalizador10-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador10-5.npz",
+    "video_id": "16MedoSinalizador10-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador11-1.npz",
+    "video_id": "16MedoSinalizador11-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador11-2.npz",
+    "video_id": "16MedoSinalizador11-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador11-3.npz",
+    "video_id": "16MedoSinalizador11-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador11-4.npz",
+    "video_id": "16MedoSinalizador11-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador11-5.npz",
+    "video_id": "16MedoSinalizador11-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "16MedoSinalizador12-1.npz",
+    "video_id": "16MedoSinalizador12-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "16MedoSinalizador12-2.npz",
+    "video_id": "16MedoSinalizador12-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "16MedoSinalizador12-3.npz",
+    "video_id": "16MedoSinalizador12-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "16MedoSinalizador12-4.npz",
+    "video_id": "16MedoSinalizador12-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "16MedoSinalizador12-5.npz",
+    "video_id": "16MedoSinalizador12-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "Sinalizador12",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador01-1.npz",
+    "video_id": "17RuimSinalizador01-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador01-2.npz",
+    "video_id": "17RuimSinalizador01-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador01-3.npz",
+    "video_id": "17RuimSinalizador01-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador01-4.npz",
+    "video_id": "17RuimSinalizador01-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador01-5.npz",
+    "video_id": "17RuimSinalizador01-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador02-1.npz",
+    "video_id": "17RuimSinalizador02-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador02-2.npz",
+    "video_id": "17RuimSinalizador02-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador02-3.npz",
+    "video_id": "17RuimSinalizador02-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador02-4.npz",
+    "video_id": "17RuimSinalizador02-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador02-5.npz",
+    "video_id": "17RuimSinalizador02-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador05-1.npz",
+    "video_id": "17RuimSinalizador05-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador05-2.npz",
+    "video_id": "17RuimSinalizador05-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador05-3.npz",
+    "video_id": "17RuimSinalizador05-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador05-4.npz",
+    "video_id": "17RuimSinalizador05-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador05-5.npz",
+    "video_id": "17RuimSinalizador05-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador06-1.npz",
+    "video_id": "17RuimSinalizador06-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador06-2.npz",
+    "video_id": "17RuimSinalizador06-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador06-3.npz",
+    "video_id": "17RuimSinalizador06-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador06-4.npz",
+    "video_id": "17RuimSinalizador06-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador06-5.npz",
+    "video_id": "17RuimSinalizador06-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador08-1.npz",
+    "video_id": "17RuimSinalizador08-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador08-2.npz",
+    "video_id": "17RuimSinalizador08-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador08-3.npz",
+    "video_id": "17RuimSinalizador08-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador08-4.npz",
+    "video_id": "17RuimSinalizador08-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador08-5.npz",
+    "video_id": "17RuimSinalizador08-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador10-1.npz",
+    "video_id": "17RuimSinalizador10-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador10-2.npz",
+    "video_id": "17RuimSinalizador10-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador10-3.npz",
+    "video_id": "17RuimSinalizador10-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador10-4.npz",
+    "video_id": "17RuimSinalizador10-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador10-5.npz",
+    "video_id": "17RuimSinalizador10-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador11-1.npz",
+    "video_id": "17RuimSinalizador11-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador11-2.npz",
+    "video_id": "17RuimSinalizador11-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador11-3.npz",
+    "video_id": "17RuimSinalizador11-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador11-4.npz",
+    "video_id": "17RuimSinalizador11-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador11-5.npz",
+    "video_id": "17RuimSinalizador11-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "17RuimSinalizador12-1.npz",
+    "video_id": "17RuimSinalizador12-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "17RuimSinalizador12-2.npz",
+    "video_id": "17RuimSinalizador12-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "17RuimSinalizador12-3.npz",
+    "video_id": "17RuimSinalizador12-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "17RuimSinalizador12-4.npz",
+    "video_id": "17RuimSinalizador12-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "17RuimSinalizador12-5.npz",
+    "video_id": "17RuimSinalizador12-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "Sinalizador12",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador01-1.npz",
+    "video_id": "20VontadeSinalizador01-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador01-2.npz",
+    "video_id": "20VontadeSinalizador01-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador01",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador01-3.npz",
+    "video_id": "20VontadeSinalizador01-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador01",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador01-4.npz",
+    "video_id": "20VontadeSinalizador01-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador01",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador01-5.npz",
+    "video_id": "20VontadeSinalizador01-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador01",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador02-1.npz",
+    "video_id": "20VontadeSinalizador02-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador02-2.npz",
+    "video_id": "20VontadeSinalizador02-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador02",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador02-3.npz",
+    "video_id": "20VontadeSinalizador02-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador02",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador02-4.npz",
+    "video_id": "20VontadeSinalizador02-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador02",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador02-5.npz",
+    "video_id": "20VontadeSinalizador02-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador02",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador05-1.npz",
+    "video_id": "20VontadeSinalizador05-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador05-2.npz",
+    "video_id": "20VontadeSinalizador05-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador05",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador05-3.npz",
+    "video_id": "20VontadeSinalizador05-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador05",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador05-4.npz",
+    "video_id": "20VontadeSinalizador05-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador05",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador05-5.npz",
+    "video_id": "20VontadeSinalizador05-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador05",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador06-1.npz",
+    "video_id": "20VontadeSinalizador06-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador06-2.npz",
+    "video_id": "20VontadeSinalizador06-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador06",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador06-3.npz",
+    "video_id": "20VontadeSinalizador06-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador06",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador06-4.npz",
+    "video_id": "20VontadeSinalizador06-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador06",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador06-5.npz",
+    "video_id": "20VontadeSinalizador06-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador06",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador08-1.npz",
+    "video_id": "20VontadeSinalizador08-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador08",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador08-2.npz",
+    "video_id": "20VontadeSinalizador08-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador08",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador08-3.npz",
+    "video_id": "20VontadeSinalizador08-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador08",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador08-4.npz",
+    "video_id": "20VontadeSinalizador08-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador08",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador08-5.npz",
+    "video_id": "20VontadeSinalizador08-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador08",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador10-1.npz",
+    "video_id": "20VontadeSinalizador10-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador10",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador10-2.npz",
+    "video_id": "20VontadeSinalizador10-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador10",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador10-3.npz",
+    "video_id": "20VontadeSinalizador10-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador10",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador10-4.npz",
+    "video_id": "20VontadeSinalizador10-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador10",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador10-5.npz",
+    "video_id": "20VontadeSinalizador10-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador10",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador11-1.npz",
+    "video_id": "20VontadeSinalizador11-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador11",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador11-2.npz",
+    "video_id": "20VontadeSinalizador11-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador11",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador11-3.npz",
+    "video_id": "20VontadeSinalizador11-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador11",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador11-4.npz",
+    "video_id": "20VontadeSinalizador11-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador11",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador11-5.npz",
+    "video_id": "20VontadeSinalizador11-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador11",
+    "take": 5
+  },
+  {
+    "path": "20VontadeSinalizador12-1.npz",
+    "video_id": "20VontadeSinalizador12-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador12",
+    "take": 1
+  },
+  {
+    "path": "20VontadeSinalizador12-2.npz",
+    "video_id": "20VontadeSinalizador12-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador12",
+    "take": 2
+  },
+  {
+    "path": "20VontadeSinalizador12-3.npz",
+    "video_id": "20VontadeSinalizador12-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador12",
+    "take": 3
+  },
+  {
+    "path": "20VontadeSinalizador12-4.npz",
+    "video_id": "20VontadeSinalizador12-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador12",
+    "take": 4
+  },
+  {
+    "path": "20VontadeSinalizador12-5.npz",
+    "video_id": "20VontadeSinalizador12-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "Sinalizador12",
+    "take": 5
+  }
+]
