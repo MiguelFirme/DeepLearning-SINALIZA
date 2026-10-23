@@ -1,0 +1,61 @@
+{
+  "annotations": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\novas_5_restantes\\annotations.csv",
+  "included": {
+    "Brincar": "curado:novas_palavras_restantes",
+    "Cansado": "curado:novas_palavras_restantes",
+    "Certo": "curado:novas_palavras_restantes",
+    "Comer": "curado:novas_palavras_restantes",
+    "Diretor": "curado:novas_palavras_restantes"
+  },
+  "excluded": [],
+  "extra_keep": [],
+  "class_list": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\novas_5_restantes.json",
+  "essential_categories": [],
+  "annotation_counts": {
+    "Brincar": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Cansado": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Certo": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Comer": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Diretor": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    }
+  }
+}

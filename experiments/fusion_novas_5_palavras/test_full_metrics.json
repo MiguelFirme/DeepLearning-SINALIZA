@@ -1,0 +1,225 @@
+{
+  "split": "test",
+  "first": "full",
+  "pose_weight": 0.65,
+  "full_weight": 0.35,
+  "device": "cuda",
+  "pose_checkpoint": "experiments\\transformer_novas_5_pose_face_seed42\\best.pt",
+  "pose_sha256": "cfed659570c2eb0a667588c8fe043b4167ffa4b444749971da97f80075b30a9e",
+  "full_checkpoint": "experiments\\transformer_novas_5_full_seed42\\best.pt",
+  "full_sha256": "906354889251ed20dbfdb871586396b88e1cb04859680aa9a4310e7f7fc2fb71",
+  "label_map": {
+    "Ajudar": 0,
+    "Amigo": 1,
+    "Aprender": 2,
+    "Beber": 3,
+    "Água": 4
+  },
+  "split_size": 5,
+  "pose_face": {
+    "correct": 3,
+    "total": 5,
+    "top1": 0.6,
+    "f1_macro": 0.4666666666666666,
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "per_class_accuracy": {
+      "Ajudar": 1.0,
+      "Amigo": 1.0,
+      "Aprender": 0.0,
+      "Beber": 0.0,
+      "Água": 1.0
+    }
+  },
+  "full": {
+    "correct": 2,
+    "total": 5,
+    "top1": 0.4,
+    "f1_macro": 0.2333333333333333,
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "per_class_accuracy": {
+      "Ajudar": 1.0,
+      "Amigo": 0.0,
+      "Aprender": 0.0,
+      "Beber": 0.0,
+      "Água": 1.0
+    }
+  },
+  "fusion": {
+    "3": {
+      "correct": 2,
+      "total": 5,
+      "top1": 0.4,
+      "f1_macro": 0.2333333333333333,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "per_class_accuracy": {
+        "Ajudar": 1.0,
+        "Amigo": 0.0,
+        "Aprender": 0.0,
+        "Beber": 0.0,
+        "Água": 1.0
+      },
+      "candidate_coverage_count": 4,
+      "candidate_coverage": 0.8
+    },
+    "5": {
+      "correct": 3,
+      "total": 5,
+      "top1": 0.6,
+      "f1_macro": 0.4666666666666666,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "per_class_accuracy": {
+        "Ajudar": 1.0,
+        "Amigo": 1.0,
+        "Aprender": 0.0,
+        "Beber": 0.0,
+        "Água": 1.0
+      },
+      "candidate_coverage_count": 5,
+      "candidate_coverage": 1.0
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "landmarks_dir": "data\\landmarks\\novas_5_palavras",
+  "num_samples": 35,
+  "num_classes": 5,
+  "split_strategy": "signer_holdout",
+  "group_key": "video",
+  "split_sizes": {
+    "train": 25,
+    "val": 5,
+    "test": 5
+  },
+  "class_counts_by_split": {
+    "train": {
+      "Ajudar": 5,
+      "Amigo": 5,
+      "Aprender": 5,
+      "Beber": 5,
+      "Água": 5
+    },
+    "val": {
+      "Ajudar": 1,
+      "Amigo": 1,
+      "Aprender": 1,
+      "Beber": 1,
+      "Água": 1
+    },
+    "test": {
+      "Ajudar": 1,
+      "Amigo": 1,
+      "Aprender": 1,
+      "Beber": 1,
+      "Água": 1
+    }
+  },
+  "seed": 42,
+  "selected_classes": [
+    "Ajudar",
+    "Amigo",
+    "Aprender",
+    "Beber",
+    "Água"
+  ],
+  "synthetic_samples_in_manifest": 0,
+  "class_list": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\novas_5_palavras.json",
+  "essential_categories": [],
+  "train_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador03",
+    "Sinalizador04",
+    "Sinalizador05"
+  ],
+  "val_signers": [
+    "Sinalizador06"
+  ],
+  "test_signer": "Sinalizador07",
+  "available_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador03",
+    "Sinalizador04",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador07"
+  ],
+  "required_signers": [
+    "Sinalizador01",
+    "Sinalizador02",
+    "Sinalizador03",
+    "Sinalizador04",
+    "Sinalizador05",
+    "Sinalizador06",
+    "Sinalizador07"
+  ],
+  "max_classes": null,
+  "classes_without_full_signer_coverage": []
+}

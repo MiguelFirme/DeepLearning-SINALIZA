@@ -1,0 +1,247 @@
+[
+  {
+    "path": "Brincar/BrincarSinalizador01.npz",
+    "video_id": "Brincar/BrincarSinalizador01.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "Brincar/BrincarSinalizador02.npz",
+    "video_id": "Brincar/BrincarSinalizador02.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "Brincar/BrincarSinalizador03.npz",
+    "video_id": "Brincar/BrincarSinalizador03.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador03",
+    "take": 1
+  },
+  {
+    "path": "Brincar/BrincarSinalizador04.npz",
+    "video_id": "Brincar/BrincarSinalizador04.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador04",
+    "take": 1
+  },
+  {
+    "path": "Brincar/BrincarSinalizador05.npz",
+    "video_id": "Brincar/BrincarSinalizador05.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "Brincar/BrincarSinalizador06.npz",
+    "video_id": "Brincar/BrincarSinalizador06.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "Brincar/BrincarSinalizador07.npz",
+    "video_id": "Brincar/BrincarSinalizador07.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador07",
+    "take": 1
+  },
+  {
+    "path": "Cansado/CansadoSinalizador01.npz",
+    "video_id": "Cansado/CansadoSinalizador01.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "Cansado/CansadoSinalizador02.npz",
+    "video_id": "Cansado/CansadoSinalizador02.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "Cansado/CansadoSinalizador03.npz",
+    "video_id": "Cansado/CansadoSinalizador03.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador03",
+    "take": 1
+  },
+  {
+    "path": "Cansado/CansadoSinalizador04.npz",
+    "video_id": "Cansado/CansadoSinalizador04.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador04",
+    "take": 1
+  },
+  {
+    "path": "Cansado/CansadoSinalizador05.npz",
+    "video_id": "Cansado/CansadoSinalizador05.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "Cansado/CansadoSinalizador06.npz",
+    "video_id": "Cansado/CansadoSinalizador06.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "Cansado/CansadoSinalizador07.npz",
+    "video_id": "Cansado/CansadoSinalizador07.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador07",
+    "take": 1
+  },
+  {
+    "path": "Certo/CertoSinalizador01.npz",
+    "video_id": "Certo/CertoSinalizador01.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "Certo/CertoSinalizador02.npz",
+    "video_id": "Certo/CertoSinalizador02.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "Certo/CertoSinalizador03.npz",
+    "video_id": "Certo/CertoSinalizador03.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador03",
+    "take": 1
+  },
+  {
+    "path": "Certo/CertoSinalizador04.npz",
+    "video_id": "Certo/CertoSinalizador04.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador04",
+    "take": 1
+  },
+  {
+    "path": "Certo/CertoSinalizador05.npz",
+    "video_id": "Certo/CertoSinalizador05.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "Certo/CertoSinalizador06.npz",
+    "video_id": "Certo/CertoSinalizador06.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "Certo/CertoSinalizador07.npz",
+    "video_id": "Certo/CertoSinalizador07.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador07",
+    "take": 1
+  },
+  {
+    "path": "Comer/ComerSinalizador01.npz",
+    "video_id": "Comer/ComerSinalizador01.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "Comer/ComerSinalizador02.npz",
+    "video_id": "Comer/ComerSinalizador02.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "Comer/ComerSinalizador03.npz",
+    "video_id": "Comer/ComerSinalizador03.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador03",
+    "take": 1
+  },
+  {
+    "path": "Comer/ComerSinalizador04.npz",
+    "video_id": "Comer/ComerSinalizador04.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador04",
+    "take": 1
+  },
+  {
+    "path": "Comer/ComerSinalizador05.npz",
+    "video_id": "Comer/ComerSinalizador05.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "Comer/ComerSinalizador06.npz",
+    "video_id": "Comer/ComerSinalizador06.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "Comer/ComerSinalizador07.npz",
+    "video_id": "Comer/ComerSinalizador07.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador07",
+    "take": 1
+  },
+  {
+    "path": "Diretor/DiretorSinalizador01.npz",
+    "video_id": "Diretor/DiretorSinalizador01.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador01",
+    "take": 1
+  },
+  {
+    "path": "Diretor/DiretorSinalizador02.npz",
+    "video_id": "Diretor/DiretorSinalizador02.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador02",
+    "take": 1
+  },
+  {
+    "path": "Diretor/DiretorSinalizador03.npz",
+    "video_id": "Diretor/DiretorSinalizador03.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador03",
+    "take": 1
+  },
+  {
+    "path": "Diretor/DiretorSinalizador04.npz",
+    "video_id": "Diretor/DiretorSinalizador04.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador04",
+    "take": 1
+  },
+  {
+    "path": "Diretor/DiretorSinalizador05.npz",
+    "video_id": "Diretor/DiretorSinalizador05.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador05",
+    "take": 1
+  },
+  {
+    "path": "Diretor/DiretorSinalizador06.npz",
+    "video_id": "Diretor/DiretorSinalizador06.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador06",
+    "take": 1
+  },
+  {
+    "path": "Diretor/DiretorSinalizador07.npz",
+    "video_id": "Diretor/DiretorSinalizador07.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador07",
+    "take": 1
+  }
+]

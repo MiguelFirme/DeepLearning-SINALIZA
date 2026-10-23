@@ -1,0 +1,6 @@
+_base_: "transformer_minds_pose_face.yaml"
+
+# Novo vocabulário: 30 vídeos de treino por classe antiga, 5 por classe nova.
+# Ponderação moderada, calculada somente com rótulos de treino.
+training:
+  class_weight_method: sqrt_inverse

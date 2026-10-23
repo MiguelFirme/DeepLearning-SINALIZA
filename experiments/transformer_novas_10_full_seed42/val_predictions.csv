@@ -1,0 +1,11 @@
+path,true,predicted,confidence
+../novas_5_palavras/Ajudar/AjudarSinalizador06.npz,Ajudar,Ajudar,0.5823796987533569
+../novas_5_palavras/Amigo/AmigoSinalizador06.npz,Amigo,Certo,0.4684170186519623
+../novas_5_palavras/Aprender/AprenderSinalizador06.npz,Aprender,Comer,0.416187047958374
+../novas_5_palavras/Beber/BeberSinalizador06.npz,Beber,Beber,0.5449756979942322
+../novas_5_restantes/Brincar/BrincarSinalizador06.npz,Brincar,Brincar,0.429592490196228
+../novas_5_restantes/Cansado/CansadoSinalizador06.npz,Cansado,Cansado,0.4641116261482239
+../novas_5_restantes/Certo/CertoSinalizador06.npz,Certo,Certo,0.4725290536880493
+../novas_5_restantes/Comer/ComerSinalizador06.npz,Comer,Aprender,0.3354312777519226
+../novas_5_restantes/Diretor/DiretorSinalizador06.npz,Diretor,Diretor,0.40586164593696594
+../novas_5_palavras/Água/ÁguaSinalizador06.npz,Água,Beber,0.46220237016677856

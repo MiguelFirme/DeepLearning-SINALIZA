@@ -1,0 +1,618 @@
+{
+  "val_pose_face": {
+    "3": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 36,
+        "full_correct": 42,
+        "fusion_correct": 40
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 1,
+        "full_correct": 4,
+        "fusion_correct": 3,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Conhecer",
+            "full": "Vontade",
+            "fusion": "Vontade"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Espelho",
+            "full": "Espelho",
+            "fusion": "Espelho"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Cansado",
+            "full": "Cansado",
+            "fusion": "Cansado"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Acontecer"
+          }
+        ]
+      }
+    },
+    "5": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 36,
+        "full_correct": 42,
+        "fusion_correct": 44
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 1,
+        "full_correct": 4,
+        "fusion_correct": 3,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Conhecer",
+            "full": "Vontade",
+            "fusion": "Vontade"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Espelho",
+            "full": "Espelho",
+            "fusion": "Espelho"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Cansado",
+            "full": "Cansado",
+            "fusion": "Cansado"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Acontecer"
+          }
+        ]
+      }
+    }
+  },
+  "val_full": {
+    "3": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 36,
+        "full_correct": 42,
+        "fusion_correct": 45
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 1,
+        "full_correct": 4,
+        "fusion_correct": 3,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Conhecer",
+            "full": "Vontade",
+            "fusion": "Vontade"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Espelho",
+            "full": "Espelho",
+            "fusion": "Espelho"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Cansado",
+            "full": "Cansado",
+            "fusion": "Cansado"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          }
+        ]
+      }
+    },
+    "5": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 36,
+        "full_correct": 42,
+        "fusion_correct": 44
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 1,
+        "full_correct": 4,
+        "fusion_correct": 3,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Conhecer",
+            "full": "Vontade",
+            "fusion": "Vontade"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Espelho",
+            "full": "Espelho",
+            "fusion": "Espelho"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Acontecer",
+            "full": "Banheiro",
+            "fusion": "Acontecer"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Cansado",
+            "full": "Cansado",
+            "fusion": "Cansado"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Acontecer",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          }
+        ]
+      }
+    }
+  },
+  "test_pose_face": {
+    "3": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 25,
+        "full_correct": 44,
+        "fusion_correct": 34
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 2,
+        "full_correct": 4,
+        "fusion_correct": 5,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Ajudar",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Certo",
+            "full": "Aproveitar",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Amigo",
+            "full": "Comer",
+            "fusion": "Aprender"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Beber",
+            "full": "Beber",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          }
+        ]
+      }
+    },
+    "5": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 25,
+        "full_correct": 44,
+        "fusion_correct": 37
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 2,
+        "full_correct": 4,
+        "fusion_correct": 5,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Ajudar",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Certo",
+            "full": "Aproveitar",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Amigo",
+            "full": "Comer",
+            "fusion": "Aprender"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Beber",
+            "full": "Beber",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          }
+        ]
+      }
+    }
+  },
+  "test_full": {
+    "3": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 25,
+        "full_correct": 44,
+        "fusion_correct": 40
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 2,
+        "full_correct": 4,
+        "fusion_correct": 5,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Ajudar",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Certo",
+            "full": "Aproveitar",
+            "fusion": "Aproveitar"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Amigo",
+            "full": "Comer",
+            "fusion": "Aprender"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Beber",
+            "full": "Beber",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          }
+        ]
+      }
+    },
+    "5": {
+      "minds_15": {
+        "total": 75,
+        "pose_face_correct": 25,
+        "full_correct": 44,
+        "fusion_correct": 40
+      },
+      "novas_10": {
+        "total": 10,
+        "pose_face_correct": 2,
+        "full_correct": 4,
+        "fusion_correct": 5,
+        "predictions": [
+          {
+            "class": "Ajudar",
+            "pose_face": "Ajudar",
+            "full": "Ajudar",
+            "fusion": "Ajudar"
+          },
+          {
+            "class": "Amigo",
+            "pose_face": "Certo",
+            "full": "Aproveitar",
+            "fusion": "Aproveitar"
+          },
+          {
+            "class": "Aprender",
+            "pose_face": "Amigo",
+            "full": "Comer",
+            "fusion": "Aprender"
+          },
+          {
+            "class": "Beber",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Brincar",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Diretor"
+          },
+          {
+            "class": "Cansado",
+            "pose_face": "Beber",
+            "full": "Beber",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Certo",
+            "pose_face": "Amigo",
+            "full": "Certo",
+            "fusion": "Certo"
+          },
+          {
+            "class": "Comer",
+            "pose_face": "Aprender",
+            "full": "Comer",
+            "fusion": "Comer"
+          },
+          {
+            "class": "Diretor",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          },
+          {
+            "class": "Água",
+            "pose_face": "Beber",
+            "full": "Brincar",
+            "fusion": "Beber"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+_base_: "transformer_minds_pose_face.yaml"
+
+# Ablacao: mesmos dados, split, arquitetura e treino; inclui pontos das maos.
+data:
+  feature_mode: full

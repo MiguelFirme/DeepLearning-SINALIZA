@@ -1,0 +1,35 @@
+2026-10-18 23:38:34,219 [INFO] Log persistente: logs\experiments\transformer_minds_school8_hands_only_seed42\train.log
+2026-10-18 23:38:34,220 [INFO] Device: cuda
+2026-10-18 23:38:35,594 [INFO] Classes: 8
+2026-10-18 23:38:35,596 [INFO] Train: 240 | Val: 40
+2026-10-18 23:38:35,641 [INFO] Modelo: transformer | input_dim=697 | params=121,018
+2026-10-18 23:38:35,668 [INFO] Loss=ce_standard | class_weight_method=none | smoothing=0.0
+2026-10-18 23:38:38,407 [INFO] Iniciando treinamento: 120 épocas no dispositivo cuda
+2026-10-18 23:38:38,407 [INFO] Modelo: TransformerModel | Params: 121,018
+2026-10-18 23:38:41,514 [INFO] Epoch 1/120 | train_loss=2.0748 | train_top1=0.1875 | val_loss=2.0803 | val_top1=0.1250 | val_f1=0.0278 | lr=3.00e-04 ★
+2026-10-18 23:38:42,891 [INFO] Epoch 2/120 | train_loss=2.0401 | train_top1=0.2583 | val_loss=2.0820 | val_top1=0.1250 | val_f1=0.0278 | lr=3.00e-04
+2026-10-18 23:38:44,140 [INFO] Epoch 3/120 | train_loss=1.9896 | train_top1=0.2250 | val_loss=2.0906 | val_top1=0.1250 | val_f1=0.0278 | lr=3.00e-04
+2026-10-18 23:38:45,525 [INFO] Epoch 4/120 | train_loss=1.9149 | train_top1=0.2625 | val_loss=2.1203 | val_top1=0.1250 | val_f1=0.0278 | lr=3.00e-04
+2026-10-18 23:38:46,848 [INFO] Epoch 5/120 | train_loss=1.8311 | train_top1=0.2625 | val_loss=2.1899 | val_top1=0.1250 | val_f1=0.0278 | lr=3.00e-04
+2026-10-18 23:38:48,115 [INFO] Epoch 6/120 | train_loss=1.7512 | train_top1=0.2833 | val_loss=2.3084 | val_top1=0.1250 | val_f1=0.0278 | lr=3.00e-04
+2026-10-18 23:38:49,424 [INFO] Epoch 7/120 | train_loss=1.7204 | train_top1=0.2083 | val_loss=2.4500 | val_top1=0.1250 | val_f1=0.0278 | lr=3.00e-04
+2026-10-18 23:38:50,728 [INFO] Epoch 8/120 | train_loss=1.6684 | train_top1=0.2167 | val_loss=2.5317 | val_top1=0.1250 | val_f1=0.0278 | lr=1.50e-04
+2026-10-18 23:38:51,923 [INFO] Epoch 9/120 | train_loss=1.6659 | train_top1=0.2417 | val_loss=2.6237 | val_top1=0.1250 | val_f1=0.0278 | lr=1.50e-04
+2026-10-18 23:38:53,218 [INFO] Epoch 10/120 | train_loss=1.6525 | train_top1=0.2750 | val_loss=2.6900 | val_top1=0.1250 | val_f1=0.0278 | lr=1.50e-04
+2026-10-18 23:38:54,501 [INFO] Epoch 11/120 | train_loss=1.6266 | train_top1=0.2875 | val_loss=2.7548 | val_top1=0.1250 | val_f1=0.0278 | lr=1.50e-04
+2026-10-18 23:38:55,814 [INFO] Epoch 12/120 | train_loss=1.6336 | train_top1=0.2542 | val_loss=2.8227 | val_top1=0.1250 | val_f1=0.0278 | lr=1.50e-04
+2026-10-18 23:38:57,243 [INFO] Epoch 13/120 | train_loss=1.6196 | train_top1=0.2250 | val_loss=2.8904 | val_top1=0.1250 | val_f1=0.0278 | lr=1.50e-04
+2026-10-18 23:38:58,592 [INFO] Epoch 14/120 | train_loss=1.6211 | train_top1=0.2167 | val_loss=2.9256 | val_top1=0.1250 | val_f1=0.0278 | lr=7.50e-05
+2026-10-18 23:38:59,763 [INFO] Epoch 15/120 | train_loss=1.6197 | train_top1=0.2417 | val_loss=2.9604 | val_top1=0.1250 | val_f1=0.0278 | lr=7.50e-05
+2026-10-18 23:39:01,097 [INFO] Epoch 16/120 | train_loss=1.6136 | train_top1=0.2125 | val_loss=2.9832 | val_top1=0.1250 | val_f1=0.0278 | lr=7.50e-05
+2026-10-18 23:39:01,097 [INFO] Early stopping! Sem melhora por 15 épocas.
+2026-10-18 23:39:01,097 [INFO] Early stopping na época 16.
+2026-10-18 23:39:01,100 [INFO] Histórico salvo em experiments\transformer_minds_school8_hands_only_seed42\history.csv e experiments\transformer_minds_school8_hands_only_seed42\history.json
+2026-10-18 23:39:01,100 [INFO] Treinamento concluído em 23s. Melhor época: 1
+2026-10-18 23:39:01,121 [INFO] Resultado: {
+  "best_epoch": 1,
+  "best_metric": 2.0802734375,
+  "total_epochs": 16,
+  "elapsed_seconds": 22.69051194190979,
+  "save_dir": "experiments\\transformer_minds_school8_hands_only_seed42"
+}

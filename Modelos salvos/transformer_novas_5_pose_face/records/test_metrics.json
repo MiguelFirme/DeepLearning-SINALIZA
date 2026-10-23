@@ -1,0 +1,11 @@
+{
+  "loss": 0.794140636920929,
+  "top1": 0.6,
+  "top3": 1.0,
+  "top5": 1.0,
+  "f1_macro": 0.4666666666666666,
+  "f1_weighted": 0.4666666666666666,
+  "precision_macro": 0.4,
+  "recall_macro": 0.6,
+  "total_samples": 5
+}

@@ -1,0 +1,562 @@
+[
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador01.npz",
+    "video_id": "novas_5_palavras/Ajudar/AjudarSinalizador01.mp4",
+    "label": "Ajudar",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador02.npz",
+    "video_id": "novas_5_palavras/Ajudar/AjudarSinalizador02.mp4",
+    "label": "Ajudar",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador03.npz",
+    "video_id": "novas_5_palavras/Ajudar/AjudarSinalizador03.mp4",
+    "label": "Ajudar",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador04.npz",
+    "video_id": "novas_5_palavras/Ajudar/AjudarSinalizador04.mp4",
+    "label": "Ajudar",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador05.npz",
+    "video_id": "novas_5_palavras/Ajudar/AjudarSinalizador05.mp4",
+    "label": "Ajudar",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador06.npz",
+    "video_id": "novas_5_palavras/Ajudar/AjudarSinalizador06.mp4",
+    "label": "Ajudar",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador07.npz",
+    "video_id": "novas_5_palavras/Ajudar/AjudarSinalizador07.mp4",
+    "label": "Ajudar",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador01.npz",
+    "video_id": "novas_5_palavras/Amigo/AmigoSinalizador01.mp4",
+    "label": "Amigo",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador02.npz",
+    "video_id": "novas_5_palavras/Amigo/AmigoSinalizador02.mp4",
+    "label": "Amigo",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador03.npz",
+    "video_id": "novas_5_palavras/Amigo/AmigoSinalizador03.mp4",
+    "label": "Amigo",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador04.npz",
+    "video_id": "novas_5_palavras/Amigo/AmigoSinalizador04.mp4",
+    "label": "Amigo",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador05.npz",
+    "video_id": "novas_5_palavras/Amigo/AmigoSinalizador05.mp4",
+    "label": "Amigo",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador06.npz",
+    "video_id": "novas_5_palavras/Amigo/AmigoSinalizador06.mp4",
+    "label": "Amigo",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador07.npz",
+    "video_id": "novas_5_palavras/Amigo/AmigoSinalizador07.mp4",
+    "label": "Amigo",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador01.npz",
+    "video_id": "novas_5_palavras/Aprender/AprenderSinalizador01.mp4",
+    "label": "Aprender",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador02.npz",
+    "video_id": "novas_5_palavras/Aprender/AprenderSinalizador02.mp4",
+    "label": "Aprender",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador03.npz",
+    "video_id": "novas_5_palavras/Aprender/AprenderSinalizador03.mp4",
+    "label": "Aprender",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador04.npz",
+    "video_id": "novas_5_palavras/Aprender/AprenderSinalizador04.mp4",
+    "label": "Aprender",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador05.npz",
+    "video_id": "novas_5_palavras/Aprender/AprenderSinalizador05.mp4",
+    "label": "Aprender",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador06.npz",
+    "video_id": "novas_5_palavras/Aprender/AprenderSinalizador06.mp4",
+    "label": "Aprender",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador07.npz",
+    "video_id": "novas_5_palavras/Aprender/AprenderSinalizador07.mp4",
+    "label": "Aprender",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador01.npz",
+    "video_id": "novas_5_palavras/Beber/BeberSinalizador01.mp4",
+    "label": "Beber",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador02.npz",
+    "video_id": "novas_5_palavras/Beber/BeberSinalizador02.mp4",
+    "label": "Beber",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador03.npz",
+    "video_id": "novas_5_palavras/Beber/BeberSinalizador03.mp4",
+    "label": "Beber",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador04.npz",
+    "video_id": "novas_5_palavras/Beber/BeberSinalizador04.mp4",
+    "label": "Beber",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador05.npz",
+    "video_id": "novas_5_palavras/Beber/BeberSinalizador05.mp4",
+    "label": "Beber",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador06.npz",
+    "video_id": "novas_5_palavras/Beber/BeberSinalizador06.mp4",
+    "label": "Beber",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador07.npz",
+    "video_id": "novas_5_palavras/Beber/BeberSinalizador07.mp4",
+    "label": "Beber",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador01.npz",
+    "video_id": "novas_5_restantes/Brincar/BrincarSinalizador01.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador02.npz",
+    "video_id": "novas_5_restantes/Brincar/BrincarSinalizador02.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador03.npz",
+    "video_id": "novas_5_restantes/Brincar/BrincarSinalizador03.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador04.npz",
+    "video_id": "novas_5_restantes/Brincar/BrincarSinalizador04.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador05.npz",
+    "video_id": "novas_5_restantes/Brincar/BrincarSinalizador05.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador06.npz",
+    "video_id": "novas_5_restantes/Brincar/BrincarSinalizador06.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador07.npz",
+    "video_id": "novas_5_restantes/Brincar/BrincarSinalizador07.mp4",
+    "label": "Brincar",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador01.npz",
+    "video_id": "novas_5_restantes/Cansado/CansadoSinalizador01.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador02.npz",
+    "video_id": "novas_5_restantes/Cansado/CansadoSinalizador02.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador03.npz",
+    "video_id": "novas_5_restantes/Cansado/CansadoSinalizador03.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador04.npz",
+    "video_id": "novas_5_restantes/Cansado/CansadoSinalizador04.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador05.npz",
+    "video_id": "novas_5_restantes/Cansado/CansadoSinalizador05.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador06.npz",
+    "video_id": "novas_5_restantes/Cansado/CansadoSinalizador06.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador07.npz",
+    "video_id": "novas_5_restantes/Cansado/CansadoSinalizador07.mp4",
+    "label": "Cansado",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador01.npz",
+    "video_id": "novas_5_restantes/Certo/CertoSinalizador01.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador02.npz",
+    "video_id": "novas_5_restantes/Certo/CertoSinalizador02.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador03.npz",
+    "video_id": "novas_5_restantes/Certo/CertoSinalizador03.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador04.npz",
+    "video_id": "novas_5_restantes/Certo/CertoSinalizador04.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador05.npz",
+    "video_id": "novas_5_restantes/Certo/CertoSinalizador05.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador06.npz",
+    "video_id": "novas_5_restantes/Certo/CertoSinalizador06.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador07.npz",
+    "video_id": "novas_5_restantes/Certo/CertoSinalizador07.mp4",
+    "label": "Certo",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador01.npz",
+    "video_id": "novas_5_restantes/Comer/ComerSinalizador01.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador02.npz",
+    "video_id": "novas_5_restantes/Comer/ComerSinalizador02.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador03.npz",
+    "video_id": "novas_5_restantes/Comer/ComerSinalizador03.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador04.npz",
+    "video_id": "novas_5_restantes/Comer/ComerSinalizador04.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador05.npz",
+    "video_id": "novas_5_restantes/Comer/ComerSinalizador05.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador06.npz",
+    "video_id": "novas_5_restantes/Comer/ComerSinalizador06.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador07.npz",
+    "video_id": "novas_5_restantes/Comer/ComerSinalizador07.mp4",
+    "label": "Comer",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador01.npz",
+    "video_id": "novas_5_restantes/Diretor/DiretorSinalizador01.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador02.npz",
+    "video_id": "novas_5_restantes/Diretor/DiretorSinalizador02.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador03.npz",
+    "video_id": "novas_5_restantes/Diretor/DiretorSinalizador03.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador04.npz",
+    "video_id": "novas_5_restantes/Diretor/DiretorSinalizador04.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador05.npz",
+    "video_id": "novas_5_restantes/Diretor/DiretorSinalizador05.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador06.npz",
+    "video_id": "novas_5_restantes/Diretor/DiretorSinalizador06.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador07.npz",
+    "video_id": "novas_5_restantes/Diretor/DiretorSinalizador07.mp4",
+    "label": "Diretor",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_restantes"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador01.npz",
+    "video_id": "novas_5_palavras/Água/ÁguaSinalizador01.mp4",
+    "label": "Água",
+    "signer": "Sinalizador01",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador02.npz",
+    "video_id": "novas_5_palavras/Água/ÁguaSinalizador02.mp4",
+    "label": "Água",
+    "signer": "Sinalizador02",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador03.npz",
+    "video_id": "novas_5_palavras/Água/ÁguaSinalizador03.mp4",
+    "label": "Água",
+    "signer": "Sinalizador03",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador04.npz",
+    "video_id": "novas_5_palavras/Água/ÁguaSinalizador04.mp4",
+    "label": "Água",
+    "signer": "Sinalizador04",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador05.npz",
+    "video_id": "novas_5_palavras/Água/ÁguaSinalizador05.mp4",
+    "label": "Água",
+    "signer": "Sinalizador05",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador06.npz",
+    "video_id": "novas_5_palavras/Água/ÁguaSinalizador06.mp4",
+    "label": "Água",
+    "signer": "Sinalizador06",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador07.npz",
+    "video_id": "novas_5_palavras/Água/ÁguaSinalizador07.mp4",
+    "label": "Água",
+    "signer": "Sinalizador07",
+    "take": 1,
+    "origin": "novas_5_palavras"
+  }
+]

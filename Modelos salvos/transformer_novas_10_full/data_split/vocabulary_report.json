@@ -1,0 +1,111 @@
+{
+  "annotations": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\novas_10\\annotations.csv",
+  "included": {
+    "Água": "curado:novas_palavras",
+    "Ajudar": "curado:novas_palavras",
+    "Amigo": "curado:novas_palavras",
+    "Aprender": "curado:novas_palavras",
+    "Beber": "curado:novas_palavras",
+    "Brincar": "curado:novas_palavras",
+    "Cansado": "curado:novas_palavras",
+    "Certo": "curado:novas_palavras",
+    "Comer": "curado:novas_palavras",
+    "Diretor": "curado:novas_palavras"
+  },
+  "excluded": [],
+  "extra_keep": [],
+  "class_list": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\novas_10_palavras.json",
+  "essential_categories": [],
+  "annotation_counts": {
+    "Ajudar": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Amigo": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Aprender": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Beber": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Brincar": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Cansado": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Certo": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Comer": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Diretor": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    },
+    "Água": {
+      "Sinalizador01": 1,
+      "Sinalizador02": 1,
+      "Sinalizador03": 1,
+      "Sinalizador04": 1,
+      "Sinalizador05": 1,
+      "Sinalizador06": 1,
+      "Sinalizador07": 1
+    }
+  }
+}

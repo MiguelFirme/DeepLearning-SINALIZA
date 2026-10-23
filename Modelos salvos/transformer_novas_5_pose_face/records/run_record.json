@@ -1,0 +1,273 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-22T21:46:10",
+  "command": [
+    "scripts/train.py",
+    "--config",
+    "configs/transformer_minds_pose_face.yaml",
+    "--data-dir",
+    "data/landmarks/novas_5_palavras",
+    "--processed-dir",
+    "data/processed/novas_5_palavras",
+    "--experiment",
+    "transformer_novas_5_pose_face_seed42",
+    "--num-workers",
+    "0"
+  ],
+  "config_file": "C:\\Users\\migue\\DeepLearning-SINALIZA\\configs\\transformer_minds_pose_face.yaml",
+  "config_effective": {
+    "data": {
+      "data_dir": "data/processed",
+      "label_map": "data/processed/label_map.json",
+      "target_frames": 48,
+      "feature_dim": 346,
+      "batch_size": 32,
+      "num_workers": 0,
+      "pin_memory": true,
+      "train_split": 0.75,
+      "val_split": 0.15,
+      "test_split": 0.1,
+      "stratified": true,
+      "feature_mode": "pose_face"
+    },
+    "augmentation": {
+      "enabled": true,
+      "speed_warp": {
+        "prob": 0.0,
+        "min_rate": 1.0,
+        "max_rate": 1.0
+      },
+      "temporal_crop": {
+        "prob": 0.0,
+        "min_ratio": 1.0
+      },
+      "gaussian_noise": {
+        "prob": 0.7,
+        "std": 0.002
+      },
+      "scale_jitter": {
+        "prob": 0.7,
+        "min_scale": 0.98,
+        "max_scale": 1.02
+      },
+      "translation_jitter": {
+        "prob": 0.0,
+        "max_offset": 0.0
+      },
+      "rotation_jitter": {
+        "prob": 0.7,
+        "max_angle": 2.0
+      },
+      "frame_drop": {
+        "prob": 0.0,
+        "max_drop_ratio": 0.0
+      },
+      "landmark_mask": {
+        "prob": 0.0,
+        "mask_prob": 0.0
+      },
+      "temporal_shift": {
+        "prob": 0.0,
+        "max_shift": 0
+      },
+      "prob": 1.0
+    },
+    "training": {
+      "epochs": 120,
+      "optimizer": "adam",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "scheduler": "plateau",
+      "warmup_epochs": 0,
+      "early_stopping": true,
+      "patience": 15,
+      "min_delta": 0.001,
+      "gradient_clip": 1.0,
+      "accumulation_steps": 1,
+      "use_amp": true,
+      "loss": "ce_standard",
+      "label_smoothing": 0.0,
+      "class_weight_method": "none",
+      "effective_beta": 0.999,
+      "batch_size": 16,
+      "plateau_patience": 5,
+      "plateau_factor": 0.5,
+      "monitor": "val_loss"
+    },
+    "checkpoint": {
+      "dir": "artifacts/checkpoints",
+      "save_top_k": 3,
+      "monitor": "val_acc",
+      "mode": "max"
+    },
+    "logging": {
+      "log_dir": "artifacts/logs",
+      "log_every_n_steps": 10,
+      "save_confusion_matrix": true
+    },
+    "seed": 42,
+    "device": "auto",
+    "model": {
+      "type": "transformer",
+      "hidden_size": 64,
+      "num_layers": 1,
+      "projection_dim": 64,
+      "classifier_hidden": 64,
+      "dropout": 0.45,
+      "regularized": true,
+      "params": {
+        "d_model": 64,
+        "nhead": 4,
+        "num_layers": 2,
+        "dim_feedforward": 128,
+        "dropout": 0.45,
+        "max_seq_len": 48,
+        "classifier_hidden": 64
+      }
+    }
+  },
+  "resolved": {
+    "model_type": "transformer",
+    "model_kwargs": {
+      "d_model": 64,
+      "nhead": 4,
+      "num_layers": 2,
+      "dim_feedforward": 128,
+      "dropout": 0.45,
+      "max_seq_len": 48,
+      "classifier_hidden": 64
+    },
+    "input_dim": 697,
+    "num_classes": 5,
+    "parameter_count": 120823,
+    "target_frames": 48,
+    "feature_mode": "pose_face",
+    "batch_size": 16,
+    "num_workers": 0,
+    "epochs": 120,
+    "learning_rate": 0.0003,
+    "seed": 42,
+    "device": "cuda",
+    "optimizer": "adam",
+    "augmentation": {
+      "enabled": true,
+      "prob": 1.0,
+      "noise_enabled": true,
+      "noise_prob": 0.7,
+      "noise_std": 0.002,
+      "scale_enabled": true,
+      "scale_prob": 0.7,
+      "scale_range": [
+        0.98,
+        1.02
+      ],
+      "translate_enabled": false,
+      "translate_prob": 0.0,
+      "translate_range": 0.0,
+      "rotate_enabled": true,
+      "rotate_prob": 0.7,
+      "rotate_range_deg": 2.0,
+      "temporal_crop_enabled": false,
+      "temporal_crop_prob": 0.0,
+      "crop_ratio_range": [
+        1.0,
+        1.0
+      ],
+      "frame_drop_enabled": false,
+      "frame_drop_apply_prob": 0.0,
+      "frame_drop_prob": 0.0,
+      "speed_enabled": false,
+      "speed_prob": 0.0,
+      "speed_range": [
+        1.0,
+        1.0
+      ],
+      "landmark_mask_enabled": false,
+      "landmark_mask_apply_prob": 0.0,
+      "mask_prob": 0.0,
+      "temporal_jitter_enabled": false,
+      "temporal_jitter_prob": 0.0,
+      "jitter_range": 0,
+      "mirror_enabled": false
+    },
+    "skip_test": false,
+    "test_checkpoint": "best",
+    "loss": "ce_standard",
+    "class_weight_method": "none",
+    "label_smoothing": 0.0,
+    "weight_decay": 0.0001,
+    "scheduler": "plateau",
+    "dropout": 0.45
+  },
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.14.0+cu130",
+    "numpy": "1.26.4",
+    "cuda": "13.0",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU"
+  },
+  "dataset": {
+    "data_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\novas_5_palavras",
+    "processed_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\processed\\novas_5_palavras",
+    "manifest_sha256": "deebb63adc1093e7ffc690c1cd263c029120c6dbf716857337306222ac2b9347",
+    "splits_sha256": "69ea393c6c7766b24966864734f8a55cb5d668a85a04e343c1667eb92436fd58",
+    "label_map_sha256": "76b5d0cc8d85c9eaa94906e9b80d989daf0b87ac18973e9503798f2a60cadd6c",
+    "split_sizes": {
+      "train": 25,
+      "val": 5,
+      "test": 5
+    },
+    "split_strategy": "signer_holdout",
+    "group_key": "video",
+    "synthetic_by_split": {
+      "train": 0,
+      "val": 0,
+      "test": 0
+    },
+    "signers_by_split": {
+      "train": [
+        "Sinalizador01",
+        "Sinalizador02",
+        "Sinalizador03",
+        "Sinalizador04",
+        "Sinalizador05"
+      ],
+      "val": [
+        "Sinalizador06"
+      ],
+      "test": [
+        "Sinalizador07"
+      ]
+    },
+    "classes": [
+      "Ajudar",
+      "Amigo",
+      "Aprender",
+      "Beber",
+      "Água"
+    ]
+  },
+  "artifacts": {
+    "checkpoint_dir": "C:\\Users\\migue\\DeepLearning-SINALIZA\\experiments\\transformer_novas_5_pose_face_seed42"
+  },
+  "finished_at": "2026-10-22T21:46:47",
+  "result": {
+    "best_epoch": 101,
+    "best_metric": 0.29896241426467896,
+    "total_epochs": 116,
+    "elapsed_seconds": 33.20740008354187,
+    "save_dir": "experiments\\transformer_novas_5_pose_face_seed42",
+    "test_metrics": {
+      "loss": 0.794140636920929,
+      "top1": 0.6,
+      "top3": 1.0,
+      "top5": 1.0,
+      "f1_macro": 0.4666666666666666,
+      "f1_weighted": 0.4666666666666666,
+      "precision_macro": 0.4,
+      "recall_macro": 0.6,
+      "total_samples": 5
+    },
+    "test_metrics_path": "experiments\\transformer_novas_5_pose_face_seed42\\test_metrics.json"
+  }
+}

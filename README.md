@@ -72,12 +72,15 @@ O backend não classifica janelas com detecção insuficiente de pose/face. Para
 
 ## Dados e modelos
 
+A [simulação de fusão sequencial dos dois modelos de 15 classes](docs/EXPERIMENTO_FUSAO_SEQUENCIAL_15_CLASSES_2026-10-21.md) acertou 52/75 vídeos na validação e 44/75 no teste exploratório com top 5. A inversão da ordem não mudou as previsões top 5 neste conjunto. É uma avaliação offline; o backend ativo não foi alterado.
+
 O experimento ativo usa o **MINDS-Libras**: 20 classes, 800 vídeos, 8 sinalizadores e 40 vídeos por classe no conjunto completo. O subconjunto de 8 classes tem 320 vídeos. Os splits separam pessoas: Sinalizadores 01, 02, 05, 06, 08 e 10 no treino; 11 na validação; 12 no teste. Não foram usadas variações sintéticas nesses experimentos.
 
 | Checkpoint arquivado | Vídeos treino/validação/teste | Validação top-1 | Teste top-1 | Uso atual |
 |---|---:|---:|---:|---|
 | [Transformer `pose_face`, 8 classes](Modelos%20salvos/transformer_minds_8_classes_pose_face/README.md) | 240 / 40 / 40 | 40/40 (100%) | 37/40 (92,5%) | Aplicação web |
 | [Transformer `pose_face`, 15 classes](Modelos%20salvos/transformer_minds_15_classes_pose_face/README.md) | 450 / 75 / 75 | 49/75 (65,3%) | 41/75 (54,7%), exploratório | Experimento arquivado |
+| [Transformer `full`, 15 classes](Modelos%20salvos/transformer_minds_15_classes_full/README.md) | 450 / 75 / 75 | 45/75 (60%) | 34/75 (45,3%), exploratório | Experimento arquivado |
 | [Transformer `pose_face`, 20 classes](Modelos%20salvos/transformer_minds_20_classes_pose_face/README.md) | 600 / 100 / 100 | 37/100 (37%) | Não executado | Experimento arquivado |
 
 O checkpoint de 8 classes foi selecionado pela menor perda de validação, na época 94. A arquitetura tem duas camadas Transformer, quatro cabeças de atenção, dimensão 64, dropout 0,45 e 121.018 parâmetros. O treino usou Adam com `weight_decay=1e-4`, augmentation apenas no treino, scheduler por perda de validação e early stopping. Os detalhes e comandos completos estão no [README do modelo](Modelos%20salvos/transformer_minds_8_classes_pose_face/README.md).

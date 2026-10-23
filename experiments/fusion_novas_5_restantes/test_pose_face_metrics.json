@@ -1,0 +1,225 @@
+{
+  "split": "test",
+  "first": "pose_face",
+  "pose_weight": 0.65,
+  "full_weight": 0.35,
+  "device": "cuda",
+  "pose_checkpoint": "experiments\\transformer_novas_5_restantes_pose_face_seed42\\best.pt",
+  "pose_sha256": "da74f37b0783b61afefe3b2f452b438a1c5f2fdcb23309ccec4f597a656b4717",
+  "full_checkpoint": "experiments\\transformer_novas_5_restantes_full_seed42\\best.pt",
+  "full_sha256": "10da956321569770fdc6300d81aa01b1af4b0342062793cdf0de067b88cf1d35",
+  "label_map": {
+    "Brincar": 0,
+    "Cansado": 1,
+    "Certo": 2,
+    "Comer": 3,
+    "Diretor": 4
+  },
+  "split_size": 5,
+  "pose_face": {
+    "correct": 4,
+    "total": 5,
+    "top1": 0.8,
+    "f1_macro": 0.7333333333333333,
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "per_class_accuracy": {
+      "Brincar": 0.0,
+      "Cansado": 1.0,
+      "Certo": 1.0,
+      "Comer": 1.0,
+      "Diretor": 1.0
+    }
+  },
+  "full": {
+    "correct": 5,
+    "total": 5,
+    "top1": 1.0,
+    "f1_macro": 1.0,
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "per_class_accuracy": {
+      "Brincar": 1.0,
+      "Cansado": 1.0,
+      "Certo": 1.0,
+      "Comer": 1.0,
+      "Diretor": 1.0
+    }
+  },
+  "fusion": {
+    "3": {
+      "correct": 4,
+      "total": 5,
+      "top1": 0.8,
+      "f1_macro": 0.7333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "per_class_accuracy": {
+        "Brincar": 0.0,
+        "Cansado": 1.0,
+        "Certo": 1.0,
+        "Comer": 1.0,
+        "Diretor": 1.0
+      },
+      "candidate_coverage_count": 5,
+      "candidate_coverage": 1.0
+    },
+    "5": {
+      "correct": 4,
+      "total": 5,
+      "top1": 0.8,
+      "f1_macro": 0.7333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "per_class_accuracy": {
+        "Brincar": 0.0,
+        "Cansado": 1.0,
+        "Certo": 1.0,
+        "Comer": 1.0,
+        "Diretor": 1.0
+      },
+      "candidate_coverage_count": 5,
+      "candidate_coverage": 1.0
+    }
+  }
+}

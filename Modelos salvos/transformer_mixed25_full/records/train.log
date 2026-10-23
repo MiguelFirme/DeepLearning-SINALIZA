@@ -1,0 +1,70 @@
+2026-10-22 23:28:15,469 [INFO] Log persistente: logs\experiments\transformer_mixed25_full_seed42\train.log
+2026-10-22 23:28:15,470 [INFO] Device: cuda
+2026-10-22 23:28:16,812 [INFO] Classes: 25
+2026-10-22 23:28:16,816 [INFO] Train: 500 | Val: 85
+2026-10-22 23:28:16,835 [INFO] Modelo: transformer | input_dim=697 | params=122,123
+2026-10-22 23:28:16,861 [INFO] Loss=ce_standard | class_weight_method=sqrt_inverse | smoothing=0.0
+2026-10-22 23:28:19,569 [INFO] Iniciando treinamento: 120 épocas no dispositivo cuda
+2026-10-22 23:28:19,570 [INFO] Modelo: TransformerModel | Params: 122,123
+2026-10-22 23:28:25,173 [INFO] Epoch 1/120 | train_loss=3.2104 | train_top1=0.0600 | val_loss=3.2013 | val_top1=0.0588 | val_f1=0.0047 | lr=3.00e-04 ★
+2026-10-22 23:28:29,645 [INFO] Epoch 2/120 | train_loss=3.1562 | train_top1=0.0980 | val_loss=3.1497 | val_top1=0.0588 | val_f1=0.0052 | lr=3.00e-04 ★
+2026-10-22 23:28:34,786 [INFO] Epoch 3/120 | train_loss=3.0394 | train_top1=0.1040 | val_loss=3.0142 | val_top1=0.1294 | val_f1=0.0329 | lr=3.00e-04 ★
+2026-10-22 23:28:40,017 [INFO] Epoch 4/120 | train_loss=2.9012 | train_top1=0.1000 | val_loss=2.9057 | val_top1=0.0706 | val_f1=0.0149 | lr=3.00e-04 ★
+2026-10-22 23:28:45,092 [INFO] Epoch 5/120 | train_loss=2.7850 | train_top1=0.1100 | val_loss=2.8312 | val_top1=0.1294 | val_f1=0.0440 | lr=3.00e-04 ★
+2026-10-22 23:28:50,172 [INFO] Epoch 6/120 | train_loss=2.7172 | train_top1=0.1160 | val_loss=2.7583 | val_top1=0.1412 | val_f1=0.0471 | lr=3.00e-04 ★
+2026-10-22 23:28:54,804 [INFO] Epoch 7/120 | train_loss=2.6196 | train_top1=0.1500 | val_loss=2.6584 | val_top1=0.3176 | val_f1=0.1301 | lr=3.00e-04 ★
+2026-10-22 23:28:59,475 [INFO] Epoch 8/120 | train_loss=2.5213 | train_top1=0.1860 | val_loss=2.5726 | val_top1=0.2941 | val_f1=0.1157 | lr=3.00e-04 ★
+2026-10-22 23:29:04,077 [INFO] Epoch 9/120 | train_loss=2.4198 | train_top1=0.1960 | val_loss=2.5458 | val_top1=0.1529 | val_f1=0.0555 | lr=3.00e-04 ★
+2026-10-22 23:29:06,541 [INFO] Epoch 10/120 | train_loss=2.3326 | train_top1=0.2120 | val_loss=2.4377 | val_top1=0.2588 | val_f1=0.0998 | lr=3.00e-04 ★
+2026-10-22 23:29:10,263 [INFO] Epoch 11/120 | train_loss=2.2681 | train_top1=0.2420 | val_loss=2.4440 | val_top1=0.1882 | val_f1=0.1308 | lr=3.00e-04
+2026-10-22 23:29:15,356 [INFO] Epoch 12/120 | train_loss=2.1943 | train_top1=0.2360 | val_loss=2.3737 | val_top1=0.2941 | val_f1=0.1687 | lr=3.00e-04 ★
+2026-10-22 23:29:20,228 [INFO] Epoch 13/120 | train_loss=2.1578 | train_top1=0.2180 | val_loss=2.3158 | val_top1=0.2824 | val_f1=0.1536 | lr=3.00e-04 ★
+2026-10-22 23:29:25,388 [INFO] Epoch 14/120 | train_loss=2.1040 | train_top1=0.2340 | val_loss=2.3763 | val_top1=0.2941 | val_f1=0.2085 | lr=3.00e-04
+2026-10-22 23:29:30,198 [INFO] Epoch 15/120 | train_loss=2.0399 | train_top1=0.2500 | val_loss=2.3322 | val_top1=0.2353 | val_f1=0.1750 | lr=3.00e-04
+2026-10-22 23:29:35,408 [INFO] Epoch 16/120 | train_loss=2.0037 | train_top1=0.2460 | val_loss=2.2264 | val_top1=0.4471 | val_f1=0.3001 | lr=3.00e-04 ★
+2026-10-22 23:29:40,443 [INFO] Epoch 17/120 | train_loss=1.9494 | train_top1=0.2980 | val_loss=2.3147 | val_top1=0.3059 | val_f1=0.1422 | lr=3.00e-04
+2026-10-22 23:29:45,622 [INFO] Epoch 18/120 | train_loss=1.8933 | train_top1=0.2780 | val_loss=2.1848 | val_top1=0.3176 | val_f1=0.2064 | lr=3.00e-04 ★
+2026-10-22 23:29:50,840 [INFO] Epoch 19/120 | train_loss=1.8333 | train_top1=0.3580 | val_loss=2.2113 | val_top1=0.3412 | val_f1=0.1804 | lr=3.00e-04
+2026-10-22 23:29:55,880 [INFO] Epoch 20/120 | train_loss=1.7994 | train_top1=0.3900 | val_loss=2.2236 | val_top1=0.3294 | val_f1=0.2123 | lr=3.00e-04
+2026-10-22 23:30:00,833 [INFO] Epoch 21/120 | train_loss=1.7573 | train_top1=0.3720 | val_loss=2.2924 | val_top1=0.3176 | val_f1=0.1730 | lr=3.00e-04
+2026-10-22 23:30:05,858 [INFO] Epoch 22/120 | train_loss=1.7027 | train_top1=0.3960 | val_loss=2.2420 | val_top1=0.3176 | val_f1=0.1509 | lr=3.00e-04
+2026-10-22 23:30:11,158 [INFO] Epoch 23/120 | train_loss=1.6824 | train_top1=0.3900 | val_loss=2.2821 | val_top1=0.2235 | val_f1=0.1337 | lr=3.00e-04
+2026-10-22 23:30:16,204 [INFO] Epoch 24/120 | train_loss=1.6143 | train_top1=0.4360 | val_loss=2.2241 | val_top1=0.3176 | val_f1=0.1630 | lr=3.00e-04
+2026-10-22 23:30:21,385 [INFO] Epoch 25/120 | train_loss=1.5469 | train_top1=0.4780 | val_loss=2.1467 | val_top1=0.3765 | val_f1=0.2578 | lr=1.50e-04 ★
+2026-10-22 23:30:26,499 [INFO] Epoch 26/120 | train_loss=1.5680 | train_top1=0.4520 | val_loss=2.1518 | val_top1=0.3647 | val_f1=0.2004 | lr=1.50e-04
+2026-10-22 23:30:31,358 [INFO] Epoch 27/120 | train_loss=1.5439 | train_top1=0.4660 | val_loss=2.1824 | val_top1=0.3647 | val_f1=0.2685 | lr=1.50e-04
+2026-10-22 23:30:36,457 [INFO] Epoch 28/120 | train_loss=1.4943 | train_top1=0.4920 | val_loss=2.2856 | val_top1=0.2588 | val_f1=0.1633 | lr=1.50e-04
+2026-10-22 23:30:41,718 [INFO] Epoch 29/120 | train_loss=1.4714 | train_top1=0.4940 | val_loss=2.1977 | val_top1=0.3176 | val_f1=0.1814 | lr=1.50e-04
+2026-10-22 23:30:46,857 [INFO] Epoch 30/120 | train_loss=1.4680 | train_top1=0.5200 | val_loss=2.1060 | val_top1=0.3294 | val_f1=0.2130 | lr=1.50e-04 ★
+2026-10-22 23:30:51,833 [INFO] Epoch 31/120 | train_loss=1.4258 | train_top1=0.5240 | val_loss=2.0391 | val_top1=0.3294 | val_f1=0.2086 | lr=1.50e-04 ★
+2026-10-22 23:30:56,346 [INFO] Epoch 32/120 | train_loss=1.4132 | train_top1=0.5260 | val_loss=1.9546 | val_top1=0.4941 | val_f1=0.3805 | lr=1.50e-04 ★
+2026-10-22 23:31:01,063 [INFO] Epoch 33/120 | train_loss=1.3753 | train_top1=0.5280 | val_loss=2.1249 | val_top1=0.4118 | val_f1=0.2848 | lr=1.50e-04
+2026-10-22 23:31:05,460 [INFO] Epoch 34/120 | train_loss=1.3592 | train_top1=0.5640 | val_loss=2.1421 | val_top1=0.4000 | val_f1=0.3332 | lr=1.50e-04
+2026-10-22 23:31:10,488 [INFO] Epoch 35/120 | train_loss=1.3566 | train_top1=0.5320 | val_loss=1.9344 | val_top1=0.4471 | val_f1=0.3536 | lr=1.50e-04 ★
+2026-10-22 23:31:15,498 [INFO] Epoch 36/120 | train_loss=1.3086 | train_top1=0.5280 | val_loss=1.7469 | val_top1=0.5529 | val_f1=0.3745 | lr=1.50e-04 ★
+2026-10-22 23:31:20,697 [INFO] Epoch 37/120 | train_loss=1.2941 | train_top1=0.5480 | val_loss=1.8761 | val_top1=0.4824 | val_f1=0.3183 | lr=1.50e-04
+2026-10-22 23:31:25,909 [INFO] Epoch 38/120 | train_loss=1.2700 | train_top1=0.5500 | val_loss=2.1299 | val_top1=0.4118 | val_f1=0.3298 | lr=1.50e-04
+2026-10-22 23:31:30,910 [INFO] Epoch 39/120 | train_loss=1.2304 | train_top1=0.5800 | val_loss=2.2147 | val_top1=0.3059 | val_f1=0.2734 | lr=1.50e-04
+2026-10-22 23:31:35,896 [INFO] Epoch 40/120 | train_loss=1.2203 | train_top1=0.6060 | val_loss=1.7929 | val_top1=0.5059 | val_f1=0.4015 | lr=1.50e-04
+2026-10-22 23:31:40,877 [INFO] Epoch 41/120 | train_loss=1.2174 | train_top1=0.6080 | val_loss=1.7891 | val_top1=0.5765 | val_f1=0.4187 | lr=1.50e-04
+2026-10-22 23:31:45,739 [INFO] Epoch 42/120 | train_loss=1.2250 | train_top1=0.5940 | val_loss=2.2123 | val_top1=0.3529 | val_f1=0.3106 | lr=1.50e-04
+2026-10-22 23:31:50,761 [INFO] Epoch 43/120 | train_loss=1.1731 | train_top1=0.6180 | val_loss=1.9738 | val_top1=0.4353 | val_f1=0.3156 | lr=7.50e-05
+2026-10-22 23:31:55,888 [INFO] Epoch 44/120 | train_loss=1.1644 | train_top1=0.6320 | val_loss=1.8991 | val_top1=0.5529 | val_f1=0.4334 | lr=7.50e-05
+2026-10-22 23:32:00,739 [INFO] Epoch 45/120 | train_loss=1.1598 | train_top1=0.5900 | val_loss=1.8991 | val_top1=0.4941 | val_f1=0.3594 | lr=7.50e-05
+2026-10-22 23:32:05,861 [INFO] Epoch 46/120 | train_loss=1.1433 | train_top1=0.6300 | val_loss=1.8284 | val_top1=0.5412 | val_f1=0.3782 | lr=7.50e-05
+2026-10-22 23:32:11,227 [INFO] Epoch 47/120 | train_loss=1.1368 | train_top1=0.6280 | val_loss=1.8266 | val_top1=0.5294 | val_f1=0.4248 | lr=7.50e-05
+2026-10-22 23:32:16,731 [INFO] Epoch 48/120 | train_loss=1.1107 | train_top1=0.6540 | val_loss=1.8246 | val_top1=0.4706 | val_f1=0.3959 | lr=7.50e-05
+2026-10-22 23:32:22,100 [INFO] Epoch 49/120 | train_loss=1.1202 | train_top1=0.6620 | val_loss=1.7805 | val_top1=0.4941 | val_f1=0.3962 | lr=3.75e-05
+2026-10-22 23:32:27,465 [INFO] Epoch 50/120 | train_loss=1.1083 | train_top1=0.6160 | val_loss=1.8674 | val_top1=0.4941 | val_f1=0.4083 | lr=3.75e-05
+2026-10-22 23:32:32,711 [INFO] Epoch 51/120 | train_loss=1.1156 | train_top1=0.6300 | val_loss=1.8844 | val_top1=0.5529 | val_f1=0.4420 | lr=3.75e-05
+2026-10-22 23:32:32,712 [INFO] Early stopping! Sem melhora por 15 épocas.
+2026-10-22 23:32:32,712 [INFO] Early stopping na época 51.
+2026-10-22 23:32:32,716 [INFO] Histórico salvo em experiments\transformer_mixed25_full_seed42\history.csv e experiments\transformer_mixed25_full_seed42\history.json
+2026-10-22 23:32:32,716 [INFO] Treinamento concluído em 253s. Melhor época: 36
+2026-10-22 23:32:32,745 [INFO] Resultado: {
+  "best_epoch": 36,
+  "best_metric": 1.7468692148433012,
+  "total_epochs": 51,
+  "elapsed_seconds": 253.14162802696228,
+  "save_dir": "experiments\\transformer_mixed25_full_seed42"
+}

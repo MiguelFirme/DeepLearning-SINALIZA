@@ -64,12 +64,15 @@ def extract_single(args_tuple: tuple) -> dict:
         return {"path": str(video_path), "status": "error", "error": str(e)}
 
 
-def collect_tasks(input_dir: Path, output_dir: Path) -> list[tuple]:
+def collect_tasks(input_dir: Path, output_dir: Path,
+                  include_classes: set[str] | None = None) -> list[tuple]:
     """Coleta vídeos para processar."""
     tasks = []
     for video in sorted(input_dir.rglob("*")):
         if video.is_file() and video.suffix.lower() in VIDEO_EXTS:
             rel = video.relative_to(input_dir)
+            if include_classes is not None and (not rel.parts or rel.parts[0] not in include_classes):
+                continue
             npz_path = output_dir / rel.parent / (rel.stem + ".npz")
             tasks.append((str(video), str(npz_path), {}))
     return tasks
@@ -87,6 +90,18 @@ def build_manifest(output_dir: Path, dataset_format: str = "vlibrasil",
             samples, output_dir / "manifest.json", output_dir / "annotations.csv"
         )
         logger.info("MINDS-Libras: %s amostras, %s classes, %s sinalizadores",
+                    len(samples), len({s["label"] for s in samples}),
+                    len({s["signer"] for s in samples}))
+        return
+    if dataset_format == "folder_signer":
+        from ml.data.folder_signer import build_manifest as build_folder_manifest
+        from ml.data.folder_signer import write_manifest_and_annotations
+
+        samples = build_folder_manifest(output_dir, input_dir)
+        write_manifest_and_annotations(
+            samples, output_dir / "manifest.json", output_dir / "annotations.csv"
+        )
+        logger.info("Pastas por classe: %s amostras, %s classes, %s sinalizadores",
                     len(samples), len({s["label"] for s in samples}),
                     len({s["signer"] for s in samples}))
         return
@@ -130,8 +145,10 @@ def main():
         help="Diretório de saída .npz",
     )
     parser.add_argument("--workers", type=int, default=1, help="Workers paralelos")
-    parser.add_argument("--dataset-format", choices=["vlibrasil", "minds_libras"],
+    parser.add_argument("--dataset-format", choices=["vlibrasil", "minds_libras", "folder_signer"],
                         default="vlibrasil")
+    parser.add_argument("--include-classes", nargs="+", default=None,
+                        help="Processar apenas estas pastas de classe sob --input")
     args = parser.parse_args()
 
     input_dir = Path(args.input).expanduser().resolve()
@@ -143,7 +160,12 @@ def main():
         )
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    tasks = collect_tasks(input_dir, output_dir)
+    include_classes = set(args.include_classes) if args.include_classes else None
+    if include_classes is not None:
+        absent = include_classes - {p.name for p in input_dir.iterdir() if p.is_dir()}
+        if absent:
+            parser.error(f"Pastas de classe ausentes: {sorted(absent)}")
+    tasks = collect_tasks(input_dir, output_dir, include_classes)
     logger.info(f"Total de vídeos: {len(tasks)}")
 
     # Processar
