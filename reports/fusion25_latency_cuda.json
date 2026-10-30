@@ -1,0 +1,39 @@
+{
+  "device": "cuda",
+  "samples": 30,
+  "input": "data\\landmarks\\mixed_25\\..\\minds_libras_all20\\01AcontecerSinalizador11-1.npz",
+  "scope": "landmarks preprocessing + model inference; excludes JPEG, MediaPipe and transport",
+  "latency": {
+    "full_preprocess_ms": {
+      "p50_ms": 1.6997999919112772,
+      "p95_ms": 1.9308749848278237,
+      "mean_ms": 1.7156000016257167
+    },
+    "full_inference_ms": {
+      "p50_ms": 2.271500008646399,
+      "p95_ms": 2.836029988247901,
+      "mean_ms": 2.3574766741755107
+    },
+    "pose_face_preprocess_ms": {
+      "p50_ms": 1.6053500003181398,
+      "p95_ms": 1.8584849953185765,
+      "mean_ms": 1.6405533378322918
+    },
+    "pose_face_inference_ms": {
+      "p50_ms": 2.1382999839261174,
+      "p95_ms": 3.9361150033073495,
+      "mean_ms": 2.390896666717405
+    },
+    "fusion_total_ms": {
+      "p50_ms": 7.973600004334003,
+      "p95_ms": 9.674924999126231,
+      "mean_ms": 8.163093337013075
+    },
+    "full_total_ms": {
+      "p50_ms": 3.9830500609241426,
+      "p95_ms": 4.616160012665205,
+      "mean_ms": 4.073076675801228
+    }
+  },
+  "fusion_manifest_sha256": "d33d90562e003951797ea34a3517a7fb4132aaf2c4333399ed75e56bf4f07318"
+}

@@ -12,6 +12,7 @@ from ml.features.normalization import LandmarkNormalizer, NormalizationConfig
 from ml.features.sequence import SequenceProcessor, SequenceConfig
 from ml.features.feature_modes import FEATURE_MODES, select_feature_mode
 from backend.config import settings
+from backend.services.fusion import FusionBundle, FusionSessionPredictor
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +25,7 @@ class PredictionService:
         self._normalizer: LandmarkNormalizer | None = None
         self._seq_processor: SequenceProcessor | None = None
         self._loaded = False
+        self._fusion: FusionBundle | None = None
         self.feature_mode = "full"
         self.target_frames = settings.target_frames
 
@@ -33,6 +35,16 @@ class PredictionService:
 
     def load_model(self, model_path: str | None = None):
         """Carrega o checkpoint treinado com metadados e pesos estritos."""
+        self._loaded = False
+        if model_path is None and settings.fusion_manifest_path:
+            self._fusion = FusionBundle(settings.fusion_manifest_path, settings.device)
+            self._predictor = None
+            self.feature_mode = "fusion" if self._fusion.spec["selected_mode"] == "fusion" else "full"
+            self.target_frames = self._fusion.target_frames
+            self._loaded = True
+            logger.info("Fusão de 25 classes carregada: %s", settings.fusion_manifest_path)
+            return
+        self._fusion = None
         path = Path(model_path or settings.model_path)
         if not path.exists():
             logger.warning("Modelo não encontrado em %s. API rodará sem modelo.", path)
@@ -94,8 +106,11 @@ class PredictionService:
         self._loaded = True
         logger.info(f"Modelo carregado: {model_type} | {num_classes} classes | device={settings.device}")
 
-    def new_session_predictor(self) -> SignPredictor:
+    def new_session_predictor(self) -> SignPredictor | FusionSessionPredictor:
         """Compartilha pesos, com suavização/cooldown separados por conexão."""
+        if self._fusion is not None:
+            return FusionSessionPredictor(self._fusion, settings.confidence_threshold,
+                                          settings.smoothing_type, settings.ema_alpha, settings.top_k)
         if self._predictor is None:
             raise RuntimeError("Modelo não carregado")
         predictor = SignPredictor(self._predictor.config)
@@ -105,8 +120,15 @@ class PredictionService:
         return predictor
 
     def predict(self, landmarks: np.ndarray, mask: np.ndarray | None = None,
-                predictor: SignPredictor | None = None) -> dict:
+                predictor: SignPredictor | FusionSessionPredictor | None = None) -> dict:
         """Predição a partir de landmarks brutos."""
+        if self._loaded and self._fusion is not None:
+            start = time.perf_counter()
+            probabilities, timings = self._fusion.probabilities(landmarks, mask)
+            session = predictor or self.new_session_predictor()
+            result = session.present(probabilities, timings)
+            result["processing_time_ms"] = (time.perf_counter() - start) * 1000
+            return result
         if not self._loaded or self._predictor is None:
             return {"sign": None, "confidence": 0.0, "top_k": [], "is_cooldown": False, "error": "Modelo não carregado"}
 
@@ -138,6 +160,10 @@ class PredictionService:
             self._predictor.reset_state()
 
     def get_info(self) -> dict:
+        if self._fusion is not None:
+            return {"status": "loaded", "num_classes": 25,
+                    "feature_mode": self.feature_mode,
+                    "fusion_manifest": settings.fusion_manifest_path}
         if self._predictor:
             return self._predictor.get_model_info()
         return {"status": "not_loaded"}

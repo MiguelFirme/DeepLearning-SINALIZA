@@ -1,0 +1,102 @@
+[
+  {
+    "video": "data\\raw\\minds_libras\\02AlunoSinalizador01-1.mp4",
+    "split": "train",
+    "label": "Aluno",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 524.44398941138,
+    "dark_fraction": 0.0,
+    "reported_frames": 130
+  },
+  {
+    "video": "data\\raw\\minds_libras\\02AlunoSinalizador01-2.mp4",
+    "split": "train",
+    "label": "Aluno",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 511.27799466311603,
+    "dark_fraction": 0.0,
+    "reported_frames": 143
+  },
+  {
+    "video": "data\\raw\\minds_libras\\02AlunoSinalizador01-3.mp4",
+    "split": "train",
+    "label": "Aluno",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 530.4844301546827,
+    "dark_fraction": 0.0,
+    "reported_frames": 150
+  },
+  {
+    "video": "data\\raw\\minds_libras\\02AlunoSinalizador01-5.mp4",
+    "split": "train",
+    "label": "Aluno",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 566.5400533454801,
+    "dark_fraction": 0.0,
+    "reported_frames": 169
+  },
+  {
+    "video": "data\\raw\\minds_libras\\03AmareloSinalizador01-2.mp4",
+    "split": "train",
+    "label": "Amarelo",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 525.8665135437766,
+    "dark_fraction": 0.0,
+    "reported_frames": 183
+  },
+  {
+    "video": "data\\raw\\minds_libras\\10CincoSinalizador01-2.mp4",
+    "split": "train",
+    "label": "Cinco",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 630.2315104635356,
+    "dark_fraction": 0.0,
+    "reported_frames": 150
+  },
+  {
+    "video": "data\\raw\\minds_libras\\11ConhecerSinalizador01-3.mp4",
+    "split": "train",
+    "label": "Conhecer",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 587.7877713068457,
+    "dark_fraction": 0.0,
+    "reported_frames": 125
+  },
+  {
+    "video": "data\\raw\\minds_libras\\14FilhoSinalizador01-4.mp4",
+    "split": "train",
+    "label": "Filho",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 628.192624944993,
+    "dark_fraction": 0.0,
+    "reported_frames": 133
+  },
+  {
+    "video": "data\\raw\\minds_libras\\16MedoSinalizador01-5.mp4",
+    "split": "train",
+    "label": "Medo",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 611.2040592295705,
+    "dark_fraction": 0.0,
+    "reported_frames": 150
+  },
+  {
+    "video": "data\\raw\\minds_libras\\19VacinaSinalizador01-1.mp4",
+    "split": "train",
+    "label": "Vacina",
+    "video_exists": true,
+    "decoded_samples": 2,
+    "blur_score": 586.0851118174612,
+    "dark_fraction": 0.0,
+    "reported_frames": 155
+  }
+]

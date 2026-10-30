@@ -7,14 +7,15 @@ import styles from "./HomePage.module.css";
 
 export default function HomePage() {
   const webcamRef = useRef<WebcamViewHandle>(null!);
-  const handleOverlay = useCallback((overlay: Parameters<WebcamViewHandle["drawOverlay"]>[0]) => {
-    webcamRef.current?.drawOverlay(overlay);
+  const handleOverlay = useCallback((overlay: Parameters<WebcamViewHandle["drawOverlay"]>[0], ageMs?: number, frameId?: number) => {
+    webcamRef.current?.drawOverlay(overlay, ageMs, frameId);
   }, []);
   const ws = useWebSocket(handleOverlay);
 
   const [cameraOn, setCameraOn] = useState(false);
   const [sentence, setSentence] = useState<string[]>([]);
-  const handleFrame = useCallback((jpeg: Blob) => ws.sendFrame(jpeg), [ws.sendFrame]);
+  const handleFrame = useCallback((jpeg: Blob, capturedAt: number, captureEncodeMs: number) =>
+    ws.sendFrame(jpeg, capturedAt, captureEncodeMs), [ws.sendFrame]);
 
   /* Montar frase progressivamente */
   useEffect(() => {
@@ -54,7 +55,7 @@ export default function HomePage() {
       <div className={styles.grid}>
         {/* Coluna esquerda — Vídeo */}
         <div className={styles.videoCol}>
-          <WebcamView ref={webcamRef} onFrame={handleFrame} backendFps={ws.backendFps} />
+          <WebcamView ref={webcamRef} onFrame={handleFrame} canSendFrame={ws.canSendFrame} backendFps={ws.backendFps} />
 
           {/* Sentence overlay */}
           <div className={styles.sentenceBar}>

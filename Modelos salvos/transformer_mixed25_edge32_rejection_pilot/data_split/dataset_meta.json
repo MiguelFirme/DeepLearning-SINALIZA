@@ -1,0 +1,18 @@
+{
+  "pilot": true,
+  "weak_labels": true,
+  "review_status": "AI screened contact sheets; no human full-clip review",
+  "candidate_csv_sha256": "d6751c72170c615e362ba0a17a5f8958532e5d1ae18d756c7f1a2410e8bf7c74",
+  "negative_counts": {
+    "train": 100,
+    "val": 11
+  },
+  "split_sizes": {
+    "train": 600,
+    "val": 96,
+    "test": 85
+  },
+  "test_negatives": 0,
+  "segment_frames": 32,
+  "warning": "Not suitable for deployment or calibrated rejection."
+}

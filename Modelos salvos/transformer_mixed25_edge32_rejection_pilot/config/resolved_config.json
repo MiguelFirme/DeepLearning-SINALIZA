@@ -1,0 +1,25 @@
+{
+  "optimizer_type": "adam",
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "scheduler_type": "plateau",
+  "plateau_patience": 5,
+  "plateau_factor": 0.5,
+  "min_lr": 1e-07,
+  "warmup_epochs": 0,
+  "epochs": 60,
+  "gradient_clip_val": 1.0,
+  "gradient_accumulation_steps": 1,
+  "use_amp": true,
+  "early_stopping": true,
+  "patience": 12,
+  "monitor": "val_loss",
+  "mode": "min",
+  "save_dir": "experiments",
+  "experiment_name": "transformer_mixed25_edge32_rejection_pilot_seed42",
+  "save_top_k": 1
+}

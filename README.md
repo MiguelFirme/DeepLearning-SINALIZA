@@ -66,11 +66,23 @@ Webcam → JPEG via WebSocket → MediaPipe Holistic no backend
        → Transformer temporal → palavra e confiança → frontend
 ```
 
-O modo `pose_face` **zera os pontos detalhados das mãos** antes do modelo, mas preserva braços, cotovelos, pulsos e face. A primeira predição usa 48 quadros; depois, a janela avança 24 quadros. O frontend captura cada quadro novo entregue pelo navegador, solicita 30 FPS como preferência da câmera e controla a fila para acompanhar o backend. O indicador "FPS câmera" mede quadros recebidos pelo navegador, não quadros processados pelo modelo. Veja [PLANO_FPS_WEBCAM.md](docs/PLANO_FPS_WEBCAM.md).
+O modo `pose_face` **zera os pontos detalhados das mãos** antes do modelo, mas preserva braços, cotovelos, pulsos e face. A primeira predição usa 48 quadros; depois, a janela avança 12 quadros. O frontend captura cada quadro novo entregue pelo navegador, solicita 30 FPS como preferência da câmera e controla a fila para acompanhar o backend. O indicador "FPS câmera" mede quadros recebidos pelo navegador, não quadros processados pelo modelo. Veja [PLANO_FPS_WEBCAM.md](docs/PLANO_FPS_WEBCAM.md).
+
+Para reduzir o atraso dos pontos desenhados, o frontend mantém apenas um quadro pendente no WebSocket, codifica JPEG somente quando o backend pode receber um novo quadro e faz uma breve antecipação visual limitada entre respostas. Essa antecipação afeta apenas o canvas; os modelos continuam recebendo os landmarks reais do MediaPipe no backend. Veja [plano e verificação do acompanhamento](docs/PLANO_ACOMPANHAMENTO_LANDMARKS_2026-10-28.md).
+
+Para investigar latência, ative `SINALIZA_PERF_LOGGING=true` no backend e abra o frontend com `?perf=1`. O Console e o terminal mostram um resumo simples a cada três segundos. Os detalhes por quadro são opcionais; veja [perfil de tempo real](docs/PLANO_PERFIL_TEMPO_REAL_2026-10-28.md).
 
 O backend não classifica janelas com detecção insuficiente de pose/face. Para as demais, a confiança mínima para mostrar uma palavra é **0,30**, configurável por `SINALIZA_CONFIDENCE_THRESHOLD`. O modelo não possui uma classe treinada de “nenhum sinal”; portanto, pode atribuir palavras a uma pessoa parada. A [experiência anterior com filtro de movimento](docs/PLANO_REJEICAO_SEM_SINAL.md) foi documentada e revertida.
 
 ## Dados e modelos
+
+### Experimento opcional de 25 classes
+
+As 15 classes selecionadas do MINDS-Libras e dez palavras gravadas pelo grupo formam um conjunto de 670 vídeos (500 treino, 85 validação e 85 teste). Dois Transformers arquivados, um `pose_face` e outro `full`, podem ser usados no backend pela variável `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_frozen.json`. O modo padrão continua sendo o modelo de oito classes. A fusão congelada propõe as cinco classes mais prováveis do modelo `pose_face` e as reordena com 22% do escore desse modelo e 78% do `full`.
+
+Na validação, a fusão acertou 50/85 contra 46/85 do modelo `full`; no teste já consultado em experimentos anteriores, 56/85 contra 48/85. Esses resultados são exploratórios. A auditoria marcou 168/670 vídeos para revisão, principalmente por ausência da mão ativa. Não existem negativos reais revisados, portanto ainda não há rejeição treinada de “nenhum sinal”. O [relatório de qualidade e fusão](docs/RELATORIO_QUALIDADE_FUSAO_25_CLASSES_2026-10-27.md) traz protocolo congelado, latência, comandos, limitações e passos para coletar negativos.
+
+Um [piloto de rejeição com início e fim dos vídeos](docs/RELATORIO_NEGATIVOS_BORDAS_25_CLASSES_2026-10-27.md) foi treinado separadamente com 100 trechos de repouso no treino e 11 na validação. Ele reconheceu esses repousos, mas piorou a tradução quando usado sozinho. Como bloqueio antes da fusão, produziu cinco rejeições indevidas entre 85 sinais no teste exploratório. Seus rótulos são provisórios, e o checkpoint **não está ativo na aplicação**.
 
 A [simulação de fusão sequencial dos dois modelos de 15 classes](docs/EXPERIMENTO_FUSAO_SEQUENCIAL_15_CLASSES_2026-10-21.md) acertou 52/75 vídeos na validação e 44/75 no teste exploratório com top 5. A inversão da ordem não mudou as previsões top 5 neste conjunto. É uma avaliação offline; o backend ativo não foi alterado.
 
@@ -131,6 +143,8 @@ Há configuração de Docker Compose no repositório, mas a execução em contê
 
 ## Documentação
 
+- [Plano e relatório do experimento de 25 classes](docs/RELATORIO_QUALIDADE_FUSAO_25_CLASSES_2026-10-27.md)
+- [Piloto de rejeição com trechos de repouso dos vídeos](docs/RELATORIO_NEGATIVOS_BORDAS_25_CLASSES_2026-10-27.md)
 - [Como rodar a aplicação web](docs/COMO_RODAR_APLICACAO_WEB.md)
 - [Integração do modelo com a webcam](docs/PLANO_INTEGRACAO_WEB_8_CLASSES.md)
 - [Experimento revertido de filtro de cenas paradas](docs/PLANO_REJEICAO_SEM_SINAL.md)

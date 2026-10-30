@@ -1,0 +1,8 @@
+_base_: "transformer_mixed25_full.yaml"
+
+# Piloto de 26 classes com negativos fracos retirados das bordas.
+# Não ativar no backend. Segmentos de 32 quadros são remostrados para 48.
+training:
+  epochs: 60
+  patience: 12
+  class_weight_method: sqrt_inverse

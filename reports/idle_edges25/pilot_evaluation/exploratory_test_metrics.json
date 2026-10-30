@@ -1,0 +1,18 @@
+{
+  "status": "exploratory test; old positive test previously inspected; weak negatives",
+  "checkpoint_sha256": "74b0545eddefebf92a26bcc239373f15c29fc42108bbdcc8ded663d3faa16394",
+  "candidate_csv_sha256": "c0be51ffa0f9d4a9b96f13ca89f9c5ae829f24cc69c2f0421cb6a6b28cb5688e",
+  "positive_samples": 85,
+  "negative_candidates": 21,
+  "negative_window_lengths": [
+    32
+  ],
+  "fusion_positive_correct": 56,
+  "cascade_positive_correct": 55,
+  "gate_false_rejections": 5,
+  "gate_negative_rejections": 20,
+  "negative_signers": [
+    "minds:Sinalizador12"
+  ],
+  "limitations": "Same-video boundary snippets are not independent negatives; 32-frame windows are resampled to 48."
+}

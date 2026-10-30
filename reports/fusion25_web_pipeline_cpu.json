@@ -1,0 +1,20 @@
+{
+  "video": "data\\raw\\minds_libras\\08BanheiroSinalizador11-1.mp4",
+  "device": "cpu",
+  "frames": 60,
+  "scope": "recorded 640x480 JPEG encode/decode + MediaPipe + backend fusion; excludes browser/network",
+  "frame_p50_ms": 110.46815000008792,
+  "frame_p95_ms": 117.67387003637847,
+  "prediction_calls": 2,
+  "prediction_p50_ms": 7.581050012959167,
+  "predictions": [
+    {
+      "status": "recognized",
+      "sign": "Banheiro"
+    },
+    {
+      "status": "recognized",
+      "sign": "Banheiro"
+    }
+  ]
+}

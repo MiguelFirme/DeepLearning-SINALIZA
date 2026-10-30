@@ -70,7 +70,7 @@ class LandmarkExtractor:
     def __enter__(self):
         self._holistic = mp.solutions.holistic.Holistic(
             static_image_mode=self.config.static_image_mode,
-            model_complexity=2,
+            model_complexity=1,
             min_detection_confidence=self.config.min_detection_confidence,
             min_tracking_confidence=self.config.min_tracking_confidence,
         )

@@ -1,0 +1,4 @@
+_base_: "transformer_mixed25_full.yaml"
+
+# A 26ª classe (__nenhum_sinal__) exige vídeos negativos reais e revisados.
+# Execute prepare_rejection_dataset.py antes de treinar.

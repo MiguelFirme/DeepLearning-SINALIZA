@@ -7,6 +7,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from backend.main import app
+from backend.config import settings
 from backend.services.prediction import prediction_service
 from backend.services.video_stream import VideoStreamSession
 from ml.features.landmarks import LandmarkExtractor
@@ -17,6 +18,7 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
     # inferência sem depender da detecção variável do MediaPipe numa imagem vazia.
     monkeypatch.setattr(LandmarkExtractor, "__enter__", lambda self: self)
     monkeypatch.setattr(LandmarkExtractor, "__exit__", lambda self, *args: None)
+    monkeypatch.setattr(settings, "perf_logging", True)
 
     def fake_extract(self, frame):
         assert frame.shape == (64, 64, 3)
@@ -41,10 +43,18 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
             assert VideoStreamSession(prediction_service).stride == 12
             for _ in range(48):
                 ws.send_bytes(encoded.tobytes())
-            for _ in range(48):
+            for index in range(1, 49):
                 ack = ws.receive_json()
                 assert ack["type"] == "frame_ack"
+                assert ack["data"]["frame_id"] == index
                 assert ack["data"]["frame_processing_ms"] > 0
+                profile = ack["data"]["profile"]
+                assert profile["decode_ms"] >= 0
+                assert profile["mediapipe_ms"] >= 0
+                assert profile["prepare_ms"] >= 0
+                assert profile["inference_ms"] >= 0
+                assert profile["window_frames"] == index
+                assert profile["prediction_ran"] is (index == 48)
                 overlay = ack["data"]["overlay"]
                 assert len(overlay["landmarks"]) == 346
                 assert overlay["mask"] == [False, False, True, True]

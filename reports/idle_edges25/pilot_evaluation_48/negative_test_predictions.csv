@@ -1,0 +1,7 @@
+source_path,signer,gate_reject,gate_reject_probability
+../minds_libras_all20/03AmareloSinalizador12-3.npz,minds:Sinalizador12,True,0.9181991815567017
+../minds_libras_all20/07BancoSinalizador12-2.npz,minds:Sinalizador12,True,0.5856167078018188
+../minds_libras_all20/08BanheiroSinalizador12-1.npz,minds:Sinalizador12,True,0.8892282247543335
+../minds_libras_all20/10CincoSinalizador12-1.npz,minds:Sinalizador12,True,0.6645753979682922
+../minds_libras_all20/14FilhoSinalizador12-2.npz,minds:Sinalizador12,True,0.7376300096511841
+../minds_libras_all20/19VacinaSinalizador12-3.npz,minds:Sinalizador12,True,0.748269259929657

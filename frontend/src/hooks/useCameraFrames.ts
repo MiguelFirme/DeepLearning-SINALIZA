@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { perfLog, recordCameraFps } from "../utils/perfLogging";
 
 interface Options {
   width?: number;
   height?: number;
-  onFrame?: (jpeg: Blob) => void;
+  onFrame?: (jpeg: Blob, capturedAt: number, captureEncodeMs: number) => void;
+  canSendFrame?: () => boolean;
 }
 
 /** Captura JPEGs da webcam. O MediaPipe roda no backend, como no treinamento. */
-export function useCameraFrames({ width = 640, height = 480, onFrame }: Options) {
+export function useCameraFrames({ width = 640, height = 480, onFrame, canSendFrame }: Options) {
   const videoRef = useRef<HTMLVideoElement>(null!);
   const canvasRef = useRef<HTMLCanvasElement>(null!);
   const streamRef = useRef<MediaStream | null>(null);
@@ -15,7 +17,9 @@ export function useCameraFrames({ width = 640, height = 480, onFrame }: Options)
   const animationFrameIdRef = useRef<number>();
   const encodingRef = useRef(false);
   const onFrameRef = useRef(onFrame);
+  const canSendFrameRef = useRef(canSendFrame);
   onFrameRef.current = onFrame;
+  canSendFrameRef.current = canSendFrame;
 
   const [isRunning, setIsRunning] = useState(false);
   const [fps, setFps] = useState(0);
@@ -46,7 +50,7 @@ export function useCameraFrames({ width = 640, height = 480, onFrame }: Options)
       video: {
         width: { ideal: width },
         height: { ideal: height },
-        frameRate: { ideal: 30 },
+        frameRate: { ideal: 24 },
         ...(deviceId ? { deviceId: { exact: deviceId } } : {}),
       },
     });
@@ -79,17 +83,26 @@ export function useCameraFrames({ width = 640, height = 480, onFrame }: Options)
       frames += 1;
       const elapsed = now - fpsStarted;
       if (elapsed >= 1000) {
-        setFps(Math.round(frames * 1000 / elapsed));
+        const measuredFps = frames * 1000 / elapsed;
+        setFps(Math.round(measuredFps));
+        recordCameraFps(measuredFps);
+        perfLog("camera", {
+          fps: Number(measuredFps.toFixed(1)),
+          intervalo_medio_ms: Number((elapsed / frames).toFixed(1)),
+          fps_configurado: stream.getVideoTracks()[0]?.getSettings().frameRate ?? 0,
+        });
         frames = 0;
         fpsStarted = now;
       }
-      if (!ctx || video.readyState < 2 || encodingRef.current) return;
+      // Evita codificar JPEGs que ficariam esperando na fila do WebSocket.
+      if (!ctx || video.readyState < 2 || encodingRef.current || !canSendFrameRef.current?.()) return;
+      const capturedAt = performance.now();
       ctx.drawImage(video, 0, 0, width, height);
       encodingRef.current = true;
       capture.toBlob((blob) => {
         if (streamRef.current !== stream) return;
         encodingRef.current = false;
-        if (blob) onFrameRef.current?.(blob);
+        if (blob) onFrameRef.current?.(blob, capturedAt, performance.now() - capturedAt);
       }, "image/jpeg", 0.72);
     };
     if (typeof video.requestVideoFrameCallback === "function") {

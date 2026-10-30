@@ -1,0 +1,17 @@
+{
+  "split": "previously inspected test (exploratory)",
+  "samples": 85,
+  "selected_mode": "fusion",
+  "full": {
+    "correct": 48,
+    "accuracy": 0.5647058823529412,
+    "f1_macro": 0.43756115779645194,
+    "new_correct": 4
+  },
+  "frozen_rule": {
+    "correct": 56,
+    "accuracy": 0.6588235294117647,
+    "f1_macro": 0.47950776674306084,
+    "new_correct": 4
+  }
+}

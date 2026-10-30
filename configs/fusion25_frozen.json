@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "scope": "15 selected MINDS classes + 10 new classes",
+  "selection_split": "val",
+  "selection_samples": 85,
+  "validation_predictions_path": "experiments/fusion_mixed25/val_pose_face_predictions.csv",
+  "validation_predictions_sha256": "515607375d82c7907b95a8d4b0267a188c5a93d2c76986347610561590ec7b58",
+  "selected_mode": "fusion",
+  "selection_reason": "predeclared F1 +0.02, new-class and total nondegradation rule",
+  "pose_checkpoint": "Modelos salvos/transformer_mixed25_pose_face/best.pt",
+  "full_checkpoint": "Modelos salvos/transformer_mixed25_full/best.pt",
+  "pose_sha256": "c55ac171bc8d7e11b69ef0855cc9cb911c67f0f14677776e8944d4063a4aac2f",
+  "full_sha256": "d29d6110f1a8a91510383efe01b5beb067063f5418edb343d5a66ee27b7ced1a",
+  "label_map": "Modelos salvos/transformer_mixed25_full/data_split/label_map.json",
+  "label_map_sha256": "e65d5506176493836ecb10a05f52ae3d1f82cdbfec8a45f13bdf36e67f6a79dc",
+  "split_path": "data/processed/mixed_25/splits.json",
+  "split_sha256": "953a95a962458f03a439bc580e4726828d17a406e5f2b78fcdf95f8c62b4499e",
+  "data_manifest_path": "data/landmarks/mixed_25/manifest.json",
+  "data_manifest_sha256": "d6b91f0e38aa236af7fefda4c2045c542ec476bca0d36ece091f431eddafc4a5",
+  "target_frames": 48,
+  "temperatures": {
+    "pose_face": 1.0287345780239197,
+    "full": 0.7924465962305567
+  },
+  "fusion": {
+    "first": "pose_face",
+    "top_k": 5,
+    "pose_weight": 0.22
+  },
+  "validation": {
+    "raw_pose_face": {
+      "correct": 37,
+      "f1_macro": 0.2671817243643869,
+      "new_correct": 1,
+      "nll": 1.6693244682682769,
+      "ece_10bin": 0.18115983570323269
+    },
+    "raw_full": {
+      "correct": 46,
+      "f1_macro": 0.4217978100331042,
+      "new_correct": 4,
+      "nll": 1.6067446081997212,
+      "ece_10bin": 0.20774547124610232
+    },
+    "calibrated_pose_face": {
+      "correct": 37,
+      "f1_macro": 0.2671817243643869,
+      "new_correct": 1,
+      "nll": 1.6691648655939915,
+      "ece_10bin": 0.169505698882825
+    },
+    "calibrated_full": {
+      "correct": 46,
+      "f1_macro": 0.4217978100331042,
+      "new_correct": 4,
+      "nll": 1.586939955672183,
+      "ece_10bin": 0.2054167533626359
+    },
+    "fusion_pose_first": {
+      "correct": 50,
+      "f1_macro": 0.45179781003310415,
+      "new_correct": 4
+    },
+    "fusion_full_first": {
+      "correct": 48,
+      "f1_macro": 0.4430432312785254,
+      "new_correct": 4
+    }
+  },
+  "limitations": "Temperatures and weight fitted on the same 85 validation videos. Fused top-5 scores are not calibrated confidence probabilities. No reviewed negatives or unseen signers for rejection calibration."
+}

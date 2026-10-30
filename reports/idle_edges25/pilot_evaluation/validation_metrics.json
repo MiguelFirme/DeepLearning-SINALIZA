@@ -1,0 +1,17 @@
+{
+  "split": "validation only",
+  "status": "weak-label pilot, not deployment ready",
+  "positive_samples": 85,
+  "negative_samples": 11,
+  "baseline25_positive_correct": 46,
+  "pilot26_positive_correct": 29,
+  "pilot26_false_rejections": 1,
+  "pilot26_negative_recall_count": 11,
+  "baseline25_heuristic_reject_negative_count": 0,
+  "baseline25_heuristic_false_reject_positive_count": 32,
+  "frozen_fusion25_positive_correct": 50,
+  "cascade_positive_correct": 50,
+  "pilot_checkpoint_sha256": "74b0545eddefebf92a26bcc239373f15c29fc42108bbdcc8ded663d3faa16394",
+  "baseline_checkpoint_sha256": "d29d6110f1a8a91510383efe01b5beb067063f5418edb343d5a66ee27b7ced1a",
+  "limitations": "Negatives are 32-frame source clips resampled to 48, all MINDS signer11 in validation; no independently recorded negatives."
+}

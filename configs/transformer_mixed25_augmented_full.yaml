@@ -1,0 +1,17 @@
+_base_: "transformer_mixed25_full.yaml"
+
+# Ablação planejada: mesmas 25 classes/split/arquitetura do full original.
+# Usar somente após a revisão dos vídeos sinalizados pela auditoria.
+# As transformações são amostradas em __getitem__ somente no treino.
+augmentation:
+  enabled: true
+  prob: 1.0
+  gaussian_noise: {prob: 0.8, std: 0.004}
+  scale_jitter: {prob: 0.8, min_scale: 0.95, max_scale: 1.05}
+  rotation_jitter: {prob: 0.8, max_angle: 5.0}
+  translation_jitter: {prob: 0.0, max_offset: 0.0}
+  temporal_crop: {prob: 0.0, min_ratio: 1.0}
+  speed_warp: {prob: 0.0, min_rate: 1.0, max_rate: 1.0}
+  frame_drop: {prob: 0.0, max_drop_ratio: 0.0}
+  landmark_mask: {prob: 0.0, mask_prob: 0.0}
+  temporal_shift: {prob: 0.0, max_shift: 0}

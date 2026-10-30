@@ -7,6 +7,7 @@ import time
 
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 
+from backend.config import settings
 from backend.services.prediction import prediction_service
 from backend.services.video_stream import VideoStreamSession
 
@@ -24,6 +25,13 @@ async def websocket_predict(ws: WebSocket):
 
     try:
         with VideoStreamSession(prediction_service) as session:
+            frame_id = 0
+            perf_started = time.perf_counter()
+            perf_count = 0
+            perf_calls = 0
+            perf_totals = {key: 0.0 for key in (
+                "decode_ms", "mediapipe_ms", "prepare_ms", "inference_ms", "ack_ms"
+            )}
             await ws.send_json({"type": "ready", "data": {
                 "num_classes": session.predictor.num_classes,
                 "target_frames": prediction_service.target_frames,
@@ -35,17 +43,64 @@ async def websocket_predict(ws: WebSocket):
                 if message["type"] == "websocket.disconnect":
                     break
                 if message.get("bytes") is not None:
+                    frame_id += 1
                     try:
                         frame_started = time.perf_counter()
-                        result = session.process_jpeg(message["bytes"])
+                        result = session.process_jpeg(message["bytes"], profile=settings.perf_logging)
                     except ValueError as exc:
                         await ws.send_json({"type": "error", "data": {"message": str(exc)}})
-                        await ws.send_json({"type": "frame_ack", "data": {}})
+                        await ws.send_json({"type": "frame_ack", "data": {"frame_id": frame_id}})
                         continue
-                    await ws.send_json({"type": "frame_ack", "data": {
+                    processed_ms = (time.perf_counter() - frame_started) * 1000
+                    ack_data = {
+                        "frame_id": frame_id,
                         "overlay": session.last_overlay,
-                        "frame_processing_ms": (time.perf_counter() - frame_started) * 1000,
-                    }})
+                        "frame_processing_ms": processed_ms,
+                    }
+                    if settings.perf_logging:
+                        ack_data["profile"] = session.last_profile
+                    ack_started = time.perf_counter()
+                    await ws.send_json({"type": "frame_ack", "data": ack_data})
+                    if settings.perf_logging:
+                        stages = session.last_profile or {}
+                        ack_ms = (time.perf_counter() - ack_started) * 1000
+                        perf_count += 1
+                        perf_calls += int(bool(stages.get("prediction_ran")))
+                        for key in ("decode_ms", "mediapipe_ms", "prepare_ms", "inference_ms"):
+                            perf_totals[key] += stages.get(key, 0.0)
+                        perf_totals["ack_ms"] += ack_ms
+                        if settings.perf_detail:
+                            logger.info(
+                                "[PERF DETALHE] quadro=%d jpeg_kb=%.1f decode=%.1fms mediapipe=%.1fms "
+                                "preparo=%.1fms modelo=%.1fms ack=%.1fms total=%.1fms",
+                                frame_id, len(message["bytes"]) / 1024,
+                                stages.get("decode_ms", 0), stages.get("mediapipe_ms", 0),
+                                stages.get("prepare_ms", 0), stages.get("inference_ms", 0),
+                                ack_ms, processed_ms,
+                            )
+                        elapsed = time.perf_counter() - perf_started
+                        if elapsed >= 3.0:
+                            largest = max((
+                                ("JPEG", perf_totals["decode_ms"]),
+                                ("MediaPipe", perf_totals["mediapipe_ms"]),
+                                ("preparo", perf_totals["prepare_ms"]),
+                                ("modelo", perf_totals["inference_ms"]),
+                                ("retorno", perf_totals["ack_ms"]),
+                            ), key=lambda item: item[1])[0]
+                            logger.info(
+                                "[PERF RESUMO] %.1fs | analise=%.1f FPS | JPEG=%.0fms/quadro | "
+                                "MediaPipe=%.0fms/quadro | modelo=%.0fms/predicao (%d vezes) | "
+                                "retorno=%.0fms/quadro | maior_etapa=%s",
+                                elapsed, perf_count / elapsed,
+                                perf_totals["decode_ms"] / perf_count,
+                                perf_totals["mediapipe_ms"] / perf_count,
+                                perf_totals["inference_ms"] / max(1, perf_calls), perf_calls,
+                                perf_totals["ack_ms"] / perf_count, largest,
+                            )
+                            perf_started = time.perf_counter()
+                            perf_count = 0
+                            perf_calls = 0
+                            perf_totals = {key: 0.0 for key in perf_totals}
                     if result is not None:
                         await ws.send_json({"type": "prediction", "data": {
                             "sign": result.get("sign"),
@@ -53,6 +108,8 @@ async def websocket_predict(ws: WebSocket):
                             "top_k": result.get("top_k", []),
                             "is_cooldown": result.get("is_cooldown", False),
                             "processing_time_ms": result.get("processing_time_ms", 0.0),
+                            "timings": result.get("timings", {}),
+                            "fusion_mode": result.get("fusion_mode"),
                             "status": result.get("status", "uncertain"),
                         }})
                     continue

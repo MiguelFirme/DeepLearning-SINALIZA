@@ -1,0 +1,37 @@
+{
+  "scope": "15 selected MINDS classes + 10 new recorded classes",
+  "total_videos": 670,
+  "flagged_videos": 168,
+  "flags": {
+    "active_hand_coverage_lt_50pct": 124,
+    "active_hand_out_of_frame": 50,
+    "possible_temporal_cut": 7,
+    "hand_near_frame_edge": 34
+  },
+  "by_split": {
+    "train": {
+      "videos": 500,
+      "flagged": 132,
+      "median_active_hand_coverage": 0.71875
+    },
+    "val": {
+      "videos": 85,
+      "flagged": 7,
+      "median_active_hand_coverage": 0.9180327868852459
+    },
+    "test": {
+      "videos": 85,
+      "flagged": 29,
+      "median_active_hand_coverage": 0.8596491228070176
+    }
+  },
+  "thresholds": {
+    "active_hand_coverage": 0.5,
+    "active_hand_in_frame": 0.8,
+    "wrist_jump_fraction": 0.1,
+    "edge_fraction": 0.3,
+    "pose_coverage": 0.8,
+    "blur_score": 20
+  },
+  "interpretation": "Flags require human video review; no sample was changed or excluded."
+}

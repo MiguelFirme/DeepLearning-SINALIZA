@@ -11,12 +11,15 @@ class Settings(BaseSettings):
 
     # Modelo
     model_path: str = "Modelos salvos/transformer_minds_8_classes_pose_face/best.pt"
+    fusion_manifest_path: str | None = None
     device: str = "cpu"
     confidence_threshold: float = 0.3
     top_k: int = 5
     smoothing_type: str = "ema"
     ema_alpha: float = 0.6
     temperature: float = 1.0
+    perf_logging: bool = False
+    perf_detail: bool = False
 
     # Sequência
     target_frames: int = 48
