@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "scope": "experimental 16 face points; same 25-class vocabulary",
+  "selection_split": "val",
+  "selection_samples": 85,
+  "validation_predictions_path": "experiments/fusion_mixed25_face16/val_pose_face_predictions.csv",
+  "validation_predictions_sha256": "d095b0864db9c26f27e3d04034661da73e2fafc811663ca3ccc0c7a08103fa54",
+  "selected_mode": "fusion",
+  "selection_reason": "fixed 40-point fusion rule for controlled ablation; no new tuning",
+  "pose_checkpoint": "Modelos salvos/transformer_mixed25_pose_face16/best.pt",
+  "full_checkpoint": "Modelos salvos/transformer_mixed25_full_face16/best.pt",
+  "pose_sha256": "a9161fe30d62c3b86a8665cd3195e1415fc7b79a02337c8d822ced1b00d9ee4d",
+  "full_sha256": "2cdbd6080930237ee0bb2b09cbf74255d2d70e04fb9fab679ac3ce6cd5a61eca",
+  "label_map": "Modelos salvos/transformer_mixed25_full_face16/data_split/label_map.json",
+  "label_map_sha256": "e65d5506176493836ecb10a05f52ae3d1f82cdbfec8a45f13bdf36e67f6a79dc",
+  "split_path": "data/processed/mixed_25/splits.json",
+  "split_sha256": "953a95a962458f03a439bc580e4726828d17a406e5f2b78fcdf95f8c62b4499e",
+  "data_manifest_path": "data/landmarks/mixed_25/manifest.json",
+  "data_manifest_sha256": "d6b91f0e38aa236af7fefda4c2045c542ec476bca0d36ece091f431eddafc4a5",
+  "target_frames": 48,
+  "temperatures": {
+    "pose_face": 1.0287345780239197,
+    "full": 0.7924465962305567
+  },
+  "fusion": {
+    "first": "pose_face",
+    "top_k": 5,
+    "pose_weight": 0.22
+  },
+  "limitations": "Experimental ablation; temperatures and weights inherited from the 40-point fusion. The 85 test videos were consulted in prior experiments. No unseen signer validation.",
+  "face_indices": [
+    46,
+    65,
+    276,
+    295,
+    33,
+    133,
+    160,
+    144,
+    362,
+    263,
+    387,
+    373,
+    13,
+    14,
+    78,
+    308
+  ]
+}

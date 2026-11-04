@@ -1,0 +1,4 @@
+_base_: "transformer_mixed25_pose_face.yaml"
+
+data:
+  feature_mode: full

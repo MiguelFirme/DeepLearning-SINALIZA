@@ -1,0 +1,46 @@
+_base_: "default.yaml"
+
+# Use com holdout por articulador: A1 treino, A2 validação, A3 teste.
+data:
+  num_workers: 0
+
+model:
+  type: bilstm
+  hidden_size: 64
+  num_layers: 1
+  projection_dim: 64
+  classifier_hidden: 64
+  dropout: 0.45
+  regularized: true
+
+training:
+  optimizer: adam
+  epochs: 120
+  batch_size: 16
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  scheduler: plateau
+  plateau_patience: 5
+  plateau_factor: 0.5
+  warmup_epochs: 0
+  early_stopping: true
+  patience: 15
+  monitor: val_loss
+  loss: ce_standard
+  label_smoothing: 0.0
+  class_weight_method: none
+
+# Transformações pequenas, feitas dentro de __getitem__ a cada leitura.
+# Nenhum augmentor é passado aos datasets de validação/teste.
+augmentation:
+  enabled: true
+  prob: 1.0
+  gaussian_noise: {prob: 0.7, std: 0.002}
+  scale_jitter: {prob: 0.7, min_scale: 0.98, max_scale: 1.02}
+  rotation_jitter: {prob: 0.7, max_angle: 2.0}
+  translation_jitter: {prob: 0.0, max_offset: 0.0}
+  temporal_crop: {prob: 0.0, min_ratio: 1.0}
+  speed_warp: {prob: 0.0, min_rate: 1.0, max_rate: 1.0}
+  frame_drop: {prob: 0.0, max_drop_ratio: 0.0}
+  landmark_mask: {prob: 0.0, mask_prob: 0.0}
+  temporal_shift: {prob: 0.0, max_shift: 0}

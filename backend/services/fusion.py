@@ -9,7 +9,9 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from ml.features.feature_modes import select_feature_mode
+from ml.features.feature_modes import (
+    FACE16_MEDIAPIPE_INDICES, mask_normalized_face16, select_feature_mode,
+)
 from ml.features.normalization import LandmarkNormalizer, NormalizationConfig
 from ml.features.sequence import SequenceConfig, SequenceProcessor
 from ml.inference.predictor import PredictorConfig, SignPredictor
@@ -28,7 +30,7 @@ def _load_predictor(path: Path, label_map: dict[str, int], device: str) -> tuple
     if checkpoint_labels != label_map or artifact.get("num_classes") != 25:
         raise ValueError(f"Checkpoint com vocabulário diferente: {path}")
     mode = artifact.get("feature_mode")
-    if mode not in {"pose_face", "full"}:
+    if mode not in {"pose_face", "full", "pose_face16", "full_face16"}:
         raise ValueError(f"Feature mode inválido: {path}")
     state = artifact["model_state_dict"]
     input_dim = int(state["input_norm.weight"].shape[0])
@@ -52,6 +54,8 @@ class FusionBundle:
         spec = self.spec
         if spec.get("schema_version") != 1 or spec.get("selected_mode") not in {"fusion", "single_full"}:
             raise ValueError("Manifesto de fusão inválido")
+        if "face_indices" in spec and tuple(spec["face_indices"]) != FACE16_MEDIAPIPE_INDICES:
+            raise ValueError("Seleção facial diferente do protocolo congelado")
         self.label_path = Path(spec["label_map"])
         paths = {"pose_face": Path(spec["pose_checkpoint"]), "full": Path(spec["full_checkpoint"])}
         for name, file in [("label_map", self.label_path), *paths.items()]:
@@ -70,11 +74,15 @@ class FusionBundle:
             raise ValueError("Label map fora do escopo de 25 classes")
         self.labels = {int(index): name for name, index in label_map.items()}
         self.models = {}
+        self.feature_modes = {}
         for name, file in paths.items():
             predictor, mode, frames = _load_predictor(file, label_map, device)
-            if mode != name or frames != spec["target_frames"]:
+            expected_modes = {"pose_face": {"pose_face", "pose_face16"},
+                              "full": {"full", "full_face16"}}
+            if mode not in expected_modes[name] or frames != spec["target_frames"]:
                 raise ValueError(f"Checkpoint incompatível com protocolo: {file}")
             self.models[name] = predictor.model
+            self.feature_modes[name] = mode
         self.device = device
         self.target_frames = int(spec["target_frames"])
         self.normalizer = LandmarkNormalizer(346, NormalizationConfig())
@@ -86,9 +94,10 @@ class FusionBundle:
         probabilities, timings = {}, {}
         for name in ("pose_face", "full"):
             started = time.perf_counter()
-            selected, selected_mask = select_feature_mode(landmarks, mask, name)
+            selected, selected_mask = select_feature_mode(landmarks, mask, self.feature_modes[name])
             part_mask = selected_mask if selected_mask is not None and selected_mask.ndim == 2 else None
             normalized = self.normalizer.normalize_sequence(selected, part_mask)
+            normalized = mask_normalized_face16(normalized, self.feature_modes[name])
             sequence, seq_mask = self.sequence.process(normalized)
             timings[f"{name}_preprocess_ms"] = (time.perf_counter() - started) * 1000
             started = time.perf_counter()

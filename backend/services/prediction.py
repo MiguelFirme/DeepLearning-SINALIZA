@@ -10,7 +10,7 @@ import numpy as np
 from ml.inference.predictor import SignPredictor, PredictorConfig
 from ml.features.normalization import LandmarkNormalizer, NormalizationConfig
 from ml.features.sequence import SequenceProcessor, SequenceConfig
-from ml.features.feature_modes import FEATURE_MODES, select_feature_mode
+from ml.features.feature_modes import FEATURE_MODES, select_feature_mode, mask_normalized_face16
 from backend.config import settings
 from backend.services.fusion import FusionBundle, FusionSessionPredictor
 
@@ -144,6 +144,7 @@ class PredictionService:
             # máscara de detecção por parte (T, 4), quando ela estiver presente.
             part_mask = mask if mask is not None and mask.ndim == 2 and mask.shape[1] == 4 else None
             landmarks = self._normalizer.normalize_sequence(landmarks, part_mask)
+            landmarks = mask_normalized_face16(landmarks, self.feature_mode)
 
         # Processar sequência
         if self._seq_processor:
@@ -162,7 +163,12 @@ class PredictionService:
     def get_info(self) -> dict:
         if self._fusion is not None:
             return {"status": "loaded", "num_classes": 25,
+                    "type": "transformer_fusion", "device": self._fusion.device,
+                    "trainable": sum(p.numel() for model in self._fusion.models.values()
+                                     for p in model.parameters() if p.requires_grad),
+                    "smoothing": settings.smoothing_type,
                     "feature_mode": self.feature_mode,
+                    "feature_modes": self._fusion.feature_modes,
                     "fusion_manifest": settings.fusion_manifest_path}
         if self._predictor:
             return self._predictor.get_model_info()

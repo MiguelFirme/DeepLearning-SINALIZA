@@ -1,0 +1,14 @@
+_base_: "bilstm_minds_pose_face.yaml"
+
+# Comparacao controlada com o BiLSTM pose_face: mesmos landmarks, splits,
+# augmentation, loss, optimizer e criterio de early stopping.
+model:
+  type: transformer
+  params:
+    d_model: 64
+    nhead: 4
+    num_layers: 2
+    dim_feedforward: 128
+    dropout: 0.45
+    max_seq_len: 48
+    classifier_hidden: 64

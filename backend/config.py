@@ -11,7 +11,7 @@ class Settings(BaseSettings):
 
     # Modelo
     model_path: str = "Modelos salvos/transformer_minds_8_classes_pose_face/best.pt"
-    fusion_manifest_path: str | None = None
+    fusion_manifest_path: str | None = "configs/fusion25_frozen.json"
     device: str = "cpu"
     confidence_threshold: float = 0.3
     top_k: int = 5

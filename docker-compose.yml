@@ -16,7 +16,7 @@ services:
       - SINALIZA_DEBUG=false
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test: ["CMD", "python", "-c", "import json, urllib.request; data=json.load(urllib.request.urlopen('http://localhost:8000/api/health', timeout=5)); assert data['model_loaded'] and data['num_classes'] == 25"]
       interval: 30s
       timeout: 10s
       retries: 3

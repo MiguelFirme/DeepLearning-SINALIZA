@@ -79,7 +79,7 @@ class VideoStreamSession:
 
         part_mask = np.stack(self.masks)
         # Sem tronco e face detectáveis, o classificador sempre escolheria uma
-        # das oito classes, mesmo com a câmera vazia.
+        # das classes conhecidas, mesmo com a câmera vazia.
         if np.mean(part_mask[:, 2] | part_mask[:, 3]) < 0.4:
             self.predictor.reset_state()
             if profile and self.last_profile is not None:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compara dois checkpoints de 15 classes e sua fusão sequencial offline."""
+"""Compara dois checkpoints com o mesmo vocabulário e sua fusão sequencial offline."""
 from __future__ import annotations
 
 import argparse
@@ -64,7 +64,8 @@ def metrics(scores: np.ndarray, truth: np.ndarray, names: dict[int, str]) -> dic
 
 
 def infer(checkpoint_path: Path, data_dir: Path, label_map: dict[str, int],
-          indices: list[int], device: torch.device, expected_mode: str):
+          indices: list[int], device: torch.device, expected_mode: str,
+          temperature: float = 1.0):
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     mode = checkpoint.get("feature_mode", "full")
     if mode != expected_mode:
@@ -87,7 +88,7 @@ def infer(checkpoint_path: Path, data_dir: Path, label_map: dict[str, int],
             logits = model(batch["sequence"].to(device), batch["mask"].to(device))
             paths.extend(batch["path"])
             labels.extend(batch["label"].tolist())
-            probabilities.append(logits.softmax(dim=1).cpu().numpy())
+            probabilities.append((logits / temperature).softmax(dim=1).cpu().numpy())
     return paths, np.asarray(labels, dtype=np.int64), np.concatenate(probabilities, axis=0)
 
 
@@ -102,8 +103,16 @@ def main() -> None:
     parser.add_argument("--first", choices=("pose_face", "full"), default="pose_face")
     parser.add_argument("--top-k", type=int, nargs="+", default=[3, 5])
     parser.add_argument("--pose-weight", type=float, default=0.65)
+    parser.add_argument("--pose-feature-mode", choices=("pose_face", "pose_face16"),
+                        default="pose_face")
+    parser.add_argument("--full-feature-mode", choices=("full", "full_face16"),
+                        default="full")
+    parser.add_argument("--pose-temperature", type=float, default=1.0)
+    parser.add_argument("--full-temperature", type=float, default=1.0)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
+    if args.pose_temperature <= 0 or args.full_temperature <= 0:
+        raise ValueError("Temperaturas devem ser positivas")
 
     for name in ("label_map.json", "splits.json", "manifest.json"):
         pose_obj = json.loads((args.pose_split_dir / name).read_text(encoding="utf-8"))
@@ -125,15 +134,17 @@ def main() -> None:
         raise ValueError("O split possui duplicações ou vazamento com outro split")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     pose_paths, pose_truth, pose = infer(args.pose_checkpoint, args.data_dir, label_map, indices,
-                                        device, "pose_face")
+                                        device, args.pose_feature_mode, args.pose_temperature)
     full_paths, full_truth, full = infer(args.full_checkpoint, args.data_dir, label_map, indices,
-                                        device, "full")
+                                        device, args.full_feature_mode, args.full_temperature)
     if pose_paths != full_paths or not np.array_equal(pose_truth, full_truth):
         raise ValueError("Predições dos modelos não estão alinhadas por vídeo e classe")
     inverse = {value: key for key, value in label_map.items()}
     report = {
         "split": args.split, "first": args.first, "pose_weight": args.pose_weight,
         "full_weight": 1 - args.pose_weight, "device": str(device),
+        "feature_modes": {"pose_face": args.pose_feature_mode, "full": args.full_feature_mode},
+        "temperatures": {"pose_face": args.pose_temperature, "full": args.full_temperature},
         "pose_checkpoint": str(args.pose_checkpoint),
         "pose_sha256": sha256(args.pose_checkpoint),
         "full_checkpoint": str(args.full_checkpoint),
@@ -143,6 +154,9 @@ def main() -> None:
         "full": metrics(full, pose_truth, inverse), "fusion": {},
     }
     rows = []
+    new_mask = np.asarray([path.startswith("../novas_") for path in pose_paths])
+    report["pose_face"]["new_correct"] = int(((pose.argmax(axis=1) == pose_truth) & new_mask).sum())
+    report["full"]["new_correct"] = int(((full.argmax(axis=1) == pose_truth) & new_mask).sum())
     for top_k in args.top_k:
         scores, candidates = fuse_probabilities(pose, full, first=args.first,
                                                  top_k=top_k, pose_weight=args.pose_weight)
@@ -150,6 +164,7 @@ def main() -> None:
         coverage = int(np.any(candidates == pose_truth[:, None], axis=1).sum())
         report["fusion"][str(top_k)] = {
             **metrics(scores, pose_truth, inverse),
+            "new_correct": int(((predicted == pose_truth) & new_mask).sum()),
             "candidate_coverage_count": coverage,
             "candidate_coverage": coverage / len(pose_truth),
         }

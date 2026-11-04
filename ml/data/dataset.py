@@ -18,7 +18,7 @@ from torch.utils.data import Dataset, get_worker_info
 
 from ml.features.normalization import LandmarkNormalizer, NormalizationConfig
 from ml.features.sequence import SequenceProcessor, SequenceConfig
-from ml.features.feature_modes import FEATURE_MODES, select_feature_mode
+from ml.features.feature_modes import FEATURE_MODES, select_feature_mode, mask_normalized_face16
 
 logger = logging.getLogger(__name__)
 
@@ -137,12 +137,15 @@ class LibrasDataset(Dataset):
                 )
                 self._augmentation_worker = worker_epoch
             landmarks, part_mask = self.augmentor.augment_with_mask(landmarks, part_mask)
+            if self.feature_mode in {"pose_face16", "full_face16"}:
+                landmarks, part_mask = select_feature_mode(landmarks, part_mask, self.feature_mode)
 
         # Normalizar
         if self.normalize:
             if self._normalizer is None:
                 self._normalizer = LandmarkNormalizer(landmarks.shape[1], self._norm_config)
             landmarks = self._normalizer.normalize_sequence(landmarks, part_mask)
+            landmarks = mask_normalized_face16(landmarks, self.feature_mode)
 
         # Processar sequência temporal
         seq, mask = self.seq_processor.process(landmarks)

@@ -36,7 +36,8 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
         with client.websocket_connect("/api/ws/predict") as ws:
             ready = ws.receive_json()
             assert ready["type"] == "ready"
-            assert ready["data"]["num_classes"] == 8
+            assert ready["data"]["num_classes"] == 25
+            assert ready["data"]["feature_mode"] == "fusion"
             assert ready["data"]["target_frames"] == 48
             assert ready["data"]["overlay"] is True
             # O primeiro resultado conserva 48 quadros; os seguintes usam 12.
@@ -63,3 +64,4 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
             assert reply["type"] == "prediction"
             assert reply["data"]["status"] in {"recognized", "uncertain"}
             assert reply["data"]["processing_time_ms"] > 0
+            assert reply["data"]["fusion_mode"] == "fusion"
