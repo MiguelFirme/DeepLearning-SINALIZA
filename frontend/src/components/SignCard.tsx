@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { DictionaryEntry } from "../services/api";
+import VideoLightbox from "./VideoLightbox";
 import styles from "./SignCard.module.css";
 
 /**
@@ -18,6 +19,7 @@ interface Props {
 export default function SignCard({ entry }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const hasVideo = Boolean(entry.example_video_url) && !failed;
   const hasImage = Boolean(entry.image_url);
@@ -51,11 +53,9 @@ export default function SignCard({ entry }: Props) {
     video.pause();
     video.currentTime = 0;
   };
-  const toggle = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) play();
-    else stop();
+  const expand = () => {
+    stop();
+    setExpanded(true);
   };
 
   return (
@@ -64,7 +64,7 @@ export default function SignCard({ entry }: Props) {
         className={styles.thumb}
         onMouseEnter={hoverMode && canHover ? play : undefined}
         onMouseLeave={hoverMode && canHover ? stop : undefined}
-        onClick={hoverMode && !canHover && hasVideo ? toggle : undefined}
+        onClick={hasVideo ? expand : undefined}
       >
         {hasVideo ? (
           <video
@@ -97,6 +97,15 @@ export default function SignCard({ entry }: Props) {
           <span className={styles.category}>#{entry.category}</span>
         )}
       </div>
+
+      {expanded && entry.example_video_url && (
+        <VideoLightbox
+          src={entry.example_video_url}
+          poster={entry.poster_url ?? undefined}
+          title={entry.name}
+          onClose={() => setExpanded(false)}
+        />
+      )}
     </div>
   );
 }
