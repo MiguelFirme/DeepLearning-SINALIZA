@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
-import { Search } from "lucide-react";
+import { Mic, MicOff, Search } from "lucide-react";
 import api, { type DictionaryEntry } from "../services/api";
 import SignCard from "../components/SignCard";
+import { useSpeechRecognition } from "../hooks/useSpeechRecognition";
 import styles from "./DictionaryPage.module.css";
 
 const PAGE_SIZE = 12;
@@ -35,6 +36,11 @@ export default function DictionaryPage() {
   const [total, setTotal] = useState(0);
   const [skip, setSkip] = useState(0);
   const [loading, setLoading] = useState(false);
+
+  /* Busca por voz: o texto reconhecido vira o termo de busca */
+  const voice = useSpeechRecognition({
+    onResult: (text) => setSearchTerm(text),
+  });
 
   const fetchEntries = useCallback(
     async (reset = false) => {
@@ -96,12 +102,32 @@ export default function DictionaryPage() {
         <Search size={18} className={styles.searchIcon} />
         <input
           type="text"
-          placeholder="Buscar um sinal..."
-          className={styles.searchInput}
-          value={searchTerm}
+          placeholder={voice.listening ? "Ouvindo... fale o sinal" : "Buscar um sinal..."}
+          className={`${styles.searchInput} ${voice.supported ? styles.withMic : ""}`}
+          value={voice.listening && voice.interim ? voice.interim : searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+        {voice.supported && (
+          <button
+            type="button"
+            className={`${styles.micBtn} ${voice.listening ? styles.micActive : ""}`}
+            onClick={voice.toggle}
+            aria-label={voice.listening ? "Parar de ouvir" : "Buscar por voz"}
+            aria-pressed={voice.listening}
+            title={voice.listening ? "Parar de ouvir" : "Buscar por voz"}
+          >
+            {voice.listening ? <MicOff size={18} /> : <Mic size={18} />}
+          </button>
+        )}
       </div>
+      {voice.error && (
+        <p className={styles.voiceError} role="alert">
+          {voice.error}
+        </p>
+      )}
+      <span className={styles.srOnly} aria-live="polite">
+        {voice.listening ? "Ouvindo" : ""}
+      </span>
 
       <div className={styles.grid}>
         {/* Sidebar — Categorias */}
