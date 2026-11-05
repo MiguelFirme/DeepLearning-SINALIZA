@@ -157,6 +157,7 @@ Há configuração de Docker Compose no repositório, mas a execução em contê
 - [Experimento Conv1D + Transformer + atenção nas 25 classes](docs/RELATORIO_CONV_TRANSFORMER_ATENCAO_MIXED25_2026-11-04.md)
 - [Piloto de rejeição com trechos de repouso dos vídeos](docs/RELATORIO_NEGATIVOS_BORDAS_25_CLASSES_2026-10-27.md)
 - [Como rodar a aplicação web](docs/COMO_RODAR_APLICACAO_WEB.md)
+- [Roteiro de teste prático da interface com 25 classes](docs/ROTEIRO_TESTE_PRATICO_INTERFACE_25_CLASSES_2026-11-04.md)
 - [Integração do modelo com a webcam](docs/PLANO_INTEGRACAO_WEB_8_CLASSES.md)
 - [Experimento revertido de filtro de cenas paradas](docs/PLANO_REJEICAO_SEM_SINAL.md)
 - [Modelos arquivados e reprodução](Modelos%20salvos/README.md)
