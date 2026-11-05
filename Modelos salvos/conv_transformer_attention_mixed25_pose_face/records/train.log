@@ -1,0 +1,50 @@
+2026-11-04 21:06:53,269 [INFO] Log persistente: logs\experiments\conv_transformer_attention_mixed25_pose_face_seed42\train.log
+2026-11-04 21:06:53,269 [INFO] Device: cuda
+2026-11-04 21:06:54,617 [INFO] Classes: 25
+2026-11-04 21:06:54,621 [INFO] Train: 500 | Val: 85
+2026-11-04 21:06:54,635 [INFO] Modelo: conv_transformer_attention | input_dim=697 | params=136,907
+2026-11-04 21:06:54,651 [INFO] Loss=ce_standard | class_weight_method=sqrt_inverse | smoothing=0.0
+2026-11-04 21:06:56,832 [INFO] Iniciando treinamento: 120 épocas no dispositivo cuda
+2026-11-04 21:06:56,832 [INFO] Modelo: ConvTransformerAttentionModel | Params: 136,907
+2026-11-04 21:07:01,423 [INFO] Epoch 1/120 | train_loss=3.2756 | train_top1=0.0600 | val_loss=3.1336 | val_top1=0.0706 | val_f1=0.0337 | lr=3.00e-04 ★
+2026-11-04 21:07:04,904 [INFO] Epoch 2/120 | train_loss=3.1440 | train_top1=0.1040 | val_loss=3.0378 | val_top1=0.1294 | val_f1=0.0333 | lr=3.00e-04 ★
+2026-11-04 21:07:08,453 [INFO] Epoch 3/120 | train_loss=3.0249 | train_top1=0.1440 | val_loss=2.8120 | val_top1=0.1647 | val_f1=0.0859 | lr=3.00e-04 ★
+2026-11-04 21:07:12,031 [INFO] Epoch 4/120 | train_loss=2.8789 | train_top1=0.1640 | val_loss=2.7637 | val_top1=0.1529 | val_f1=0.0477 | lr=3.00e-04 ★
+2026-11-04 21:07:15,621 [INFO] Epoch 5/120 | train_loss=2.8002 | train_top1=0.1940 | val_loss=2.7882 | val_top1=0.2706 | val_f1=0.1197 | lr=3.00e-04
+2026-11-04 21:07:19,183 [INFO] Epoch 6/120 | train_loss=2.7351 | train_top1=0.2120 | val_loss=2.5698 | val_top1=0.3765 | val_f1=0.1822 | lr=3.00e-04 ★
+2026-11-04 21:07:22,786 [INFO] Epoch 7/120 | train_loss=2.5793 | train_top1=0.2560 | val_loss=2.5165 | val_top1=0.3882 | val_f1=0.2456 | lr=3.00e-04 ★
+2026-11-04 21:07:26,301 [INFO] Epoch 8/120 | train_loss=2.5148 | train_top1=0.2720 | val_loss=2.5734 | val_top1=0.2118 | val_f1=0.0835 | lr=3.00e-04
+2026-11-04 21:07:29,855 [INFO] Epoch 9/120 | train_loss=2.4114 | train_top1=0.3000 | val_loss=2.4781 | val_top1=0.3647 | val_f1=0.2131 | lr=3.00e-04 ★
+2026-11-04 21:07:33,539 [INFO] Epoch 10/120 | train_loss=2.3349 | train_top1=0.3500 | val_loss=2.3409 | val_top1=0.3412 | val_f1=0.2016 | lr=3.00e-04 ★
+2026-11-04 21:07:37,174 [INFO] Epoch 11/120 | train_loss=2.2540 | train_top1=0.3520 | val_loss=2.3833 | val_top1=0.2941 | val_f1=0.1640 | lr=3.00e-04
+2026-11-04 21:07:40,893 [INFO] Epoch 12/120 | train_loss=2.1864 | train_top1=0.3860 | val_loss=2.1471 | val_top1=0.4235 | val_f1=0.2353 | lr=3.00e-04 ★
+2026-11-04 21:07:44,739 [INFO] Epoch 13/120 | train_loss=2.1298 | train_top1=0.4060 | val_loss=2.4973 | val_top1=0.2941 | val_f1=0.1739 | lr=3.00e-04
+2026-11-04 21:07:48,741 [INFO] Epoch 14/120 | train_loss=2.0929 | train_top1=0.3900 | val_loss=2.3472 | val_top1=0.2588 | val_f1=0.1453 | lr=3.00e-04
+2026-11-04 21:07:52,682 [INFO] Epoch 15/120 | train_loss=2.0163 | train_top1=0.4240 | val_loss=2.3345 | val_top1=0.3176 | val_f1=0.1953 | lr=3.00e-04
+2026-11-04 21:07:56,543 [INFO] Epoch 16/120 | train_loss=1.9601 | train_top1=0.4200 | val_loss=1.9376 | val_top1=0.4941 | val_f1=0.3213 | lr=3.00e-04 ★
+2026-11-04 21:08:00,416 [INFO] Epoch 17/120 | train_loss=1.9258 | train_top1=0.4100 | val_loss=2.3460 | val_top1=0.3176 | val_f1=0.1672 | lr=3.00e-04
+2026-11-04 21:08:04,950 [INFO] Epoch 18/120 | train_loss=1.8991 | train_top1=0.4580 | val_loss=2.2510 | val_top1=0.3059 | val_f1=0.1986 | lr=3.00e-04
+2026-11-04 21:08:09,287 [INFO] Epoch 19/120 | train_loss=1.8153 | train_top1=0.4740 | val_loss=2.2375 | val_top1=0.3176 | val_f1=0.1852 | lr=3.00e-04
+2026-11-04 21:08:13,146 [INFO] Epoch 20/120 | train_loss=1.7957 | train_top1=0.4580 | val_loss=2.2116 | val_top1=0.3765 | val_f1=0.2233 | lr=3.00e-04
+2026-11-04 21:08:16,684 [INFO] Epoch 21/120 | train_loss=1.7618 | train_top1=0.4740 | val_loss=2.2156 | val_top1=0.3176 | val_f1=0.1927 | lr=3.00e-04
+2026-11-04 21:08:20,479 [INFO] Epoch 22/120 | train_loss=1.6778 | train_top1=0.4860 | val_loss=2.1098 | val_top1=0.3294 | val_f1=0.2022 | lr=3.00e-04
+2026-11-04 21:08:24,264 [INFO] Epoch 23/120 | train_loss=1.6674 | train_top1=0.5140 | val_loss=2.0505 | val_top1=0.4118 | val_f1=0.2987 | lr=1.50e-04
+2026-11-04 21:08:28,164 [INFO] Epoch 24/120 | train_loss=1.6427 | train_top1=0.5100 | val_loss=2.1840 | val_top1=0.3882 | val_f1=0.2505 | lr=1.50e-04
+2026-11-04 21:08:32,114 [INFO] Epoch 25/120 | train_loss=1.5851 | train_top1=0.5240 | val_loss=2.0723 | val_top1=0.4353 | val_f1=0.2673 | lr=1.50e-04
+2026-11-04 21:08:36,375 [INFO] Epoch 26/120 | train_loss=1.6217 | train_top1=0.4860 | val_loss=2.1089 | val_top1=0.3412 | val_f1=0.2355 | lr=1.50e-04
+2026-11-04 21:08:40,451 [INFO] Epoch 27/120 | train_loss=1.5477 | train_top1=0.5700 | val_loss=2.0126 | val_top1=0.3765 | val_f1=0.2464 | lr=1.50e-04
+2026-11-04 21:08:44,550 [INFO] Epoch 28/120 | train_loss=1.5722 | train_top1=0.5160 | val_loss=1.9947 | val_top1=0.3882 | val_f1=0.2591 | lr=1.50e-04
+2026-11-04 21:08:48,320 [INFO] Epoch 29/120 | train_loss=1.5444 | train_top1=0.5300 | val_loss=2.0147 | val_top1=0.3882 | val_f1=0.2546 | lr=7.50e-05
+2026-11-04 21:08:52,061 [INFO] Epoch 30/120 | train_loss=1.5172 | train_top1=0.5180 | val_loss=2.0221 | val_top1=0.3882 | val_f1=0.2542 | lr=7.50e-05
+2026-11-04 21:08:55,932 [INFO] Epoch 31/120 | train_loss=1.4745 | train_top1=0.5880 | val_loss=2.0519 | val_top1=0.4235 | val_f1=0.2918 | lr=7.50e-05
+2026-11-04 21:08:55,932 [INFO] Early stopping! Sem melhora por 15 épocas.
+2026-11-04 21:08:55,933 [INFO] Early stopping na época 31.
+2026-11-04 21:08:55,937 [INFO] Histórico salvo em experiments\conv_transformer_attention_mixed25_pose_face_seed42\history.csv e experiments\conv_transformer_attention_mixed25_pose_face_seed42\history.json
+2026-11-04 21:08:55,937 [INFO] Treinamento concluído em 119s. Melhor época: 16
+2026-11-04 21:08:55,956 [INFO] Resultado: {
+  "best_epoch": 16,
+  "best_metric": 1.9376408829408533,
+  "total_epochs": 31,
+  "elapsed_seconds": 119.09784770011902,
+  "save_dir": "experiments\\conv_transformer_attention_mixed25_pose_face_seed42"
+}

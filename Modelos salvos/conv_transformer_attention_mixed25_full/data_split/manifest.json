@@ -1,0 +1,5962 @@
+[
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador01-1.npz",
+    "video_id": "minds:01AcontecerSinalizador01-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador01-2.npz",
+    "video_id": "minds:01AcontecerSinalizador01-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador01-3.npz",
+    "video_id": "minds:01AcontecerSinalizador01-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador01-4.npz",
+    "video_id": "minds:01AcontecerSinalizador01-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador01-5.npz",
+    "video_id": "minds:01AcontecerSinalizador01-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador02-1.npz",
+    "video_id": "minds:01AcontecerSinalizador02-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador02-2.npz",
+    "video_id": "minds:01AcontecerSinalizador02-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador02-3.npz",
+    "video_id": "minds:01AcontecerSinalizador02-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador02-4.npz",
+    "video_id": "minds:01AcontecerSinalizador02-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador02-5.npz",
+    "video_id": "minds:01AcontecerSinalizador02-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador05-1.npz",
+    "video_id": "minds:01AcontecerSinalizador05-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador05-2.npz",
+    "video_id": "minds:01AcontecerSinalizador05-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador05-3.npz",
+    "video_id": "minds:01AcontecerSinalizador05-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador05-4.npz",
+    "video_id": "minds:01AcontecerSinalizador05-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador05-5.npz",
+    "video_id": "minds:01AcontecerSinalizador05-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador06-1.npz",
+    "video_id": "minds:01AcontecerSinalizador06-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador06-2.npz",
+    "video_id": "minds:01AcontecerSinalizador06-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador06-3.npz",
+    "video_id": "minds:01AcontecerSinalizador06-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador06-4.npz",
+    "video_id": "minds:01AcontecerSinalizador06-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador06-5.npz",
+    "video_id": "minds:01AcontecerSinalizador06-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador08-1.npz",
+    "video_id": "minds:01AcontecerSinalizador08-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador08-2.npz",
+    "video_id": "minds:01AcontecerSinalizador08-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador08-3.npz",
+    "video_id": "minds:01AcontecerSinalizador08-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador08-4.npz",
+    "video_id": "minds:01AcontecerSinalizador08-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador08-5.npz",
+    "video_id": "minds:01AcontecerSinalizador08-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador10-1.npz",
+    "video_id": "minds:01AcontecerSinalizador10-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador10-2.npz",
+    "video_id": "minds:01AcontecerSinalizador10-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador10-3.npz",
+    "video_id": "minds:01AcontecerSinalizador10-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador10-4.npz",
+    "video_id": "minds:01AcontecerSinalizador10-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador10-5.npz",
+    "video_id": "minds:01AcontecerSinalizador10-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador01-1.npz",
+    "video_id": "minds:02AlunoSinalizador01-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador01-2.npz",
+    "video_id": "minds:02AlunoSinalizador01-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador01-3.npz",
+    "video_id": "minds:02AlunoSinalizador01-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador01-4.npz",
+    "video_id": "minds:02AlunoSinalizador01-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador01-5.npz",
+    "video_id": "minds:02AlunoSinalizador01-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador02-1.npz",
+    "video_id": "minds:02AlunoSinalizador02-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador02-2.npz",
+    "video_id": "minds:02AlunoSinalizador02-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador02-3.npz",
+    "video_id": "minds:02AlunoSinalizador02-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador02-4.npz",
+    "video_id": "minds:02AlunoSinalizador02-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador02-5.npz",
+    "video_id": "minds:02AlunoSinalizador02-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador05-1.npz",
+    "video_id": "minds:02AlunoSinalizador05-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador05-2.npz",
+    "video_id": "minds:02AlunoSinalizador05-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador05-3.npz",
+    "video_id": "minds:02AlunoSinalizador05-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador05-4.npz",
+    "video_id": "minds:02AlunoSinalizador05-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador05-5.npz",
+    "video_id": "minds:02AlunoSinalizador05-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador06-1.npz",
+    "video_id": "minds:02AlunoSinalizador06-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador06-2.npz",
+    "video_id": "minds:02AlunoSinalizador06-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador06-3.npz",
+    "video_id": "minds:02AlunoSinalizador06-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador06-4.npz",
+    "video_id": "minds:02AlunoSinalizador06-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador06-5.npz",
+    "video_id": "minds:02AlunoSinalizador06-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador08-1.npz",
+    "video_id": "minds:02AlunoSinalizador08-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador08-2.npz",
+    "video_id": "minds:02AlunoSinalizador08-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador08-3.npz",
+    "video_id": "minds:02AlunoSinalizador08-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador08-4.npz",
+    "video_id": "minds:02AlunoSinalizador08-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador08-5.npz",
+    "video_id": "minds:02AlunoSinalizador08-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador10-1.npz",
+    "video_id": "minds:02AlunoSinalizador10-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador10-2.npz",
+    "video_id": "minds:02AlunoSinalizador10-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador10-3.npz",
+    "video_id": "minds:02AlunoSinalizador10-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador10-4.npz",
+    "video_id": "minds:02AlunoSinalizador10-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador10-5.npz",
+    "video_id": "minds:02AlunoSinalizador10-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador01-1.npz",
+    "video_id": "minds:03AmareloSinalizador01-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador01-2.npz",
+    "video_id": "minds:03AmareloSinalizador01-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador01-3.npz",
+    "video_id": "minds:03AmareloSinalizador01-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador01-4.npz",
+    "video_id": "minds:03AmareloSinalizador01-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador01-5.npz",
+    "video_id": "minds:03AmareloSinalizador01-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador02-1.npz",
+    "video_id": "minds:03AmareloSinalizador02-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador02-2.npz",
+    "video_id": "minds:03AmareloSinalizador02-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador02-3.npz",
+    "video_id": "minds:03AmareloSinalizador02-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador02-4.npz",
+    "video_id": "minds:03AmareloSinalizador02-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador02-5.npz",
+    "video_id": "minds:03AmareloSinalizador02-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador05-1.npz",
+    "video_id": "minds:03AmareloSinalizador05-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador05-2.npz",
+    "video_id": "minds:03AmareloSinalizador05-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador05-3.npz",
+    "video_id": "minds:03AmareloSinalizador05-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador05-4.npz",
+    "video_id": "minds:03AmareloSinalizador05-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador05-5.npz",
+    "video_id": "minds:03AmareloSinalizador05-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador06-1.npz",
+    "video_id": "minds:03AmareloSinalizador06-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador06-2.npz",
+    "video_id": "minds:03AmareloSinalizador06-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador06-3.npz",
+    "video_id": "minds:03AmareloSinalizador06-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador06-4.npz",
+    "video_id": "minds:03AmareloSinalizador06-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador06-5.npz",
+    "video_id": "minds:03AmareloSinalizador06-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador08-1.npz",
+    "video_id": "minds:03AmareloSinalizador08-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador08-2.npz",
+    "video_id": "minds:03AmareloSinalizador08-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador08-3.npz",
+    "video_id": "minds:03AmareloSinalizador08-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador08-4.npz",
+    "video_id": "minds:03AmareloSinalizador08-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador08-5.npz",
+    "video_id": "minds:03AmareloSinalizador08-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador10-1.npz",
+    "video_id": "minds:03AmareloSinalizador10-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador10-2.npz",
+    "video_id": "minds:03AmareloSinalizador10-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador10-3.npz",
+    "video_id": "minds:03AmareloSinalizador10-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador10-4.npz",
+    "video_id": "minds:03AmareloSinalizador10-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador10-5.npz",
+    "video_id": "minds:03AmareloSinalizador10-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador01-1.npz",
+    "video_id": "minds:05AproveitarSinalizador01-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador01-2.npz",
+    "video_id": "minds:05AproveitarSinalizador01-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador01-3.npz",
+    "video_id": "minds:05AproveitarSinalizador01-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador01-4.npz",
+    "video_id": "minds:05AproveitarSinalizador01-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador01-5.npz",
+    "video_id": "minds:05AproveitarSinalizador01-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador02-1.npz",
+    "video_id": "minds:05AproveitarSinalizador02-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador02-2.npz",
+    "video_id": "minds:05AproveitarSinalizador02-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador02-3.npz",
+    "video_id": "minds:05AproveitarSinalizador02-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador02-4.npz",
+    "video_id": "minds:05AproveitarSinalizador02-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador02-5.npz",
+    "video_id": "minds:05AproveitarSinalizador02-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador05-1.npz",
+    "video_id": "minds:05AproveitarSinalizador05-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador05-2.npz",
+    "video_id": "minds:05AproveitarSinalizador05-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador05-3.npz",
+    "video_id": "minds:05AproveitarSinalizador05-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador05-4.npz",
+    "video_id": "minds:05AproveitarSinalizador05-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador05-5.npz",
+    "video_id": "minds:05AproveitarSinalizador05-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador06-1.npz",
+    "video_id": "minds:05AproveitarSinalizador06-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador06-2.npz",
+    "video_id": "minds:05AproveitarSinalizador06-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador06-3.npz",
+    "video_id": "minds:05AproveitarSinalizador06-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador06-4.npz",
+    "video_id": "minds:05AproveitarSinalizador06-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador06-5.npz",
+    "video_id": "minds:05AproveitarSinalizador06-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador08-1.npz",
+    "video_id": "minds:05AproveitarSinalizador08-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador08-2.npz",
+    "video_id": "minds:05AproveitarSinalizador08-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador08-3.npz",
+    "video_id": "minds:05AproveitarSinalizador08-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador08-4.npz",
+    "video_id": "minds:05AproveitarSinalizador08-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador08-5.npz",
+    "video_id": "minds:05AproveitarSinalizador08-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador10-1.npz",
+    "video_id": "minds:05AproveitarSinalizador10-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador10-2.npz",
+    "video_id": "minds:05AproveitarSinalizador10-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador10-3.npz",
+    "video_id": "minds:05AproveitarSinalizador10-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador10-4.npz",
+    "video_id": "minds:05AproveitarSinalizador10-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador10-5.npz",
+    "video_id": "minds:05AproveitarSinalizador10-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador01-1.npz",
+    "video_id": "minds:07BancoSinalizador01-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador01-2.npz",
+    "video_id": "minds:07BancoSinalizador01-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador01-3.npz",
+    "video_id": "minds:07BancoSinalizador01-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador01-4.npz",
+    "video_id": "minds:07BancoSinalizador01-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador01-5.npz",
+    "video_id": "minds:07BancoSinalizador01-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador02-1.npz",
+    "video_id": "minds:07BancoSinalizador02-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador02-2.npz",
+    "video_id": "minds:07BancoSinalizador02-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador02-3.npz",
+    "video_id": "minds:07BancoSinalizador02-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador02-4.npz",
+    "video_id": "minds:07BancoSinalizador02-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador02-5.npz",
+    "video_id": "minds:07BancoSinalizador02-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador05-1.npz",
+    "video_id": "minds:07BancoSinalizador05-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador05-2.npz",
+    "video_id": "minds:07BancoSinalizador05-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador05-3.npz",
+    "video_id": "minds:07BancoSinalizador05-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador05-4.npz",
+    "video_id": "minds:07BancoSinalizador05-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador05-5.npz",
+    "video_id": "minds:07BancoSinalizador05-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador06-1.npz",
+    "video_id": "minds:07BancoSinalizador06-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador06-2.npz",
+    "video_id": "minds:07BancoSinalizador06-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador06-3.npz",
+    "video_id": "minds:07BancoSinalizador06-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador06-4.npz",
+    "video_id": "minds:07BancoSinalizador06-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador06-5.npz",
+    "video_id": "minds:07BancoSinalizador06-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador08-1.npz",
+    "video_id": "minds:07BancoSinalizador08-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador08-2.npz",
+    "video_id": "minds:07BancoSinalizador08-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador08-3.npz",
+    "video_id": "minds:07BancoSinalizador08-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador08-4.npz",
+    "video_id": "minds:07BancoSinalizador08-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador08-5.npz",
+    "video_id": "minds:07BancoSinalizador08-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador10-1.npz",
+    "video_id": "minds:07BancoSinalizador10-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador10-2.npz",
+    "video_id": "minds:07BancoSinalizador10-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador10-3.npz",
+    "video_id": "minds:07BancoSinalizador10-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador10-4.npz",
+    "video_id": "minds:07BancoSinalizador10-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador10-5.npz",
+    "video_id": "minds:07BancoSinalizador10-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador01-1.npz",
+    "video_id": "minds:08BanheiroSinalizador01-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador01-2.npz",
+    "video_id": "minds:08BanheiroSinalizador01-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador01-3.npz",
+    "video_id": "minds:08BanheiroSinalizador01-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador01-4.npz",
+    "video_id": "minds:08BanheiroSinalizador01-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador01-5.npz",
+    "video_id": "minds:08BanheiroSinalizador01-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador02-1.npz",
+    "video_id": "minds:08BanheiroSinalizador02-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador02-2.npz",
+    "video_id": "minds:08BanheiroSinalizador02-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador02-3.npz",
+    "video_id": "minds:08BanheiroSinalizador02-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador02-4.npz",
+    "video_id": "minds:08BanheiroSinalizador02-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador02-5.npz",
+    "video_id": "minds:08BanheiroSinalizador02-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador05-1.npz",
+    "video_id": "minds:08BanheiroSinalizador05-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador05-2.npz",
+    "video_id": "minds:08BanheiroSinalizador05-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador05-3.npz",
+    "video_id": "minds:08BanheiroSinalizador05-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador05-4.npz",
+    "video_id": "minds:08BanheiroSinalizador05-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador05-5.npz",
+    "video_id": "minds:08BanheiroSinalizador05-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador06-1.npz",
+    "video_id": "minds:08BanheiroSinalizador06-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador06-2.npz",
+    "video_id": "minds:08BanheiroSinalizador06-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador06-3.npz",
+    "video_id": "minds:08BanheiroSinalizador06-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador06-4.npz",
+    "video_id": "minds:08BanheiroSinalizador06-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador06-5.npz",
+    "video_id": "minds:08BanheiroSinalizador06-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador08-1.npz",
+    "video_id": "minds:08BanheiroSinalizador08-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador08-2.npz",
+    "video_id": "minds:08BanheiroSinalizador08-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador08-3.npz",
+    "video_id": "minds:08BanheiroSinalizador08-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador08-4.npz",
+    "video_id": "minds:08BanheiroSinalizador08-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador08-5.npz",
+    "video_id": "minds:08BanheiroSinalizador08-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador10-1.npz",
+    "video_id": "minds:08BanheiroSinalizador10-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador10-2.npz",
+    "video_id": "minds:08BanheiroSinalizador10-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador10-3.npz",
+    "video_id": "minds:08BanheiroSinalizador10-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador10-4.npz",
+    "video_id": "minds:08BanheiroSinalizador10-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador10-5.npz",
+    "video_id": "minds:08BanheiroSinalizador10-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador01-1.npz",
+    "video_id": "minds:09BarulhoSinalizador01-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador01-2.npz",
+    "video_id": "minds:09BarulhoSinalizador01-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador01-3.npz",
+    "video_id": "minds:09BarulhoSinalizador01-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador01-4.npz",
+    "video_id": "minds:09BarulhoSinalizador01-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador01-5.npz",
+    "video_id": "minds:09BarulhoSinalizador01-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador02-1.npz",
+    "video_id": "minds:09BarulhoSinalizador02-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador02-2.npz",
+    "video_id": "minds:09BarulhoSinalizador02-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador02-3.npz",
+    "video_id": "minds:09BarulhoSinalizador02-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador02-4.npz",
+    "video_id": "minds:09BarulhoSinalizador02-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador02-5.npz",
+    "video_id": "minds:09BarulhoSinalizador02-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador05-1.npz",
+    "video_id": "minds:09BarulhoSinalizador05-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador05-2.npz",
+    "video_id": "minds:09BarulhoSinalizador05-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador05-3.npz",
+    "video_id": "minds:09BarulhoSinalizador05-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador05-4.npz",
+    "video_id": "minds:09BarulhoSinalizador05-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador05-5.npz",
+    "video_id": "minds:09BarulhoSinalizador05-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador06-1.npz",
+    "video_id": "minds:09BarulhoSinalizador06-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador06-2.npz",
+    "video_id": "minds:09BarulhoSinalizador06-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador06-3.npz",
+    "video_id": "minds:09BarulhoSinalizador06-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador06-4.npz",
+    "video_id": "minds:09BarulhoSinalizador06-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador06-5.npz",
+    "video_id": "minds:09BarulhoSinalizador06-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador08-1.npz",
+    "video_id": "minds:09BarulhoSinalizador08-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador08-2.npz",
+    "video_id": "minds:09BarulhoSinalizador08-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador08-3.npz",
+    "video_id": "minds:09BarulhoSinalizador08-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador08-4.npz",
+    "video_id": "minds:09BarulhoSinalizador08-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador08-5.npz",
+    "video_id": "minds:09BarulhoSinalizador08-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador10-1.npz",
+    "video_id": "minds:09BarulhoSinalizador10-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador10-2.npz",
+    "video_id": "minds:09BarulhoSinalizador10-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador10-3.npz",
+    "video_id": "minds:09BarulhoSinalizador10-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador10-4.npz",
+    "video_id": "minds:09BarulhoSinalizador10-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador10-5.npz",
+    "video_id": "minds:09BarulhoSinalizador10-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador01-1.npz",
+    "video_id": "minds:10CincoSinalizador01-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador01-2.npz",
+    "video_id": "minds:10CincoSinalizador01-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador01-3.npz",
+    "video_id": "minds:10CincoSinalizador01-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador01-4.npz",
+    "video_id": "minds:10CincoSinalizador01-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador01-5.npz",
+    "video_id": "minds:10CincoSinalizador01-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador02-1.npz",
+    "video_id": "minds:10CincoSinalizador02-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador02-2.npz",
+    "video_id": "minds:10CincoSinalizador02-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador02-3.npz",
+    "video_id": "minds:10CincoSinalizador02-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador02-4.npz",
+    "video_id": "minds:10CincoSinalizador02-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador02-5.npz",
+    "video_id": "minds:10CincoSinalizador02-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador05-1.npz",
+    "video_id": "minds:10CincoSinalizador05-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador05-2.npz",
+    "video_id": "minds:10CincoSinalizador05-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador05-3.npz",
+    "video_id": "minds:10CincoSinalizador05-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador05-4.npz",
+    "video_id": "minds:10CincoSinalizador05-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador05-5.npz",
+    "video_id": "minds:10CincoSinalizador05-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador06-1.npz",
+    "video_id": "minds:10CincoSinalizador06-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador06-2.npz",
+    "video_id": "minds:10CincoSinalizador06-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador06-3.npz",
+    "video_id": "minds:10CincoSinalizador06-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador06-4.npz",
+    "video_id": "minds:10CincoSinalizador06-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador06-5.npz",
+    "video_id": "minds:10CincoSinalizador06-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador08-1.npz",
+    "video_id": "minds:10CincoSinalizador08-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador08-2.npz",
+    "video_id": "minds:10CincoSinalizador08-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador08-3.npz",
+    "video_id": "minds:10CincoSinalizador08-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador08-4.npz",
+    "video_id": "minds:10CincoSinalizador08-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador08-5.npz",
+    "video_id": "minds:10CincoSinalizador08-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador10-1.npz",
+    "video_id": "minds:10CincoSinalizador10-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador10-2.npz",
+    "video_id": "minds:10CincoSinalizador10-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador10-3.npz",
+    "video_id": "minds:10CincoSinalizador10-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador10-4.npz",
+    "video_id": "minds:10CincoSinalizador10-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador10-5.npz",
+    "video_id": "minds:10CincoSinalizador10-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador01-1.npz",
+    "video_id": "minds:11ConhecerSinalizador01-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador01-2.npz",
+    "video_id": "minds:11ConhecerSinalizador01-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador01-3.npz",
+    "video_id": "minds:11ConhecerSinalizador01-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador01-4.npz",
+    "video_id": "minds:11ConhecerSinalizador01-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador01-5.npz",
+    "video_id": "minds:11ConhecerSinalizador01-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador02-1.npz",
+    "video_id": "minds:11ConhecerSinalizador02-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador02-2.npz",
+    "video_id": "minds:11ConhecerSinalizador02-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador02-3.npz",
+    "video_id": "minds:11ConhecerSinalizador02-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador02-4.npz",
+    "video_id": "minds:11ConhecerSinalizador02-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador02-5.npz",
+    "video_id": "minds:11ConhecerSinalizador02-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador05-1.npz",
+    "video_id": "minds:11ConhecerSinalizador05-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador05-2.npz",
+    "video_id": "minds:11ConhecerSinalizador05-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador05-3.npz",
+    "video_id": "minds:11ConhecerSinalizador05-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador05-4.npz",
+    "video_id": "minds:11ConhecerSinalizador05-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador05-5.npz",
+    "video_id": "minds:11ConhecerSinalizador05-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador06-1.npz",
+    "video_id": "minds:11ConhecerSinalizador06-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador06-2.npz",
+    "video_id": "minds:11ConhecerSinalizador06-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador06-3.npz",
+    "video_id": "minds:11ConhecerSinalizador06-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador06-4.npz",
+    "video_id": "minds:11ConhecerSinalizador06-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador06-5.npz",
+    "video_id": "minds:11ConhecerSinalizador06-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador08-1.npz",
+    "video_id": "minds:11ConhecerSinalizador08-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador08-2.npz",
+    "video_id": "minds:11ConhecerSinalizador08-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador08-3.npz",
+    "video_id": "minds:11ConhecerSinalizador08-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador08-4.npz",
+    "video_id": "minds:11ConhecerSinalizador08-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador08-5.npz",
+    "video_id": "minds:11ConhecerSinalizador08-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador10-1.npz",
+    "video_id": "minds:11ConhecerSinalizador10-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador10-2.npz",
+    "video_id": "minds:11ConhecerSinalizador10-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador10-3.npz",
+    "video_id": "minds:11ConhecerSinalizador10-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador10-4.npz",
+    "video_id": "minds:11ConhecerSinalizador10-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador10-5.npz",
+    "video_id": "minds:11ConhecerSinalizador10-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador01-1.npz",
+    "video_id": "minds:12EspelhoSinalizador01-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador01-2.npz",
+    "video_id": "minds:12EspelhoSinalizador01-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador01-3.npz",
+    "video_id": "minds:12EspelhoSinalizador01-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador01-4.npz",
+    "video_id": "minds:12EspelhoSinalizador01-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador01-5.npz",
+    "video_id": "minds:12EspelhoSinalizador01-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador02-1.npz",
+    "video_id": "minds:12EspelhoSinalizador02-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador02-2.npz",
+    "video_id": "minds:12EspelhoSinalizador02-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador02-3.npz",
+    "video_id": "minds:12EspelhoSinalizador02-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador02-4.npz",
+    "video_id": "minds:12EspelhoSinalizador02-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador02-5.npz",
+    "video_id": "minds:12EspelhoSinalizador02-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador05-1.npz",
+    "video_id": "minds:12EspelhoSinalizador05-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador05-2.npz",
+    "video_id": "minds:12EspelhoSinalizador05-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador05-3.npz",
+    "video_id": "minds:12EspelhoSinalizador05-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador05-4.npz",
+    "video_id": "minds:12EspelhoSinalizador05-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador05-5.npz",
+    "video_id": "minds:12EspelhoSinalizador05-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador06-1.npz",
+    "video_id": "minds:12EspelhoSinalizador06-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador06-2.npz",
+    "video_id": "minds:12EspelhoSinalizador06-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador06-3.npz",
+    "video_id": "minds:12EspelhoSinalizador06-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador06-4.npz",
+    "video_id": "minds:12EspelhoSinalizador06-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador06-5.npz",
+    "video_id": "minds:12EspelhoSinalizador06-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador08-1.npz",
+    "video_id": "minds:12EspelhoSinalizador08-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador08-2.npz",
+    "video_id": "minds:12EspelhoSinalizador08-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador08-3.npz",
+    "video_id": "minds:12EspelhoSinalizador08-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador08-4.npz",
+    "video_id": "minds:12EspelhoSinalizador08-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador08-5.npz",
+    "video_id": "minds:12EspelhoSinalizador08-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador10-1.npz",
+    "video_id": "minds:12EspelhoSinalizador10-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador10-2.npz",
+    "video_id": "minds:12EspelhoSinalizador10-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador10-3.npz",
+    "video_id": "minds:12EspelhoSinalizador10-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador10-4.npz",
+    "video_id": "minds:12EspelhoSinalizador10-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador10-5.npz",
+    "video_id": "minds:12EspelhoSinalizador10-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador01-1.npz",
+    "video_id": "minds:14FilhoSinalizador01-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador01-2.npz",
+    "video_id": "minds:14FilhoSinalizador01-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador01-3.npz",
+    "video_id": "minds:14FilhoSinalizador01-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador01-4.npz",
+    "video_id": "minds:14FilhoSinalizador01-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador01-5.npz",
+    "video_id": "minds:14FilhoSinalizador01-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador02-1.npz",
+    "video_id": "minds:14FilhoSinalizador02-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador02-2.npz",
+    "video_id": "minds:14FilhoSinalizador02-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador02-3.npz",
+    "video_id": "minds:14FilhoSinalizador02-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador02-4.npz",
+    "video_id": "minds:14FilhoSinalizador02-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador02-5.npz",
+    "video_id": "minds:14FilhoSinalizador02-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador05-1.npz",
+    "video_id": "minds:14FilhoSinalizador05-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador05-2.npz",
+    "video_id": "minds:14FilhoSinalizador05-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador05-3.npz",
+    "video_id": "minds:14FilhoSinalizador05-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador05-4.npz",
+    "video_id": "minds:14FilhoSinalizador05-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador05-5.npz",
+    "video_id": "minds:14FilhoSinalizador05-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador06-1.npz",
+    "video_id": "minds:14FilhoSinalizador06-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador06-2.npz",
+    "video_id": "minds:14FilhoSinalizador06-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador06-3.npz",
+    "video_id": "minds:14FilhoSinalizador06-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador06-4.npz",
+    "video_id": "minds:14FilhoSinalizador06-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador06-5.npz",
+    "video_id": "minds:14FilhoSinalizador06-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador08-1.npz",
+    "video_id": "minds:14FilhoSinalizador08-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador08-2.npz",
+    "video_id": "minds:14FilhoSinalizador08-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador08-3.npz",
+    "video_id": "minds:14FilhoSinalizador08-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador08-4.npz",
+    "video_id": "minds:14FilhoSinalizador08-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador08-5.npz",
+    "video_id": "minds:14FilhoSinalizador08-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador10-1.npz",
+    "video_id": "minds:14FilhoSinalizador10-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador10-2.npz",
+    "video_id": "minds:14FilhoSinalizador10-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador10-3.npz",
+    "video_id": "minds:14FilhoSinalizador10-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador10-4.npz",
+    "video_id": "minds:14FilhoSinalizador10-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador10-5.npz",
+    "video_id": "minds:14FilhoSinalizador10-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador01-1.npz",
+    "video_id": "minds:16MedoSinalizador01-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador01-2.npz",
+    "video_id": "minds:16MedoSinalizador01-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador01-3.npz",
+    "video_id": "minds:16MedoSinalizador01-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador01-4.npz",
+    "video_id": "minds:16MedoSinalizador01-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador01-5.npz",
+    "video_id": "minds:16MedoSinalizador01-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador02-1.npz",
+    "video_id": "minds:16MedoSinalizador02-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador02-2.npz",
+    "video_id": "minds:16MedoSinalizador02-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador02-3.npz",
+    "video_id": "minds:16MedoSinalizador02-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador02-4.npz",
+    "video_id": "minds:16MedoSinalizador02-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador02-5.npz",
+    "video_id": "minds:16MedoSinalizador02-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador05-1.npz",
+    "video_id": "minds:16MedoSinalizador05-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador05-2.npz",
+    "video_id": "minds:16MedoSinalizador05-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador05-3.npz",
+    "video_id": "minds:16MedoSinalizador05-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador05-4.npz",
+    "video_id": "minds:16MedoSinalizador05-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador05-5.npz",
+    "video_id": "minds:16MedoSinalizador05-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador06-1.npz",
+    "video_id": "minds:16MedoSinalizador06-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador06-2.npz",
+    "video_id": "minds:16MedoSinalizador06-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador06-3.npz",
+    "video_id": "minds:16MedoSinalizador06-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador06-4.npz",
+    "video_id": "minds:16MedoSinalizador06-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador06-5.npz",
+    "video_id": "minds:16MedoSinalizador06-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador08-1.npz",
+    "video_id": "minds:16MedoSinalizador08-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador08-2.npz",
+    "video_id": "minds:16MedoSinalizador08-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador08-3.npz",
+    "video_id": "minds:16MedoSinalizador08-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador08-4.npz",
+    "video_id": "minds:16MedoSinalizador08-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador08-5.npz",
+    "video_id": "minds:16MedoSinalizador08-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador10-1.npz",
+    "video_id": "minds:16MedoSinalizador10-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador10-2.npz",
+    "video_id": "minds:16MedoSinalizador10-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador10-3.npz",
+    "video_id": "minds:16MedoSinalizador10-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador10-4.npz",
+    "video_id": "minds:16MedoSinalizador10-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador10-5.npz",
+    "video_id": "minds:16MedoSinalizador10-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador01-1.npz",
+    "video_id": "minds:17RuimSinalizador01-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador01-2.npz",
+    "video_id": "minds:17RuimSinalizador01-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador01-3.npz",
+    "video_id": "minds:17RuimSinalizador01-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador01-4.npz",
+    "video_id": "minds:17RuimSinalizador01-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador01-5.npz",
+    "video_id": "minds:17RuimSinalizador01-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador02-1.npz",
+    "video_id": "minds:17RuimSinalizador02-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador02-2.npz",
+    "video_id": "minds:17RuimSinalizador02-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador02-3.npz",
+    "video_id": "minds:17RuimSinalizador02-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador02-4.npz",
+    "video_id": "minds:17RuimSinalizador02-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador02-5.npz",
+    "video_id": "minds:17RuimSinalizador02-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador05-1.npz",
+    "video_id": "minds:17RuimSinalizador05-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador05-2.npz",
+    "video_id": "minds:17RuimSinalizador05-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador05-3.npz",
+    "video_id": "minds:17RuimSinalizador05-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador05-4.npz",
+    "video_id": "minds:17RuimSinalizador05-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador05-5.npz",
+    "video_id": "minds:17RuimSinalizador05-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador06-1.npz",
+    "video_id": "minds:17RuimSinalizador06-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador06-2.npz",
+    "video_id": "minds:17RuimSinalizador06-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador06-3.npz",
+    "video_id": "minds:17RuimSinalizador06-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador06-4.npz",
+    "video_id": "minds:17RuimSinalizador06-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador06-5.npz",
+    "video_id": "minds:17RuimSinalizador06-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador08-1.npz",
+    "video_id": "minds:17RuimSinalizador08-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador08-2.npz",
+    "video_id": "minds:17RuimSinalizador08-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador08-3.npz",
+    "video_id": "minds:17RuimSinalizador08-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador08-4.npz",
+    "video_id": "minds:17RuimSinalizador08-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador08-5.npz",
+    "video_id": "minds:17RuimSinalizador08-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador10-1.npz",
+    "video_id": "minds:17RuimSinalizador10-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador10-2.npz",
+    "video_id": "minds:17RuimSinalizador10-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador10-3.npz",
+    "video_id": "minds:17RuimSinalizador10-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador10-4.npz",
+    "video_id": "minds:17RuimSinalizador10-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador10-5.npz",
+    "video_id": "minds:17RuimSinalizador10-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador01-1.npz",
+    "video_id": "minds:19VacinaSinalizador01-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador01-2.npz",
+    "video_id": "minds:19VacinaSinalizador01-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador01-3.npz",
+    "video_id": "minds:19VacinaSinalizador01-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador01-4.npz",
+    "video_id": "minds:19VacinaSinalizador01-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador01-5.npz",
+    "video_id": "minds:19VacinaSinalizador01-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador02-1.npz",
+    "video_id": "minds:19VacinaSinalizador02-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador02-2.npz",
+    "video_id": "minds:19VacinaSinalizador02-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador02-3.npz",
+    "video_id": "minds:19VacinaSinalizador02-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador02-4.npz",
+    "video_id": "minds:19VacinaSinalizador02-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador02-5.npz",
+    "video_id": "minds:19VacinaSinalizador02-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador05-1.npz",
+    "video_id": "minds:19VacinaSinalizador05-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador05-2.npz",
+    "video_id": "minds:19VacinaSinalizador05-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador05-3.npz",
+    "video_id": "minds:19VacinaSinalizador05-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador05-4.npz",
+    "video_id": "minds:19VacinaSinalizador05-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador05-5.npz",
+    "video_id": "minds:19VacinaSinalizador05-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador06-1.npz",
+    "video_id": "minds:19VacinaSinalizador06-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador06-2.npz",
+    "video_id": "minds:19VacinaSinalizador06-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador06-3.npz",
+    "video_id": "minds:19VacinaSinalizador06-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador06-4.npz",
+    "video_id": "minds:19VacinaSinalizador06-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador06-5.npz",
+    "video_id": "minds:19VacinaSinalizador06-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador08-1.npz",
+    "video_id": "minds:19VacinaSinalizador08-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador08-2.npz",
+    "video_id": "minds:19VacinaSinalizador08-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador08-3.npz",
+    "video_id": "minds:19VacinaSinalizador08-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador08-4.npz",
+    "video_id": "minds:19VacinaSinalizador08-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador08-5.npz",
+    "video_id": "minds:19VacinaSinalizador08-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador10-1.npz",
+    "video_id": "minds:19VacinaSinalizador10-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador10-2.npz",
+    "video_id": "minds:19VacinaSinalizador10-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador10-3.npz",
+    "video_id": "minds:19VacinaSinalizador10-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador10-4.npz",
+    "video_id": "minds:19VacinaSinalizador10-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador10-5.npz",
+    "video_id": "minds:19VacinaSinalizador10-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador01-1.npz",
+    "video_id": "minds:20VontadeSinalizador01-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador01",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador01-2.npz",
+    "video_id": "minds:20VontadeSinalizador01-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador01",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador01-3.npz",
+    "video_id": "minds:20VontadeSinalizador01-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador01",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador01-4.npz",
+    "video_id": "minds:20VontadeSinalizador01-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador01",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador01-5.npz",
+    "video_id": "minds:20VontadeSinalizador01-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador01",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador02-1.npz",
+    "video_id": "minds:20VontadeSinalizador02-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador02",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador02-2.npz",
+    "video_id": "minds:20VontadeSinalizador02-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador02",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador02-3.npz",
+    "video_id": "minds:20VontadeSinalizador02-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador02",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador02-4.npz",
+    "video_id": "minds:20VontadeSinalizador02-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador02",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador02-5.npz",
+    "video_id": "minds:20VontadeSinalizador02-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador02",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador05-1.npz",
+    "video_id": "minds:20VontadeSinalizador05-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador05",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador05-2.npz",
+    "video_id": "minds:20VontadeSinalizador05-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador05",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador05-3.npz",
+    "video_id": "minds:20VontadeSinalizador05-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador05",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador05-4.npz",
+    "video_id": "minds:20VontadeSinalizador05-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador05",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador05-5.npz",
+    "video_id": "minds:20VontadeSinalizador05-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador05",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador06-1.npz",
+    "video_id": "minds:20VontadeSinalizador06-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador06",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador06-2.npz",
+    "video_id": "minds:20VontadeSinalizador06-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador06",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador06-3.npz",
+    "video_id": "minds:20VontadeSinalizador06-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador06",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador06-4.npz",
+    "video_id": "minds:20VontadeSinalizador06-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador06",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador06-5.npz",
+    "video_id": "minds:20VontadeSinalizador06-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador06",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador08-1.npz",
+    "video_id": "minds:20VontadeSinalizador08-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador08",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador08-2.npz",
+    "video_id": "minds:20VontadeSinalizador08-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador08",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador08-3.npz",
+    "video_id": "minds:20VontadeSinalizador08-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador08",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador08-4.npz",
+    "video_id": "minds:20VontadeSinalizador08-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador08",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador08-5.npz",
+    "video_id": "minds:20VontadeSinalizador08-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador08",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador10-1.npz",
+    "video_id": "minds:20VontadeSinalizador10-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador10",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador10-2.npz",
+    "video_id": "minds:20VontadeSinalizador10-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador10",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador10-3.npz",
+    "video_id": "minds:20VontadeSinalizador10-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador10",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador10-4.npz",
+    "video_id": "minds:20VontadeSinalizador10-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador10",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador10-5.npz",
+    "video_id": "minds:20VontadeSinalizador10-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador10",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador11-1.npz",
+    "video_id": "minds:01AcontecerSinalizador11-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador11-2.npz",
+    "video_id": "minds:01AcontecerSinalizador11-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador11-3.npz",
+    "video_id": "minds:01AcontecerSinalizador11-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador11-4.npz",
+    "video_id": "minds:01AcontecerSinalizador11-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador11-5.npz",
+    "video_id": "minds:01AcontecerSinalizador11-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador11-1.npz",
+    "video_id": "minds:02AlunoSinalizador11-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador11-2.npz",
+    "video_id": "minds:02AlunoSinalizador11-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador11-3.npz",
+    "video_id": "minds:02AlunoSinalizador11-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador11-4.npz",
+    "video_id": "minds:02AlunoSinalizador11-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador11-5.npz",
+    "video_id": "minds:02AlunoSinalizador11-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador11-1.npz",
+    "video_id": "minds:03AmareloSinalizador11-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador11-2.npz",
+    "video_id": "minds:03AmareloSinalizador11-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador11-3.npz",
+    "video_id": "minds:03AmareloSinalizador11-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador11-4.npz",
+    "video_id": "minds:03AmareloSinalizador11-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador11-5.npz",
+    "video_id": "minds:03AmareloSinalizador11-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador11-1.npz",
+    "video_id": "minds:05AproveitarSinalizador11-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador11-2.npz",
+    "video_id": "minds:05AproveitarSinalizador11-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador11-3.npz",
+    "video_id": "minds:05AproveitarSinalizador11-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador11-4.npz",
+    "video_id": "minds:05AproveitarSinalizador11-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador11-5.npz",
+    "video_id": "minds:05AproveitarSinalizador11-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador11-1.npz",
+    "video_id": "minds:07BancoSinalizador11-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador11-2.npz",
+    "video_id": "minds:07BancoSinalizador11-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador11-3.npz",
+    "video_id": "minds:07BancoSinalizador11-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador11-4.npz",
+    "video_id": "minds:07BancoSinalizador11-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador11-5.npz",
+    "video_id": "minds:07BancoSinalizador11-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador11-1.npz",
+    "video_id": "minds:08BanheiroSinalizador11-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador11-2.npz",
+    "video_id": "minds:08BanheiroSinalizador11-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador11-3.npz",
+    "video_id": "minds:08BanheiroSinalizador11-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador11-4.npz",
+    "video_id": "minds:08BanheiroSinalizador11-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador11-5.npz",
+    "video_id": "minds:08BanheiroSinalizador11-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador11-1.npz",
+    "video_id": "minds:09BarulhoSinalizador11-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador11-2.npz",
+    "video_id": "minds:09BarulhoSinalizador11-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador11-3.npz",
+    "video_id": "minds:09BarulhoSinalizador11-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador11-4.npz",
+    "video_id": "minds:09BarulhoSinalizador11-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador11-5.npz",
+    "video_id": "minds:09BarulhoSinalizador11-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador11-1.npz",
+    "video_id": "minds:10CincoSinalizador11-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador11-2.npz",
+    "video_id": "minds:10CincoSinalizador11-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador11-3.npz",
+    "video_id": "minds:10CincoSinalizador11-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador11-4.npz",
+    "video_id": "minds:10CincoSinalizador11-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador11-5.npz",
+    "video_id": "minds:10CincoSinalizador11-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador11-1.npz",
+    "video_id": "minds:11ConhecerSinalizador11-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador11-2.npz",
+    "video_id": "minds:11ConhecerSinalizador11-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador11-3.npz",
+    "video_id": "minds:11ConhecerSinalizador11-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador11-4.npz",
+    "video_id": "minds:11ConhecerSinalizador11-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador11-5.npz",
+    "video_id": "minds:11ConhecerSinalizador11-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador11-1.npz",
+    "video_id": "minds:12EspelhoSinalizador11-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador11-2.npz",
+    "video_id": "minds:12EspelhoSinalizador11-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador11-3.npz",
+    "video_id": "minds:12EspelhoSinalizador11-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador11-4.npz",
+    "video_id": "minds:12EspelhoSinalizador11-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador11-5.npz",
+    "video_id": "minds:12EspelhoSinalizador11-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador11-1.npz",
+    "video_id": "minds:14FilhoSinalizador11-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador11-2.npz",
+    "video_id": "minds:14FilhoSinalizador11-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador11-3.npz",
+    "video_id": "minds:14FilhoSinalizador11-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador11-4.npz",
+    "video_id": "minds:14FilhoSinalizador11-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador11-5.npz",
+    "video_id": "minds:14FilhoSinalizador11-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador11-1.npz",
+    "video_id": "minds:16MedoSinalizador11-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador11-2.npz",
+    "video_id": "minds:16MedoSinalizador11-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador11-3.npz",
+    "video_id": "minds:16MedoSinalizador11-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador11-4.npz",
+    "video_id": "minds:16MedoSinalizador11-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador11-5.npz",
+    "video_id": "minds:16MedoSinalizador11-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador11-1.npz",
+    "video_id": "minds:17RuimSinalizador11-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador11-2.npz",
+    "video_id": "minds:17RuimSinalizador11-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador11-3.npz",
+    "video_id": "minds:17RuimSinalizador11-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador11-4.npz",
+    "video_id": "minds:17RuimSinalizador11-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador11-5.npz",
+    "video_id": "minds:17RuimSinalizador11-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador11-1.npz",
+    "video_id": "minds:19VacinaSinalizador11-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador11-2.npz",
+    "video_id": "minds:19VacinaSinalizador11-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador11-3.npz",
+    "video_id": "minds:19VacinaSinalizador11-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador11-4.npz",
+    "video_id": "minds:19VacinaSinalizador11-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador11-5.npz",
+    "video_id": "minds:19VacinaSinalizador11-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador11-1.npz",
+    "video_id": "minds:20VontadeSinalizador11-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador11",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador11-2.npz",
+    "video_id": "minds:20VontadeSinalizador11-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador11",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador11-3.npz",
+    "video_id": "minds:20VontadeSinalizador11-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador11",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador11-4.npz",
+    "video_id": "minds:20VontadeSinalizador11-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador11",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador11-5.npz",
+    "video_id": "minds:20VontadeSinalizador11-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador11",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador12-1.npz",
+    "video_id": "minds:01AcontecerSinalizador12-1.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador12-2.npz",
+    "video_id": "minds:01AcontecerSinalizador12-2.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador12-3.npz",
+    "video_id": "minds:01AcontecerSinalizador12-3.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador12-4.npz",
+    "video_id": "minds:01AcontecerSinalizador12-4.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/01AcontecerSinalizador12-5.npz",
+    "video_id": "minds:01AcontecerSinalizador12-5.mp4",
+    "label": "Acontecer",
+    "class_number": "01",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador12-1.npz",
+    "video_id": "minds:02AlunoSinalizador12-1.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador12-2.npz",
+    "video_id": "minds:02AlunoSinalizador12-2.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador12-3.npz",
+    "video_id": "minds:02AlunoSinalizador12-3.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador12-4.npz",
+    "video_id": "minds:02AlunoSinalizador12-4.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/02AlunoSinalizador12-5.npz",
+    "video_id": "minds:02AlunoSinalizador12-5.mp4",
+    "label": "Aluno",
+    "class_number": "02",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador12-1.npz",
+    "video_id": "minds:03AmareloSinalizador12-1.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador12-2.npz",
+    "video_id": "minds:03AmareloSinalizador12-2.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador12-3.npz",
+    "video_id": "minds:03AmareloSinalizador12-3.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador12-4.npz",
+    "video_id": "minds:03AmareloSinalizador12-4.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/03AmareloSinalizador12-5.npz",
+    "video_id": "minds:03AmareloSinalizador12-5.mp4",
+    "label": "Amarelo",
+    "class_number": "03",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador12-1.npz",
+    "video_id": "minds:05AproveitarSinalizador12-1.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador12-2.npz",
+    "video_id": "minds:05AproveitarSinalizador12-2.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador12-3.npz",
+    "video_id": "minds:05AproveitarSinalizador12-3.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador12-4.npz",
+    "video_id": "minds:05AproveitarSinalizador12-4.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/05AproveitarSinalizador12-5.npz",
+    "video_id": "minds:05AproveitarSinalizador12-5.mp4",
+    "label": "Aproveitar",
+    "class_number": "05",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador12-1.npz",
+    "video_id": "minds:07BancoSinalizador12-1.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador12-2.npz",
+    "video_id": "minds:07BancoSinalizador12-2.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador12-3.npz",
+    "video_id": "minds:07BancoSinalizador12-3.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador12-4.npz",
+    "video_id": "minds:07BancoSinalizador12-4.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/07BancoSinalizador12-5.npz",
+    "video_id": "minds:07BancoSinalizador12-5.mp4",
+    "label": "Banco",
+    "class_number": "07",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador12-1.npz",
+    "video_id": "minds:08BanheiroSinalizador12-1.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador12-2.npz",
+    "video_id": "minds:08BanheiroSinalizador12-2.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador12-3.npz",
+    "video_id": "minds:08BanheiroSinalizador12-3.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador12-4.npz",
+    "video_id": "minds:08BanheiroSinalizador12-4.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/08BanheiroSinalizador12-5.npz",
+    "video_id": "minds:08BanheiroSinalizador12-5.mp4",
+    "label": "Banheiro",
+    "class_number": "08",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador12-1.npz",
+    "video_id": "minds:09BarulhoSinalizador12-1.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador12-2.npz",
+    "video_id": "minds:09BarulhoSinalizador12-2.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador12-3.npz",
+    "video_id": "minds:09BarulhoSinalizador12-3.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador12-4.npz",
+    "video_id": "minds:09BarulhoSinalizador12-4.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/09BarulhoSinalizador12-5.npz",
+    "video_id": "minds:09BarulhoSinalizador12-5.mp4",
+    "label": "Barulho",
+    "class_number": "09",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador12-1.npz",
+    "video_id": "minds:10CincoSinalizador12-1.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador12-2.npz",
+    "video_id": "minds:10CincoSinalizador12-2.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador12-3.npz",
+    "video_id": "minds:10CincoSinalizador12-3.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador12-4.npz",
+    "video_id": "minds:10CincoSinalizador12-4.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/10CincoSinalizador12-5.npz",
+    "video_id": "minds:10CincoSinalizador12-5.mp4",
+    "label": "Cinco",
+    "class_number": "10",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador12-1.npz",
+    "video_id": "minds:11ConhecerSinalizador12-1.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador12-2.npz",
+    "video_id": "minds:11ConhecerSinalizador12-2.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador12-3.npz",
+    "video_id": "minds:11ConhecerSinalizador12-3.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador12-4.npz",
+    "video_id": "minds:11ConhecerSinalizador12-4.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/11ConhecerSinalizador12-5.npz",
+    "video_id": "minds:11ConhecerSinalizador12-5.mp4",
+    "label": "Conhecer",
+    "class_number": "11",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador12-1.npz",
+    "video_id": "minds:12EspelhoSinalizador12-1.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador12-2.npz",
+    "video_id": "minds:12EspelhoSinalizador12-2.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador12-3.npz",
+    "video_id": "minds:12EspelhoSinalizador12-3.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador12-4.npz",
+    "video_id": "minds:12EspelhoSinalizador12-4.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/12EspelhoSinalizador12-5.npz",
+    "video_id": "minds:12EspelhoSinalizador12-5.mp4",
+    "label": "Espelho",
+    "class_number": "12",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador12-1.npz",
+    "video_id": "minds:14FilhoSinalizador12-1.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador12-2.npz",
+    "video_id": "minds:14FilhoSinalizador12-2.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador12-3.npz",
+    "video_id": "minds:14FilhoSinalizador12-3.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador12-4.npz",
+    "video_id": "minds:14FilhoSinalizador12-4.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/14FilhoSinalizador12-5.npz",
+    "video_id": "minds:14FilhoSinalizador12-5.mp4",
+    "label": "Filho",
+    "class_number": "14",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador12-1.npz",
+    "video_id": "minds:16MedoSinalizador12-1.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador12-2.npz",
+    "video_id": "minds:16MedoSinalizador12-2.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador12-3.npz",
+    "video_id": "minds:16MedoSinalizador12-3.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador12-4.npz",
+    "video_id": "minds:16MedoSinalizador12-4.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/16MedoSinalizador12-5.npz",
+    "video_id": "minds:16MedoSinalizador12-5.mp4",
+    "label": "Medo",
+    "class_number": "16",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador12-1.npz",
+    "video_id": "minds:17RuimSinalizador12-1.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador12-2.npz",
+    "video_id": "minds:17RuimSinalizador12-2.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador12-3.npz",
+    "video_id": "minds:17RuimSinalizador12-3.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador12-4.npz",
+    "video_id": "minds:17RuimSinalizador12-4.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/17RuimSinalizador12-5.npz",
+    "video_id": "minds:17RuimSinalizador12-5.mp4",
+    "label": "Ruim",
+    "class_number": "17",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador12-1.npz",
+    "video_id": "minds:19VacinaSinalizador12-1.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador12-2.npz",
+    "video_id": "minds:19VacinaSinalizador12-2.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador12-3.npz",
+    "video_id": "minds:19VacinaSinalizador12-3.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador12-4.npz",
+    "video_id": "minds:19VacinaSinalizador12-4.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/19VacinaSinalizador12-5.npz",
+    "video_id": "minds:19VacinaSinalizador12-5.mp4",
+    "label": "Vacina",
+    "class_number": "19",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador12-1.npz",
+    "video_id": "minds:20VontadeSinalizador12-1.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador12",
+    "take": 1,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador12-2.npz",
+    "video_id": "minds:20VontadeSinalizador12-2.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador12",
+    "take": 2,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador12-3.npz",
+    "video_id": "minds:20VontadeSinalizador12-3.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador12",
+    "take": 3,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador12-4.npz",
+    "video_id": "minds:20VontadeSinalizador12-4.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador12",
+    "take": 4,
+    "origin": "minds"
+  },
+  {
+    "path": "../minds_libras_all20/20VontadeSinalizador12-5.npz",
+    "video_id": "minds:20VontadeSinalizador12-5.mp4",
+    "label": "Vontade",
+    "class_number": "20",
+    "signer": "minds:Sinalizador12",
+    "take": 5,
+    "origin": "minds"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador01.npz",
+    "video_id": "novas:Ajudar/AjudarSinalizador01.mp4",
+    "label": "Ajudar",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador02.npz",
+    "video_id": "novas:Ajudar/AjudarSinalizador02.mp4",
+    "label": "Ajudar",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador03.npz",
+    "video_id": "novas:Ajudar/AjudarSinalizador03.mp4",
+    "label": "Ajudar",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador04.npz",
+    "video_id": "novas:Ajudar/AjudarSinalizador04.mp4",
+    "label": "Ajudar",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador05.npz",
+    "video_id": "novas:Ajudar/AjudarSinalizador05.mp4",
+    "label": "Ajudar",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador06.npz",
+    "video_id": "novas:Ajudar/AjudarSinalizador06.mp4",
+    "label": "Ajudar",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Ajudar/AjudarSinalizador07.npz",
+    "video_id": "novas:Ajudar/AjudarSinalizador07.mp4",
+    "label": "Ajudar",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador01.npz",
+    "video_id": "novas:Amigo/AmigoSinalizador01.mp4",
+    "label": "Amigo",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador02.npz",
+    "video_id": "novas:Amigo/AmigoSinalizador02.mp4",
+    "label": "Amigo",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador03.npz",
+    "video_id": "novas:Amigo/AmigoSinalizador03.mp4",
+    "label": "Amigo",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador04.npz",
+    "video_id": "novas:Amigo/AmigoSinalizador04.mp4",
+    "label": "Amigo",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador05.npz",
+    "video_id": "novas:Amigo/AmigoSinalizador05.mp4",
+    "label": "Amigo",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador06.npz",
+    "video_id": "novas:Amigo/AmigoSinalizador06.mp4",
+    "label": "Amigo",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Amigo/AmigoSinalizador07.npz",
+    "video_id": "novas:Amigo/AmigoSinalizador07.mp4",
+    "label": "Amigo",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador01.npz",
+    "video_id": "novas:Aprender/AprenderSinalizador01.mp4",
+    "label": "Aprender",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador02.npz",
+    "video_id": "novas:Aprender/AprenderSinalizador02.mp4",
+    "label": "Aprender",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador03.npz",
+    "video_id": "novas:Aprender/AprenderSinalizador03.mp4",
+    "label": "Aprender",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador04.npz",
+    "video_id": "novas:Aprender/AprenderSinalizador04.mp4",
+    "label": "Aprender",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador05.npz",
+    "video_id": "novas:Aprender/AprenderSinalizador05.mp4",
+    "label": "Aprender",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador06.npz",
+    "video_id": "novas:Aprender/AprenderSinalizador06.mp4",
+    "label": "Aprender",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Aprender/AprenderSinalizador07.npz",
+    "video_id": "novas:Aprender/AprenderSinalizador07.mp4",
+    "label": "Aprender",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador01.npz",
+    "video_id": "novas:Beber/BeberSinalizador01.mp4",
+    "label": "Beber",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador02.npz",
+    "video_id": "novas:Beber/BeberSinalizador02.mp4",
+    "label": "Beber",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador03.npz",
+    "video_id": "novas:Beber/BeberSinalizador03.mp4",
+    "label": "Beber",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador04.npz",
+    "video_id": "novas:Beber/BeberSinalizador04.mp4",
+    "label": "Beber",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador05.npz",
+    "video_id": "novas:Beber/BeberSinalizador05.mp4",
+    "label": "Beber",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador06.npz",
+    "video_id": "novas:Beber/BeberSinalizador06.mp4",
+    "label": "Beber",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Beber/BeberSinalizador07.npz",
+    "video_id": "novas:Beber/BeberSinalizador07.mp4",
+    "label": "Beber",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador01.npz",
+    "video_id": "novas:Água/ÁguaSinalizador01.mp4",
+    "label": "Água",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador02.npz",
+    "video_id": "novas:Água/ÁguaSinalizador02.mp4",
+    "label": "Água",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador03.npz",
+    "video_id": "novas:Água/ÁguaSinalizador03.mp4",
+    "label": "Água",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador04.npz",
+    "video_id": "novas:Água/ÁguaSinalizador04.mp4",
+    "label": "Água",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador05.npz",
+    "video_id": "novas:Água/ÁguaSinalizador05.mp4",
+    "label": "Água",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador06.npz",
+    "video_id": "novas:Água/ÁguaSinalizador06.mp4",
+    "label": "Água",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_palavras/Água/ÁguaSinalizador07.npz",
+    "video_id": "novas:Água/ÁguaSinalizador07.mp4",
+    "label": "Água",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador01.npz",
+    "video_id": "novas:Brincar/BrincarSinalizador01.mp4",
+    "label": "Brincar",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador02.npz",
+    "video_id": "novas:Brincar/BrincarSinalizador02.mp4",
+    "label": "Brincar",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador03.npz",
+    "video_id": "novas:Brincar/BrincarSinalizador03.mp4",
+    "label": "Brincar",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador04.npz",
+    "video_id": "novas:Brincar/BrincarSinalizador04.mp4",
+    "label": "Brincar",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador05.npz",
+    "video_id": "novas:Brincar/BrincarSinalizador05.mp4",
+    "label": "Brincar",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador06.npz",
+    "video_id": "novas:Brincar/BrincarSinalizador06.mp4",
+    "label": "Brincar",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Brincar/BrincarSinalizador07.npz",
+    "video_id": "novas:Brincar/BrincarSinalizador07.mp4",
+    "label": "Brincar",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador01.npz",
+    "video_id": "novas:Cansado/CansadoSinalizador01.mp4",
+    "label": "Cansado",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador02.npz",
+    "video_id": "novas:Cansado/CansadoSinalizador02.mp4",
+    "label": "Cansado",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador03.npz",
+    "video_id": "novas:Cansado/CansadoSinalizador03.mp4",
+    "label": "Cansado",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador04.npz",
+    "video_id": "novas:Cansado/CansadoSinalizador04.mp4",
+    "label": "Cansado",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador05.npz",
+    "video_id": "novas:Cansado/CansadoSinalizador05.mp4",
+    "label": "Cansado",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador06.npz",
+    "video_id": "novas:Cansado/CansadoSinalizador06.mp4",
+    "label": "Cansado",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Cansado/CansadoSinalizador07.npz",
+    "video_id": "novas:Cansado/CansadoSinalizador07.mp4",
+    "label": "Cansado",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador01.npz",
+    "video_id": "novas:Certo/CertoSinalizador01.mp4",
+    "label": "Certo",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador02.npz",
+    "video_id": "novas:Certo/CertoSinalizador02.mp4",
+    "label": "Certo",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador03.npz",
+    "video_id": "novas:Certo/CertoSinalizador03.mp4",
+    "label": "Certo",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador04.npz",
+    "video_id": "novas:Certo/CertoSinalizador04.mp4",
+    "label": "Certo",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador05.npz",
+    "video_id": "novas:Certo/CertoSinalizador05.mp4",
+    "label": "Certo",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador06.npz",
+    "video_id": "novas:Certo/CertoSinalizador06.mp4",
+    "label": "Certo",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Certo/CertoSinalizador07.npz",
+    "video_id": "novas:Certo/CertoSinalizador07.mp4",
+    "label": "Certo",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador01.npz",
+    "video_id": "novas:Comer/ComerSinalizador01.mp4",
+    "label": "Comer",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador02.npz",
+    "video_id": "novas:Comer/ComerSinalizador02.mp4",
+    "label": "Comer",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador03.npz",
+    "video_id": "novas:Comer/ComerSinalizador03.mp4",
+    "label": "Comer",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador04.npz",
+    "video_id": "novas:Comer/ComerSinalizador04.mp4",
+    "label": "Comer",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador05.npz",
+    "video_id": "novas:Comer/ComerSinalizador05.mp4",
+    "label": "Comer",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador06.npz",
+    "video_id": "novas:Comer/ComerSinalizador06.mp4",
+    "label": "Comer",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Comer/ComerSinalizador07.npz",
+    "video_id": "novas:Comer/ComerSinalizador07.mp4",
+    "label": "Comer",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador01.npz",
+    "video_id": "novas:Diretor/DiretorSinalizador01.mp4",
+    "label": "Diretor",
+    "signer": "novas:Sinalizador01",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador02.npz",
+    "video_id": "novas:Diretor/DiretorSinalizador02.mp4",
+    "label": "Diretor",
+    "signer": "novas:Sinalizador02",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador03.npz",
+    "video_id": "novas:Diretor/DiretorSinalizador03.mp4",
+    "label": "Diretor",
+    "signer": "novas:Sinalizador03",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador04.npz",
+    "video_id": "novas:Diretor/DiretorSinalizador04.mp4",
+    "label": "Diretor",
+    "signer": "novas:Sinalizador04",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador05.npz",
+    "video_id": "novas:Diretor/DiretorSinalizador05.mp4",
+    "label": "Diretor",
+    "signer": "novas:Sinalizador05",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador06.npz",
+    "video_id": "novas:Diretor/DiretorSinalizador06.mp4",
+    "label": "Diretor",
+    "signer": "novas:Sinalizador06",
+    "take": 1,
+    "origin": "novas"
+  },
+  {
+    "path": "../novas_5_restantes/Diretor/DiretorSinalizador07.npz",
+    "video_id": "novas:Diretor/DiretorSinalizador07.mp4",
+    "label": "Diretor",
+    "signer": "novas:Sinalizador07",
+    "take": 1,
+    "origin": "novas"
+  }
+]

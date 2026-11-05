@@ -152,6 +152,9 @@ Há configuração de Docker Compose no repositório, mas a execução em contê
 
 - [Plano e relatório do experimento de 25 classes](docs/RELATORIO_QUALIDADE_FUSAO_25_CLASSES_2026-10-27.md)
 - [Ativação da fusão de 25 classes como padrão](docs/RELATORIO_ATIVACAO_FUSAO25_PADRAO_2026-11-04.md)
+- [Revisão de três PDFs de um projeto semelhante e prioridades para o Sinaliza](docs/RELATORIO_REVISAO_PROJETOS_LIBRAS_2026-11-04.md)
+- [Experimento Conv1D + BiLSTM + atenção nas 25 classes](docs/RELATORIO_CONV_BILSTM_ATENCAO_MIXED25_2026-11-04.md)
+- [Experimento Conv1D + Transformer + atenção nas 25 classes](docs/RELATORIO_CONV_TRANSFORMER_ATENCAO_MIXED25_2026-11-04.md)
 - [Piloto de rejeição com trechos de repouso dos vídeos](docs/RELATORIO_NEGATIVOS_BORDAS_25_CLASSES_2026-10-27.md)
 - [Como rodar a aplicação web](docs/COMO_RODAR_APLICACAO_WEB.md)
 - [Integração do modelo com a webcam](docs/PLANO_INTEGRACAO_WEB_8_CLASSES.md)

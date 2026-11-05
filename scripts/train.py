@@ -71,7 +71,9 @@ def load_config(config_path: str | None) -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Treinar modelo Sinaliza")
     parser.add_argument("--config", type=str, help="Arquivo YAML de configuração")
-    parser.add_argument("--model", type=str, default=None, choices=["bilstm", "transformer", "tcn"])
+    parser.add_argument("--model", type=str, default=None,
+                        choices=["bilstm", "transformer", "tcn", "conv_bilstm_attention",
+                                 "conv_transformer_attention"])
     parser.add_argument("--data-dir", type=str, default="data/landmarks")
     parser.add_argument("--processed-dir", type=str, default="data/processed")
     parser.add_argument("--epochs", type=int, default=None)

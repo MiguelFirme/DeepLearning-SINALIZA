@@ -1,0 +1,64 @@
+2026-11-04 20:48:03,526 [INFO] Log persistente: logs\experiments\conv_bilstm_attention_mixed25_pose_face_seed42\train.log
+2026-11-04 20:48:03,526 [INFO] Device: cuda
+2026-11-04 20:48:04,790 [INFO] Classes: 25
+2026-11-04 20:48:04,794 [INFO] Train: 500 | Val: 85
+2026-11-04 20:48:04,807 [INFO] Modelo: conv_bilstm_attention | input_dim=697 | params=116,939
+2026-11-04 20:48:04,822 [INFO] Loss=ce_standard | class_weight_method=sqrt_inverse | smoothing=0.0
+2026-11-04 20:48:06,946 [INFO] Iniciando treinamento: 120 épocas no dispositivo cuda
+2026-11-04 20:48:06,947 [INFO] Modelo: ConvBiLSTMAttentionModel | Params: 116,939
+2026-11-04 20:48:11,775 [INFO] Epoch 1/120 | train_loss=3.2460 | train_top1=0.0640 | val_loss=3.0561 | val_top1=0.0588 | val_f1=0.0054 | lr=3.00e-04 ★
+2026-11-04 20:48:15,409 [INFO] Epoch 2/120 | train_loss=3.1118 | train_top1=0.0760 | val_loss=2.9555 | val_top1=0.1176 | val_f1=0.0281 | lr=3.00e-04 ★
+2026-11-04 20:48:19,139 [INFO] Epoch 3/120 | train_loss=3.0250 | train_top1=0.1200 | val_loss=2.8731 | val_top1=0.1294 | val_f1=0.0787 | lr=3.00e-04 ★
+2026-11-04 20:48:22,893 [INFO] Epoch 4/120 | train_loss=2.9317 | train_top1=0.1480 | val_loss=2.8729 | val_top1=0.0824 | val_f1=0.0495 | lr=3.00e-04 ★
+2026-11-04 20:48:26,662 [INFO] Epoch 5/120 | train_loss=2.8101 | train_top1=0.1620 | val_loss=2.9348 | val_top1=0.0824 | val_f1=0.0428 | lr=3.00e-04
+2026-11-04 20:48:30,454 [INFO] Epoch 6/120 | train_loss=2.6695 | train_top1=0.2140 | val_loss=2.6402 | val_top1=0.1412 | val_f1=0.0382 | lr=3.00e-04 ★
+2026-11-04 20:48:34,326 [INFO] Epoch 7/120 | train_loss=2.5870 | train_top1=0.2580 | val_loss=2.6768 | val_top1=0.2235 | val_f1=0.0806 | lr=3.00e-04
+2026-11-04 20:48:38,063 [INFO] Epoch 8/120 | train_loss=2.5055 | train_top1=0.2540 | val_loss=2.5861 | val_top1=0.1882 | val_f1=0.0568 | lr=3.00e-04 ★
+2026-11-04 20:48:41,783 [INFO] Epoch 9/120 | train_loss=2.3898 | train_top1=0.2920 | val_loss=2.5209 | val_top1=0.2000 | val_f1=0.0642 | lr=3.00e-04 ★
+2026-11-04 20:48:45,577 [INFO] Epoch 10/120 | train_loss=2.2940 | train_top1=0.3420 | val_loss=2.4012 | val_top1=0.3176 | val_f1=0.1511 | lr=3.00e-04 ★
+2026-11-04 20:48:49,320 [INFO] Epoch 11/120 | train_loss=2.2267 | train_top1=0.3300 | val_loss=2.4247 | val_top1=0.2353 | val_f1=0.1069 | lr=3.00e-04
+2026-11-04 20:48:53,057 [INFO] Epoch 12/120 | train_loss=2.1567 | train_top1=0.3660 | val_loss=2.4394 | val_top1=0.2588 | val_f1=0.1436 | lr=3.00e-04
+2026-11-04 20:48:56,774 [INFO] Epoch 13/120 | train_loss=2.0709 | train_top1=0.4260 | val_loss=2.4447 | val_top1=0.1529 | val_f1=0.0424 | lr=3.00e-04
+2026-11-04 20:49:00,558 [INFO] Epoch 14/120 | train_loss=2.0454 | train_top1=0.4420 | val_loss=2.6221 | val_top1=0.1882 | val_f1=0.0606 | lr=3.00e-04
+2026-11-04 20:49:04,400 [INFO] Epoch 15/120 | train_loss=1.9745 | train_top1=0.4420 | val_loss=2.4714 | val_top1=0.1765 | val_f1=0.0485 | lr=3.00e-04
+2026-11-04 20:49:08,122 [INFO] Epoch 16/120 | train_loss=1.9413 | train_top1=0.4660 | val_loss=2.2974 | val_top1=0.2471 | val_f1=0.1130 | lr=3.00e-04 ★
+2026-11-04 20:49:11,913 [INFO] Epoch 17/120 | train_loss=1.8818 | train_top1=0.4840 | val_loss=2.2942 | val_top1=0.2353 | val_f1=0.0775 | lr=3.00e-04 ★
+2026-11-04 20:49:15,677 [INFO] Epoch 18/120 | train_loss=1.8199 | train_top1=0.5060 | val_loss=2.1552 | val_top1=0.3176 | val_f1=0.2000 | lr=3.00e-04 ★
+2026-11-04 20:49:19,440 [INFO] Epoch 19/120 | train_loss=1.7851 | train_top1=0.5100 | val_loss=2.2801 | val_top1=0.3765 | val_f1=0.1694 | lr=3.00e-04
+2026-11-04 20:49:23,250 [INFO] Epoch 20/120 | train_loss=1.7546 | train_top1=0.4860 | val_loss=2.0824 | val_top1=0.4000 | val_f1=0.2122 | lr=3.00e-04 ★
+2026-11-04 20:49:26,989 [INFO] Epoch 21/120 | train_loss=1.7023 | train_top1=0.5140 | val_loss=2.1188 | val_top1=0.3765 | val_f1=0.1981 | lr=3.00e-04
+2026-11-04 20:49:30,724 [INFO] Epoch 22/120 | train_loss=1.6355 | train_top1=0.5620 | val_loss=2.4355 | val_top1=0.2588 | val_f1=0.1192 | lr=3.00e-04
+2026-11-04 20:49:34,559 [INFO] Epoch 23/120 | train_loss=1.5834 | train_top1=0.5640 | val_loss=1.9131 | val_top1=0.3529 | val_f1=0.1713 | lr=3.00e-04 ★
+2026-11-04 20:49:38,226 [INFO] Epoch 24/120 | train_loss=1.5759 | train_top1=0.5740 | val_loss=2.0447 | val_top1=0.3412 | val_f1=0.1807 | lr=3.00e-04
+2026-11-04 20:49:41,940 [INFO] Epoch 25/120 | train_loss=1.5071 | train_top1=0.5880 | val_loss=2.0108 | val_top1=0.3176 | val_f1=0.1418 | lr=3.00e-04
+2026-11-04 20:49:45,688 [INFO] Epoch 26/120 | train_loss=1.4933 | train_top1=0.5940 | val_loss=2.0083 | val_top1=0.3529 | val_f1=0.1748 | lr=3.00e-04
+2026-11-04 20:49:49,418 [INFO] Epoch 27/120 | train_loss=1.4743 | train_top1=0.5660 | val_loss=1.9654 | val_top1=0.3882 | val_f1=0.2038 | lr=3.00e-04
+2026-11-04 20:49:53,145 [INFO] Epoch 28/120 | train_loss=1.4093 | train_top1=0.5920 | val_loss=2.0444 | val_top1=0.2471 | val_f1=0.1129 | lr=3.00e-04
+2026-11-04 20:49:56,910 [INFO] Epoch 29/120 | train_loss=1.4120 | train_top1=0.6300 | val_loss=1.9849 | val_top1=0.2941 | val_f1=0.1544 | lr=3.00e-04
+2026-11-04 20:50:00,693 [INFO] Epoch 30/120 | train_loss=1.3630 | train_top1=0.6060 | val_loss=1.7898 | val_top1=0.3882 | val_f1=0.1985 | lr=1.50e-04 ★
+2026-11-04 20:50:04,520 [INFO] Epoch 31/120 | train_loss=1.3385 | train_top1=0.6500 | val_loss=1.9784 | val_top1=0.3059 | val_f1=0.1553 | lr=1.50e-04
+2026-11-04 20:50:08,237 [INFO] Epoch 32/120 | train_loss=1.3156 | train_top1=0.6180 | val_loss=2.0571 | val_top1=0.2824 | val_f1=0.1282 | lr=1.50e-04
+2026-11-04 20:50:11,998 [INFO] Epoch 33/120 | train_loss=1.2664 | train_top1=0.6400 | val_loss=1.8899 | val_top1=0.5176 | val_f1=0.2708 | lr=1.50e-04
+2026-11-04 20:50:15,795 [INFO] Epoch 34/120 | train_loss=1.2598 | train_top1=0.6620 | val_loss=1.9843 | val_top1=0.3529 | val_f1=0.1918 | lr=1.50e-04
+2026-11-04 20:50:19,539 [INFO] Epoch 35/120 | train_loss=1.2593 | train_top1=0.6660 | val_loss=2.0640 | val_top1=0.2941 | val_f1=0.1430 | lr=1.50e-04
+2026-11-04 20:50:23,327 [INFO] Epoch 36/120 | train_loss=1.2213 | train_top1=0.6580 | val_loss=2.0521 | val_top1=0.4118 | val_f1=0.1998 | lr=1.50e-04
+2026-11-04 20:50:27,083 [INFO] Epoch 37/120 | train_loss=1.2178 | train_top1=0.6800 | val_loss=1.8111 | val_top1=0.4235 | val_f1=0.2203 | lr=7.50e-05
+2026-11-04 20:50:30,874 [INFO] Epoch 38/120 | train_loss=1.1951 | train_top1=0.7060 | val_loss=1.8535 | val_top1=0.4588 | val_f1=0.2429 | lr=7.50e-05
+2026-11-04 20:50:35,085 [INFO] Epoch 39/120 | train_loss=1.2296 | train_top1=0.6540 | val_loss=1.9816 | val_top1=0.4118 | val_f1=0.2139 | lr=7.50e-05
+2026-11-04 20:50:39,262 [INFO] Epoch 40/120 | train_loss=1.1531 | train_top1=0.7140 | val_loss=2.0543 | val_top1=0.3412 | val_f1=0.1705 | lr=7.50e-05
+2026-11-04 20:50:43,440 [INFO] Epoch 41/120 | train_loss=1.1918 | train_top1=0.6480 | val_loss=2.0261 | val_top1=0.3529 | val_f1=0.1833 | lr=7.50e-05
+2026-11-04 20:50:47,655 [INFO] Epoch 42/120 | train_loss=1.1903 | train_top1=0.6900 | val_loss=1.9774 | val_top1=0.3882 | val_f1=0.2026 | lr=7.50e-05
+2026-11-04 20:50:51,773 [INFO] Epoch 43/120 | train_loss=1.1626 | train_top1=0.6740 | val_loss=1.9823 | val_top1=0.4000 | val_f1=0.1985 | lr=3.75e-05
+2026-11-04 20:50:54,966 [INFO] Epoch 44/120 | train_loss=1.1528 | train_top1=0.7380 | val_loss=1.9645 | val_top1=0.4118 | val_f1=0.2109 | lr=3.75e-05
+2026-11-04 20:50:58,868 [INFO] Epoch 45/120 | train_loss=1.1415 | train_top1=0.7120 | val_loss=1.9057 | val_top1=0.4353 | val_f1=0.2290 | lr=3.75e-05
+2026-11-04 20:50:58,868 [INFO] Early stopping! Sem melhora por 15 épocas.
+2026-11-04 20:50:58,868 [INFO] Early stopping na época 45.
+2026-11-04 20:50:58,873 [INFO] Histórico salvo em experiments\conv_bilstm_attention_mixed25_pose_face_seed42\history.csv e experiments\conv_bilstm_attention_mixed25_pose_face_seed42\history.json
+2026-11-04 20:50:58,873 [INFO] Treinamento concluído em 172s. Melhor época: 30
+2026-11-04 20:50:58,895 [INFO] Resultado: {
+  "best_epoch": 30,
+  "best_metric": 1.7898102395674762,
+  "total_epochs": 45,
+  "elapsed_seconds": 171.92116928100586,
+  "save_dir": "experiments\\conv_bilstm_attention_mixed25_pose_face_seed42"
+}
