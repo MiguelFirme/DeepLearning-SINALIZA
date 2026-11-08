@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Mic, MicOff, Search } from "lucide-react";
 import api, { type DictionaryEntry } from "../services/api";
 import SignCard from "../components/SignCard";
@@ -36,6 +36,13 @@ export default function DictionaryPage() {
   const [total, setTotal] = useState(0);
   const [skip, setSkip] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  /* Marcador no fim da lista: quando ele aparece na tela, carrega mais sinais */
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  /* Evita misturar categorias: cada vez que a lista recomeça (troca de categoria ou busca)
+     o "epoch" muda, e qualquer resposta de uma lista antiga que chegar atrasada é descartada. */
+  const epochRef = useRef(0);
+  const busyRef = useRef(false); // há uma carga em andamento agora?
 
   /* Busca por voz: o texto reconhecido vira o termo de busca */
   const voice = useSpeechRecognition({
@@ -44,7 +51,12 @@ export default function DictionaryPage() {
 
   const fetchEntries = useCallback(
     async (reset = false) => {
+      if (!reset && busyRef.current) return; // nunca duas cargas de "mais" ao mesmo tempo
+      if (reset) epochRef.current += 1; // nova lista: invalida respostas antigas
+      const epoch = epochRef.current;
+      busyRef.current = true;
       setLoading(true);
+      setLoadError(false);
       try {
         const offset = reset ? 0 : skip;
         const res = await api.dictionary({
@@ -53,6 +65,7 @@ export default function DictionaryPage() {
           skip: offset,
           limit: PAGE_SIZE,
         });
+        if (epoch !== epochRef.current) return; // resposta de outra categoria/busca: ignora
         if (reset) {
           setEntries(res.entries);
         } else {
@@ -68,9 +81,14 @@ export default function DictionaryPage() {
         }
         setSkip(offset + res.entries.length);
       } catch (err) {
+        if (epoch !== epochRef.current) return;
         console.error("Erro ao buscar dicionário:", err);
+        setLoadError(true);
       } finally {
-        setLoading(false);
+        if (epoch === epochRef.current) {
+          busyRef.current = false;
+          setLoading(false);
+        }
       }
     },
     [activeCategory, searchTerm, skip]
@@ -82,6 +100,24 @@ export default function DictionaryPage() {
     fetchEntries(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCategory, searchTerm]);
+
+  /* Rolagem infinita: ao chegar perto do fim da lista, carrega a próxima página.
+     Não dispara enquanto já está carregando, nem fica repetindo se deu erro. */
+  const hasMore = entries.length < total;
+  // navegadores muito antigos não têm IntersectionObserver: nesse caso o botão volta a aparecer
+  const canObserve = typeof IntersectionObserver !== "undefined";
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!canObserve || !el || !hasMore || loading || loadError) return;
+    const observer = new IntersectionObserver(
+      ([item]) => {
+        if (item.isIntersecting) fetchEntries(false);
+      },
+      { rootMargin: "400px 0px" } // começa a carregar um pouco antes de chegar no fim
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [canObserve, hasMore, loading, loadError, fetchEntries]);
 
   const categoryDesc: Record<string, string> = {
     Saudações: "Sinais essenciais para iniciar e terminar conversas de forma educada",
@@ -158,10 +194,17 @@ export default function DictionaryPage() {
         {/* Conteúdo principal */}
         <section className={styles.main}>
           <div className={styles.catHeader}>
-            <h2 className={styles.catName}>
-              <span>{CATEGORY_ICONS[activeCategory] ?? "📁"}</span>
-              {searchTerm ? `Resultados: "${searchTerm}"` : activeCategory}
-            </h2>
+            <div className={styles.catTitleRow}>
+              <h2 className={styles.catName}>
+                <span>{CATEGORY_ICONS[activeCategory] ?? "📁"}</span>
+                {searchTerm ? `Resultados: "${searchTerm}"` : activeCategory}
+              </h2>
+              {!searchTerm && total > 0 && (
+                <span className={styles.count}>
+                  {total} {total === 1 ? "sinal" : "sinais"}
+                </span>
+              )}
+            </div>
             <p className={styles.catDesc}>
               {searchTerm
                 ? `${total} sinal(is) encontrado(s)`
@@ -180,16 +223,25 @@ export default function DictionaryPage() {
             <p className={styles.empty}>Nenhum sinal encontrado.</p>
           )}
 
-          {/* Load more */}
-          {entries.length < total && (
-            <div className={styles.loadMore}>
-              <button
-                className="btn btn-outline"
-                onClick={() => fetchEntries(false)}
-                disabled={loading}
-              >
-                {loading ? "Carregando..." : "Carregar mais sinais ▼"}
-              </button>
+          {/* Fim da lista: carrega mais sozinho ao rolar */}
+          {hasMore && (
+            <div ref={sentinelRef} className={styles.loadMore}>
+              {!loadError && (
+                <p className={styles.progress}>
+                  {loading
+                    ? "Carregando mais sinais..."
+                    : `Mostrando ${entries.length} de ${total} sinais`}
+                </p>
+              )}
+              {(loadError || !canObserve) && (
+                <button
+                  className="btn btn-outline"
+                  onClick={() => fetchEntries(false)}
+                  disabled={loading}
+                >
+                  {loadError ? "Tentar novamente" : "Carregar mais sinais ▼"}
+                </button>
+              )}
             </div>
           )}
         </section>
