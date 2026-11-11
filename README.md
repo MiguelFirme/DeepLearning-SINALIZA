@@ -2,17 +2,17 @@
 
 Protótipo de um projeto de extensão para reconhecer **sinais isolados de Libras** pela webcam e apresentar a palavra identificada em português. O objetivo de longo prazo é apoiar a comunicação em escolas, casas e recepções. A versão atual ainda não traduz frases nem está validada para uso com pessoas novas.
 
-## Estado do projeto — 04/11/2026
+## Estado do projeto — 11/11/2026
 
 - A aplicação web usa **React/Vite** no frontend e **FastAPI** no backend.
-- O backend carrega por padrão a [fusão de dois Transformers de 25 classes](docs/RELATORIO_QUALIDADE_FUSAO_25_CLASSES_2026-10-27.md), definida em `configs/fusion25_frozen.json`. Ambos usam 40 pontos faciais; o primeiro usa pose e face, o segundo usa pose, face e mãos.
+- O backend carrega por padrão a [fusão de dois modelos Conv1D + BiLSTM + atenção, com 25 classes](docs/RELATORIO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md), definida em `configs/fusion25_conv_bilstm_default.json`. Ambos usam 40 pontos faciais; o primeiro usa pose e face, o segundo usa pose, face e mãos.
 - A webcam envia quadros JPEG pelo WebSocket. O backend extrai landmarks com MediaPipe Holistic, prepara sequências de 48 quadros e devolve o sinal, a confiança e os candidatos.
 - Não há filtro de movimento para cenas paradas: uma janela com pose/face detectada pode receber uma das 25 palavras mesmo sem um sinal. O experimento anterior de rejeição por movimento foi revertido a pedido do usuário.
 - O dicionário da interface é um catálogo separado e **não indica quais palavras o modelo reconhece**. No estado atual, a API do dicionário lê `data/processed/label_map.json` quando presente, que pertence ao histórico do V-Librasil.
 
 ### Palavras reconhecidas pelo modelo ativo
 
-O modelo ativo reconhece as **25 classes** do mapa `Modelos salvos/transformer_mixed25_full/data_split/label_map.json`: 15 sinais selecionados do MINDS-Libras e dez gravados pelo grupo. A API `/api/health` informa a quantidade de classes carregadas.
+O modelo ativo reconhece as **25 classes** do mapa `Modelos salvos/conv_bilstm_attention_mixed25_full/data_split/label_map.json`: 15 sinais selecionados do MINDS-Libras e dez gravados pelo grupo. A API `/api/health` informa a quantidade de classes carregadas.
 
 ## Rodar localmente no Git Bash do VS Code
 
@@ -45,7 +45,7 @@ cd frontend
 npm run dev
 ```
 
-Abra **http://localhost:5173**, clique em **Iniciar Câmera** e autorize a webcam. Confira **http://127.0.0.1:8000/api/health**: a resposta deve incluir `"model_loaded": true` e `"num_classes": 25`. Em **http://127.0.0.1:8000/api/model/info**, `model_type` deve ser `transformer_fusion`. A primeira classificação exige 48 quadros processados, então pode levar alguns segundos, especialmente na CPU. Use `Ctrl+C` em cada terminal para parar.
+Abra **http://localhost:5173**, clique em **Iniciar Câmera** e autorize a webcam. Confira **http://127.0.0.1:8000/api/health**: a resposta deve incluir `"model_loaded": true` e `"num_classes": 25`. Em **http://127.0.0.1:8000/api/model/info**, `model_type` deve ser `conv_bilstm_attention_fusion`. A primeira classificação exige 48 quadros processados, então pode levar alguns segundos, especialmente na CPU. Use `Ctrl+C` em cada terminal para parar.
 
 Para testar o pipeline com um vídeo existente, sem webcam:
 
@@ -64,7 +64,7 @@ Webcam → JPEG via WebSocket → MediaPipe Holistic no backend
        → normalização pelos ombros
        → velocidades e distâncias: 697 features por quadro
        → janela de 48 quadros → verificação de presença de pose/face
-       → dois Transformers temporais → top 5 + fusão → palavra e confiança → frontend
+       → dois modelos Conv1D + BiLSTM + atenção → top 5 + fusão → palavra e confiança → frontend
 ```
 
 O modelo `pose_face` **zera os pontos detalhados das mãos**, mas preserva braços, cotovelos, pulsos e face; o modelo `full` recebe também as mãos. A primeira predição usa 48 quadros; depois, a janela avança 12 quadros. O frontend captura cada quadro novo entregue pelo navegador, solicita 30 FPS como preferência da câmera e controla a fila para acompanhar o backend. O indicador "FPS câmera" mede quadros recebidos pelo navegador, não quadros processados pelo modelo. Veja [PLANO_FPS_WEBCAM.md](docs/PLANO_FPS_WEBCAM.md).
@@ -79,13 +79,13 @@ O backend não classifica janelas com detecção insuficiente de pose/face. Para
 
 ### Fusão padrão de 25 classes
 
-As 15 classes selecionadas do MINDS-Libras e dez palavras gravadas pelo grupo formam um conjunto de 670 vídeos (500 treino, 85 validação e 85 teste). Dois Transformers arquivados, um `pose_face` e outro `full`, são carregados automaticamente pelo manifesto `configs/fusion25_frozen.json`. A fusão congelada propõe as cinco classes mais prováveis do modelo `pose_face` e as reordena com 22% do escore desse modelo e 78% do `full`. A variável `SINALIZA_FUSION_MANIFEST_PATH` pode selecionar outro manifesto para testes, sem alterar o padrão do projeto.
+As 15 classes selecionadas do MINDS-Libras e dez palavras gravadas pelo grupo formam um conjunto de 670 vídeos (500 treino, 85 validação e 85 teste). Dois modelos Conv1D + BiLSTM + atenção arquivados, um `pose_face` e outro `full`, são carregados automaticamente pelo manifesto `configs/fusion25_conv_bilstm_default.json`. A fusão propõe as cinco classes mais prováveis do modelo `pose_face` e as reordena com 22% do escore desse modelo e 78% do `full`. A variável `SINALIZA_FUSION_MANIFEST_PATH` pode selecionar outro manifesto; o antigo par Transformer continua disponível em `configs/fusion25_frozen.json`.
 
-Na validação, a fusão acertou 50/85 contra 46/85 do modelo `full`; no teste já consultado em experimentos anteriores, 56/85 contra 48/85. Esses resultados são exploratórios. A auditoria marcou 168/670 vídeos para revisão, principalmente por ausência da mão ativa. Não existem negativos reais revisados, portanto ainda não há rejeição treinada de “nenhum sinal”. O [relatório de qualidade e fusão](docs/RELATORIO_QUALIDADE_FUSAO_25_CLASSES_2026-10-27.md) traz protocolo congelado, latência, comandos, limitações e passos para coletar negativos.
+Na validação, a nova fusão acertou 47/85, contra 50/85 do par Transformer anterior; no teste já consultado em experimentos anteriores, 65/85 contra 56/85. A escolha de ativá-la foi do grupo, não uma comprovação de superioridade em pessoas novas. A auditoria marcou 168/670 vídeos para revisão, principalmente por ausência da mão ativa. Não existem negativos reais revisados, portanto ainda não há rejeição treinada de “nenhum sinal”. O [relatório do experimento ConvBiLSTM](docs/RELATORIO_CONV_BILSTM_ATENCAO_MIXED25_2026-11-04.md) traz o protocolo e os limites.
 
 Um [piloto de rejeição com início e fim dos vídeos](docs/RELATORIO_NEGATIVOS_BORDAS_25_CLASSES_2026-10-27.md) foi treinado separadamente com 100 trechos de repouso no treino e 11 na validação. Ele reconheceu esses repousos, mas piorou a tradução quando usado sozinho. Como bloqueio antes da fusão, produziu cinco rejeições indevidas entre 85 sinais no teste exploratório. Seus rótulos são provisórios, e o checkpoint **não está ativo na aplicação**.
 
-Um [experimento com 16 pontos faciais](docs/RELATORIO_ABLACAO_FACE16_MIXED25_2026-11-04.md) retreinou os dois Transformers de 25 classes com os mesmos splits e parâmetros. A versão `pose_face` isolada melhorou, mas a fusão caiu de 50/85 para 45/85 na validação e de 56/85 para 42/85 no teste exploratório já consultado anteriormente. Os novos checkpoints e logs estão arquivados em `Modelos salvos/`; a aplicação usa por padrão a dupla original de 40 pontos.
+Um [experimento com 16 pontos faciais](docs/RELATORIO_ABLACAO_FACE16_MIXED25_2026-11-04.md) retreinou os dois Transformers de 25 classes com os mesmos splits e parâmetros. A versão `pose_face` isolada melhorou, mas a fusão caiu de 50/85 para 45/85 na validação e de 56/85 para 42/85 no teste exploratório já consultado anteriormente. Os checkpoints e logs estão arquivados em `Modelos salvos/`; a dupla ConvBiLSTM ativa usa 40 pontos faciais.
 
 A [fusão híbrida face16 + modelo completo de 40 pontos](docs/RELATORIO_FUSAO_HIBRIDA_FACE16_FULL40_2026-11-04.md) foi testada com checkpoints existentes e a regra original fixa. Acertou 46/85 na validação e 49/85 no teste exploratório, abaixo da dupla original (50/85 e 56/85). O manifesto experimental está em `configs/fusion25_hybrid_face16_full40.json`.
 
@@ -154,6 +154,7 @@ Há configuração de Docker Compose no repositório, mas a execução em contê
 - [Ativação da fusão de 25 classes como padrão](docs/RELATORIO_ATIVACAO_FUSAO25_PADRAO_2026-11-04.md)
 - [Revisão de três PDFs de um projeto semelhante e prioridades para o Sinaliza](docs/RELATORIO_REVISAO_PROJETOS_LIBRAS_2026-11-04.md)
 - [Experimento Conv1D + BiLSTM + atenção nas 25 classes](docs/RELATORIO_CONV_BILSTM_ATENCAO_MIXED25_2026-11-04.md)
+- [Ativação da fusão ConvBiLSTM como padrão](docs/RELATORIO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md)
 - [Experimento Conv1D + Transformer + atenção nas 25 classes](docs/RELATORIO_CONV_TRANSFORMER_ATENCAO_MIXED25_2026-11-04.md)
 - [Piloto de rejeição com trechos de repouso dos vídeos](docs/RELATORIO_NEGATIVOS_BORDAS_25_CLASSES_2026-10-27.md)
 - [Como rodar a aplicação web](docs/COMO_RODAR_APLICACAO_WEB.md)

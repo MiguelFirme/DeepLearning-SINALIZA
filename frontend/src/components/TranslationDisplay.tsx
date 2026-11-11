@@ -109,7 +109,7 @@ export default function TranslationDisplay({ prediction, latency, frameProcessin
             <span className={styles.statValue}>{latency}ms</span>
           </div>
           <div>
-            <span className={styles.statLabel}>Transformer</span>
+            <span className={styles.statLabel}>Modelos</span>
             <span className={styles.statValue}>
               {prediction?.processing_time_ms?.toFixed(0) ?? 0}ms
             </span>

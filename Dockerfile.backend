@@ -13,8 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ml/ ml/
 COPY backend/ backend/
 COPY configs/ configs/
-COPY ["Modelos salvos/transformer_mixed25_pose_face", "/app/Modelos salvos/transformer_mixed25_pose_face"]
-COPY ["Modelos salvos/transformer_mixed25_full", "/app/Modelos salvos/transformer_mixed25_full"]
+COPY ["Modelos salvos/conv_bilstm_attention_mixed25_pose_face", "/app/Modelos salvos/conv_bilstm_attention_mixed25_pose_face"]
+COPY ["Modelos salvos/conv_bilstm_attention_mixed25_full", "/app/Modelos salvos/conv_bilstm_attention_mixed25_full"]
 
 # Criar diretórios para artefatos
 RUN mkdir -p artifacts data

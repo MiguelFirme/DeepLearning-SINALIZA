@@ -1,5 +1,8 @@
 """A busca usa validação real separada e nunca seleciona pelo teste."""
 import json
+from pathlib import Path
+
+import pytest
 
 from scripts.grid_search_escola import prepare_person_splits, ranking
 from scripts.reselect_grid_accuracy import peak_validation_row
@@ -7,6 +10,8 @@ from scripts.reselect_grid_accuracy import peak_validation_row
 
 def test_person_grid_splits_keep_derivatives_with_their_signer(tmp_path):
     spec = json.loads(open("configs/grid_escola_23.json", encoding="utf-8").read())
+    if not (Path(spec["data_dir"]) / "manifest.json").is_file():
+        pytest.skip("Optional augmented school dataset is not available locally")
     report = prepare_person_splits(spec, tmp_path)
     manifest = json.loads((tmp_path / "tune" / "manifest.json").read_text(encoding="utf-8"))
     tune = json.loads((tmp_path / "tune" / "splits.json").read_text(encoding="utf-8"))

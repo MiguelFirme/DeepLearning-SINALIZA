@@ -162,13 +162,16 @@ class PredictionService:
 
     def get_info(self) -> dict:
         if self._fusion is not None:
+            model_types = set(self._fusion.model_types.values())
+            model_type = f"{next(iter(model_types))}_fusion" if len(model_types) == 1 else "mixed_model_fusion"
             return {"status": "loaded", "num_classes": 25,
-                    "type": "transformer_fusion", "device": self._fusion.device,
+                    "type": model_type, "device": self._fusion.device,
                     "trainable": sum(p.numel() for model in self._fusion.models.values()
                                      for p in model.parameters() if p.requires_grad),
                     "smoothing": settings.smoothing_type,
                     "feature_mode": self.feature_mode,
                     "feature_modes": self._fusion.feature_modes,
+                    "model_types": self._fusion.model_types,
                     "fusion_manifest": settings.fusion_manifest_path}
         if self._predictor:
             return self._predictor.get_model_info()

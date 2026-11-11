@@ -22,7 +22,7 @@ def _digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _load_predictor(path: Path, label_map: dict[str, int], device: str) -> tuple[SignPredictor, str, int]:
+def _load_predictor(path: Path, label_map: dict[str, int], device: str) -> tuple[SignPredictor, str, int, str]:
     artifact = torch.load(path, map_location="cpu", weights_only=False)
     checkpoint_labels = artifact.get("label_map")
     if checkpoint_labels is None:
@@ -44,7 +44,7 @@ def _load_predictor(path: Path, label_map: dict[str, int], device: str) -> tuple
     predictor.model = model
     predictor.num_classes = 25
     predictor.load_label_names(label_map)
-    return predictor, mode, int(artifact.get("target_frames", 48))
+    return predictor, mode, int(artifact.get("target_frames", 48)), artifact["model_type"]
 
 
 class FusionBundle:
@@ -75,14 +75,16 @@ class FusionBundle:
         self.labels = {int(index): name for name, index in label_map.items()}
         self.models = {}
         self.feature_modes = {}
+        self.model_types = {}
         for name, file in paths.items():
-            predictor, mode, frames = _load_predictor(file, label_map, device)
+            predictor, mode, frames, model_type = _load_predictor(file, label_map, device)
             expected_modes = {"pose_face": {"pose_face", "pose_face16"},
                               "full": {"full", "full_face16"}}
             if mode not in expected_modes[name] or frames != spec["target_frames"]:
                 raise ValueError(f"Checkpoint incompatível com protocolo: {file}")
             self.models[name] = predictor.model
             self.feature_modes[name] = mode
+            self.model_types[name] = model_type
         self.device = device
         self.target_frames = int(spec["target_frames"])
         self.normalizer = LandmarkNormalizer(346, NormalizationConfig())

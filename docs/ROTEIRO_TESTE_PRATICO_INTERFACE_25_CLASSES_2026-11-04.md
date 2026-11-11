@@ -1,10 +1,10 @@
 # Roteiro de teste prático da interface — 25 classes
 
-Data: 04/11/2026. Protocolo para executar diante da câmera, com a aplicação web atual. **Ainda não há resultados preenchidos neste documento.**
+Data: 04/11/2026; atualizado em 11/11/2026 para a fusão ConvBiLSTM ativa. Protocolo para executar diante da câmera. **Ainda não há resultados preenchidos neste documento.**
 
 ## Plano
 
-1. Confirmar que a API carregou a dupla Transformer ativa de 25 classes e que a câmera envia quadros com pontos rastreados.
+1. Confirmar que a API carregou a dupla ConvBiLSTM ativa de 25 classes e que a câmera envia quadros com pontos rastreados.
 2. Medir separadamente reconhecimento de sinais conhecidos, falsos palpites sem sinal, rastreamento e tempo de resposta.
 3. Repetir tentativas em ordem alternada, anotar o que apareceu na tela e calcular taxas por pessoa e por classe.
 4. Usar os achados para escolher quais erros investigar nos vídeos/landmarks, sem alterar os modelos durante esta rodada.
@@ -24,11 +24,11 @@ cd frontend
 npm run dev
 ```
 
-Abra `http://127.0.0.1:8000/api/health`: espere `model_loaded: true` e `num_classes: 25`. Em `http://127.0.0.1:8000/api/model/info`, espere `model_type: transformer_fusion`. Abra `http://localhost:5173`, clique em **Iniciar Câmera**, permita o acesso e confirme **Modelo pronto** e **Pontos detectados**. Anote `FPS câmera` e `FPS análise`. Os dois podem ser diferentes. Se houver mais de uma câmera, escolha a mesma para toda a rodada.
+Abra `http://127.0.0.1:8000/api/health`: espere `model_loaded: true` e `num_classes: 25`. Em `http://127.0.0.1:8000/api/model/info`, espere `model_type: conv_bilstm_attention_fusion`. Abra `http://localhost:5173`, clique em **Iniciar Câmera**, permita o acesso e confirme **Modelo pronto** e **Pontos detectados**. Anote `FPS câmera` e `FPS análise`. Os dois podem ser diferentes. Se houver mais de uma câmera, escolha a mesma para toda a rodada.
 
 Faça o teste com a pessoa inteira da cintura para cima, rosto, ombros, cotovelos, punhos e mãos visíveis, sem cortar as mãos no movimento. Use luz frontal estável e fundo sem outras pessoas. Não copie uma pose estática: execute o sinal de Libras que vocês conhecem ou que aparece no vídeo de referência. Registre pessoa, câmera, resolução se conhecida, iluminação, distância aproximada e data/hora.
 
-**Atenção ao tempo:** a primeira classificação precisa de **48 quadros analisados pelo backend**, e novas classificações vêm a cada 12 quadros. O número de FPS da câmera não determina sozinho esse tempo. A tela mostra `Ida e volta/quadro`, `Backend/quadro` e `Transformer`: são tempos por quadro ou inferência, **não** o atraso completo entre começar um sinal e receber a palavra.
+**Atenção ao tempo:** a primeira classificação precisa de **48 quadros analisados pelo backend**, e novas classificações vêm a cada 12 quadros. O número de FPS da câmera não determina sozinho esse tempo. A tela mostra `Ida e volta/quadro`, `Backend/quadro` e `Modelos`: são tempos por quadro ou inferência, **não** o atraso completo entre começar um sinal e receber a palavra.
 
 ## Rodada 1 — funcionamento básico
 
@@ -91,6 +91,6 @@ Calcule para cada classe e pessoa:
 - **Tempo até acerto:** mediana dos tempos medidos desde o início do gesto; informe quantas tentativas nunca acertaram dentro de 12 segundos.
 - **Falha de rastreamento:** tentativas em que a mão ativa, rosto ou tronco sumiram do overlay durante parte relevante do gesto.
 
-Não trate a porcentagem exibida como probabilidade calibrada de estar certo: o escore da fusão top 5 não foi calibrado para uso ao vivo. Os resultados offline de 85 vídeos não são meta automática para a webcam. Erros concentrados em uma pessoa sugerem diferença de sinalização, enquadramento ou domínio; erros concentrados em uma classe sugerem olhar os vídeos, landmarks e confusões dessa classe. Se `FPS análise` estiver baixo, a janela de 48 quadros demora mais a formar; isso pode explicar atraso sem ser lentidão do Transformer.
+Não trate a porcentagem exibida como probabilidade calibrada de estar certo: o escore da fusão top 5 não foi calibrado para uso ao vivo. Os resultados offline de 85 vídeos não são meta automática para a webcam. Erros concentrados em uma pessoa sugerem diferença de sinalização, enquadramento ou domínio; erros concentrados em uma classe sugerem olhar os vídeos, landmarks e confusões dessa classe. Se `FPS análise` estiver baixo, a janela de 48 quadros demora mais a formar; isso pode explicar atraso sem ser lentidão dos modelos.
 
-Ao terminar, guarde uma cópia preenchida deste roteiro em `reports/teste_pratico_interface/` com data e identificador da pessoa, sem publicar vídeos pessoais sem autorização. Inclua uma captura da tela e, se possível, uma gravação que mostre o gesto e a resposta. Compare somente rodadas com as mesmas condições e o mesmo manifesto de modelo (`configs/fusion25_frozen.json`).
+Ao terminar, guarde uma cópia preenchida deste roteiro em `reports/teste_pratico_interface/` com data e identificador da pessoa, sem publicar vídeos pessoais sem autorização. Inclua uma captura da tela e, se possível, uma gravação que mostre o gesto e a resposta. Compare somente rodadas com as mesmas condições e o mesmo manifesto de modelo (`configs/fusion25_conv_bilstm_default.json`).

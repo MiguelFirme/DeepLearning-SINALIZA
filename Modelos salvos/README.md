@@ -2,6 +2,8 @@
 
 Este diretório arquiva os checkpoints `best.pt` selecionados por **menor perda de validação**. Os experimentos originais em `experiments/` continuam intactos.
 
+A aplicação usa agora a dupla Conv1D + BiLSTM + atenção de 25 classes (`pose_face` e `full`) por meio de `configs/fusion25_conv_bilstm_default.json`. Os Transformers anteriores permanecem arquivados e podem ser selecionados por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_frozen.json`. Veja o [relatório de ativação](../docs/RELATORIO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md).
+
 | Modelo | Classes | Validação | Teste | Documentação |
 |---|---:|---:|---:|---|
 | Transformer MINDS `pose_face` | 8 | 40/40 (100%) | 37/40 (92,5%) | [README do modelo de 8 classes](transformer_minds_8_classes_pose_face/README.md) |
@@ -15,6 +17,8 @@ Este diretório arquiva os checkpoints `best.pt` selecionados por **menor perda 
 | Transformer misto `pose_face` | 25 | 37/85 (43,5%) | 27/85 (31,8%), exploratório | [README do modelo misto de pose e face](transformer_mixed25_pose_face/README.md) |
 | Transformer misto `full` | 25 | 46/85 (54,1%) | 48/85 (56,5%), exploratório | [README do modelo misto com mãos](transformer_mixed25_full/README.md) |
 | Transformer novas palavras `full` | 10 | 6/10 (60%) | 6/10 (60%), exploratório | [README do modelo das dez novas](transformer_novas_10_full/README.md) |
+| ConvBiLSTM misto `pose_face` | 25 | 33/85 (38,8%) | 49/85 (57,6%), exploratório | [README do primeiro modelo ativo](conv_bilstm_attention_mixed25_pose_face/README.md) |
+| ConvBiLSTM misto `full` | 25 | 49/85 (57,6%) | 63/85 (74,1%), exploratório | [README do segundo modelo ativo](conv_bilstm_attention_mixed25_full/README.md) |
 | Transformer cinco restantes `pose_face` | 5 | 4/5 (80%) | 4/5 (80%), exploratório | [README das cinco restantes com pose e face](transformer_novas_5_restantes_pose_face/README.md) |
 | Transformer cinco restantes `full` | 5 | 4/5 (80%) | 5/5 (100%), exploratório | [README das cinco restantes com mãos](transformer_novas_5_restantes_full/README.md) |
 

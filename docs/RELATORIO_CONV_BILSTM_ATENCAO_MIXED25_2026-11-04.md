@@ -2,6 +2,8 @@
 
 Data: 04/11/2026. [Plano e protocolo antes do treino](PLANO_CONV_BILSTM_ATENCAO_MIXED25_2026-11-04.md).
 
+Atualização em 11/11/2026: por solicitação do usuário, a dupla foi ativada como padrão por meio de um manifesto de implantação separado. Veja o [relatório da integração](RELATORIO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md). O texto abaixo registra o estado e os resultados do experimento original.
+
 ## Implementação e dados
 
 Foi adicionada a arquitetura `conv_bilstm_attention`: LayerNorm de entrada → projeção 697→64 → Conv1D temporal de 64 canais e kernel 3 → BatchNorm/GELU/dropout → duas BiLSTMs de 32 unidades por direção → atenção temporal mascarada → classificador. Cada modelo tem **116.939 parâmetros**, contra aproximadamente 122 mil de cada Transformer anterior. A implementação preserva a máscara de padding antes/depois da convolução e na atenção.

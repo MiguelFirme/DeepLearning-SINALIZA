@@ -23,7 +23,10 @@ def test_face16_runtime_matches_offline_probabilities():
         row = next(item for item in csv.DictReader(handle) if item["top_k"] == "5")
     label_map = json.loads((ROOT / bundle.spec["label_map"]).read_text(encoding="utf-8"))
     names = [name for name, _ in sorted(label_map.items(), key=lambda item: item[1])]
-    with np.load(ROOT / "data/landmarks/mixed_25" / row["path"]) as data:
+    sample_path = ROOT / "data/landmarks/mixed_25" / row["path"]
+    if not sample_path.is_file():
+        pytest.skip("Optional training landmark video is not available locally")
+    with np.load(sample_path) as data:
         actual, _ = bundle.probabilities(data["landmarks"], data["mask"])
     for name, field in (("pose_face", "pose_probabilities"), ("full", "full_probabilities")):
         expected = np.asarray([json.loads(row[field])[label] for label in names])

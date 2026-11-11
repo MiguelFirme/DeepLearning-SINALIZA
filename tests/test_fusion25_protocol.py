@@ -24,7 +24,10 @@ def test_runtime_agrees_with_offline_prediction():
         encoding="utf-8", newline=""
     ) as handle:
         row = next(r for r in csv.DictReader(handle) if r["top_k"] == "5")
-    with np.load(ROOT / "data/landmarks/mixed_25" / row["path"]) as data:
+    sample_path = ROOT / "data/landmarks/mixed_25" / row["path"]
+    if not sample_path.is_file():
+        pytest.skip("Optional training landmark video is not available locally")
+    with np.load(sample_path) as data:
         probabilities, _ = bundle.probabilities(data["landmarks"], data["mask"])
     labels = json.loads((ROOT / spec["label_map"]).read_text(encoding="utf-8"))
     names = [name for name, _ in sorted(labels.items(), key=lambda item: item[1])]
@@ -65,8 +68,14 @@ def test_backend_session_uses_25_class_fusion(monkeypatch):
     service.load_model()
     assert service.get_info()["num_classes"] == 25
     session = service.new_session_predictor()
-    samples = json.loads((ROOT / "data/landmarks/mixed_25/manifest.json").read_text(encoding="utf-8"))
-    with np.load(ROOT / "data/landmarks/mixed_25" / samples[0]["path"]) as data:
+    manifest_path = ROOT / "data/landmarks/mixed_25/manifest.json"
+    if not manifest_path.is_file():
+        pytest.skip("Optional training landmark manifest is not available locally")
+    samples = json.loads(manifest_path.read_text(encoding="utf-8"))
+    sample_path = ROOT / "data/landmarks/mixed_25" / samples[0]["path"]
+    if not sample_path.is_file():
+        pytest.skip("Optional training landmark video is not available locally")
+    with np.load(sample_path) as data:
         result = service.predict(data["landmarks"], data["mask"], predictor=session)
     assert result["fusion_mode"] == "fusion"
     assert len(result["top_k"]) <= 5
