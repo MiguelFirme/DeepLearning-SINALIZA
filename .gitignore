@@ -27,6 +27,7 @@ data/raw/
 data/landmarks/
 data/augmented/
 data/processed/
+data/coleta/
 *.npz
 
 # Artefatos de treino

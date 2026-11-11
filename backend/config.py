@@ -33,6 +33,7 @@ class Settings(BaseSettings):
     # Paths
     data_dir: str = "data"
     artifacts_dir: str = "artifacts"
+    collection_dir: str = "data/coleta"
 
     class Config:
         env_prefix = "SINALIZA_"

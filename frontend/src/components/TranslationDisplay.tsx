@@ -20,6 +20,8 @@ export default function TranslationDisplay({ prediction, latency, frameProcessin
         ? { label: "Conectando", detail: "Estabelecendo conexão com o serviço de tradução.", tone: "warning" }
         : prediction?.status === "poor_tracking"
           ? { label: "Rastreamento insuficiente", detail: "Mantenha o tronco e o rosto visíveis e ajuste o enquadramento.", tone: "warning" }
+          : prediction?.status === "no_sign"
+            ? { label: "Nenhum sinal", detail: "O modelo classificou esta janela como nenhum sinal.", tone: "neutral" }
           : prediction?.status === "idle"
             ? { label: "Aguardando sinal", detail: "Faça o sinal em frente à câmera.", tone: "neutral" }
             : prediction?.status === "recognized" && prediction.sign
@@ -29,6 +31,7 @@ export default function TranslationDisplay({ prediction, latency, frameProcessin
                 : { label: "Capturando sinais", detail: "Câmera ativa. Os quadros estão sendo enviados para análise.", tone: "active" };
 
   const sign = prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
+    : prediction?.status === "no_sign" ? "Nenhum sinal"
     : prediction?.status === "uncertain" ? "Sinal incerto"
     : prediction?.sign ?? "—";
   const confidence = prediction?.confidence ?? 0;

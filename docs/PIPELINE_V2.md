@@ -14,6 +14,22 @@ Dimensão e offsets: coordenadas globais `0:297` (126 mãos + 51 pose + 120 face
 - Fase 2: `pytest tests -q`: **126 passaram, 8 ignorados**. Reamostragem física, bordas repetidas, validade por parte, janelas com cobertura de 80%, dataset determinístico e velocidade equivalente a 9/30 FPS verificados com dados sintéticos.
 - Fase 3: `pytest tests -q`: **128 passaram, 8 ignorados**. Espelhamento duplo, troca das mãos, partes ausentes zeradas e máscara/timestamps sincronizados após descarte foram verificados.
 - Fase 4: `pytest tests -q`: **130 passaram, 8 ignorados**. Um treino sintético de uma época verificou metadados do checkpoint, F1 como monitor, matrizes por origem, carregamento v2 e contrato `_nenhum_sinal`. O carregamento padrão v1 e WebSocket existente também passaram. Não é um experimento de acurácia.
+- Fase 5: `pytest tests -q`: **132 passaram, 8 ignorados**; build TypeScript/Vite passou (1.593 módulos). Coleta por WebSocket, consentimento obrigatório, igualdade dos landmarks salvos, timestamps e splits por pessoa foram verificados. Câmera humana e contagem na interface ainda precisam de execução manual.
+
+## Coleta na interface
+
+Inicie backend e frontend normalmente e abra **Coleta** (`http://localhost:5173/collection`). A coleta funciona com v1 ou v2 carregada. Inicie a câmera, use IDs estáveis como `P01` e `sessao01`, escolha uma palavra do mapa do modelo ou `_nenhum_sinal`, informe a duração (padrão 4 s) e confirme consentimento. Clique **Gravar exemplo**, aguarde 3 s e execute o gesto completo. **Cancelar e descartar** não salva uma gravação parcial. Se a conexão cair, repita a tentativa. O backend pode finalizar pela duração ou por controle explícito; precisa de pelo menos dois quadros.
+
+São salvos apenas landmarks, máscaras e horários — não vídeo nem áudio — em `data/coleta/<pessoa>/<palavra>/<timestamp>.npz`, no computador do backend. Metadados: largura/altura, pessoa, sessão, palavra, data UTC, versão do app, FPS observado, duração solicitada/observada e consentimento. As colunas são exatamente as mesmas da inferência, antes de qualquer aumento ou feature. O relógio é monotônico; empates de ticks são desambiguados pelo menor incremento representável. O diretório está no `.gitignore`.
+
+Depois de coletar todas as palavras com pessoas separadas para os três conjuntos, gere o dataset (IDs abaixo são exemplos, substitua pelos reais):
+
+```bash
+./.venv/Scripts/python.exe scripts/build_coleta_manifest.py --input data/coleta --output data/landmarks/coleta_v2 --processed-dir data/processed/coleta_v2 --train-persons P01 P02 P03 --val-persons P04 --test-persons P05
+./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_mixed25.yaml --data-dir data/landmarks/coleta_v2 --processed-dir data/processed/coleta_v2 --experiment transformer_v2_coleta_seed42 --num-workers 0 --skip-test
+```
+
+O script não copia nem altera `.npz`; cria caminhos relativos no manifesto e separa por identidade, inclusive entre sessões. Recusa pessoas em dois splits, pessoas não atribuídas, arquivos duplicados, ausência de consentimento/dimensões e classes sem treino. Saídas existentes exigem outro diretório ou `--force`. Para mesclar, adicione `--merge-manifest data/landmarks/mixed_25/manifest.json` e inclua **todas as pessoas** de ambas as origens nos três grupos. Use `--person-map caminho/identidades.json` para mapear IDs antigos e novos para a mesma identidade real; caso contrário, nomes diferentes da mesma pessoa não podem ser detectados automaticamente. Confirme essa identidade antes de mesclar para evitar vazamento.
 
 ## Treinar e avaliar por pessoa
 

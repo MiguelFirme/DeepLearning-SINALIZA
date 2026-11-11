@@ -9,6 +9,8 @@ import numpy as np
 
 from ml.features.landmarks import LandmarkExtractor
 from backend.services.prediction import PredictionService
+from backend.services.collection import LandmarkCollector
+from backend.config import settings
 
 
 MAX_JPEG_BYTES = 1_000_000
@@ -24,6 +26,9 @@ class VideoStreamSession:
         self.frames_since_prediction = 0
         self.last_overlay: dict | None = None
         self.last_profile: dict | None = None
+        self.collector = LandmarkCollector(settings.collection_dir, service.get_info().get("labels", []), settings.version)
+        self.collection_events = deque()
+        self._last_received_at = float("-inf")
         # Janelas de 48 quadros continuam intactas; atualizar a cada 12 quadros.
         self.stride = max(1, service.target_frames // 4)
         self.temporal_v2 = None
@@ -36,6 +41,7 @@ class VideoStreamSession:
         return self
 
     def __exit__(self, *args):
+        self.collector.cancel()
         self.extractor.__exit__(*args)
 
     def reset(self):
@@ -52,6 +58,10 @@ class VideoStreamSession:
         """Extrai um quadro; classifica a cada meia janela após 48 quadros."""
         self.last_profile = None
         received_at = time.monotonic()
+        # No Windows, dois quadros muito rápidos podem cair no mesmo tick do
+        # relógio. Preserva a ordem com o menor incremento representável.
+        received_at = max(received_at, np.nextafter(self._last_received_at, np.inf))
+        self._last_received_at = received_at
         started = time.perf_counter() if profile else 0.0
         if not jpeg or len(jpeg) > MAX_JPEG_BYTES:
             raise ValueError("Quadro JPEG vazio ou maior que 1 MB")
@@ -66,6 +76,9 @@ class VideoStreamSession:
         extracted = time.perf_counter() if profile else 0.0
         # Coordenadas brutas da mesma extracao usada pelo classificador.
         self.last_overlay = {"landmarks": landmarks.tolist(), "mask": mask.tolist()}
+        event = self.collector.feed(landmarks, mask, received_at, frame.shape[1], frame.shape[0])
+        if event:
+            self.collection_events.append(event)
         if self.temporal_v2 is not None:
             result = self.temporal_v2.process_landmarks(landmarks, mask, received_at, frame.shape[1], frame.shape[0])
             if profile:

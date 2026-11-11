@@ -47,6 +47,7 @@ export default function HomePage() {
   };
 
   const displaySentence = ws.prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
+    : ws.prediction?.status === "no_sign" ? "Nenhum sinal"
     : ws.prediction?.status === "uncertain" ? "Sinal incerto"
     : sentence.join(", ");
 
@@ -68,6 +69,8 @@ export default function HomePage() {
                   ? "Conectando ao serviço de tradução…"
                   : ws.prediction?.status === "poor_tracking"
                     ? "Não foi possível rastrear o corpo — ajuste o enquadramento"
+                    : ws.prediction?.status === "no_sign"
+                      ? "Nenhum sinal reconhecido nesta janela"
                     : ws.prediction?.status === "idle"
                       ? "Aguardando movimento das mãos e braços"
                       : ws.prediction?.status === "recognized"

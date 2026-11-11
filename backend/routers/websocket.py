@@ -61,6 +61,8 @@ async def websocket_predict(ws: WebSocket):
                         ack_data["profile"] = session.last_profile
                     ack_started = time.perf_counter()
                     await ws.send_json({"type": "frame_ack", "data": ack_data})
+                    while session.collection_events:
+                        await ws.send_json({"type": "collection", "data": session.collection_events.popleft()})
                     if settings.perf_logging:
                         stages = session.last_profile or {}
                         ack_ms = (time.perf_counter() - ack_started) * 1000
@@ -119,7 +121,21 @@ async def websocket_predict(ws: WebSocket):
                 except json.JSONDecodeError:
                     await ws.send_json({"type": "error", "data": {"message": "JSON inválido"}})
                     continue
-                if payload.get("type") == "control" and payload.get("data", {}).get("action") == "reset":
+                action = payload.get("data", {}).get("action")
+                if payload.get("type") == "control" and action in {"record_start", "record_stop", "record_cancel"}:
+                    try:
+                        data = payload["data"]
+                        if action == "record_start":
+                            reply = session.collector.start(data.get("person"), data.get("session"), data.get("word"),
+                                                            data.get("duration", 4), data.get("consent", False))
+                        elif action == "record_stop":
+                            reply = session.collector.finish()
+                        else:
+                            reply = session.collector.cancel()
+                    except (ValueError, TypeError) as exc:
+                        reply = {"status": "erro", "message": str(exc)}
+                    await ws.send_json({"type": "collection", "data": reply})
+                elif payload.get("type") == "control" and action == "reset":
                     session.reset()
                     await ws.send_json({"type": "control", "data": {"status": "reset_ok"}})
                 elif payload.get("type") == "ping":

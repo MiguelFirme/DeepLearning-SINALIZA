@@ -1,0 +1,10 @@
+.page { padding: 24px 16px 48px; }
+.page > p { margin: 12px 0 24px; }
+.grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr); gap: 28px; align-items: start; }
+.form { display: grid; gap: 16px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; }
+.form label { display: grid; gap: 6px; }
+.form input:not([type="checkbox"]), .form select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: inherit; }
+.form .consent { display: flex; align-items: flex-start; gap: 10px; }
+.consent input { margin-top: 4px; }
+.countdown { min-height: 48px; padding: 12px 0; font-size: 28px; font-weight: 700; color: var(--primary); }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }

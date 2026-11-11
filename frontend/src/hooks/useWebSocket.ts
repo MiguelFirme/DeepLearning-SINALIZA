@@ -11,14 +11,17 @@ interface PendingFrame {
 }
 
 interface WsMessage {
-  type: "ready" | "prediction" | "error" | "control" | "pong" | "frame_ack";
+  type: "ready" | "prediction" | "error" | "control" | "pong" | "frame_ack" | "collection";
   data: any;
 }
 
-export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs?: number, frameId?: number) => void) {
+export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs?: number, frameId?: number) => void,
+  onCollection?: (data: {status: string; message?: string; path?: string; frames?: number}) => void) {
   const wsRef = useRef<WebSocket | null>(null);
   const onOverlayRef = useRef(onOverlay);
   onOverlayRef.current = onOverlay;
+  const onCollectionRef = useRef(onCollection);
+  onCollectionRef.current = onCollection;
   const reconnectTimer = useRef<ReturnType<typeof setTimeout>>();
   const shouldReconnect = useRef(false);
   const sentAt = useRef<PendingFrame[]>([]);
@@ -100,6 +103,8 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
           }
         } else if (message.type === "prediction") {
           setPrediction(message.data as PredictResponse);
+        } else if (message.type === "collection") {
+          onCollectionRef.current?.(message.data);
         } else if (message.type === "error") {
           setError(message.data?.message ?? "Erro no backend");
         }
@@ -188,11 +193,18 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
     ws.send(jpeg);
   }, [canSendFrame]);
 
+  const sendControl = useCallback((data: Record<string, unknown>) => {
+    const ws = wsRef.current;
+    if (!serverReady.current || !ws || ws.readyState !== WebSocket.OPEN) return false;
+    ws.send(JSON.stringify({type: "control", data}));
+    return true;
+  }, []);
+
   useEffect(() => () => {
     shouldReconnect.current = false;
     clearTimeout(reconnectTimer.current);
     wsRef.current?.close();
   }, []);
 
-  return { prediction, connected, error, sendFrame, canSendFrame, connect, disconnect, latency, backendFps, frameProcessingMs };
+  return { prediction, connected, error, sendFrame, canSendFrame, connect, disconnect, latency, backendFps, frameProcessingMs, sendControl };
 }

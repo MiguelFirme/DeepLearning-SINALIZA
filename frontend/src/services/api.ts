@@ -26,7 +26,7 @@ export interface PredictResponse {
   top_k: PredictionItem[];
   is_cooldown: boolean;
   processing_time_ms: number;
-  status?: "recognized" | "poor_tracking" | "uncertain" | "idle";
+  status?: "recognized" | "poor_tracking" | "uncertain" | "idle" | "no_sign";
 }
 
 /** Landmarks brutos do mesmo quadro processado pelo backend (346 valores). */
@@ -57,6 +57,8 @@ export interface ModelInfoResponse {
   device: string;
   parameters: number;
   smoothing: string;
+  labels: string[];
+  pipeline_version: number;
 }
 
 /* ---------- Helpers ---------- */
