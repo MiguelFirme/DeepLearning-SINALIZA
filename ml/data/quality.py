@@ -4,6 +4,31 @@ from __future__ import annotations
 import numpy as np
 
 
+def active_interval(landmarks: np.ndarray, mask: np.ndarray) -> tuple[int, int]:
+    """Localiza janela de maior movimento dos punhos; fim exclusivo.
+
+    Reutiliza o critério da auditoria: janela contígua de 40% dos quadros, com
+    mínimo de oito. Não equivale a uma anotação linguística do início/fim.
+    """
+    n = len(landmarks)
+    if n < 2:
+        return 0, n
+    pose = landmarks[:, 126:226].reshape(n, 25, 4)
+    widths = np.linalg.norm(pose[:, 5, :2] - pose[:, 6, :2], axis=1)
+    valid = mask[:, 2].astype(bool) & np.isfinite(widths) & (widths > .025)
+    motion = np.zeros(n)
+    if valid.any():
+        width = np.median(widths[valid])
+        for wrist, shoulder in ((9, 5), (10, 6)):
+            rel = (pose[:, wrist, :2] - pose[:, shoulder, :2]) / width
+            step = np.linalg.norm(np.diff(rel, axis=0), axis=1)
+            step = np.where(valid[1:] & valid[:-1] & np.isfinite(step), step, 0)
+            motion[1:] = np.maximum(motion[1:], step)
+    window = min(n, max(8, int(round(n * .4))))
+    start = int(np.argmax(np.convolve(motion, np.ones(window), mode="valid")))
+    return start, start + window
+
+
 def hand_quality(landmarks: np.ndarray, mask: np.ndarray) -> dict:
     """Estima a mão mais ativa pelo punho relativo ao ombro e mede cobertura.
 
@@ -31,11 +56,8 @@ def hand_quality(landmarks: np.ndarray, mask: np.ndarray) -> dict:
     active_side = int(np.argmax(scores))
     active_name = ("left", "right")[active_side]
     # Uma janela contígua evita chamar ruído isolado de gesto inteiro.
-    window = min(n, max(8, int(round(n * 0.4))))
     total_motion = motion.max(axis=1)
-    rolling = np.convolve(total_motion, np.ones(window), mode="valid")
-    start = int(np.argmax(rolling))
-    end = start + window
+    start, end = active_interval(landmarks, mask)
     active_detected = mask[start:end, active_side].astype(bool)
     active_coverage = float(active_detected.mean())
     full_coverage = float(mask[:, active_side].mean())

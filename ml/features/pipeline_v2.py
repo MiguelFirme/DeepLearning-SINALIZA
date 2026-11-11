@@ -11,6 +11,20 @@ GLOBAL_DIM_V2 = 297
 PART_SLICES_V2 = ((0, 63), (63, 126), (126, 177), (177, 297))
 
 
+def prepare_features_v2(raw, part_mask, timestamps, width, height, cfg=None, end_time=None):
+    """Entrada única de janela para dataset e backend: tempo antes de velocidade."""
+    from ml.features.temporal_v2 import resample_by_time
+    cfg = cfg or PipelineV2Config()
+    sampled, sampled_mask, grid = resample_by_time(
+        raw, part_mask, timestamps, timestamps[-1] if end_time is None else end_time,
+        cfg.target_fps, cfg.n_samples,
+    )
+    features = build_features_v2(sampled, sampled_mask, grid, width, height, cfg)
+    # A validade temporal indica presença de ao menos uma parte. Lacunas curtas
+    # das mãos já são preenchidas pelo construtor; pose/face preservam a presença.
+    return features, sampled_mask.any(axis=1), sampled_mask
+
+
 @dataclass
 class PipelineV2Config:
     target_fps: float = 15.0

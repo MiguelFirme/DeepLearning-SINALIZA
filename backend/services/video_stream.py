@@ -26,6 +26,10 @@ class VideoStreamSession:
         self.last_profile: dict | None = None
         # Janelas de 48 quadros continuam intactas; atualizar a cada 12 quadros.
         self.stride = max(1, service.target_frames // 4)
+        self.temporal_v2 = None
+        if getattr(service, "pipeline_version", 1) == 2:
+            from backend.services.video_stream_v2 import TemporalWindowSessionV2
+            self.temporal_v2 = TemporalWindowSessionV2(service)
 
     def __enter__(self):
         self.extractor.__enter__()
@@ -35,6 +39,8 @@ class VideoStreamSession:
         self.extractor.__exit__(*args)
 
     def reset(self):
+        if self.temporal_v2 is not None:
+            self.temporal_v2.reset()
         self.landmarks.clear()
         self.masks.clear()
         self.frames_since_prediction = 0
@@ -45,6 +51,7 @@ class VideoStreamSession:
     def process_jpeg(self, jpeg: bytes, profile: bool = False) -> dict | None:
         """Extrai um quadro; classifica a cada meia janela após 48 quadros."""
         self.last_profile = None
+        received_at = time.monotonic()
         started = time.perf_counter() if profile else 0.0
         if not jpeg or len(jpeg) > MAX_JPEG_BYTES:
             raise ValueError("Quadro JPEG vazio ou maior que 1 MB")
@@ -59,6 +66,16 @@ class VideoStreamSession:
         extracted = time.perf_counter() if profile else 0.0
         # Coordenadas brutas da mesma extracao usada pelo classificador.
         self.last_overlay = {"landmarks": landmarks.tolist(), "mask": mask.tolist()}
+        if self.temporal_v2 is not None:
+            result = self.temporal_v2.process_landmarks(landmarks, mask, received_at, frame.shape[1], frame.shape[0])
+            if profile:
+                self.last_profile = {"decode_ms": (decoded - started) * 1000,
+                                     "mediapipe_ms": (extracted - decoded) * 1000,
+                                     "prepare_ms": 0.,
+                                     "inference_ms": (time.perf_counter() - extracted) * 1000,
+                                     "window_frames": len(self.temporal_v2.buffer),
+                                     "prediction_ran": result is not None}
+            return result
         self.landmarks.append(landmarks)
         self.masks.append(mask)
         self.frames_since_prediction += 1
