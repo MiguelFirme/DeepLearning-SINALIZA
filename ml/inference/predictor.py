@@ -52,6 +52,7 @@ class SignPredictor:
         self._ema_probs: np.ndarray | None = None
         self._history: deque = deque(maxlen=self.config.majority_window)
         self._last_prediction_time: float = 0.0
+        self.clock = None  # Sessões v2 usam o relógio monotônico dos quadros.
 
     def load_checkpoint(self, checkpoint_path: str | Path, model_type: str | None = None, **model_kwargs):
         """Carrega modelo de um checkpoint."""
@@ -92,7 +93,7 @@ class SignPredictor:
             raise RuntimeError("Modelo não carregado. Use load_checkpoint().")
 
         # Cooldown check
-        now = time.time()
+        now = self.clock() if self.clock is not None else time.time()
         if now - self._last_prediction_time < self.config.cooldown_seconds:
             return {"sign": None, "confidence": 0.0, "top_k": [], "is_cooldown": True}
 

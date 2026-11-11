@@ -2,6 +2,8 @@
 
 Data: 11/11/2026. Pedido: integrar a nova fusão Conv1D + BiLSTM + atenção ao backend como padrão. [Plano anterior à alteração](PLANO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md).
 
+Atualização posterior no mesmo dia: a tarefa [pipeline v2](PIPELINE_V2.md) determinou `configs/fusion25_frozen.json` como padrão v1 e ativação explícita da v2 por checkpoint. A dupla ConvBiLSTM e seu manifesto foram preservados; este relatório documenta a integração anterior.
+
 ## Modelo carregado ao iniciar
 
 `backend/config.py` agora seleciona automaticamente `configs/fusion25_conv_bilstm_default.json`. O manifesto carrega dois checkpoints já treinados, com SHA-256 e mapa de classes verificados pelo `FusionBundle`:

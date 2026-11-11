@@ -16,6 +16,7 @@ class TemporalWindowSessionV2:
         self.buffer = deque()
         self.last_prediction = None
         self.dimensions = None
+        self.predictor.clock = lambda: self.last_prediction if self.last_prediction is not None else 0.
 
     def reset(self):
         self.buffer.clear()

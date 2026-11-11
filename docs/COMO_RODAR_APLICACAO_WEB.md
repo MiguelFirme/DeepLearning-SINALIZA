@@ -60,7 +60,7 @@ Para parar, pressione `Ctrl+C` em cada terminal.
 
 ## Estado atual da tradução ao vivo
 
-- O backend carrega automaticamente os dois checkpoints ConvBiLSTM de 25 classes listados em `configs/fusion25_conv_bilstm_default.json`; não é preciso escolher o modelo a cada execução. Confira `model_loaded: true` e `num_classes: 25` em `/api/health` e `model_type: conv_bilstm_attention_fusion` em `/api/model/info`. Para usar temporariamente o par antigo, defina `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_frozen.json` antes de iniciar o backend.
+- Conforme a tarefa v2, o padrão é novamente a fusão v1 Transformer `configs/fusion25_frozen.json`; confira `model_loaded: true`, `num_classes: 25` e `model_type: transformer_fusion`. A dupla ConvBiLSTM continua selecionável por seu manifesto. Para treinar/ativar a v2, medir robustez a FPS e usar a página **Coleta**, siga [PIPELINE_V2.md](PIPELINE_V2.md). O checkpoint v2 exige `SINALIZA_FUSION_MANIFEST_PATH` vazio e `SINALIZA_MODEL_PATH` apontando para ele.
 - O frontend envia JPEGs da câmera a `/api/ws/predict`; o MediaPipe e o pré-processamento do treinamento rodam no backend. Aguarde 48 quadros processados para a primeira classificação.
 - A integração e o teste com vídeo gravado estão documentados em [PLANO_INTEGRACAO_WEB_8_CLASSES.md](PLANO_INTEGRACAO_WEB_8_CLASSES.md). A avaliação com a webcam do usuário ainda precisa ser feita no navegador.
 - O filtro de movimento para cenas paradas foi revertido; a confiança mínima voltou a 30%. O histórico da experiência está em [PLANO_REJEICAO_SEM_SINAL.md](PLANO_REJEICAO_SEM_SINAL.md).

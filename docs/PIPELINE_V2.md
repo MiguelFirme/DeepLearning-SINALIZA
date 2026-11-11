@@ -15,6 +15,7 @@ Dimensão e offsets: coordenadas globais `0:297` (126 mãos + 51 pose + 120 face
 - Fase 3: `pytest tests -q`: **128 passaram, 8 ignorados**. Espelhamento duplo, troca das mãos, partes ausentes zeradas e máscara/timestamps sincronizados após descarte foram verificados.
 - Fase 4: `pytest tests -q`: **130 passaram, 8 ignorados**. Um treino sintético de uma época verificou metadados do checkpoint, F1 como monitor, matrizes por origem, carregamento v2 e contrato `_nenhum_sinal`. O carregamento padrão v1 e WebSocket existente também passaram. Não é um experimento de acurácia.
 - Fase 5: `pytest tests -q`: **132 passaram, 8 ignorados**; build TypeScript/Vite passou (1.593 módulos). Coleta por WebSocket, consentimento obrigatório, igualdade dos landmarks salvos, timestamps e splits por pessoa foram verificados. Câmera humana e contagem na interface ainda precisam de execução manual.
+- Fase 6: `pytest tests -q`: **134 passaram, 8 ignorados, zero falhas**. A sessão v2 percorreu 6/9/15/30 FPS com checkpoint sintético, janelas por tempo e velocidades equivalentes. Também passou pelo caminho JPEG do backend com relógio controlado. A preparação de todos os folds por pessoa foi verificada sem depender de `annotations.csv`. Dois avisos de descontinuação preexistentes (Pydantic e Starlette/httpx) permanecem.
 
 ## Coleta na interface
 
@@ -30,6 +31,28 @@ Depois de coletar todas as palavras com pessoas separadas para os três conjunto
 ```
 
 O script não copia nem altera `.npz`; cria caminhos relativos no manifesto e separa por identidade, inclusive entre sessões. Recusa pessoas em dois splits, pessoas não atribuídas, arquivos duplicados, ausência de consentimento/dimensões e classes sem treino. Saídas existentes exigem outro diretório ou `--force`. Para mesclar, adicione `--merge-manifest data/landmarks/mixed_25/manifest.json` e inclua **todas as pessoas** de ambas as origens nos três grupos. Use `--person-map caminho/identidades.json` para mapear IDs antigos e novos para a mesma identidade real; caso contrário, nomes diferentes da mesma pessoa não podem ser detectados automaticamente. Confirme essa identidade antes de mesclar para evitar vazamento.
+
+## Simular 6, 9, 15 e 30 FPS
+
+Depois de treinar um checkpoint v2, use um `.npz` com metadados dimensionais ou um vídeo com ao menos 3,2 s (preferencialmente 4 s ou mais). Substitua o caminho de exemplo pelo arquivo real:
+
+```bash
+./.venv/Scripts/python.exe scripts/simulate_live_fps.py --input data/landmarks/minds_libras_all20/08BanheiroSinalizador11-1.npz --checkpoint experiments/transformer_v2_mixed25_seed42/best.pt --fps 6 9 15 30 --output reports/pipeline_v2/banheiro_fps.json
+# Também aceita MP4; o Holistic é executado novamente apenas nos quadros retidos:
+./.venv/Scripts/python.exe scripts/simulate_live_fps.py --input data/raw/minds_libras/08BanheiroSinalizador11-1.mp4 --checkpoint experiments/transformer_v2_mixed25_seed42/best.pt --fps 6 9 15 30 --output reports/pipeline_v2/banheiro_video_fps.json
+```
+
+Cada taxa cria uma nova `TemporalWindowSessionV2`, a mesma classe usada pelo backend. O relógio virtual dos quadros também governa o cooldown e conserva a EMA sem esperas artificiais. O relatório mostra FPS solicitado/efetivo, top 1, escore, palavra aceita e status por janela. Janelas bloqueadas pelo cooldown são identificadas sem inventar probabilidade. Sem pessoa detectada, aparece `poor_tracking`. Um clipe mais curto que a janela não produz classificação. O simulador só descarta quadros: não cria novos frames para atingir uma taxa maior que a fonte.
+
+O `.npz` reaproveita as detecções já existentes; o MP4 reavalia o detector no FPS escolhido e preserva a proporção original. A simulação não mede JPEG, rede, filas nem latência física de câmera. O antigo `smoke_web_inference.py`, quando usado com checkpoint v2, delega à mesma sessão temporal em vez de acelerar todos os frames pelo relógio da máquina. Em v1 seu comportamento histórico é preservado.
+
+O critério sintético é equivalência das features e velocidades para o mesmo movimento linear nos quatro FPS, com tolerância numérica; também são verificados início em 3,2 s e intervalo mínimo de 0,4 s. Isso não garante a mesma palavra em vídeos reais com oclusão e detecção variável. Avalie sinais de pessoas inéditas e falsos positivos fora do vocabulário antes de qualquer decisão de implantação.
+
+## Limites desta entrega
+
+Os datasets reais em `data/` não estão disponíveis aqui. Foram testados movimento/pose sintéticos, um treino de uma época em amostras sintéticas, checkpoints de teste e transporte de JPEGs com extrator determinístico. **Não foi treinado um novo modelo real de 25 classes e não existe métrica real v2 nesta entrega.** Os arquivos de treino antigo com mão ativa pouco detectada não podem ser recuperados somente por interpolação. Revise esses vídeos e use a coleta para ampliar pessoas e ambientes.
+
+Também não foram validados webcam humana, FPS do MediaPipe em vídeo real nem Docker em execução. Os oito testes antigos ignorados dependem de dados locais ausentes. Os pesos e experimentos antigos permanecem arquivados. Novas execuções devem usar nomes próprios e manter o teste independente do ajuste de hiperparâmetros.
 
 ## Treinar e avaliar por pessoa
 

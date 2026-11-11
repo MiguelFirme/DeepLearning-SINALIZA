@@ -12,7 +12,7 @@ from backend.services.prediction import PredictionService
 from backend.services.video_stream_v2 import TemporalWindowSessionV2
 from ml.features.pipeline_v2 import PipelineV2Config
 from ml.training.pipeline_v2 import balanced_sampler, run_training_v2
-from ml.training.signer_cv_v2 import make_person_folds
+from ml.training.signer_cv_v2 import make_person_folds, run_cv_v2
 from scripts.train import load_config
 from tests.test_pipeline_v2 import amostra
 
@@ -24,6 +24,21 @@ def test_sampler_por_classe_e_folds():
     for person, splits in make_person_folds(manifest):
         assert all(manifest[i]["signer"] == person for i in splits["test"])
         assert not set(splits["train"]) & set(splits["val"])
+
+
+def test_cv_v2_prepara_folds_sem_annotations(tmp_path):
+    manifest = [{"path": f"{i}.npz", "signer": f"P{i}", "label": "A"} for i in range(3)]
+    (tmp_path / "manifest.json").write_text(json.dumps(manifest))
+    args = SimpleNamespace(data_dir=str(tmp_path), essential_categories=[], extra_keep=[], class_list=None,
+                           max_classes=None, run_name="cv", run_root=str(tmp_path / "runs"),
+                           processed_root=str(tmp_path / "processed"), signers=None, round="all",
+                           dry_run=False, prepare_only=True, seed=42)
+    run_cv_v2(args)
+    folds = list((tmp_path / "processed/cv").glob("*/splits.json"))
+    assert len(folds) == 3
+    for path in folds:
+        split = json.loads(path.read_text())
+        assert len(split["train"]) == len(split["val"]) == len(split["test"]) == 1
 
 
 def test_treino_checkpoint_carregamento_e_negativo(tmp_path, monkeypatch):
@@ -61,8 +76,10 @@ def test_treino_checkpoint_carregamento_e_negativo(tmp_path, monkeypatch):
     checkpoint["model_state_dict"]["classifier.3.bias"] = torch.tensor([-10., 10.])
     torch.save(checkpoint, path)
     monkeypatch.setattr(settings, "smoothing_type", "none")
+    monkeypatch.setattr(settings, "fusion_manifest_path", "")
+    monkeypatch.setattr(settings, "model_path", str(path))
     service = PredictionService()
-    service.load_model(str(path))
+    service.load_model()
     assert service.pipeline_version == 2
     result = service.predict(raw, mask, timestamps=times, width=640, height=480)
     assert result["status"] == "no_sign" and result["sign"] is None

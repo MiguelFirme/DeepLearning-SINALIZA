@@ -2,7 +2,7 @@
 
 Este diretório arquiva os checkpoints `best.pt` selecionados por **menor perda de validação**. Os experimentos originais em `experiments/` continuam intactos.
 
-A aplicação usa agora a dupla Conv1D + BiLSTM + atenção de 25 classes (`pose_face` e `full`) por meio de `configs/fusion25_conv_bilstm_default.json`. Os Transformers anteriores permanecem arquivados e podem ser selecionados por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_frozen.json`. Veja o [relatório de ativação](../docs/RELATORIO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md).
+A tarefa [pipeline v2](../docs/PIPELINE_V2.md) restaura como padrão v1 a dupla Transformer `configs/fusion25_frozen.json`. A dupla ConvBiLSTM continua disponível em `configs/fusion25_conv_bilstm_default.json`. A v2 requer treino próprio e checkpoint com `pipeline_version: 2`; os checkpoints históricos não são convertidos. O [relatório de ativação ConvBiLSTM](../docs/RELATORIO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md) registra a escolha anterior.
 
 | Modelo | Classes | Validação | Teste | Documentação |
 |---|---:|---:|---:|---|

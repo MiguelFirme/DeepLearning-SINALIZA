@@ -22,7 +22,12 @@ def main():
     args = parser.parse_args()
     prediction_service.load_model()
     if not prediction_service.is_loaded:
-        raise RuntimeError("Modelo de 8 classes não carregado")
+        raise RuntimeError("Modelo não carregado")
+    if prediction_service.pipeline_version == 2:
+        from scripts.simulate_live_fps import simulate_frames, video_frames
+        report = simulate_frames(prediction_service, video_frames(args.video, args.fps))
+        print(json.dumps({"pipeline_version": 2, "requested_fps": args.fps, **report}, ensure_ascii=False, indent=2))
+        return
 
     cap = cv2.VideoCapture(str(args.video))
     if not cap.isOpened():
