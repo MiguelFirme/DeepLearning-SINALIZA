@@ -7,6 +7,7 @@ from dataclasses import asdict
 
 import numpy as np
 import torch
+from torch.utils.data import get_worker_info
 
 from ml.data.dataset import LibrasDataset
 from ml.data.quality import active_interval
@@ -85,6 +86,11 @@ class LibrasDatasetV2(LibrasDataset):
         self.rng = np.random.default_rng(self.augmentation_seed + epoch * 100003)
 
     def __getitem__(self, idx):
+        worker = get_worker_info()
+        worker_key = (self.epoch, worker.id if worker else 0)
+        if self._augmentation_worker != worker_key:
+            self.rng = np.random.default_rng(self.augmentation_seed + self.epoch * 100003 + worker_key[1])
+            self._augmentation_worker = worker_key
         sample, meta = self.samples[idx], self.metadata[idx]
         with np.load(self.data_dir / sample["path"], allow_pickle=True) as data:
             raw = data["landmarks"].astype(np.float32)
@@ -92,7 +98,7 @@ class LibrasDatasetV2(LibrasDataset):
             times = (data["timestamps"].astype(np.float64) if "timestamps" in data
                      else np.arange(len(raw), dtype=np.float64) / meta["fps"])
         if self.training and self.augmentor is not None:
-            raw, mask, times = self.augmentor(raw, mask, times, self.rng)
+            raw, mask, times = self.augmentor(raw, mask, times, self.rng, meta["width"], meta["height"])
         start, end = active_interval(raw, mask)
         end_time = window_end(times, start, end, self.pipeline_cfg.window_seconds, self.training, self.rng)
         features, valid, _ = prepare_features_v2(raw, mask, times, meta["width"], meta["height"],

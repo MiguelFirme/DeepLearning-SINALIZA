@@ -99,7 +99,9 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
         center[:] = 0
         scale[:] = 1
     global_xyz = compact.reshape(n, -1, 3)
+    face_valid = np.any(global_xyz[:, 59:] != 0, axis=-1)
     global_xyz = (global_xyz - center[:, None]) / np.maximum(scale[:, None, None], cfg.epsilon)
+    global_xyz[:, 59:][~face_valid] = 0
     global_xyz = global_xyz.reshape(n, GLOBAL_DIM_V2)
     for side, (start, end) in enumerate(PART_SLICES_V2):
         global_xyz[~mask[:, side], start:end] = 0
@@ -120,6 +122,8 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
         distances[ok, i] = np.linalg.norm(delta[ok], axis=1)
     velocity = np.zeros_like(global_xyz)
     velocity[1:] = np.diff(global_xyz, axis=0) * cfg.target_fps
+    face_velocity = velocity[:, 177:297].reshape(n, 40, 3)
+    face_velocity[1:][~(face_valid[1:] & face_valid[:-1])] = 0
     for side, (start, end) in enumerate(PART_SLICES_V2):
         velocity[1:, start:end][~(mask[1:, side] & mask[:-1, side])] = 0
     return np.concatenate((global_xyz, local.reshape(n, 126), distances, velocity), axis=1).astype(np.float32)

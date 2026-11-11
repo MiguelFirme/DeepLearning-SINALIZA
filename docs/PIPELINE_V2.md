@@ -12,6 +12,13 @@ Dimensão e offsets: coordenadas globais `0:297` (126 mãos + 51 pose + 120 face
 
 - Fase 1: `pytest tests -q`: **122 passaram, 8 ignorados** por datasets locais opcionais ausentes. Testados aspecto, remoção de pernas/visibilidade, invariância local de mão e lacunas curtas/longas.
 - Fase 2: `pytest tests -q`: **126 passaram, 8 ignorados**. Reamostragem física, bordas repetidas, validade por parte, janelas com cobertura de 80%, dataset determinístico e velocidade equivalente a 9/30 FPS verificados com dados sintéticos.
+- Fase 3: `pytest tests -q`: **128 passaram, 8 ignorados**. Espelhamento duplo, troca das mãos, partes ausentes zeradas e máscara/timestamps sincronizados após descarte foram verificados.
+
+## Aumentos somente no treino
+
+`RawAugmentorV2` atua nos dados brutos. Configuração em `configs/augmentation_v2.yaml`: espelhamento 50%, fator de tempo 0,7–1,3 (multiplica os timestamps; fator maior deixa o movimento mais lento), escala 0,85–1,15, rotação ±10°, translação ±0,05, ruído 0,005, descarte de até 30% dos quadros e ocultação contígua de uma mão com probabilidade 0,2. A rotação usa aspecto físico e volta ao formato bruto. As bordas temporais são mantidas ao descartar quadros. Avaliação não aceita augmentor.
+
+O mapa de espelhamento usa os pares de pose e face explicitados no código. Os pontos centrais da face permanecem em sua posição na lista. O **267 não tem par** nesta seleção e é zerado no exemplo espelhado; permanece zerado também após normalização e na velocidade. Espelhar duas vezes recupera os pontos com par, mas não recupera o 267 descartado. A probabilidade é configurável: sinais direcionais devem ser revisados pelo grupo antes de adotar espelhamento indiscriminado.
 
 ## Tempo e metadados
 
