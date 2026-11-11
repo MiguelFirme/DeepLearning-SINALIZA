@@ -56,6 +56,19 @@ Também não foram validados webcam humana, FPS do MediaPipe em vídeo real nem 
 
 ## Treinar e avaliar por pessoa
 
+Se aparecer `FileNotFoundError: data/landmarks/mixed_25/manifest.json`, primeiro verifique os dados. Em 11/11/2026, esta instalação tinha apenas `data/annotations.csv`: faltavam os 670 `.npz` referenciados pelo mixed25 (600 MINDS selecionados, 35 em `novas_5_palavras`, 35 em `novas_5_restantes`). Os checkpoints e o CSV de anotações não contêm os landmarks de treinamento. Os manifestos/splits antigos estão preservados em `Modelos salvos/transformer_mixed25_full/data_split`.
+
+```bash
+# Diagnóstico: não escreve arquivos.
+./.venv/Scripts/python.exe scripts/restore_mixed25_dataset.py --check-only
+# Após recuperar as pastas originais de .npz, restaura somente os índices faltantes:
+./.venv/Scripts/python.exe scripts/restore_mixed25_dataset.py
+```
+
+O comando só restaura `data/landmarks/mixed_25/manifest.json` e os índices de `data/processed/mixed_25` quando todas as sequências estão presentes. Ele preserva os splits arquivados e recusa sobrescrever índices diferentes. Não cria landmarks substitutos nem modifica `.npz`. Se as pastas foram movidas para outro local, use `--landmarks-root 'D:/backup/landmarks'` (essa pasta deve conter as subpastas de origem); depois passe `--data-dir 'D:/backup/landmarks/mixed_25'` ao treino. Se nenhum backup dos landmarks existir, será necessário restaurar os vídeos e extrair novamente; os novos sinais do grupo não podem ser recuperados dos pesos.
+
+Esta correção de diagnóstico e recuperação foi verificada com **136 testes passando, 8 ignorados** por dados ausentes. O treino agora verifica índices e arquivos referenciados antes de iniciar e imprime uma orientação em português em vez do traceback genérico de arquivo ausente.
+
 Na raiz, com os `.npz` originais e os três arquivos `manifest.json`, `splits.json` e `label_map.json` em `data/processed/mixed_25` correspondentes ao manifesto de `data/landmarks/mixed_25`:
 
 ```bash

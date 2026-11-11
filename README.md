@@ -52,6 +52,8 @@ Abra **http://localhost:5173**, clique em **Iniciar Câmera** e autorize a webca
 
 O novo pipeline usa uma grade de **15 FPS por 3,2 s**, aspecto corrigido e **725 features** (pose superior sem visibilidade, posição e forma local das mãos, face, distâncias e velocidade por segundo). Treino e backend usam o mesmo construtor. A v2 tem sampler balanceado, augmentation apenas em treino e seleção por F1 macro da validação. Ainda não há métricas reais v2: os testes aqui usam dados sintéticos porque os landmarks locais estão ausentes.
 
+Se faltar `data/landmarks/mixed_25/manifest.json`, execute `./.venv/Scripts/python.exe scripts/restore_mixed25_dataset.py --check-only`. O [guia de recuperação](docs/PIPELINE_V2.md) explica como restaurar índices arquivados quando os `.npz` estão disponíveis; os pesos do modelo não substituem os dados de treino.
+
 ```bash
 # Com os landmarks e splits mixed25 existentes:
 ./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_mixed25.yaml --data-dir data/landmarks/mixed_25 --processed-dir data/processed/mixed_25 --experiment transformer_v2_mixed25_seed42 --num-workers 0 --skip-test

@@ -61,6 +61,25 @@ def balanced_sampler(labels, seed):
                                  replacement=True, generator=torch.Generator().manual_seed(seed))
 
 
+def check_dataset_files(data_dir, processed):
+    """Diagnostica índices ou sequências ausentes antes de inicializar o treino."""
+    required = [data_dir / "manifest.json"] + [processed / name for name in
+                                                ("manifest.json", "splits.json", "label_map.json")]
+    missing = [str(path) for path in required if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(
+            "Dataset v2 incompleto. Índices ausentes: " + ", ".join(missing)
+            + ". Execute ./.venv/Scripts/python.exe scripts/restore_mixed25_dataset.py "
+              "para verificar os landmarks e recuperar os índices arquivados do mixed25. "
+              "O comando só restaura índices; não recria .npz ausentes. Consulte docs/PIPELINE_V2.md."
+        )
+    manifest = json.loads((data_dir / "manifest.json").read_text(encoding="utf-8"))
+    missing_samples = [row["path"] for row in manifest if not (data_dir / row["path"]).is_file()]
+    if missing_samples:
+        raise FileNotFoundError(f"Faltam {len(missing_samples)}/{len(manifest)} arquivos .npz do manifesto. "
+                                f"Exemplos: {missing_samples[:3]}. Recupere os landmarks antes de treinar.")
+
+
 def run_training_v2(args, cfg):
     """Ponto de entrada do CLI de treino quando pipeline_version=2."""
     seed = args.seed if args.seed is not None else cfg.get("seed", 42)
@@ -74,6 +93,7 @@ def run_training_v2(args, cfg):
     if args.target_frames and args.target_frames != pipeline.n_samples:
         raise ValueError("target_frames precisa coincidir com FPS × duração v2")
     data_dir, processed = Path(args.data_dir), Path(args.processed_dir)
+    check_dataset_files(data_dir, processed)
     manifest = json.loads((data_dir / "manifest.json").read_text(encoding="utf-8"))
     if manifest != json.loads((processed / "manifest.json").read_text(encoding="utf-8")):
         raise ValueError("Manifesto de dados diferente do manifesto dos splits")
