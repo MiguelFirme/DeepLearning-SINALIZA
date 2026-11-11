@@ -28,4 +28,7 @@ async def model_info():
         device=info.get("device", "cpu"),
         parameters=info.get("trainable", 0),
         smoothing=info.get("smoothing", "none"),
+        pipeline_version=info.get("pipeline_version", 1),
+        target_fps=info.get("target_fps"), window_seconds=info.get("window_seconds"),
+        feature_dim=info.get("feature_dim"), labels=info.get("labels", []),
     )

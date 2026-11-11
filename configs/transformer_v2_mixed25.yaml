@@ -1,0 +1,33 @@
+# Pipeline independente, ativado explicitamente pelo checkpoint.
+pipeline_version: 2
+seed: 42
+pipeline:
+  target_fps: 15.0
+  window_seconds: 3.2
+  max_gap: 5
+model:
+  type: transformer
+  params:
+    d_model: 128
+    nhead: 4
+    num_layers: 3
+    dim_feedforward: 256
+    dropout: 0.15
+    max_seq_len: 48
+    classifier_hidden: 128
+data:
+  num_workers: 0
+augmentation_file: augmentation_v2.yaml
+training:
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.01
+  scheduler: cosine
+  warmup_epochs: 5
+  epochs: 150
+  batch_size: 16
+  label_smoothing: 0.1
+  balanced_sampler: true
+  monitor: val_f1
+  patience: 25
+  use_amp: true

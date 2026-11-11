@@ -19,7 +19,10 @@ class PredictionItem(BaseModel):
 
 class PredictRequest(BaseModel):
     landmarks: list[list[float]] = Field(..., description="Sequência de landmarks (T, D)")
-    mask: list[bool] | None = Field(None, description="Máscara de frames válidos")
+    mask: list[list[bool]] | list[bool] | None = Field(None, description="Máscara por parte (T,4) na v2")
+    timestamps: list[float] | None = None
+    width: int | None = None
+    height: int | None = None
 
 
 class PredictResponse(BaseModel):
@@ -28,6 +31,7 @@ class PredictResponse(BaseModel):
     top_k: list[PredictionItem]
     is_cooldown: bool = False
     processing_time_ms: float = 0.0
+    status: str | None = None
 
 
 class DictionaryEntry(BaseModel):
@@ -52,6 +56,11 @@ class ModelInfoResponse(BaseModel):
     device: str
     parameters: int = 0
     smoothing: str = "ema"
+    pipeline_version: int = 1
+    target_fps: float | None = None
+    window_seconds: float | None = None
+    feature_dim: int | None = None
+    labels: list[str] = Field(default_factory=list)
 
 
 class WebSocketMessage(BaseModel):

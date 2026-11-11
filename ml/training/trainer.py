@@ -396,6 +396,7 @@ class Trainer:
             "feature_mode": getattr(self.model, "sinaliza_feature_mode", "full"),
             "num_classes": self.num_classes,
         }
+        checkpoint.update(getattr(self.model, "sinaliza_pipeline_metadata", {}))
         if self.scheduler is not None:
             checkpoint["scheduler_state_dict"] = self.scheduler.state_dict()
         torch.save(checkpoint, path)
@@ -421,6 +422,7 @@ class Trainer:
         calculator = MetricsCalculator(self.num_classes, self.metrics_calc.label_names)
         total_loss = 0.0
         total_samples = 0
+        by_origin = {}
         for batch in loader:
             seq = batch["sequence"].to(self.device)
             mask = batch["mask"].to(self.device)
@@ -431,11 +433,16 @@ class Trainer:
             total_loss += loss.item() * labels.size(0)
             total_samples += labels.size(0)
             calculator.update(logits.cpu().numpy(), labels.cpu().numpy())
+            if "origin" in batch:
+                for origin in set(batch["origin"]):
+                    selected = np.asarray([value == origin for value in batch["origin"]])
+                    origin_calc = by_origin.setdefault(origin, MetricsCalculator(self.num_classes))
+                    origin_calc.update(logits.cpu().numpy()[selected], labels.cpu().numpy()[selected])
 
         if total_samples == 0:
             raise ValueError("Não é possível avaliar um conjunto vazio.")
         metrics = calculator.compute()
-        return {
+        result = {
             "loss": float(total_loss / total_samples),
             "top1": float(metrics.top1_accuracy),
             "top3": float(metrics.top3_accuracy),
@@ -446,6 +453,18 @@ class Trainer:
             "recall_macro": float(metrics.recall_macro),
             "total_samples": int(metrics.total_samples),
         }
+        if by_origin:
+            result["confusion_matrix"] = metrics.confusion_matrix.tolist()
+            result["label_names"] = self.metrics_calc.label_names
+            result["by_origin"] = {}
+            for origin in sorted(set(by_origin) | {"minds", "novas"}):
+                if origin not in by_origin:
+                    result["by_origin"][origin] = {"total_samples": 0, "top1": None, "f1_macro": None}
+                    continue
+                values = by_origin[origin].compute()
+                result["by_origin"][origin] = {"total_samples": values.total_samples, "top1": values.top1_accuracy,
+                                              "f1_macro": values.f1_macro, "confusion_matrix": values.confusion_matrix.tolist()}
+        return result
 
     def _save_history(self):
         # CSV

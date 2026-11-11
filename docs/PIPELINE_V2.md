@@ -13,6 +13,30 @@ Dimensão e offsets: coordenadas globais `0:297` (126 mãos + 51 pose + 120 face
 - Fase 1: `pytest tests -q`: **122 passaram, 8 ignorados** por datasets locais opcionais ausentes. Testados aspecto, remoção de pernas/visibilidade, invariância local de mão e lacunas curtas/longas.
 - Fase 2: `pytest tests -q`: **126 passaram, 8 ignorados**. Reamostragem física, bordas repetidas, validade por parte, janelas com cobertura de 80%, dataset determinístico e velocidade equivalente a 9/30 FPS verificados com dados sintéticos.
 - Fase 3: `pytest tests -q`: **128 passaram, 8 ignorados**. Espelhamento duplo, troca das mãos, partes ausentes zeradas e máscara/timestamps sincronizados após descarte foram verificados.
+- Fase 4: `pytest tests -q`: **130 passaram, 8 ignorados**. Um treino sintético de uma época verificou metadados do checkpoint, F1 como monitor, matrizes por origem, carregamento v2 e contrato `_nenhum_sinal`. O carregamento padrão v1 e WebSocket existente também passaram. Não é um experimento de acurácia.
+
+## Treinar e avaliar por pessoa
+
+Na raiz, com os `.npz` originais e os três arquivos `manifest.json`, `splits.json` e `label_map.json` em `data/processed/mixed_25` correspondentes ao manifesto de `data/landmarks/mixed_25`:
+
+```bash
+./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_mixed25.yaml --data-dir data/landmarks/mixed_25 --processed-dir data/processed/mixed_25 --experiment transformer_v2_mixed25_seed42 --num-workers 0 --skip-test
+./.venv/Scripts/python.exe scripts/run_signer_cv.py --config configs/transformer_v2_mixed25.yaml --data-dir data/landmarks/mixed_25 --processed-root data/processed/signer_cv_v2 --run-name transformer_v2_cv_seed42 --epochs 150 --num-workers 0 --prepare-only
+# Após conferir os splits por pessoa, execute sem --prepare-only para treinar todos os folds.
+./.venv/Scripts/python.exe scripts/run_signer_cv.py --config configs/transformer_v2_mixed25.yaml --data-dir data/landmarks/mixed_25 --processed-root data/processed/signer_cv_v2 --run-name transformer_v2_cv_seed42 --epochs 150 --num-workers 0
+```
+
+A CV v2 descobre as pessoas no manifesto: uma no teste, a próxima na validação e as restantes no treino; nenhum peso é reutilizado entre folds. `--round 1` permite uma rodada; `--signers` permite informar as identidades exatas do manifesto. Os índices e arquivos brutos são preservados. Classes sem treino ou identidade desconhecida geram erro. Cada teste é avaliado após escolher o checkpoint pelo F1 macro da validação. `by_origin` e `confusion_matrix` ficam nos JSONs e no terminal. Origens sem amostras são registradas com contagem zero e métricas nulas.
+
+Configuração: Transformer 128/4 cabeças/3 camadas/dropout 0,15, AdamW 1e-3/L2 0,01, cosine com warmup 5, 150 épocas, suavização de rótulo 0,1, amostragem balanceada com reposição calculada somente no treino e early stopping por F1 macro com paciência 25. O sampler substitui a ponderação adicional da loss. Logs ficam em `logs/`, pesos e métricas em `experiments/`. Checkpoints v2 incluem `pipeline_version`, `pipeline_config`, `feature_dim`, `label_map`, `target_fps`, `window_seconds` e os parâmetros da rede.
+
+## Ativar a v2 explicitamente
+
+```bash
+SINALIZA_FUSION_MANIFEST_PATH='' SINALIZA_MODEL_PATH=experiments/transformer_v2_mixed25_seed42/best.pt ./.venv/Scripts/python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Sem essas variáveis, a aplicação usa a fusão v1 `configs/fusion25_frozen.json`, conforme o pedido desta tarefa. A dupla ConvBiLSTM anterior continua disponível em seu manifesto, sem apagar pesos. `/api/model/info` informa versão, dimensão e parâmetros temporais. A v2 exige timestamps e dimensões reais; o REST `/api/predict` aceita esses campos e máscara por parte. A webcam os fornece automaticamente. A classe opcional `_nenhum_sinal` pode estar no mapa e nos splits como qualquer outra; se vencer o top 1 suavizado, o backend responde `no_sign`, palavra nula e candidatos vazios, mesmo abaixo do limiar de exibição. Não são gerados negativos artificiais nesta fase.
 
 ## Aumentos somente no treino
 

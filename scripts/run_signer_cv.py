@@ -93,12 +93,13 @@ def parse_args():
     parser.add_argument("--essential-categories", nargs="+", default=[],
                         help="Categorias de ESSENTIAL_BY_CATEGORY usadas como vocabulário fechado")
     parser.add_argument("--extra-keep", nargs="*", default=[])
-    parser.add_argument("--epochs", type=int, default=120)
+    parser.add_argument("--epochs", type=int, default=None)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--batch-size", type=int, default=None)
     parser.add_argument("--num-workers", type=int, default=None)
     parser.add_argument("--device", default=None)
-    parser.add_argument("--round", choices=["all", "1", "2", "3"], default="all")
+    parser.add_argument("--round", default="all", help="all ou número do fold (v2 descobre as pessoas no manifesto)")
+    parser.add_argument("--signers", nargs="+", default=None, help="Pessoas exatas do manifesto para CV v2")
     parser.add_argument(
         "--prepare-only",
         action="store_true",
@@ -119,6 +120,17 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if str(PROJECT_ROOT) not in sys.path:
+        sys.path.insert(0, str(PROJECT_ROOT))
+    from scripts.train import load_config
+    cv_config = load_config(args.config)
+    if cv_config.get("pipeline_version", 1) == 2:
+        args.epochs = args.epochs or cv_config.get("training", {}).get("epochs", 150)
+        from ml.training.signer_cv_v2 import run_cv_v2
+        return run_cv_v2(args)
+    args.epochs = args.epochs or 120
+    if args.round not in ("all", "1", "2", "3"):
+        raise ValueError("V1 possui somente três folds")
     if args.max_classes is not None and args.max_classes <= 0:
         raise SystemExit("--max-classes deve ser maior que zero")
     if args.epochs <= 0:

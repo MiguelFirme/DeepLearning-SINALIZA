@@ -97,6 +97,9 @@ def main():
 
     # Carregar config
     cfg = load_config(args.config)
+    if cfg.get("pipeline_version", 1) == 2:
+        from ml.training.pipeline_v2 import run_training_v2
+        return run_training_v2(args, cfg)
     data_cfg = cfg.get("data", {})
     train_cfg_dict = cfg.get("training", {})
     model_type = args.model or cfg.get("model", {}).get("type", "bilstm")

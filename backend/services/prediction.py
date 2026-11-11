@@ -27,6 +27,8 @@ class PredictionService:
         self._loaded = False
         self._fusion: FusionBundle | None = None
         self.feature_mode = "full"
+        self.pipeline_version = 1
+        self.pipeline_cfg = None
         self.target_frames = settings.target_frames
 
     @property
@@ -36,6 +38,8 @@ class PredictionService:
     def load_model(self, model_path: str | None = None):
         """Carrega o checkpoint treinado com metadados e pesos estritos."""
         self._loaded = False
+        self.pipeline_version = 1
+        self.pipeline_cfg = None
         if model_path is None and settings.fusion_manifest_path:
             self._fusion = FusionBundle(settings.fusion_manifest_path, settings.device)
             self._predictor = None
@@ -52,6 +56,17 @@ class PredictionService:
 
         import torch
         artifact = torch.load(path, map_location="cpu", weights_only=False)
+        self.pipeline_version = int(artifact.get("pipeline_version", 1))
+        if self.pipeline_version not in (1, 2):
+            raise ValueError("Versão de pipeline não suportada")
+        if self.pipeline_version == 2:
+            from ml.features.pipeline_v2 import PipelineV2Config, FEATURE_DIM_V2
+            self.pipeline_cfg = PipelineV2Config(**artifact["pipeline_config"])
+            if (artifact.get("feature_dim") != FEATURE_DIM_V2
+                    or artifact.get("target_fps") != self.pipeline_cfg.target_fps
+                    or artifact.get("window_seconds") != self.pipeline_cfg.window_seconds
+                    or artifact.get("target_frames") != self.pipeline_cfg.n_samples):
+                raise ValueError("Metadados v2 inconsistentes com a configuração de features")
 
         config = PredictorConfig(
             confidence_threshold=settings.confidence_threshold,
@@ -64,6 +79,7 @@ class PredictionService:
         model_type = artifact.get("model_type")
         if not model_type:
             raise ValueError(f"Checkpoint sem model_type: {path}")
+        self._model_type = model_type
         num_classes = artifact["num_classes"]
         label_map = artifact.get("label_map")
         if not label_map:
@@ -96,12 +112,13 @@ class PredictionService:
         if self.feature_mode not in FEATURE_MODES:
             raise ValueError(f"feature_mode desconhecido: {self.feature_mode}")
         self.target_frames = int(artifact.get("target_frames", settings.target_frames))
-        if input_dim != LandmarkNormalizer(346, NormalizationConfig()).get_output_dim():
-            raise ValueError(f"Checkpoint espera {input_dim} features, mas o pipeline produz 697")
+        expected_dim = 725 if self.pipeline_version == 2 else LandmarkNormalizer(346, NormalizationConfig()).get_output_dim()
+        if input_dim != expected_dim:
+            raise ValueError(f"Checkpoint espera {input_dim} features, mas o pipeline produz {expected_dim}")
 
         # Processadores
-        self._normalizer = LandmarkNormalizer(346, NormalizationConfig())
-        self._seq_processor = SequenceProcessor(SequenceConfig(target_frames=self.target_frames))
+        self._normalizer = LandmarkNormalizer(346, NormalizationConfig()) if self.pipeline_version == 1 else None
+        self._seq_processor = SequenceProcessor(SequenceConfig(target_frames=self.target_frames)) if self.pipeline_version == 1 else None
 
         self._loaded = True
         logger.info(f"Modelo carregado: {model_type} | {num_classes} classes | device={settings.device}")
@@ -120,7 +137,8 @@ class PredictionService:
         return predictor
 
     def predict(self, landmarks: np.ndarray, mask: np.ndarray | None = None,
-                predictor: SignPredictor | FusionSessionPredictor | None = None) -> dict:
+                predictor: SignPredictor | FusionSessionPredictor | None = None,
+                timestamps=None, width=None, height=None) -> dict:
         """Predição a partir de landmarks brutos."""
         if self._loaded and self._fusion is not None:
             start = time.perf_counter()
@@ -131,6 +149,21 @@ class PredictionService:
             return result
         if not self._loaded or self._predictor is None:
             return {"sign": None, "confidence": 0.0, "top_k": [], "is_cooldown": False, "error": "Modelo não carregado"}
+
+        if self.pipeline_version == 2:
+            from ml.features.pipeline_v2 import prepare_features_v2
+            if timestamps is None or mask is None or width is None or height is None:
+                raise ValueError("V2 exige timestamps, máscara por parte, largura e altura")
+            start = time.perf_counter()
+            seq, seq_mask, _ = prepare_features_v2(landmarks, mask, timestamps, width, height, self.pipeline_cfg)
+            session = predictor or self._predictor
+            result = session.predict(seq, seq_mask)
+            probabilities = result.get("raw_probs")
+            if probabilities is not None and session.label_names[int(np.argmax(probabilities))] == "_nenhum_sinal":
+                result.update(status="no_sign", sign=None, top_k=[])
+                session._last_prediction_time = 0.
+            result["processing_time_ms"] = (time.perf_counter() - start) * 1000
+            return result
 
         start = time.time()
 
@@ -172,9 +205,17 @@ class PredictionService:
                     "feature_mode": self.feature_mode,
                     "feature_modes": self._fusion.feature_modes,
                     "model_types": self._fusion.model_types,
+                    "pipeline_version": 1,
+                    "labels": [self._fusion.labels[i] for i in sorted(self._fusion.labels)],
                     "fusion_manifest": settings.fusion_manifest_path}
         if self._predictor:
-            return self._predictor.get_model_info()
+            info = self._predictor.get_model_info()
+            info["pipeline_version"] = self.pipeline_version
+            info["labels"] = [self._predictor.label_names[i] for i in sorted(self._predictor.label_names)]
+            if self.pipeline_version == 2:
+                info.update(type=f"{self._model_type}_v2", target_fps=self.pipeline_cfg.target_fps,
+                            window_seconds=self.pipeline_cfg.window_seconds, feature_dim=725)
+            return info
         return {"status": "not_loaded"}
 
 

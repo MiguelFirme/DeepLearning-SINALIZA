@@ -1,4 +1,4 @@
-"""Fluxo webcam -> JPEG -> landmarks -> fusão ConvBiLSTM -> WebSocket."""
+"""Fluxo webcam -> JPEG -> landmarks -> fusão v1 -> WebSocket."""
 from __future__ import annotations
 
 import cv2
@@ -33,7 +33,7 @@ def test_websocket_classifies_48_jpeg_frames(monkeypatch):
 
     with TestClient(app) as client:
         assert client.get("/api/health").json()["model_loaded"] is True
-        assert client.get("/api/model/info").json()["model_type"] == "conv_bilstm_attention_fusion"
+        assert client.get("/api/model/info").json()["model_type"] == "transformer_fusion"
         with client.websocket_connect("/api/ws/predict") as ws:
             ready = ws.receive_json()
             assert ready["type"] == "ready"

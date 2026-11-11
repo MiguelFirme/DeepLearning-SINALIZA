@@ -21,7 +21,9 @@ async def predict(request: PredictRequest):
 
         mask = np.array(request.mask, dtype=bool) if request.mask else None
 
-        result = prediction_service.predict(landmarks, mask)
+        kwargs = ({"timestamps": request.timestamps, "width": request.width, "height": request.height}
+                  if prediction_service.pipeline_version == 2 else {})
+        result = prediction_service.predict(landmarks, mask, **kwargs)
 
         top_k = [PredictionItem(**item) for item in result.get("top_k", [])]
 
@@ -31,9 +33,12 @@ async def predict(request: PredictRequest):
             top_k=top_k,
             is_cooldown=result.get("is_cooldown", False),
             processing_time_ms=result.get("processing_time_ms", 0.0),
+            status=result.get("status"),
         )
     except HTTPException:
         raise
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro na predição: {str(e)}")
 
