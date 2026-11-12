@@ -1,0 +1,2 @@
+# Mesmos parâmetros v2; o label_map mixed_23 fornece as 23 classes.
+_base_: transformer_v2_mixed25.yaml

@@ -56,6 +56,10 @@ Também não foram validados webcam humana, FPS do MediaPipe em vídeo real nem 
 
 ## Treinar e avaliar por pessoa
 
+**Vocabulário atual após a remoção de classes (12/11/2026):** para usar as 13 classes MINDS restantes e os vídeos em `data/raw/Videos do grupo`, siga [Treino v2 mixed23 com o grupo](TREINO_V2_MIXED23_GRUPO_2026-11-12.md). São 23 classes, 590 exemplos e splits 440/75/75. Os comandos mixed25 abaixo documentam a reprodução do vocabulário anterior e não devem ser usados nesse conjunto reduzido.
+
+Para baixar novamente os vídeos públicos e extrair os landmarks dentro de `data`, siga [Recuperar vídeos MINDS](RECUPERAR_VIDEOS_MINDS_2026-11-11.md). As dez palavras gravadas pelo grupo precisam ser recuperadas separadamente.
+
 Se aparecer `FileNotFoundError: data/landmarks/mixed_25/manifest.json`, primeiro verifique os dados. Em 11/11/2026, esta instalação tinha apenas `data/annotations.csv`: faltavam os 670 `.npz` referenciados pelo mixed25 (600 MINDS selecionados, 35 em `novas_5_palavras`, 35 em `novas_5_restantes`). Os checkpoints e o CSV de anotações não contêm os landmarks de treinamento. Os manifestos/splits antigos estão preservados em `Modelos salvos/transformer_mixed25_full/data_split`.
 
 ```bash

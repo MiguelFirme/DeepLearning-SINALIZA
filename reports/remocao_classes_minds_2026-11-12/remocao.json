@@ -1,0 +1,3385 @@
+{
+  "status": "concluido_verificado",
+  "classes": [
+    "Cinco",
+    "Espelho",
+    "America",
+    "Esquina",
+    "Sapo",
+    "Bala",
+    "Maca"
+  ],
+  "videos": 280,
+  "landmarks": 280,
+  "bytes": 17388262828.0,
+  "video_root": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras",
+  "landmark_root": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20",
+  "targets": [
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador01-1.mp4",
+      "bytes": 35818301
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador01-1.npz",
+      "bytes": 122585
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador01-2.mp4",
+      "bytes": 47406659
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador01-2.npz",
+      "bytes": 159028
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador01-3.mp4",
+      "bytes": 48367146
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador01-3.npz",
+      "bytes": 153609
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador01-4.mp4",
+      "bytes": 49043217
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador01-4.npz",
+      "bytes": 164459
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador01-5.mp4",
+      "bytes": 48856666
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador01-5.npz",
+      "bytes": 157519
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador02-1.mp4",
+      "bytes": 51168956
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador02-1.npz",
+      "bytes": 160580
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador02-2.mp4",
+      "bytes": 50437714
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador02-2.npz",
+      "bytes": 171248
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador02-3.mp4",
+      "bytes": 48815232
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador02-3.npz",
+      "bytes": 167694
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador02-4.mp4",
+      "bytes": 53762266
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador02-4.npz",
+      "bytes": 170960
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador02-5.mp4",
+      "bytes": 45690106
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador02-5.npz",
+      "bytes": 152163
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador05-1.mp4",
+      "bytes": 49450031
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador05-1.npz",
+      "bytes": 127918
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador05-2.mp4",
+      "bytes": 65140834
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador05-2.npz",
+      "bytes": 159079
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador05-3.mp4",
+      "bytes": 59557545
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador05-3.npz",
+      "bytes": 140131
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador05-4.mp4",
+      "bytes": 66955642
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador05-4.npz",
+      "bytes": 154344
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador05-5.mp4",
+      "bytes": 59487344
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador05-5.npz",
+      "bytes": 138494
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador06-1.mp4",
+      "bytes": 75546653
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador06-1.npz",
+      "bytes": 161220
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador06-2.mp4",
+      "bytes": 74162817
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador06-2.npz",
+      "bytes": 153634
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador06-3.mp4",
+      "bytes": 66830634
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador06-3.npz",
+      "bytes": 147576
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador06-4.mp4",
+      "bytes": 67218507
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador06-4.npz",
+      "bytes": 143874
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador06-5.mp4",
+      "bytes": 67902820
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador06-5.npz",
+      "bytes": 148681
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador08-1.mp4",
+      "bytes": 48491426
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador08-1.npz",
+      "bytes": 116884
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador08-2.mp4",
+      "bytes": 57509867
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador08-2.npz",
+      "bytes": 146279
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador08-3.mp4",
+      "bytes": 60809697
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador08-3.npz",
+      "bytes": 147804
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador08-4.mp4",
+      "bytes": 64137604
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador08-4.npz",
+      "bytes": 162230
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador08-5.mp4",
+      "bytes": 58569918
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador08-5.npz",
+      "bytes": 149187
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador10-1.mp4",
+      "bytes": 44952570
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador10-1.npz",
+      "bytes": 108717
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador10-2.mp4",
+      "bytes": 56292085
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador10-2.npz",
+      "bytes": 136264
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador10-3.mp4",
+      "bytes": 45239082
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador10-3.npz",
+      "bytes": 108714
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador10-4.mp4",
+      "bytes": 46701976
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador10-4.npz",
+      "bytes": 108433
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador10-5.mp4",
+      "bytes": 51174953
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador10-5.npz",
+      "bytes": 126435
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador11-1.mp4",
+      "bytes": 74109061
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador11-1.npz",
+      "bytes": 160426
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador11-2.mp4",
+      "bytes": 86759061
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador11-2.npz",
+      "bytes": 192245
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador11-3.mp4",
+      "bytes": 75604454
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador11-3.npz",
+      "bytes": 163908
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador11-4.mp4",
+      "bytes": 85479866
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador11-4.npz",
+      "bytes": 184208
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador11-5.mp4",
+      "bytes": 78983910
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador11-5.npz",
+      "bytes": 171320
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador12-1.mp4",
+      "bytes": 94749201
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador12-1.npz",
+      "bytes": 220582
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador12-2.mp4",
+      "bytes": 88954351
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador12-2.npz",
+      "bytes": 209544
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador12-3.mp4",
+      "bytes": 97468675
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador12-3.npz",
+      "bytes": 225326
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador12-4.mp4",
+      "bytes": 103688175
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador12-4.npz",
+      "bytes": 241619
+    },
+    {
+      "label": "America",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\04AmericaSinalizador12-5.mp4",
+      "bytes": 99815335
+    },
+    {
+      "label": "America",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\04AmericaSinalizador12-5.npz",
+      "bytes": 229173
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador01-1.mp4",
+      "bytes": 40925908
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador01-1.npz",
+      "bytes": 113408
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador01-2.mp4",
+      "bytes": 51935394
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador01-2.npz",
+      "bytes": 147189
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador01-3.mp4",
+      "bytes": 39403069
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador01-3.npz",
+      "bytes": 113565
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador01-4.mp4",
+      "bytes": 40401698
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador01-4.npz",
+      "bytes": 119498
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador01-5.mp4",
+      "bytes": 44042604
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador01-5.npz",
+      "bytes": 127600
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador02-1.mp4",
+      "bytes": 45692587
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador02-1.npz",
+      "bytes": 129527
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador02-2.mp4",
+      "bytes": 35226451
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador02-2.npz",
+      "bytes": 109331
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador02-3.mp4",
+      "bytes": 41376967
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador02-3.npz",
+      "bytes": 115124
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador02-4.mp4",
+      "bytes": 39761983
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador02-4.npz",
+      "bytes": 112660
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador02-5.mp4",
+      "bytes": 40481176
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador02-5.npz",
+      "bytes": 113667
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador05-1.mp4",
+      "bytes": 58126030
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador05-1.npz",
+      "bytes": 120805
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador05-2.mp4",
+      "bytes": 53419228
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador05-2.npz",
+      "bytes": 114738
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador05-3.mp4",
+      "bytes": 41593155
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador05-3.npz",
+      "bytes": 89384
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador05-4.mp4",
+      "bytes": 58106427
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador05-4.npz",
+      "bytes": 123145
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador05-5.mp4",
+      "bytes": 57903348
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador05-5.npz",
+      "bytes": 120781
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador06-1.mp4",
+      "bytes": 64532443
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador06-1.npz",
+      "bytes": 166818
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador06-2.mp4",
+      "bytes": 78391233
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador06-2.npz",
+      "bytes": 158251
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador06-3.mp4",
+      "bytes": 60494697
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador06-3.npz",
+      "bytes": 128634
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador06-4.mp4",
+      "bytes": 60035947
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador06-4.npz",
+      "bytes": 155782
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador06-5.mp4",
+      "bytes": 64784908
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador06-5.npz",
+      "bytes": 133682
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador08-1.mp4",
+      "bytes": 51854357
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador08-1.npz",
+      "bytes": 113073
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador08-2.mp4",
+      "bytes": 47117843
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador08-2.npz",
+      "bytes": 101277
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador08-3.mp4",
+      "bytes": 39976989
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador08-3.npz",
+      "bytes": 86788
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador08-4.mp4",
+      "bytes": 56298730
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador08-4.npz",
+      "bytes": 119394
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador08-5.mp4",
+      "bytes": 54417230
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador08-5.npz",
+      "bytes": 116084
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador10-1.mp4",
+      "bytes": 41796489
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador10-1.npz",
+      "bytes": 87175
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador10-2.mp4",
+      "bytes": 49148321
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador10-2.npz",
+      "bytes": 101441
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador10-3.mp4",
+      "bytes": 44975983
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador10-3.npz",
+      "bytes": 92756
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador10-4.mp4",
+      "bytes": 46565972
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador10-4.npz",
+      "bytes": 96839
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador10-5.mp4",
+      "bytes": 42801251
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador10-5.npz",
+      "bytes": 88581
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador11-1.mp4",
+      "bytes": 94137700
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador11-1.npz",
+      "bytes": 206927
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador11-2.mp4",
+      "bytes": 89151020
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador11-2.npz",
+      "bytes": 196354
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador11-3.mp4",
+      "bytes": 84797318
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador11-3.npz",
+      "bytes": 187825
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador11-4.mp4",
+      "bytes": 91735727
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador11-4.npz",
+      "bytes": 206030
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador11-5.mp4",
+      "bytes": 94712033
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador11-5.npz",
+      "bytes": 209903
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador12-1.mp4",
+      "bytes": 61469830
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador12-1.npz",
+      "bytes": 207202
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador12-2.mp4",
+      "bytes": 86800636
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador12-2.npz",
+      "bytes": 214244
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador12-3.mp4",
+      "bytes": 102716787
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador12-3.npz",
+      "bytes": 261936
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador12-4.mp4",
+      "bytes": 90800793
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador12-4.npz",
+      "bytes": 227012
+    },
+    {
+      "label": "Bala",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\06BalaSinalizador12-5.mp4",
+      "bytes": 89925098
+    },
+    {
+      "label": "Bala",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\06BalaSinalizador12-5.npz",
+      "bytes": 223311
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador01-1.mp4",
+      "bytes": 37814464
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador01-1.npz",
+      "bytes": 109097
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador01-2.mp4",
+      "bytes": 47803182
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador01-2.npz",
+      "bytes": 139894
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador01-3.mp4",
+      "bytes": 49803468
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador01-3.npz",
+      "bytes": 141108
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador01-4.mp4",
+      "bytes": 41894963
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador01-4.npz",
+      "bytes": 121101
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador01-5.mp4",
+      "bytes": 48356024
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador01-5.npz",
+      "bytes": 140416
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador02-1.mp4",
+      "bytes": 40403331
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador02-1.npz",
+      "bytes": 115485
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador02-2.mp4",
+      "bytes": 49452100
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador02-2.npz",
+      "bytes": 140900
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador02-3.mp4",
+      "bytes": 45949543
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador02-3.npz",
+      "bytes": 130485
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador02-4.mp4",
+      "bytes": 45681330
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador02-4.npz",
+      "bytes": 129614
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador02-5.mp4",
+      "bytes": 48839445
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador02-5.npz",
+      "bytes": 141294
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador05-1.mp4",
+      "bytes": 41822834
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador05-1.npz",
+      "bytes": 126158
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador05-2.mp4",
+      "bytes": 49977123
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador05-2.npz",
+      "bytes": 107285
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador05-3.mp4",
+      "bytes": 52683700
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador05-3.npz",
+      "bytes": 109955
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador05-4.mp4",
+      "bytes": 43156191
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador05-4.npz",
+      "bytes": 91101
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador05-5.mp4",
+      "bytes": 54582390
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador05-5.npz",
+      "bytes": 114969
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador06-1.mp4",
+      "bytes": 51614228
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador06-1.npz",
+      "bytes": 104448
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador06-2.mp4",
+      "bytes": 53023114
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador06-2.npz",
+      "bytes": 110317
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador06-3.mp4",
+      "bytes": 53605503
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador06-3.npz",
+      "bytes": 107682
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador06-4.mp4",
+      "bytes": 47794827
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador06-4.npz",
+      "bytes": 96975
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador06-5.mp4",
+      "bytes": 45592879
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador06-5.npz",
+      "bytes": 94908
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador08-1.mp4",
+      "bytes": 41302065
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador08-1.npz",
+      "bytes": 90609
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador08-2.mp4",
+      "bytes": 53799484
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador08-2.npz",
+      "bytes": 113352
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador08-3.mp4",
+      "bytes": 57255133
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador08-3.npz",
+      "bytes": 121025
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador08-4.mp4",
+      "bytes": 47557126
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador08-4.npz",
+      "bytes": 101154
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador08-5.mp4",
+      "bytes": 60184168
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador08-5.npz",
+      "bytes": 124373
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador10-1.mp4",
+      "bytes": 49320911
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador10-1.npz",
+      "bytes": 105973
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador10-2.mp4",
+      "bytes": 59470982
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador10-2.npz",
+      "bytes": 121027
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador10-3.mp4",
+      "bytes": 53363396
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador10-3.npz",
+      "bytes": 113504
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador10-4.mp4",
+      "bytes": 51327705
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador10-4.npz",
+      "bytes": 108978
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador10-5.mp4",
+      "bytes": 61594091
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador10-5.npz",
+      "bytes": 127967
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador11-1.mp4",
+      "bytes": 78105435
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador11-1.npz",
+      "bytes": 170844
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador11-2.mp4",
+      "bytes": 84733312
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador11-2.npz",
+      "bytes": 185946
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador11-3.mp4",
+      "bytes": 90033429
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador11-3.npz",
+      "bytes": 197230
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador11-4.mp4",
+      "bytes": 84791425
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador11-4.npz",
+      "bytes": 185225
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador11-5.mp4",
+      "bytes": 86693965
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador11-5.npz",
+      "bytes": 189254
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador12-1.mp4",
+      "bytes": 78775858
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador12-1.npz",
+      "bytes": 202631
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador12-2.mp4",
+      "bytes": 68364324
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador12-2.npz",
+      "bytes": 171323
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador12-3.mp4",
+      "bytes": 72825365
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador12-3.npz",
+      "bytes": 178935
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador12-4.mp4",
+      "bytes": 60348502
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador12-4.npz",
+      "bytes": 150513
+    },
+    {
+      "label": "Cinco",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\10CincoSinalizador12-5.mp4",
+      "bytes": 67565424
+    },
+    {
+      "label": "Cinco",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\10CincoSinalizador12-5.npz",
+      "bytes": 168705
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador01-1.mp4",
+      "bytes": 62794091
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador01-1.npz",
+      "bytes": 194261
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador01-2.mp4",
+      "bytes": 46227151
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador01-2.npz",
+      "bytes": 130643
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador01-3.mp4",
+      "bytes": 47267643
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador01-3.npz",
+      "bytes": 134526
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador01-4.mp4",
+      "bytes": 37688398
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador01-4.npz",
+      "bytes": 110168
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador01-5.mp4",
+      "bytes": 44933299
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador01-5.npz",
+      "bytes": 130618
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador02-1.mp4",
+      "bytes": 47624908
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador02-1.npz",
+      "bytes": 133811
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador02-2.mp4",
+      "bytes": 44665944
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador02-2.npz",
+      "bytes": 128069
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador02-3.mp4",
+      "bytes": 54159767
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador02-3.npz",
+      "bytes": 153889
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador02-4.mp4",
+      "bytes": 53698691
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador02-4.npz",
+      "bytes": 155433
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador02-5.mp4",
+      "bytes": 56470790
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador02-5.npz",
+      "bytes": 161239
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador05-1.mp4",
+      "bytes": 51679231
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador05-1.npz",
+      "bytes": 109624
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador05-2.mp4",
+      "bytes": 54203143
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador05-2.npz",
+      "bytes": 112961
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador05-3.mp4",
+      "bytes": 69410142
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador05-3.npz",
+      "bytes": 142312
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador05-4.mp4",
+      "bytes": 50874946
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador05-4.npz",
+      "bytes": 107545
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador05-5.mp4",
+      "bytes": 51834681
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador05-5.npz",
+      "bytes": 110314
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador06-1.mp4",
+      "bytes": 59250605
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador06-1.npz",
+      "bytes": 126012
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador06-2.mp4",
+      "bytes": 63851525
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador06-2.npz",
+      "bytes": 133450
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador06-3.mp4",
+      "bytes": 66285545
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador06-3.npz",
+      "bytes": 136143
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador06-4.mp4",
+      "bytes": 66578341
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador06-4.npz",
+      "bytes": 135113
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador06-5.mp4",
+      "bytes": 69717655
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador06-5.npz",
+      "bytes": 141277
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador08-1.mp4",
+      "bytes": 57230620
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador08-1.npz",
+      "bytes": 121856
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador08-2.mp4",
+      "bytes": 46556290
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador08-2.npz",
+      "bytes": 104951
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador08-3.mp4",
+      "bytes": 52208160
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador08-3.npz",
+      "bytes": 109778
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador08-4.mp4",
+      "bytes": 43992967
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador08-4.npz",
+      "bytes": 94358
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador08-5.mp4",
+      "bytes": 46511452
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador08-5.npz",
+      "bytes": 99597
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador10-1.mp4",
+      "bytes": 40678052
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador10-1.npz",
+      "bytes": 85516
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador10-2.mp4",
+      "bytes": 49616903
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador10-2.npz",
+      "bytes": 104535
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador10-3.mp4",
+      "bytes": 43077634
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador10-3.npz",
+      "bytes": 122320
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador10-4.mp4",
+      "bytes": 56340816
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador10-4.npz",
+      "bytes": 114003
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador10-5.mp4",
+      "bytes": 63239038
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador10-5.npz",
+      "bytes": 126881
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador11-1.mp4",
+      "bytes": 53101127
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador11-1.npz",
+      "bytes": 164636
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador11-2.mp4",
+      "bytes": 73269694
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador11-2.npz",
+      "bytes": 157830
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador11-3.mp4",
+      "bytes": 94687541
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador11-3.npz",
+      "bytes": 208318
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador11-4.mp4",
+      "bytes": 96118725
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador11-4.npz",
+      "bytes": 211487
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador11-5.mp4",
+      "bytes": 81423235
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador11-5.npz",
+      "bytes": 177226
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador12-1.mp4",
+      "bytes": 78722350
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador12-1.npz",
+      "bytes": 144889
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador12-2.mp4",
+      "bytes": 101096182
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador12-2.npz",
+      "bytes": 208723
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador12-3.mp4",
+      "bytes": 98371604
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador12-3.npz",
+      "bytes": 207597
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador12-4.mp4",
+      "bytes": 97894918
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador12-4.npz",
+      "bytes": 195754
+    },
+    {
+      "label": "Espelho",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\12EspelhoSinalizador12-5.mp4",
+      "bytes": 100442206
+    },
+    {
+      "label": "Espelho",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\12EspelhoSinalizador12-5.npz",
+      "bytes": 223562
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador01-1.mp4",
+      "bytes": 42997442
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador01-1.npz",
+      "bytes": 144829
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador01-2.mp4",
+      "bytes": 36779558
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador01-2.npz",
+      "bytes": 120494
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador01-3.mp4",
+      "bytes": 36635817
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador01-3.npz",
+      "bytes": 109917
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador01-4.mp4",
+      "bytes": 39057386
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador01-4.npz",
+      "bytes": 123331
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador01-5.mp4",
+      "bytes": 37473077
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador01-5.npz",
+      "bytes": 113541
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador02-1.mp4",
+      "bytes": 52113733
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador02-1.npz",
+      "bytes": 169714
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador02-2.mp4",
+      "bytes": 43850438
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador02-2.npz",
+      "bytes": 152703
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador02-3.mp4",
+      "bytes": 62798063
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador02-3.npz",
+      "bytes": 190537
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador02-4.mp4",
+      "bytes": 49318585
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador02-4.npz",
+      "bytes": 154616
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador02-5.mp4",
+      "bytes": 48226682
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador02-5.npz",
+      "bytes": 149719
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador05-1.mp4",
+      "bytes": 61876759
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador05-1.npz",
+      "bytes": 156671
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador05-2.mp4",
+      "bytes": 61764506
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador05-2.npz",
+      "bytes": 151314
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador05-3.mp4",
+      "bytes": 61102794
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador05-3.npz",
+      "bytes": 151965
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador05-4.mp4",
+      "bytes": 63664511
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador05-4.npz",
+      "bytes": 158469
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador05-5.mp4",
+      "bytes": 67574358
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador05-5.npz",
+      "bytes": 161122
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador06-1.mp4",
+      "bytes": 80679898
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador06-1.npz",
+      "bytes": 179628
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador06-2.mp4",
+      "bytes": 81111568
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador06-2.npz",
+      "bytes": 181674
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador06-3.mp4",
+      "bytes": 81290405
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador06-3.npz",
+      "bytes": 188203
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador06-4.mp4",
+      "bytes": 97311589
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador06-4.npz",
+      "bytes": 216944
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador06-5.mp4",
+      "bytes": 74751754
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador06-5.npz",
+      "bytes": 167547
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador08-1.mp4",
+      "bytes": 67509815
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador08-1.npz",
+      "bytes": 165574
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador08-2.mp4",
+      "bytes": 48848479
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador08-2.npz",
+      "bytes": 127925
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador08-3.mp4",
+      "bytes": 51919271
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador08-3.npz",
+      "bytes": 134431
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador08-4.mp4",
+      "bytes": 55066656
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador08-4.npz",
+      "bytes": 138356
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador08-5.mp4",
+      "bytes": 54881104
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador08-5.npz",
+      "bytes": 136481
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador10-1.mp4",
+      "bytes": 45652221
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador10-1.npz",
+      "bytes": 103064
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador10-2.mp4",
+      "bytes": 53518257
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador10-2.npz",
+      "bytes": 121747
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador10-3.mp4",
+      "bytes": 58731937
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador10-3.npz",
+      "bytes": 133316
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador10-4.mp4",
+      "bytes": 44296617
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador10-4.npz",
+      "bytes": 104435
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador10-5.mp4",
+      "bytes": 57832931
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador10-5.npz",
+      "bytes": 128504
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador11-1.mp4",
+      "bytes": 79232638
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador11-1.npz",
+      "bytes": 173678
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador11-2.mp4",
+      "bytes": 72020268
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador11-2.npz",
+      "bytes": 159331
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador11-3.mp4",
+      "bytes": 72933169
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador11-3.npz",
+      "bytes": 159094
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador11-4.mp4",
+      "bytes": 79878808
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador11-4.npz",
+      "bytes": 177191
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador11-5.mp4",
+      "bytes": 80685799
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador11-5.npz",
+      "bytes": 180694
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador12-1.mp4",
+      "bytes": 75456691
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador12-1.npz",
+      "bytes": 162131
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador12-2.mp4",
+      "bytes": 96568012
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador12-2.npz",
+      "bytes": 216953
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador12-3.mp4",
+      "bytes": 107676915
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador12-3.npz",
+      "bytes": 243397
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador12-4.mp4",
+      "bytes": 92657954
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador12-4.npz",
+      "bytes": 197487
+    },
+    {
+      "label": "Esquina",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\13EsquinaSinalizador12-5.mp4",
+      "bytes": 87043856
+    },
+    {
+      "label": "Esquina",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\13EsquinaSinalizador12-5.npz",
+      "bytes": 183011
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador01-1.mp4",
+      "bytes": 37807516
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador01-1.npz",
+      "bytes": 108292
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador01-2.mp4",
+      "bytes": 35415794
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador01-2.npz",
+      "bytes": 102273
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador01-3.mp4",
+      "bytes": 45186030
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador01-3.npz",
+      "bytes": 128873
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador01-4.mp4",
+      "bytes": 40400827
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador01-4.npz",
+      "bytes": 118711
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador01-5.mp4",
+      "bytes": 44762899
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador01-5.npz",
+      "bytes": 131685
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador02-1.mp4",
+      "bytes": 40265546
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador02-1.npz",
+      "bytes": 116003
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador02-2.mp4",
+      "bytes": 51953019
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador02-2.npz",
+      "bytes": 148620
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador02-3.mp4",
+      "bytes": 54074187
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador02-3.npz",
+      "bytes": 154680
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador02-4.mp4",
+      "bytes": 52663597
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador02-4.npz",
+      "bytes": 153440
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador02-5.mp4",
+      "bytes": 50598829
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador02-5.npz",
+      "bytes": 145765
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador05-1.mp4",
+      "bytes": 47536497
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador05-1.npz",
+      "bytes": 102113
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador05-2.mp4",
+      "bytes": 66286444
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador05-2.npz",
+      "bytes": 139904
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador05-3.mp4",
+      "bytes": 46154038
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador05-3.npz",
+      "bytes": 141270
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador05-4.mp4",
+      "bytes": 67784703
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador05-4.npz",
+      "bytes": 145893
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador05-5.mp4",
+      "bytes": 54397747
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador05-5.npz",
+      "bytes": 120012
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador06-1.mp4",
+      "bytes": 71470521
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador06-1.npz",
+      "bytes": 149351
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador06-2.mp4",
+      "bytes": 68928400
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador06-2.npz",
+      "bytes": 143563
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador06-3.mp4",
+      "bytes": 74099293
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador06-3.npz",
+      "bytes": 151150
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador06-4.mp4",
+      "bytes": 75324633
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador06-4.npz",
+      "bytes": 151231
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador06-5.mp4",
+      "bytes": 73355821
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador06-5.npz",
+      "bytes": 151784
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador08-1.mp4",
+      "bytes": 57873133
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador08-1.npz",
+      "bytes": 131221
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador08-2.mp4",
+      "bytes": 44000032
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador08-2.npz",
+      "bytes": 100485
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador08-3.mp4",
+      "bytes": 58845534
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador08-3.npz",
+      "bytes": 124574
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador08-4.mp4",
+      "bytes": 53996533
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador08-4.npz",
+      "bytes": 116789
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador08-5.mp4",
+      "bytes": 52889580
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador08-5.npz",
+      "bytes": 114042
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador10-1.mp4",
+      "bytes": 46177072
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador10-1.npz",
+      "bytes": 94299
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador10-2.mp4",
+      "bytes": 51485107
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador10-2.npz",
+      "bytes": 105248
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador10-3.mp4",
+      "bytes": 49270911
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador10-3.npz",
+      "bytes": 99238
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador10-4.mp4",
+      "bytes": 48389724
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador10-4.npz",
+      "bytes": 101682
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador10-5.mp4",
+      "bytes": 52796327
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador10-5.npz",
+      "bytes": 106861
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador11-1.mp4",
+      "bytes": 76846595
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador11-1.npz",
+      "bytes": 168655
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador11-2.mp4",
+      "bytes": 94571255
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador11-2.npz",
+      "bytes": 206529
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador11-3.mp4",
+      "bytes": 94209052
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador11-3.npz",
+      "bytes": 208528
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador11-4.mp4",
+      "bytes": 86987962
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador11-4.npz",
+      "bytes": 195251
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador11-5.mp4",
+      "bytes": 87912904
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador11-5.npz",
+      "bytes": 195934
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador12-1.mp4",
+      "bytes": 78114611
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador12-1.npz",
+      "bytes": 173682
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador12-2.mp4",
+      "bytes": 82325852
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador12-2.npz",
+      "bytes": 188192
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador12-3.mp4",
+      "bytes": 79625935
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador12-3.npz",
+      "bytes": 189736
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador12-4.mp4",
+      "bytes": 86805032
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador12-4.npz",
+      "bytes": 205379
+    },
+    {
+      "label": "Maca",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\15MacaSinalizador12-5.mp4",
+      "bytes": 93208818
+    },
+    {
+      "label": "Maca",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\15MacaSinalizador12-5.npz",
+      "bytes": 225447
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador01-1.mp4",
+      "bytes": 36898863
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador01-1.npz",
+      "bytes": 123756
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador01-2.mp4",
+      "bytes": 43961098
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador01-2.npz",
+      "bytes": 147828
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador01-3.mp4",
+      "bytes": 41600972
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador01-3.npz",
+      "bytes": 140635
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador01-4.mp4",
+      "bytes": 46462164
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador01-4.npz",
+      "bytes": 156584
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador01-5.mp4",
+      "bytes": 42547824
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador01-5.npz",
+      "bytes": 146432
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador02-1.mp4",
+      "bytes": 62664262
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador02-1.npz",
+      "bytes": 195465
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador02-2.mp4",
+      "bytes": 46640980
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador02-2.npz",
+      "bytes": 157635
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador02-3.mp4",
+      "bytes": 53486605
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador02-3.npz",
+      "bytes": 170267
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador02-4.mp4",
+      "bytes": 52527434
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador02-4.npz",
+      "bytes": 167500
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador02-5.mp4",
+      "bytes": 45590013
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador02-5.npz",
+      "bytes": 147485
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador05-1.mp4",
+      "bytes": 75247101
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador05-1.npz",
+      "bytes": 178910
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador05-2.mp4",
+      "bytes": 74590210
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador05-2.npz",
+      "bytes": 170668
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador05-3.mp4",
+      "bytes": 72196316
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador05-3.npz",
+      "bytes": 173392
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador05-4.mp4",
+      "bytes": 61684658
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador05-4.npz",
+      "bytes": 146266
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador05-5.mp4",
+      "bytes": 62710924
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador05-5.npz",
+      "bytes": 151462
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador06-1.mp4",
+      "bytes": 68560706
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador06-1.npz",
+      "bytes": 149428
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador06-2.mp4",
+      "bytes": 73935363
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador06-2.npz",
+      "bytes": 158476
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador06-3.mp4",
+      "bytes": 79237156
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador06-3.npz",
+      "bytes": 163655
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador06-4.mp4",
+      "bytes": 67544979
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador06-4.npz",
+      "bytes": 147025
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador06-5.mp4",
+      "bytes": 70022350
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador06-5.npz",
+      "bytes": 153452
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador08-1.mp4",
+      "bytes": 51827359
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador08-1.npz",
+      "bytes": 122905
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador08-2.mp4",
+      "bytes": 57492812
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador08-2.npz",
+      "bytes": 133395
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador08-3.mp4",
+      "bytes": 72054683
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador08-3.npz",
+      "bytes": 163216
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador08-4.mp4",
+      "bytes": 58323338
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador08-4.npz",
+      "bytes": 156296
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador08-5.mp4",
+      "bytes": 59825141
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador08-5.npz",
+      "bytes": 141982
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador10-1.mp4",
+      "bytes": 56720907
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador10-1.npz",
+      "bytes": 138009
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador10-2.mp4",
+      "bytes": 48467106
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador10-2.npz",
+      "bytes": 112169
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador10-3.mp4",
+      "bytes": 46102905
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador10-3.npz",
+      "bytes": 99607
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador10-4.mp4",
+      "bytes": 48033626
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador10-4.npz",
+      "bytes": 108711
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador10-5.mp4",
+      "bytes": 53532987
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador10-5.npz",
+      "bytes": 119928
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador11-1.mp4",
+      "bytes": 73719757
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador11-1.npz",
+      "bytes": 155004
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador11-2.mp4",
+      "bytes": 86343871
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador11-2.npz",
+      "bytes": 180352
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador11-3.mp4",
+      "bytes": 79243672
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador11-3.npz",
+      "bytes": 169241
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador11-4.mp4",
+      "bytes": 93801195
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador11-4.npz",
+      "bytes": 201380
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador11-5.mp4",
+      "bytes": 89163756
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador11-5.npz",
+      "bytes": 192399
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador12-1.mp4",
+      "bytes": 99312235
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador12-1.npz",
+      "bytes": 223572
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador12-2.mp4",
+      "bytes": 105054544
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador12-2.npz",
+      "bytes": 221044
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador12-3.mp4",
+      "bytes": 93900975
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador12-3.npz",
+      "bytes": 202058
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador12-4.mp4",
+      "bytes": 103641429
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador12-4.npz",
+      "bytes": 237584
+    },
+    {
+      "label": "Sapo",
+      "kind": "video",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\minds_libras\\18SapoSinalizador12-5.mp4",
+      "bytes": 94522295
+    },
+    {
+      "label": "Sapo",
+      "kind": "landmark",
+      "path": "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\landmarks\\minds_libras_all20\\18SapoSinalizador12-5.npz",
+      "bytes": 209044
+    }
+  ],
+  "remaining": {
+    "classes": 13,
+    "landmarks": 520,
+    "videos": 520,
+    "annotations": 520
+  }
+}
