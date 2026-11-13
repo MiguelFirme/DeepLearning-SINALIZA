@@ -14,6 +14,7 @@ from ml.features.landmarks import LandmarkExtractor
 
 
 def test_websocket_classifies_48_jpeg_frames(monkeypatch):
+    monkeypatch.setattr(settings, "fusion_manifest_path", "configs/fusion25_frozen.json")
     # O teste usa um extrator determinístico para verificar o transporte e a
     # inferência sem depender da detecção variável do MediaPipe numa imagem vazia.
     monkeypatch.setattr(LandmarkExtractor, "__enter__", lambda self: self)

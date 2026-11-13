@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     debug: bool = False
 
     # Modelo
-    model_path: str = "Modelos salvos/transformer_minds_8_classes_pose_face/best.pt"
-    fusion_manifest_path: str | None = "configs/fusion25_frozen.json"
+    model_path: str = "Modelos salvos/transformer_v2_mixed23_full/best.pt"
+    fusion_manifest_path: str | None = None
     device: str = "cpu"
     confidence_threshold: float = 0.3
     top_k: int = 5

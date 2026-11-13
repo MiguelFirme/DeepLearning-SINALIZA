@@ -2,6 +2,8 @@
 
 Implementação em fases conforme [plano](PLANO_PIPELINE_V2.md). A extração continua com 346 valores e máscara `(T,4)`. Os arquivos brutos não são modificados.
 
+**Estado atual em 13/11/2026:** o Transformer v2 real de 23 classes está definido como padrão em `Modelos salvos/transformer_v2_mixed23_full/best.pt`, com 60/75 acertos de validação. Não é mais necessário selecionar a v2 por variável de ambiente ao iniciar. Veja a [ativação e verificação](ATIVACAO_TRANSFORMER_V2_PADRAO_2026-11-13.md). Os registros por fase abaixo descrevem a implementação original.
+
 ## Features e ordem
 
 O construtor compartilhado `build_features_v2` recebe amostras em grade temporal uniforme. Corrige x pelo aspecto largura/altura; mantém somente os primeiros 17 pontos de pose e remove visibilidade; preenche lacunas internas de mãos de até cinco amostras; centraliza e escala pelos ombros com referência mediana quando a pose falta; calcula forma local por pulso/base do dedo médio; acrescenta cinco distâncias e velocidades globais em unidades por segundo. Lacunas maiores e ausências nas extremidades ficam zeradas. Sem pose válida na janela, a referência é centro zero e escala um; o bloqueio de rastreamento da aplicação continua necessário.
@@ -50,7 +52,7 @@ O critério sintético é equivalência das features e velocidades para o mesmo 
 
 ## Limites desta entrega
 
-Os datasets reais em `data/` não estão disponíveis aqui. Foram testados movimento/pose sintéticos, um treino de uma época em amostras sintéticas, checkpoints de teste e transporte de JPEGs com extrator determinístico. **Não foi treinado um novo modelo real de 25 classes e não existe métrica real v2 nesta entrega.** Os arquivos de treino antigo com mão ativa pouco detectada não podem ser recuperados somente por interpolação. Revise esses vídeos e use a coleta para ampliar pessoas e ambientes.
+Na entrega inicial de 11/11, os dados reais estavam ausentes e a verificação usou dados sintéticos. Depois da recuperação e exclusão de sete classes, o usuário treinou um modelo real de **23 classes**, com validação documentada em [resultado do treino](RESULTADO_TREINO_V2_MIXED23_2026-11-12.md). Os arquivos com mão ativa pouco detectada não podem ser recuperados somente por interpolação. Revise esses vídeos e use a coleta para ampliar pessoas e ambientes.
 
 Também não foram validados webcam humana, FPS do MediaPipe em vídeo real nem Docker em execução. Os oito testes antigos ignorados dependem de dados locais ausentes. Os pesos e experimentos antigos permanecem arquivados. Novas execuções devem usar nomes próprios e manter o teste independente do ajuste de hiperparâmetros.
 
@@ -86,13 +88,13 @@ A CV v2 descobre as pessoas no manifesto: uma no teste, a próxima na validaçã
 
 Configuração: Transformer 128/4 cabeças/3 camadas/dropout 0,15, AdamW 1e-3/L2 0,01, cosine com warmup 5, 150 épocas, suavização de rótulo 0,1, amostragem balanceada com reposição calculada somente no treino e early stopping por F1 macro com paciência 25. O sampler substitui a ponderação adicional da loss. Logs ficam em `logs/`, pesos e métricas em `experiments/`. Checkpoints v2 incluem `pipeline_version`, `pipeline_config`, `feature_dim`, `label_map`, `target_fps`, `window_seconds` e os parâmetros da rede.
 
-## Ativar a v2 explicitamente
+## Usar o padrão v2 ou escolher outro checkpoint
 
 ```bash
 SINALIZA_FUSION_MANIFEST_PATH='' SINALIZA_MODEL_PATH=experiments/transformer_v2_mixed25_seed42/best.pt ./.venv/Scripts/python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Sem essas variáveis, a aplicação usa a fusão v1 `configs/fusion25_frozen.json`, conforme o pedido desta tarefa. A dupla ConvBiLSTM anterior continua disponível em seu manifesto, sem apagar pesos. `/api/model/info` informa versão, dimensão e parâmetros temporais. A v2 exige timestamps e dimensões reais; o REST `/api/predict` aceita esses campos e máscara por parte. A webcam os fornece automaticamente. A classe opcional `_nenhum_sinal` pode estar no mapa e nos splits como qualquer outra; se vencer o top 1 suavizado, o backend responde `no_sign`, palavra nula e candidatos vazios, mesmo abaixo do limiar de exibição. Não são gerados negativos artificiais nesta fase.
+O comando acima é um exemplo para escolher um checkpoint de outro experimento; ajuste o caminho para um arquivo existente. Desde 13/11, **sem essas variáveis a aplicação carrega o Transformer v2 mixed23 arquivado**, e basta iniciar o Uvicorn normalmente. A fusão v1 e a dupla ConvBiLSTM continuam selecionáveis por seus manifestos. `/api/model/info` informa versão, dimensão e parâmetros temporais. A v2 exige timestamps e dimensões reais; o REST `/api/predict` aceita esses campos e máscara por parte. A webcam os fornece automaticamente. A classe opcional `_nenhum_sinal`, quando treinada, produz `no_sign` se vencer o top 1 suavizado. O checkpoint mixed23 atual não contém essa classe.
 
 ## Aumentos somente no treino
 

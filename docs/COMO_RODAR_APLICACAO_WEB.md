@@ -60,8 +60,8 @@ Para parar, pressione `Ctrl+C` em cada terminal.
 
 ## Estado atual da tradução ao vivo
 
-- Conforme a tarefa v2, o padrão é novamente a fusão v1 Transformer `configs/fusion25_frozen.json`; confira `model_loaded: true`, `num_classes: 25` e `model_type: transformer_fusion`. A dupla ConvBiLSTM continua selecionável por seu manifesto. Para treinar/ativar a v2, medir robustez a FPS e usar a página **Coleta**, siga [PIPELINE_V2.md](PIPELINE_V2.md). O checkpoint v2 exige `SINALIZA_FUSION_MANIFEST_PATH` vazio e `SINALIZA_MODEL_PATH` apontando para ele.
-- O frontend envia JPEGs da câmera a `/api/ws/predict`; o MediaPipe e o pré-processamento do treinamento rodam no backend. Aguarde 48 quadros processados para a primeira classificação.
+- Desde 13/11/2026, o padrão é o checkpoint único `Modelos salvos/transformer_v2_mixed23_full/best.pt`. Confira `model_loaded: true`, `num_classes: 23` e, em `/api/model/info`, `model_type: transformer_v2`, `pipeline_version: 2` e `feature_dim: 725`. Não é preciso definir variáveis a cada execução. A fusão antiga continua selecionável por manifesto. Consulte a [ativação v2](ATIVACAO_TRANSFORMER_V2_PADRAO_2026-11-13.md).
+- O frontend envia JPEGs a `/api/ws/predict`; a v2 mantém uma janela temporal e aguarda 3,2 segundos de cobertura antes da primeira classificação, com grade de 48 amostras a 15 FPS.
 - A integração e o teste com vídeo gravado estão documentados em [PLANO_INTEGRACAO_WEB_8_CLASSES.md](PLANO_INTEGRACAO_WEB_8_CLASSES.md). A avaliação com a webcam do usuário ainda precisa ser feita no navegador.
 - O filtro de movimento para cenas paradas foi revertido; a confiança mínima voltou a 30%. O histórico da experiência está em [PLANO_REJEICAO_SEM_SINAL.md](PLANO_REJEICAO_SEM_SINAL.md).
 - Docker Compose foi ajustado para incluir o checkpoint e encaminhar o WebSocket, mas não foi executado neste ambiente.

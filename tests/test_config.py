@@ -13,7 +13,8 @@ def test_settings_defaults():
     assert s.top_k == 5
     assert s.target_frames == 48
     assert s.device in ("cpu", "cuda", "mps", "auto")
-    assert s.fusion_manifest_path == "configs/fusion25_frozen.json"
+    assert s.fusion_manifest_path is None
+    assert s.model_path == "Modelos salvos/transformer_v2_mixed23_full/best.pt"
 
 
 def test_settings_env_override(monkeypatch):

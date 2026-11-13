@@ -1,0 +1,102 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-12T11:35:32.818802",
+  "config": {
+    "pipeline_version": 2,
+    "seed": 42,
+    "pipeline": {
+      "target_fps": 15.0,
+      "window_seconds": 3.2,
+      "max_gap": 5
+    },
+    "model": {
+      "type": "transformer",
+      "params": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 3,
+        "dim_feedforward": 256,
+        "dropout": 0.15,
+        "max_seq_len": 48,
+        "classifier_hidden": 128
+      }
+    },
+    "data": {
+      "num_workers": 0
+    },
+    "augmentation_file": "augmentation_v2.yaml",
+    "training": {
+      "optimizer": "adamw",
+      "learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "scheduler": "cosine",
+      "warmup_epochs": 5,
+      "epochs": 150,
+      "batch_size": 16,
+      "label_smoothing": 0.1,
+      "balanced_sampler": true,
+      "monitor": "val_f1",
+      "patience": 25,
+      "use_amp": true
+    }
+  },
+  "training": {
+    "optimizer_type": "adamw",
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "scheduler_type": "cosine",
+    "plateau_patience": 5,
+    "plateau_factor": 0.5,
+    "min_lr": 1e-07,
+    "warmup_epochs": 5,
+    "epochs": 150,
+    "gradient_clip_val": 1.0,
+    "gradient_accumulation_steps": 1,
+    "use_amp": true,
+    "early_stopping": true,
+    "patience": 25,
+    "monitor": "val_f1",
+    "mode": "max",
+    "save_dir": "experiments",
+    "experiment_name": "transformer_v2_mixed23_seed42",
+    "save_top_k": 1
+  },
+  "pipeline": {
+    "target_fps": 15.0,
+    "window_seconds": 3.2,
+    "max_gap": 5,
+    "epsilon": 1e-06
+  },
+  "seed": 42,
+  "metadata_issues": {
+    "train": {
+      "fps": 0,
+      "dimensions": 0
+    },
+    "val": {
+      "fps": 0,
+      "dimensions": 0
+    },
+    "test": {
+      "fps": 0,
+      "dimensions": 0
+    }
+  },
+  "hashes": {
+    "data\\landmarks\\mixed_23\\manifest.json": "a4905e26bf646dc4bd1e2a697a71e527dbb7bd75d8849c10b38acae39ef07c87",
+    "data\\processed\\mixed_23\\splits.json": "11a21157ab2aee29e4348e7083958f9bc25e9695f620f151b7bf585c9d058bb8",
+    "data\\processed\\mixed_23\\label_map.json": "9da652f318d6d5134917109132b41fcd0e7b4f770d21dd9e811928c68902be4b"
+  },
+  "result": {
+    "best_epoch": 69,
+    "best_metric": 0.8175622686492252,
+    "total_epochs": 94,
+    "elapsed_seconds": 367.4335970878601,
+    "save_dir": "experiments\\transformer_v2_mixed23_seed42"
+  },
+  "finished_at": "2026-11-12T11:41:42.574132"
+}

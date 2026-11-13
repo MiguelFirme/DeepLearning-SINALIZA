@@ -2,10 +2,10 @@
 
 Protótipo de um projeto de extensão para reconhecer **sinais isolados de Libras** pela webcam e apresentar a palavra identificada em português. O objetivo de longo prazo é apoiar a comunicação em escolas, casas e recepções. A versão atual ainda não traduz frases nem está validada para uso com pessoas novas.
 
-## Estado do projeto — 11/11/2026
+## Estado do projeto — 13/11/2026
 
 - A aplicação web usa **React/Vite** no frontend e **FastAPI** no backend.
-- O backend carrega por padrão a fusão v1 de dois Transformers de 25 classes, definida em `configs/fusion25_frozen.json`. O [pipeline v2](docs/PIPELINE_V2.md) é independente e precisa de checkpoint próprio; corrige tempo/FPS, aspecto e representação das mãos sem alterar os `.npz` brutos.
+- O backend carrega por padrão **um Transformer v2 de 23 classes**, arquivado em `Modelos salvos/transformer_v2_mixed23_full/best.pt`. A [ativação](docs/ATIVACAO_TRANSFORMER_V2_PADRAO_2026-11-13.md) usa os pesos da época 69, com pose, face e mãos, sem precisar escolher o modelo ao iniciar.
 - A página **Coleta** grava landmarks, máscaras e timestamps do mesmo fluxo usado na inferência, com consentimento e campos de pessoa/sessão/palavra. Os arquivos ficam em `data/coleta/`, ignorada pelo Git.
 - A webcam envia quadros JPEG pelo WebSocket. O backend extrai landmarks com MediaPipe Holistic, prepara sequências de 48 quadros e devolve o sinal, a confiança e os candidatos.
 - Não há filtro de movimento para cenas paradas: uma janela com pose/face detectada pode receber uma das 25 palavras mesmo sem um sinal. O experimento anterior de rejeição por movimento foi revertido a pedido do usuário.
@@ -13,7 +13,7 @@ Protótipo de um projeto de extensão para reconhecer **sinais isolados de Libra
 
 ### Palavras reconhecidas pelo modelo ativo
 
-O modelo v1 padrão reconhece as **25 classes** do mapa `Modelos salvos/transformer_mixed25_full/data_split/label_map.json`: 15 sinais selecionados do MINDS-Libras e dez gravados pelo grupo. A API `/api/health` informa a quantidade de classes carregadas; `/api/model/info` lista os rótulos e a versão do pipeline. A v2 usa o mapa salvo em seu checkpoint.
+O padrão v2 reconhece **23 classes**: 13 sinais MINDS restantes e dez gravados pelo grupo. O mapa está dentro do checkpoint e arquivado em `Modelos salvos/transformer_v2_mixed23_full/data_split/label_map.json`. `/api/health` informa a quantidade de classes; `/api/model/info` lista rótulos e versão. Cinco e Espelho não pertencem ao modelo atual.
 
 ## Rodar localmente no Git Bash do VS Code
 
@@ -46,19 +46,19 @@ cd frontend
 npm run dev
 ```
 
-Abra **http://localhost:5173**, clique em **Iniciar Câmera** e autorize a webcam. Confira **http://127.0.0.1:8000/api/health**: no padrão v1 a resposta inclui `"model_loaded": true` e `"num_classes": 25`. Em **http://127.0.0.1:8000/api/model/info**, `model_type` é `transformer_fusion` e `pipeline_version` é 1. A primeira classificação v1 exige 48 quadros processados. Use `Ctrl+C` em cada terminal para parar.
+Abra **http://localhost:5173**, clique em **Iniciar Câmera** e autorize a webcam. Confira **http://127.0.0.1:8000/api/health**: `"model_loaded": true` e `"num_classes": 23`. Em **http://127.0.0.1:8000/api/model/info**, espere `model_type: transformer_v2`, `pipeline_version: 2`, `feature_dim: 725`, `target_fps: 15` e `window_seconds: 3.2`. A janela inicial exige 3,2 segundos de quadros recebidos; as seguintes são tentadas a cada 0,4 s. Use `Ctrl+C` em cada terminal para parar.
 
-### Pipeline v2: treino e ativação explícita
+### Pipeline v2: modelo atual e reprodução
 
-O novo pipeline usa uma grade de **15 FPS por 3,2 s**, aspecto corrigido e **725 features** (pose superior sem visibilidade, posição e forma local das mãos, face, distâncias e velocidade por segundo). Treino e backend usam o mesmo construtor. A v2 tem sampler balanceado, augmentation apenas em treino e seleção por F1 macro da validação. Ainda não há métricas reais v2: os testes aqui usam dados sintéticos porque os landmarks locais estão ausentes.
+O pipeline usa uma grade de **15 FPS por 3,2 s**, aspecto corrigido e **725 features** (pose superior sem visibilidade, posição e forma local das mãos, face, distâncias e velocidade por segundo). Treino e backend usam o mesmo construtor. O checkpoint real teve **60/75 acertos (80%) na validação e F1 macro 0,8176**; o teste ainda não foi avaliado. Veja o [resultado do treino](docs/RESULTADO_TREINO_V2_MIXED23_2026-11-12.md). Não é uma métrica de webcam.
 
-Se faltar `data/landmarks/mixed_25/manifest.json`, execute `./.venv/Scripts/python.exe scripts/restore_mixed25_dataset.py --check-only`. O [guia de recuperação](docs/PIPELINE_V2.md) explica como restaurar índices arquivados quando os `.npz` estão disponíveis; os pesos do modelo não substituem os dados de treino.
+Para reproduzir o novo vocabulário após as exclusões, siga o [guia mixed23](docs/TREINO_V2_MIXED23_GRUPO_2026-11-12.md). A reprodução mixed25 depende dos dados históricos; não use seus índices no conjunto reduzido.
 
 ```bash
-# Com os landmarks e splits mixed25 existentes:
-./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_mixed25.yaml --data-dir data/landmarks/mixed_25 --processed-dir data/processed/mixed_25 --experiment transformer_v2_mixed25_seed42 --num-workers 0 --skip-test
-# Depois de treinar, inicie o backend com a v2:
-SINALIZA_FUSION_MANIFEST_PATH='' SINALIZA_MODEL_PATH=experiments/transformer_v2_mixed25_seed42/best.pt ./.venv/Scripts/python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+# Reprodução em experimento separado, com os dados mixed23 disponíveis:
+./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_mixed23.yaml --data-dir data/landmarks/mixed_23 --processed-dir data/processed/mixed_23 --experiment transformer_v2_mixed23_seed42_repro --num-workers 0 --skip-test
+# Iniciar o checkpoint padrão já treinado (não precisa retreinar):
+./.venv/Scripts/python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 Confira `pipeline_version: 2` e `feature_dim: 725` em `/api/model/info`. Abra **Coleta** para gravar novos exemplos e negativos `_nenhum_sinal`. Comandos completos de CV por pessoa, preparo de coleta, simulação a 6/9/15/30 FPS e limites estão em [docs/PIPELINE_V2.md](docs/PIPELINE_V2.md).
@@ -72,18 +72,18 @@ Para testar o pipeline com um vídeo existente, sem webcam:
 
 Esse MP4 é opcional e pode não estar presente em outra instalação. O [guia da aplicação web](docs/COMO_RODAR_APLICACAO_WEB.md) traz solução para problemas comuns de instalação e inicialização.
 
-## Como funciona o padrão v1
+## Como funciona o padrão v2
 
 ```text
 Webcam → JPEG via WebSocket → MediaPipe Holistic no backend
-       → 346 valores brutos por quadro → pose + face / pose + face + mãos
-       → normalização pelos ombros
-       → velocidades e distâncias: 697 features por quadro
-       → janela de 48 quadros → verificação de presença de pose/face
-       → dois Transformers v1 → top 5 + fusão → palavra e confiança → frontend
+       → 346 valores brutos + máscara + timestamps e dimensões reais
+       → janela por tempo → reamostragem a 15 FPS
+       → aspecto, ombros, pose superior, mãos globais/locais e velocidades/s
+       → 48 amostras × 725 features → verificação de pose/face
+       → um Transformer v2 → palavra e confiança → frontend
 ```
 
-O modelo `pose_face` **zera os pontos detalhados das mãos**, mas preserva braços, cotovelos, pulsos e face; o modelo `full` recebe também as mãos. A primeira predição usa 48 quadros; depois, a janela avança 12 quadros. O frontend captura cada quadro novo entregue pelo navegador, solicita 30 FPS como preferência da câmera e controla a fila para acompanhar o backend. O indicador "FPS câmera" mede quadros recebidos pelo navegador, não quadros processados pelo modelo. Veja [PLANO_FPS_WEBCAM.md](docs/PLANO_FPS_WEBCAM.md).
+O modelo atual recebe pose, face e mãos. A sessão armazena aproximadamente 6,4 s; ao cobrir 3,2 s começa a classificar, tentando novas janelas no primeiro quadro após pelo menos 0,4 s. Suavização EMA e cooldown podem reduzir a frequência de palavras exibidas. O FPS da câmera pode diferir do FPS analisado; a reamostragem temporal evita tratar essa taxa como se fosse a taxa do treino. A fusão antiga `pose_face`/`full` continua selecionável por manifesto.
 
 Para reduzir o atraso dos pontos desenhados, o frontend mantém apenas um quadro pendente no WebSocket, codifica JPEG somente quando o backend pode receber um novo quadro e faz uma breve antecipação visual limitada entre respostas. Essa antecipação afeta apenas o canvas; os modelos continuam recebendo os landmarks reais do MediaPipe no backend. Veja [plano e verificação do acompanhamento](docs/PLANO_ACOMPANHAMENTO_LANDMARKS_2026-10-28.md).
 
@@ -93,9 +93,9 @@ O backend não classifica janelas com detecção insuficiente de pose/face. Para
 
 ## Dados e modelos
 
-### Fusão padrão de 25 classes
+### Fusões históricas de 25 classes
 
-As 15 classes selecionadas do MINDS-Libras e dez palavras gravadas pelo grupo formam um conjunto de 670 vídeos (500 treino, 85 validação e 85 teste). A tarefa v2 preserva `configs/fusion25_frozen.json` como padrão v1, com dois Transformers `pose_face` e `full`. A fusão propõe top 5 do `pose_face` e reordena com pesos 22%/78%. A dupla ConvBiLSTM permanece selecionável por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_conv_bilstm_default.json`.
+O conjunto histórico de 25 classes tinha 670 vídeos (500/85/85). `configs/fusion25_frozen.json` conserva dois Transformers `pose_face` e `full`, com top 5 e pesos 22%/78%; pode ser selecionado por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_frozen.json`. A dupla ConvBiLSTM permanece selecionável por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_conv_bilstm_default.json`. O padrão atual é o checkpoint único v2 de 23 classes.
 
 Os estudos históricos registraram 50/85 na validação e 56/85 no teste exploratório para a fusão Transformer v1; ConvBiLSTM registrou 47/85 e 65/85. Não são resultados v2 nem comprovação com pessoas novas. A auditoria marcou 168/670 vídeos para revisão, principalmente por ausência da mão ativa. Não existem negativos reais revisados nos pesos históricos; a v2 permite coletá-los e treinar `_nenhum_sinal`. O [relatório ConvBiLSTM](docs/RELATORIO_CONV_BILSTM_ATENCAO_MIXED25_2026-11-04.md) traz o protocolo antigo.
 
@@ -109,7 +109,7 @@ A [fusão híbrida invertida face40 + modelo completo de 16 pontos](docs/RELATOR
 
 A [simulação de fusão sequencial dos dois modelos de 15 classes](docs/EXPERIMENTO_FUSAO_SEQUENCIAL_15_CLASSES_2026-10-21.md) acertou 52/75 vídeos na validação e 44/75 no teste exploratório com top 5. A inversão da ordem não mudou as previsões top 5 neste conjunto. É uma avaliação offline; o backend ativo não foi alterado.
 
-O MINDS-Libras original tem 20 classes, 800 vídeos, 8 sinalizadores e 40 vídeos por classe; o subconjunto histórico de 8 classes tem 320 vídeos. O modelo atual de 25 classes combina 15 classes selecionadas desse conjunto com dez gravadas pelo grupo. Nos vídeos MINDS, os splits separam pessoas: Sinalizadores 01, 02, 05, 06, 08 e 10 no treino; 11 na validação; 12 no teste. Não foram usadas variações sintéticas nesses experimentos.
+O MINDS-Libras original tem 20 classes, 800 vídeos, 8 sinalizadores e 40 vídeos por classe; o subconjunto histórico de 8 classes tem 320 vídeos. O modelo atual de 23 classes usa 13 classes MINDS e dez do grupo, com **440/75/75** vídeos. MINDS: pessoas 01/02/05/06/08/10 no treino, 11 na validação e 12 no teste. Grupo: 01–05 no treino, 06 na validação e 07 no teste. A v2 aplica augmentation dinâmica somente no treino.
 
 | Checkpoint arquivado | Vídeos treino/validação/teste | Validação top-1 | Teste top-1 | Uso atual |
 |---|---:|---:|---:|---|
@@ -166,6 +166,7 @@ Há configuração de Docker Compose no repositório, mas a execução em contê
 
 ## Documentação
 
+- [Ativação do Transformer v2 de 23 classes como padrão](docs/ATIVACAO_TRANSFORMER_V2_PADRAO_2026-11-13.md)
 - [Pipeline v2: features, treino, validação por pessoa, coleta e simulação de FPS](docs/PIPELINE_V2.md)
 - [Plano e relatório do experimento de 25 classes](docs/RELATORIO_QUALIDADE_FUSAO_25_CLASSES_2026-10-27.md)
 - [Ativação da fusão de 25 classes como padrão](docs/RELATORIO_ATIVACAO_FUSAO25_PADRAO_2026-11-04.md)

@@ -1,11 +1,12 @@
 # Modelos salvos do Sinaliza
 
-Este diretório arquiva os checkpoints `best.pt` selecionados por **menor perda de validação**. Os experimentos originais em `experiments/` continuam intactos.
+Este diretório arquiva os checkpoints `best.pt`. Os históricos v1 foram selecionados por menor perda de validação; a v2 atual usa **maior F1 macro da validação**. Os experimentos originais em `experiments/` continuam intactos.
 
-A tarefa [pipeline v2](../docs/PIPELINE_V2.md) restaura como padrão v1 a dupla Transformer `configs/fusion25_frozen.json`. A dupla ConvBiLSTM continua disponível em `configs/fusion25_conv_bilstm_default.json`. A v2 requer treino próprio e checkpoint com `pipeline_version: 2`; os checkpoints históricos não são convertidos. O [relatório de ativação ConvBiLSTM](../docs/RELATORIO_ATIVACAO_CONV_BILSTM_PADRAO_2026-11-11.md) registra a escolha anterior.
+O padrão atual é `transformer_v2_mixed23_full/best.pt`, com 23 classes e pipeline_version 2. Veja a [ativação v2](../docs/ATIVACAO_TRANSFORMER_V2_PADRAO_2026-11-13.md). As fusões Transformer e ConvBiLSTM históricas continuam disponíveis pelos respectivos manifestos.
 
 | Modelo | Classes | Validação | Teste | Documentação |
 |---|---:|---:|---:|---|
+| **Transformer v2 `full` — padrão** | 23 | 60/75 (80%) | Não avaliado | [README do modelo atual](transformer_v2_mixed23_full/README.md) |
 | Transformer MINDS `pose_face` | 8 | 40/40 (100%) | 37/40 (92,5%) | [README do modelo de 8 classes](transformer_minds_8_classes_pose_face/README.md) |
 | Transformer MINDS `hands_only` | 8 | 5/40 (12,5%) | 6/40 (15%), exploratório | [README do modelo de mãos](transformer_minds_8_classes_hands_only/README.md) |
 | Transformer MINDS `full` | 8 | 23/40 (57,5%) | 35/40 (87,5%), exploratório | [README do modelo completo](transformer_minds_8_classes_full/README.md) |
