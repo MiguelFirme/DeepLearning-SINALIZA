@@ -31,6 +31,14 @@ class PipelineV2Config:
     window_seconds: float = 3.2
     max_gap: int = 5
     epsilon: float = 1e-6
+    # Revisão 2026-11-13. Os padrões reproduzem o checkpoint v2 já treinado;
+    # configs novos devem usar global_depth=False, scale_2d=True,
+    # point_visibility=True e segmentation=True.
+    global_depth: bool = True       # z global mistura origens diferentes (quadril, pulso, rosto)
+    scale_2d: bool = False          # largura dos ombros só em x,y (z da pose é instável na webcam)
+    point_visibility: bool = False  # zera pontos de braço extrapolados fora do quadro
+    segmentation: bool = False      # janela centrada no trecho de movimento, igual no treino e ao vivo
+    visibility_threshold: float = 0.5
 
     def __post_init__(self):
         if self.target_fps <= 0 or self.window_seconds <= 0 or self.max_gap < 0:
@@ -80,6 +88,8 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
     for side, (start, end) in enumerate(((0, 63), (63, 126), (126, 226), (226, 346))):
         mask[:, side] &= np.isfinite(raw[:, start:end]).all(axis=1)
     raw = np.nan_to_num(raw, nan=0, posinf=0, neginf=0)
+    # Visibilidade é lida antes de ser descartada: não vira feature, só filtro.
+    pose_visibility = raw[:, 126:226].reshape(n, 25, 4)[:, :17, 3].copy()
     raw[:, 0:126:3] *= width / height
     raw[:, 126:226:4] *= width / height
     raw[:, 226:346:3] *= width / height
@@ -90,7 +100,8 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
     hands = compact[:, :126].reshape(n, 2, 21, 3).copy()
     pose = compact[:, 126:177].reshape(n, 17, 3)
     center = (pose[:, 5] + pose[:, 6]) / 2
-    scale = np.linalg.norm(pose[:, 5] - pose[:, 6], axis=1)
+    dims = 2 if cfg.scale_2d else 3
+    scale = np.linalg.norm(pose[:, 5, :dims] - pose[:, 6, :dims], axis=1)
     valid = mask[:, 2] & (scale > cfg.epsilon)
     if valid.any():
         center[~valid] = np.median(center[valid], axis=0)
@@ -102,6 +113,17 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
     face_valid = np.any(global_xyz[:, 59:] != 0, axis=-1)
     global_xyz = (global_xyz - center[:, None]) / np.maximum(scale[:, None, None], cfg.epsilon)
     global_xyz[:, 59:][~face_valid] = 0
+    if not cfg.global_depth:
+        # z da pose tem origem no quadril (fora do quadro na webcam), z da mão
+        # no pulso e z da face no rosto: subtraí-los gera um deslocamento que
+        # depende do enquadramento, não do sinal. A forma local da mão mantém z.
+        global_xyz[..., 2] = 0
+    point_ok = np.ones((n, 17), dtype=bool)
+    if cfg.point_visibility:
+        # Cotovelos, punhos e dedos da pose (posições 7..16) fora do quadro
+        # são extrapolados pelo MediaPipe; nariz/olhos/ombros ficam sempre.
+        point_ok[:, 7:] = pose_visibility[:, 7:] >= cfg.visibility_threshold
+        global_xyz[:, 42:59][~point_ok] = 0
     global_xyz = global_xyz.reshape(n, GLOBAL_DIM_V2)
     for side, (start, end) in enumerate(PART_SLICES_V2):
         global_xyz[~mask[:, side], start:end] = 0
@@ -126,4 +148,8 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
     face_velocity[1:][~(face_valid[1:] & face_valid[:-1])] = 0
     for side, (start, end) in enumerate(PART_SLICES_V2):
         velocity[1:, start:end][~(mask[1:, side] & mask[:-1, side])] = 0
+    if cfg.point_visibility:
+        pose_velocity = velocity[:, 126:177].reshape(n, 17, 3)
+        pose_velocity[1:][~(point_ok[1:] & point_ok[:-1])] = 0
+        pose_velocity[0] = 0
     return np.concatenate((global_xyz, local.reshape(n, 126), distances, velocity), axis=1).astype(np.float32)

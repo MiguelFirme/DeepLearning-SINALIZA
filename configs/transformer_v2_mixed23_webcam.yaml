@@ -1,0 +1,13 @@
+# Revisão pós-auditoria (2026-11-13): mesmos dados/modelo do mixed23, com
+# features sem profundidade global, escala 2D, filtro de pontos fora do quadro,
+# segmentação compartilhada com a webcam e cadência baixa no augmentation.
+_base_: transformer_v2_mixed23.yaml
+pipeline:
+  target_fps: 15.0
+  window_seconds: 3.2
+  max_gap: 5
+  global_depth: false
+  scale_2d: true
+  point_visibility: true
+  segmentation: true
+augmentation_file: augmentation_v2_webcam.yaml

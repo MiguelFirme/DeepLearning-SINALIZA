@@ -62,6 +62,8 @@ class PredictionService:
         if self.pipeline_version == 2:
             from ml.features.pipeline_v2 import PipelineV2Config, FEATURE_DIM_V2
             self.pipeline_cfg = PipelineV2Config(**artifact["pipeline_config"])
+            if settings.live_segmentation:
+                self.pipeline_cfg.segmentation = True
             if (artifact.get("feature_dim") != FEATURE_DIM_V2
                     or artifact.get("target_fps") != self.pipeline_cfg.target_fps
                     or artifact.get("window_seconds") != self.pipeline_cfg.window_seconds
@@ -138,7 +140,7 @@ class PredictionService:
 
     def predict(self, landmarks: np.ndarray, mask: np.ndarray | None = None,
                 predictor: SignPredictor | FusionSessionPredictor | None = None,
-                timestamps=None, width=None, height=None) -> dict:
+                timestamps=None, width=None, height=None, end_time=None) -> dict:
         """Predição a partir de landmarks brutos."""
         if self._loaded and self._fusion is not None:
             start = time.perf_counter()
@@ -155,7 +157,8 @@ class PredictionService:
             if timestamps is None or mask is None or width is None or height is None:
                 raise ValueError("V2 exige timestamps, máscara por parte, largura e altura")
             start = time.perf_counter()
-            seq, seq_mask, _ = prepare_features_v2(landmarks, mask, timestamps, width, height, self.pipeline_cfg)
+            seq, seq_mask, _ = prepare_features_v2(landmarks, mask, timestamps, width, height,
+                                                   self.pipeline_cfg, end_time=end_time)
             session = predictor or self._predictor
             result = session.predict(seq, seq_mask)
             probabilities = result.get("raw_probs")

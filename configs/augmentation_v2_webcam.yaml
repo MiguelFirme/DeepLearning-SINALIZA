@@ -1,0 +1,11 @@
+# Igual a augmentation_v2.yaml, mais a cadência baixa da webcam (revisão 2026-11-13).
+mirror_prob: 0.5
+speed_range: [0.7, 1.3]
+scale_range: [0.85, 1.15]
+rotate_degrees: 10.0
+translate: 0.05
+noise_std: 0.005
+max_frame_drop: 0.3
+hand_missing_prob: 0.2
+low_fps_prob: 0.5
+low_fps_range: [6.0, 15.0]

@@ -72,8 +72,14 @@ export function useCameraFrames({ width = 640, height = 480, onFrame, canSendFra
     setDevices(allDevices.filter((item) => item.kind === "videoinput"));
 
     const capture = document.createElement("canvas");
-    capture.width = width;
-    capture.height = height;
+    // Preserva a proporção real da câmera. Se a webcam entregar 16:9 e o
+    // quadro for desenhado em 640x480, a imagem é esticada e o backend lê a
+    // proporção errada (frame.shape), distorcendo toda a geometria das mãos.
+    const sourceWidth = video.videoWidth || width;
+    const sourceHeight = video.videoHeight || height;
+    const captureScale = Math.min(1, Math.max(width, height) / Math.max(sourceWidth, sourceHeight));
+    capture.width = Math.round(sourceWidth * captureScale);
+    capture.height = Math.round(sourceHeight * captureScale);
     const ctx = capture.getContext("2d");
     let frames = 0;
     let fpsStarted = performance.now();
@@ -97,7 +103,7 @@ export function useCameraFrames({ width = 640, height = 480, onFrame, canSendFra
       // Evita codificar JPEGs que ficariam esperando na fila do WebSocket.
       if (!ctx || video.readyState < 2 || encodingRef.current || !canSendFrameRef.current?.()) return;
       const capturedAt = performance.now();
-      ctx.drawImage(video, 0, 0, width, height);
+      ctx.drawImage(video, 0, 0, capture.width, capture.height);
       encodingRef.current = true;
       capture.toBlob((blob) => {
         if (streamRef.current !== stream) return;

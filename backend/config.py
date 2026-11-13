@@ -19,6 +19,9 @@ class Settings(BaseSettings):
     ema_alpha: float = 0.6
     temperature: float = 1.0
     perf_logging: bool = False
+    # Liga a segmentação ao vivo também em checkpoints v2 treinados sem ela
+    # (SINALIZA_LIVE_SEGMENTATION=true). Não altera as features do modelo.
+    live_segmentation: bool = False
     perf_detail: bool = False
 
     # Sequência

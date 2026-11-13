@@ -12,6 +12,7 @@ from torch.utils.data import get_worker_info
 from ml.data.dataset import LibrasDataset
 from ml.data.quality import active_interval
 from ml.features.pipeline_v2 import PipelineV2Config, FEATURE_DIM_V2, prepare_features_v2
+from ml.features.segmentation_v2 import centered_window_end, main_segment
 
 logger = logging.getLogger(__name__)
 
@@ -55,6 +56,7 @@ class LibrasDatasetV2(LibrasDataset):
         self.rng = np.random.default_rng(augmentation_seed)
         self.metadata = []
         self.metadata_issues = {"fps": 0, "dimensions": 0}
+        self.segmentation_fallbacks = 0
         for sample in self.samples:
             with np.load(self.data_dir / sample["path"], allow_pickle=True) as data:
                 meta = read_metadata(data)
@@ -99,8 +101,20 @@ class LibrasDatasetV2(LibrasDataset):
                      else np.arange(len(raw), dtype=np.float64) / meta["fps"])
         if self.training and self.augmentor is not None:
             raw, mask, times = self.augmentor(raw, mask, times, self.rng, meta["width"], meta["height"])
-        start, end = active_interval(raw, mask)
-        end_time = window_end(times, start, end, self.pipeline_cfg.window_seconds, self.training, self.rng)
+        end_time = None
+        if self.pipeline_cfg.segmentation:
+            # Mesmo segmentador da webcam. No treino, o centro varia ±0,25 s
+            # para tolerar erros de início/fim da segmentação ao vivo.
+            segment = main_segment(raw, mask, times, meta["width"], meta["height"])
+            if segment is not None:
+                end_time = centered_window_end(segment, self.pipeline_cfg.window_seconds)
+                if self.training:
+                    end_time += float(self.rng.uniform(-.25, .25))
+            else:
+                self.segmentation_fallbacks += 1
+        if end_time is None:
+            start, end = active_interval(raw, mask)
+            end_time = window_end(times, start, end, self.pipeline_cfg.window_seconds, self.training, self.rng)
         features, valid, _ = prepare_features_v2(raw, mask, times, meta["width"], meta["height"],
                                                self.pipeline_cfg, end_time=end_time)
         origin = sample.get("origin") or ("novas" if "novas_" in sample["path"] else "minds")
@@ -110,4 +124,5 @@ class LibrasDatasetV2(LibrasDataset):
 
     def get_stats(self):
         return {**super().get_stats(), "pipeline_version": 2,
-                "pipeline_config": asdict(self.pipeline_cfg), "metadata_issues": self.metadata_issues}
+                "pipeline_config": asdict(self.pipeline_cfg), "metadata_issues": self.metadata_issues,
+                "segmentation_fallbacks": self.segmentation_fallbacks}

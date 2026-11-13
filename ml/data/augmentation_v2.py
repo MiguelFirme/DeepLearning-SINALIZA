@@ -53,6 +53,10 @@ class AugmentationV2Config:
     noise_std: float = .005
     max_frame_drop: float = .3
     hand_missing_prob: float = .2
+    # Webcam no backend processa ~6-12 fps; o descarte de 30% de um vídeo de
+    # 30 fps nunca desce de ~21 fps. Simula a cadência real da captura.
+    low_fps_prob: float = 0.
+    low_fps_range: tuple = (6., 15.)
 
     def __post_init__(self):
         for p in (self.mirror_prob, self.hand_missing_prob, self.max_frame_drop):
@@ -97,4 +101,13 @@ class RawAugmentorV2:
             keep = np.ones(len(raw), bool)
             keep[rng.choice(np.arange(1, len(raw) - 1), min(count, len(raw) - 2), replace=False)] = False
             raw, mask, times = raw[keep], mask[keep], times[keep]
+        if len(raw) > 4 and rng.random() < cfg.low_fps_prob:
+            fps = rng.uniform(*cfg.low_fps_range)
+            # Grade com variação de ±20% no intervalo, como a fila do WebSocket.
+            steps = rng.uniform(.8, 1.2, int((times[-1] - times[0]) * fps) + 2) / fps
+            grid = times[0] + np.concatenate(([0.], np.cumsum(steps)))
+            grid = grid[grid <= times[-1]]
+            keep = np.unique(np.clip(np.searchsorted(times, grid), 0, len(times) - 1))
+            if len(keep) >= 4:
+                raw, mask, times = raw[keep], mask[keep], times[keep]
         return raw, mask, times
