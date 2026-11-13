@@ -1,0 +1,773 @@
+From 925a09dacc4f414ac3db3eeebc8ec7e5a7bf7e90 Mon Sep 17 00:00:00 2001
+From: auditoria <a@b>
+Date: Fri, 13 Nov 2026 12:17:51 +0000
+Subject: [PATCH] =?UTF-8?q?Auditoria=20webcam=20v2:=20z=20global,=20escala?=
+ =?UTF-8?q?=202D,=20visibilidade,=20segmenta=C3=A7=C3=A3o=20compartilhada,?=
+ =?UTF-8?q?=20FPS=20baixo=20e=20propor=C3=A7=C3=A3o=20da=20c=C3=A2mera?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ backend/config.py                          |   3 +
+ backend/services/prediction.py             |   7 +-
+ backend/services/video_stream_v2.py        |  45 +++++++++
+ configs/augmentation_v2_webcam.yaml        |  11 +++
+ configs/transformer_v2_mixed23_webcam.yaml |  13 +++
+ docs/AUDITORIA_WEBCAM_V2_2026-11-13.md     |  39 ++++++++
+ frontend/src/hooks/useCameraFrames.ts      |  12 ++-
+ ml/data/augmentation_v2.py                 |  13 +++
+ ml/data/dataset_v2.py                      |  21 +++-
+ ml/features/pipeline_v2.py                 |  28 +++++-
+ ml/features/segmentation_v2.py             |  98 +++++++++++++++++++
+ scripts/calibrate_segmentation_v2.py       |  67 +++++++++++++
+ scripts/evaluate_live_protocol_v2.py       | 106 +++++++++++++++++++++
+ tests/test_segmentation_v2.py              |  61 ++++++++++++
+ 14 files changed, 515 insertions(+), 9 deletions(-)
+ create mode 100644 configs/augmentation_v2_webcam.yaml
+ create mode 100644 configs/transformer_v2_mixed23_webcam.yaml
+ create mode 100644 docs/AUDITORIA_WEBCAM_V2_2026-11-13.md
+ create mode 100644 ml/features/segmentation_v2.py
+ create mode 100644 scripts/calibrate_segmentation_v2.py
+ create mode 100644 scripts/evaluate_live_protocol_v2.py
+ create mode 100644 tests/test_segmentation_v2.py
+
+diff --git a/backend/config.py b/backend/config.py
+index de2b107..5a3086e 100644
+--- a/backend/config.py
++++ b/backend/config.py
+@@ -19,6 +19,9 @@ class Settings(BaseSettings):
+     ema_alpha: float = 0.6
+     temperature: float = 1.0
+     perf_logging: bool = False
++    # Liga a segmentação ao vivo também em checkpoints v2 treinados sem ela
++    # (SINALIZA_LIVE_SEGMENTATION=true). Não altera as features do modelo.
++    live_segmentation: bool = False
+     perf_detail: bool = False
+ 
+     # Sequência
+diff --git a/backend/services/prediction.py b/backend/services/prediction.py
+index c1d3848..96caffb 100644
+--- a/backend/services/prediction.py
++++ b/backend/services/prediction.py
+@@ -62,6 +62,8 @@ class PredictionService:
+         if self.pipeline_version == 2:
+             from ml.features.pipeline_v2 import PipelineV2Config, FEATURE_DIM_V2
+             self.pipeline_cfg = PipelineV2Config(**artifact["pipeline_config"])
++            if settings.live_segmentation:
++                self.pipeline_cfg.segmentation = True
+             if (artifact.get("feature_dim") != FEATURE_DIM_V2
+                     or artifact.get("target_fps") != self.pipeline_cfg.target_fps
+                     or artifact.get("window_seconds") != self.pipeline_cfg.window_seconds
+@@ -138,7 +140,7 @@ class PredictionService:
+ 
+     def predict(self, landmarks: np.ndarray, mask: np.ndarray | None = None,
+                 predictor: SignPredictor | FusionSessionPredictor | None = None,
+-                timestamps=None, width=None, height=None) -> dict:
++                timestamps=None, width=None, height=None, end_time=None) -> dict:
+         """Predição a partir de landmarks brutos."""
+         if self._loaded and self._fusion is not None:
+             start = time.perf_counter()
+@@ -155,7 +157,8 @@ class PredictionService:
+             if timestamps is None or mask is None or width is None or height is None:
+                 raise ValueError("V2 exige timestamps, máscara por parte, largura e altura")
+             start = time.perf_counter()
+-            seq, seq_mask, _ = prepare_features_v2(landmarks, mask, timestamps, width, height, self.pipeline_cfg)
++            seq, seq_mask, _ = prepare_features_v2(landmarks, mask, timestamps, width, height,
++                                                   self.pipeline_cfg, end_time=end_time)
+             session = predictor or self._predictor
+             result = session.predict(seq, seq_mask)
+             probabilities = result.get("raw_probs")
+diff --git a/backend/services/video_stream_v2.py b/backend/services/video_stream_v2.py
+index 1745c24..d9c512c 100644
+--- a/backend/services/video_stream_v2.py
++++ b/backend/services/video_stream_v2.py
+@@ -5,6 +5,7 @@ from collections import deque
+ 
+ import numpy as np
+ 
++from ml.features.segmentation_v2 import centered_window_end, motion_segments
+ from ml.features.temporal_v2 import resample_by_time
+ 
+ 
+@@ -17,11 +18,15 @@ class TemporalWindowSessionV2:
+         self.last_prediction = None
+         self.dimensions = None
+         self.predictor.clock = lambda: self.last_prediction if self.last_prediction is not None else 0.
++        self.classified_until = -np.inf   # fim do último trecho já classificado
++        self.last_check = None
+ 
+     def reset(self):
+         self.buffer.clear()
+         self.last_prediction = None
+         self.dimensions = None
++        self.classified_until = -np.inf
++        self.last_check = None
+         self.predictor.reset_state()
+ 
+     def process_landmarks(self, raw, mask, timestamp, width, height):
+@@ -37,6 +42,8 @@ class TemporalWindowSessionV2:
+             self.buffer.popleft()
+         if timestamp - self.buffer[0][0] < self.cfg.window_seconds:
+             return None
++        if getattr(self.cfg, "segmentation", False):
++            return self._process_segmented(timestamp, width, height)
+         if self.last_prediction is not None and timestamp - self.last_prediction < .4 - 1e-8:
+             return None
+         self.last_prediction = timestamp
+@@ -56,3 +63,41 @@ class TemporalWindowSessionV2:
+         if not result.get("sign"):
+             result["top_k"] = []
+         return result
++
++    def _process_segmented(self, timestamp, width, height):
++        """Classifica cada sinal uma vez, com a janela centrada da validação.
++
++        Espera o repouso que encerra o gesto e o tempo para a janela centrada
++        terminar; então classifica sem EMA nem cooldown herdados de janelas
++        anteriores (que misturavam repouso e sinal parcial).
++        """
++        if self.last_check is not None and timestamp - self.last_check < .1:
++            return None
++        self.last_check = timestamp
++        times, raw, mask = zip(*self.buffer)
++        raw, mask, times = np.asarray(raw), np.asarray(mask), np.asarray(times)
++        pending = [seg for seg in motion_segments(raw, mask, times, width, height)
++                   if seg[1] > self.classified_until]
++        if not pending:
++            return None
++        segment = pending[0]
++        end_time = centered_window_end(segment, self.cfg.window_seconds)
++        if end_time > timestamp:
++            return None          # a janela centrada ainda não terminou
++        self.classified_until = segment[1]
++        if end_time - self.cfg.window_seconds < times[0]:
++            return None          # o início do sinal já saiu do buffer
++        _, sampled_mask, _ = resample_by_time(raw, mask, times, end_time,
++                                             self.cfg.target_fps, self.cfg.n_samples)
++        if np.mean(sampled_mask[:, 2] | sampled_mask[:, 3]) < .4:
++            return {"sign": None, "confidence": 0., "top_k": [], "status": "poor_tracking",
++                    "processing_time_ms": 0., "is_cooldown": False}
++        self.predictor.reset_state()
++        self.last_prediction = timestamp
++        result = self.service.predict(raw, mask, predictor=self.predictor, timestamps=times,
++                                      width=width, height=height, end_time=end_time)
++        result["segment"] = {"start": segment[0], "end": segment[1]}
++        result.setdefault("status", "recognized" if result.get("sign") else "uncertain")
++        if not result.get("sign"):
++            result["top_k"] = []
++        return result
+diff --git a/configs/augmentation_v2_webcam.yaml b/configs/augmentation_v2_webcam.yaml
+new file mode 100644
+index 0000000..f72a219
+--- /dev/null
++++ b/configs/augmentation_v2_webcam.yaml
+@@ -0,0 +1,11 @@
++# Igual a augmentation_v2.yaml, mais a cadência baixa da webcam (revisão 2026-11-13).
++mirror_prob: 0.5
++speed_range: [0.7, 1.3]
++scale_range: [0.85, 1.15]
++rotate_degrees: 10.0
++translate: 0.05
++noise_std: 0.005
++max_frame_drop: 0.3
++hand_missing_prob: 0.2
++low_fps_prob: 0.5
++low_fps_range: [6.0, 15.0]
+diff --git a/configs/transformer_v2_mixed23_webcam.yaml b/configs/transformer_v2_mixed23_webcam.yaml
+new file mode 100644
+index 0000000..f10f130
+--- /dev/null
++++ b/configs/transformer_v2_mixed23_webcam.yaml
+@@ -0,0 +1,13 @@
++# Revisão pós-auditoria (2026-11-13): mesmos dados/modelo do mixed23, com
++# features sem profundidade global, escala 2D, filtro de pontos fora do quadro,
++# segmentação compartilhada com a webcam e cadência baixa no augmentation.
++_base_: transformer_v2_mixed23.yaml
++pipeline:
++  target_fps: 15.0
++  window_seconds: 3.2
++  max_gap: 5
++  global_depth: false
++  scale_2d: true
++  point_visibility: true
++  segmentation: true
++augmentation_file: augmentation_v2_webcam.yaml
+diff --git a/docs/AUDITORIA_WEBCAM_V2_2026-11-13.md b/docs/AUDITORIA_WEBCAM_V2_2026-11-13.md
+new file mode 100644
+index 0000000..fb0d8a8
+--- /dev/null
++++ b/docs/AUDITORIA_WEBCAM_V2_2026-11-13.md
+@@ -0,0 +1,39 @@
++# Auditoria: validação v2 alta, webcam ruim
++
++Data: 13/11/2026. Escopo: `ml/features/pipeline_v2.py`, `temporal_v2.py`, `ml/data/dataset_v2.py`, `augmentation_v2.py`, `backend/services/video_stream*.py`, `prediction.py`, `ml/inference/predictor.py` e `frontend/src/hooks/useCameraFrames.ts`, no commit `05a101e`.
++
++## Achados
++
++1. **O 80% é o pico de uma curva ruidosa.** No `history.csv` do `transformer_v2_mixed23_seed42`, a validação top 1 das épocas 40–94 tem média 0,60 (desvio 0,09). O checkpoint escolhido é o máximo (época 69). Na época 81 a validação era 0,49. A expectativa realista é ~60–65% nesse split; o teste ainda não foi avaliado.
++2. **A validação usa uma janela "oráculo".** `window_end(training=False)` centraliza a janela no trecho de maior movimento, escolhido com o vídeo inteiro. Ao vivo, a janela termina no instante atual a cada 0,4 s: pega sinal parcial ou só repouso. O modelo nunca viu essas janelas e não tem classe de repouso. Por isso emite palavras com a pessoa parada, e a EMA (α 0,6), o limiar 0,30 e o cooldown de 1 s fazem a primeira palavra errada bloquear a certa.
++3. **Profundidade absoluta nas features.** O z da pose tem origem no quadril, o da mão no pulso e o da face no rosto. A normalização subtrai o z dos ombros de todas as partes, então o z global de mãos e rosto vira "menos a profundidade dos ombros". Com o quadril fora do quadro (webcam), esse valor muda sem relação com o sinal. Alterar só o z da pose muda 86 das 725 features (z dos 42 pontos das mãos e dos 40 da face, mais 4 distâncias).
++4. **Escala 3D.** A largura dos ombros usa z, instável com enquadramento de meio corpo.
++5. **Pontos extrapolados.** Cotovelos e punhos da pose fora do quadro continuam como válidos, porque a máscara é da pose inteira. A visibilidade é descartada sem ser usada como filtro.
++6. **Cadência.** O backend processa ~6–12 fps; o augmentation com descarte de até 30% de vídeos de 30 fps nunca fica abaixo de ~21 fps.
++7. **Proporção no frontend.** `drawImage(video, 0, 0, 640, 480)` estica a imagem se a câmera entregar 16:9, e o backend usa a proporção da imagem esticada.
++8. **Validação das palavras do grupo.** 10/10 com um vídeo por classe tem intervalo de confiança de 95% com limite inferior ~69%. Se os IDs `Sinalizador01–07` não forem sete pessoas reais distintas, o split por pessoa não impede vazamento.
++
++## Correções (retrocompatíveis)
++
++Os padrões de `PipelineV2Config` reproduzem o checkpoint atual (`test_profundidade_da_pose_nao_altera_features_revisadas` confere). A config `configs/transformer_v2_mixed23_webcam.yaml` liga:
++
++- `global_depth: false`: zera o z global; a forma local da mão mantém z.
++- `scale_2d: true`: largura dos ombros em x,y.
++- `point_visibility: true`: zera cotovelos, punhos e dedos da pose com visibilidade < 0,5.
++- `segmentation: true`: `ml/features/segmentation_v2.py` define início e fim do sinal pelo deslocamento dos punhos em relação aos ombros, em larguras de ombro por segundo, igual a qualquer FPS. O dataset centraliza a janela nesse trecho (±0,25 s no treino). A sessão da webcam espera o repouso, classifica uma vez a mesma janela centrada e não herda EMA nem cooldown.
++- `augmentation_v2_webcam.yaml`: `low_fps_prob: 0.5` com 6–15 fps e intervalos irregulares.
++- Frontend: a captura preserva `videoWidth/videoHeight`.
++
++## Comandos
++
++```bash
++./.venv/Scripts/python.exe scripts/calibrate_segmentation_v2.py --data-dir data/landmarks/mixed_23
++./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_mixed23_webcam.yaml \
++  --data-dir data/landmarks/mixed_23 --processed-dir data/processed/mixed_23 \
++  --experiment transformer_v2_mixed23_webcam_seed42 --num-workers 0 --skip-test
++./.venv/Scripts/python.exe scripts/evaluate_live_protocol_v2.py \
++  --checkpoint experiments/transformer_v2_mixed23_webcam_seed42/best.pt \
++  --data-dir data/landmarks/mixed_23 --processed-dir data/processed/mixed_23 --split val --fps 9 15
++```
++
++Para testar a segmentação ao vivo já com o checkpoint atual, sem retreinar, inicie o backend com `SINALIZA_LIVE_SEGMENTATION=true` (as features continuam as do treino). Rode o `evaluate_live_protocol_v2.py` também no checkpoint atual para ter a linha de base no protocolo da webcam. Compare `primeira_correta` e `palavras_erradas_por_minuto`, não só o top 1 da janela centrada.
+diff --git a/frontend/src/hooks/useCameraFrames.ts b/frontend/src/hooks/useCameraFrames.ts
+index b0dc95a..6d6e2d4 100644
+--- a/frontend/src/hooks/useCameraFrames.ts
++++ b/frontend/src/hooks/useCameraFrames.ts
+@@ -72,8 +72,14 @@ export function useCameraFrames({ width = 640, height = 480, onFrame, canSendFra
+     setDevices(allDevices.filter((item) => item.kind === "videoinput"));
+ 
+     const capture = document.createElement("canvas");
+-    capture.width = width;
+-    capture.height = height;
++    // Preserva a proporção real da câmera. Se a webcam entregar 16:9 e o
++    // quadro for desenhado em 640x480, a imagem é esticada e o backend lê a
++    // proporção errada (frame.shape), distorcendo toda a geometria das mãos.
++    const sourceWidth = video.videoWidth || width;
++    const sourceHeight = video.videoHeight || height;
++    const captureScale = Math.min(1, Math.max(width, height) / Math.max(sourceWidth, sourceHeight));
++    capture.width = Math.round(sourceWidth * captureScale);
++    capture.height = Math.round(sourceHeight * captureScale);
+     const ctx = capture.getContext("2d");
+     let frames = 0;
+     let fpsStarted = performance.now();
+@@ -97,7 +103,7 @@ export function useCameraFrames({ width = 640, height = 480, onFrame, canSendFra
+       // Evita codificar JPEGs que ficariam esperando na fila do WebSocket.
+       if (!ctx || video.readyState < 2 || encodingRef.current || !canSendFrameRef.current?.()) return;
+       const capturedAt = performance.now();
+-      ctx.drawImage(video, 0, 0, width, height);
++      ctx.drawImage(video, 0, 0, capture.width, capture.height);
+       encodingRef.current = true;
+       capture.toBlob((blob) => {
+         if (streamRef.current !== stream) return;
+diff --git a/ml/data/augmentation_v2.py b/ml/data/augmentation_v2.py
+index cb50e35..62deb12 100644
+--- a/ml/data/augmentation_v2.py
++++ b/ml/data/augmentation_v2.py
+@@ -53,6 +53,10 @@ class AugmentationV2Config:
+     noise_std: float = .005
+     max_frame_drop: float = .3
+     hand_missing_prob: float = .2
++    # Webcam no backend processa ~6-12 fps; o descarte de 30% de um vídeo de
++    # 30 fps nunca desce de ~21 fps. Simula a cadência real da captura.
++    low_fps_prob: float = 0.
++    low_fps_range: tuple = (6., 15.)
+ 
+     def __post_init__(self):
+         for p in (self.mirror_prob, self.hand_missing_prob, self.max_frame_drop):
+@@ -97,4 +101,13 @@ class RawAugmentorV2:
+             keep = np.ones(len(raw), bool)
+             keep[rng.choice(np.arange(1, len(raw) - 1), min(count, len(raw) - 2), replace=False)] = False
+             raw, mask, times = raw[keep], mask[keep], times[keep]
++        if len(raw) > 4 and rng.random() < cfg.low_fps_prob:
++            fps = rng.uniform(*cfg.low_fps_range)
++            # Grade com variação de ±20% no intervalo, como a fila do WebSocket.
++            steps = rng.uniform(.8, 1.2, int((times[-1] - times[0]) * fps) + 2) / fps
++            grid = times[0] + np.concatenate(([0.], np.cumsum(steps)))
++            grid = grid[grid <= times[-1]]
++            keep = np.unique(np.clip(np.searchsorted(times, grid), 0, len(times) - 1))
++            if len(keep) >= 4:
++                raw, mask, times = raw[keep], mask[keep], times[keep]
+         return raw, mask, times
+diff --git a/ml/data/dataset_v2.py b/ml/data/dataset_v2.py
+index 504fbd3..f36b256 100644
+--- a/ml/data/dataset_v2.py
++++ b/ml/data/dataset_v2.py
+@@ -12,6 +12,7 @@ from torch.utils.data import get_worker_info
+ from ml.data.dataset import LibrasDataset
+ from ml.data.quality import active_interval
+ from ml.features.pipeline_v2 import PipelineV2Config, FEATURE_DIM_V2, prepare_features_v2
++from ml.features.segmentation_v2 import centered_window_end, main_segment
+ 
+ logger = logging.getLogger(__name__)
+ 
+@@ -55,6 +56,7 @@ class LibrasDatasetV2(LibrasDataset):
+         self.rng = np.random.default_rng(augmentation_seed)
+         self.metadata = []
+         self.metadata_issues = {"fps": 0, "dimensions": 0}
++        self.segmentation_fallbacks = 0
+         for sample in self.samples:
+             with np.load(self.data_dir / sample["path"], allow_pickle=True) as data:
+                 meta = read_metadata(data)
+@@ -99,8 +101,20 @@ class LibrasDatasetV2(LibrasDataset):
+                      else np.arange(len(raw), dtype=np.float64) / meta["fps"])
+         if self.training and self.augmentor is not None:
+             raw, mask, times = self.augmentor(raw, mask, times, self.rng, meta["width"], meta["height"])
+-        start, end = active_interval(raw, mask)
+-        end_time = window_end(times, start, end, self.pipeline_cfg.window_seconds, self.training, self.rng)
++        end_time = None
++        if self.pipeline_cfg.segmentation:
++            # Mesmo segmentador da webcam. No treino, o centro varia ±0,25 s
++            # para tolerar erros de início/fim da segmentação ao vivo.
++            segment = main_segment(raw, mask, times, meta["width"], meta["height"])
++            if segment is not None:
++                end_time = centered_window_end(segment, self.pipeline_cfg.window_seconds)
++                if self.training:
++                    end_time += float(self.rng.uniform(-.25, .25))
++            else:
++                self.segmentation_fallbacks += 1
++        if end_time is None:
++            start, end = active_interval(raw, mask)
++            end_time = window_end(times, start, end, self.pipeline_cfg.window_seconds, self.training, self.rng)
+         features, valid, _ = prepare_features_v2(raw, mask, times, meta["width"], meta["height"],
+                                                self.pipeline_cfg, end_time=end_time)
+         origin = sample.get("origin") or ("novas" if "novas_" in sample["path"] else "minds")
+@@ -110,4 +124,5 @@ class LibrasDatasetV2(LibrasDataset):
+ 
+     def get_stats(self):
+         return {**super().get_stats(), "pipeline_version": 2,
+-                "pipeline_config": asdict(self.pipeline_cfg), "metadata_issues": self.metadata_issues}
++                "pipeline_config": asdict(self.pipeline_cfg), "metadata_issues": self.metadata_issues,
++                "segmentation_fallbacks": self.segmentation_fallbacks}
+diff --git a/ml/features/pipeline_v2.py b/ml/features/pipeline_v2.py
+index 7dbc18f..0a5903f 100644
+--- a/ml/features/pipeline_v2.py
++++ b/ml/features/pipeline_v2.py
+@@ -31,6 +31,14 @@ class PipelineV2Config:
+     window_seconds: float = 3.2
+     max_gap: int = 5
+     epsilon: float = 1e-6
++    # Revisão 2026-11-13. Os padrões reproduzem o checkpoint v2 já treinado;
++    # configs novos devem usar global_depth=False, scale_2d=True,
++    # point_visibility=True e segmentation=True.
++    global_depth: bool = True       # z global mistura origens diferentes (quadril, pulso, rosto)
++    scale_2d: bool = False          # largura dos ombros só em x,y (z da pose é instável na webcam)
++    point_visibility: bool = False  # zera pontos de braço extrapolados fora do quadro
++    segmentation: bool = False      # janela centrada no trecho de movimento, igual no treino e ao vivo
++    visibility_threshold: float = 0.5
+ 
+     def __post_init__(self):
+         if self.target_fps <= 0 or self.window_seconds <= 0 or self.max_gap < 0:
+@@ -80,6 +88,8 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
+     for side, (start, end) in enumerate(((0, 63), (63, 126), (126, 226), (226, 346))):
+         mask[:, side] &= np.isfinite(raw[:, start:end]).all(axis=1)
+     raw = np.nan_to_num(raw, nan=0, posinf=0, neginf=0)
++    # Visibilidade é lida antes de ser descartada: não vira feature, só filtro.
++    pose_visibility = raw[:, 126:226].reshape(n, 25, 4)[:, :17, 3].copy()
+     raw[:, 0:126:3] *= width / height
+     raw[:, 126:226:4] *= width / height
+     raw[:, 226:346:3] *= width / height
+@@ -90,7 +100,8 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
+     hands = compact[:, :126].reshape(n, 2, 21, 3).copy()
+     pose = compact[:, 126:177].reshape(n, 17, 3)
+     center = (pose[:, 5] + pose[:, 6]) / 2
+-    scale = np.linalg.norm(pose[:, 5] - pose[:, 6], axis=1)
++    dims = 2 if cfg.scale_2d else 3
++    scale = np.linalg.norm(pose[:, 5, :dims] - pose[:, 6, :dims], axis=1)
+     valid = mask[:, 2] & (scale > cfg.epsilon)
+     if valid.any():
+         center[~valid] = np.median(center[valid], axis=0)
+@@ -102,6 +113,17 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
+     face_valid = np.any(global_xyz[:, 59:] != 0, axis=-1)
+     global_xyz = (global_xyz - center[:, None]) / np.maximum(scale[:, None, None], cfg.epsilon)
+     global_xyz[:, 59:][~face_valid] = 0
++    if not cfg.global_depth:
++        # z da pose tem origem no quadril (fora do quadro na webcam), z da mão
++        # no pulso e z da face no rosto: subtraí-los gera um deslocamento que
++        # depende do enquadramento, não do sinal. A forma local da mão mantém z.
++        global_xyz[..., 2] = 0
++    point_ok = np.ones((n, 17), dtype=bool)
++    if cfg.point_visibility:
++        # Cotovelos, punhos e dedos da pose (posições 7..16) fora do quadro
++        # são extrapolados pelo MediaPipe; nariz/olhos/ombros ficam sempre.
++        point_ok[:, 7:] = pose_visibility[:, 7:] >= cfg.visibility_threshold
++        global_xyz[:, 42:59][~point_ok] = 0
+     global_xyz = global_xyz.reshape(n, GLOBAL_DIM_V2)
+     for side, (start, end) in enumerate(PART_SLICES_V2):
+         global_xyz[~mask[:, side], start:end] = 0
+@@ -126,4 +148,8 @@ def build_features_v2(raw, part_mask, timestamps, width, height, cfg=None):
+     face_velocity[1:][~(face_valid[1:] & face_valid[:-1])] = 0
+     for side, (start, end) in enumerate(PART_SLICES_V2):
+         velocity[1:, start:end][~(mask[1:, side] & mask[:-1, side])] = 0
++    if cfg.point_visibility:
++        pose_velocity = velocity[:, 126:177].reshape(n, 17, 3)
++        pose_velocity[1:][~(point_ok[1:] & point_ok[:-1])] = 0
++        pose_velocity[0] = 0
+     return np.concatenate((global_xyz, local.reshape(n, 126), distances, velocity), axis=1).astype(np.float32)
+diff --git a/ml/features/segmentation_v2.py b/ml/features/segmentation_v2.py
+new file mode 100644
+index 0000000..6e9f250
+--- /dev/null
++++ b/ml/features/segmentation_v2.py
+@@ -0,0 +1,98 @@
++"""Segmentação do sinal pelo movimento dos punhos, igual no treino e ao vivo.
++
++A validação v2 sempre classificava uma janela centrada no gesto, escolhida com o
++vídeo inteiro disponível. Ao vivo a janela terminava "agora", a cada 0,4 s, e
++quase sempre pegava o sinal pela metade ou só repouso. Este módulo define um
++único critério de início/fim em segundos, usado pelo dataset e pela sessão da
++webcam, para que a janela classificada ao vivo seja a mesma da validação.
++"""
++from __future__ import annotations
++
++from dataclasses import dataclass
++
++import numpy as np
++
++# Posições na lista de 25 pontos de pose do vetor bruto de 346 valores.
++SHOULDERS = (5, 6)
++WRISTS = (9, 10)
++
++
++@dataclass
++class SegmentationConfig:
++    on_speed: float = 0.9      # larguras de ombro por segundo para iniciar
++    off_speed: float = 0.45    # abaixo disso o punho é considerado parado
++    quiet_seconds: float = 0.4  # repouso necessário para encerrar o trecho
++    min_seconds: float = 0.3   # trechos menores são ruído
++    max_seconds: float = 3.0   # trechos maiores não cabem na janela de 3,2 s
++    smooth_seconds: float = 0.2
++
++
++def wrist_speed(raw, mask, times, width, height, smooth_seconds=0.2):
++    """Velocidade máxima dos punhos relativa aos ombros (larguras de ombro/s)."""
++    raw = np.asarray(raw, dtype=np.float32)
++    times = np.asarray(times, dtype=np.float64)
++    n = len(raw)
++    speed = np.zeros(n)
++    if n < 2:
++        return speed
++    pose = raw[:, 126:226].reshape(n, 25, 4)[:, :, :2] * np.array([width / height, 1.0])
++    shoulder_width = np.linalg.norm(pose[:, SHOULDERS[0]] - pose[:, SHOULDERS[1]], axis=1)
++    ok = np.asarray(mask, dtype=bool)[:, 2] & np.isfinite(shoulder_width) & (shoulder_width > 1e-3)
++    if ok.sum() < 2:
++        return speed
++    rel = (pose[:, list(WRISTS)] - pose[:, list(SHOULDERS)]) / np.median(shoulder_width[ok])
++    # Deslocamento ao longo de ~smooth_seconds, não soma de passos quadro a
++    # quadro: o tremor do MediaPipe não cresce com o FPS e o valor é o mesmo
++    # a 9 ou a 30 fps.
++    span = max(smooth_seconds, 1e-3)
++    # Último quadro com pelo menos `span` segundos de distância: o intervalo
++    # nunca é menor que span, nem com FPS baixo nem no começo do buffer.
++    previous = np.searchsorted(times, times - span, side="right") - 1
++    has_history = previous >= 0
++    previous = previous.clip(0)
++    elapsed = np.maximum(times - times[previous], 1e-3)
++    displacement = np.linalg.norm(rel - rel[previous], axis=-1).max(axis=1)
++    speed = displacement / elapsed
++    speed[~(ok & ok[previous] & has_history)] = 0
++    return speed
++
++
++def motion_segments(raw, mask, times, width, height, cfg: SegmentationConfig | None = None,
++                    require_closed: bool = True):
++    """Lista de (início, fim) em segundos, com histerese e repouso mínimo.
++
++    Com ``require_closed`` (uso ao vivo), só devolve trechos cujo repouso final
++    já foi observado; no dataset o fim do vídeo também fecha o trecho.
++    """
++    cfg = cfg or SegmentationConfig()
++    times = np.asarray(times, dtype=np.float64)
++    speed = wrist_speed(raw, mask, times, width, height, cfg.smooth_seconds)
++    segments, start, last_active = [], None, None
++    for t, v in zip(times, speed):
++        if start is None:
++            if v >= cfg.on_speed:
++                start, last_active = t, t
++            continue
++        if v >= cfg.off_speed:
++            last_active = t
++        elif t - last_active >= cfg.quiet_seconds:
++            segments.append((start, last_active))
++            start = None
++    if start is not None and not require_closed:
++        segments.append((start, float(times[-1])))
++    return [(float(a), float(b)) for a, b in segments
++            if cfg.min_seconds <= b - a <= cfg.max_seconds]
++
++
++def main_segment(raw, mask, times, width, height, cfg: SegmentationConfig | None = None):
++    """Trecho principal de um vídeo de sinal isolado: o de maior duração."""
++    segments = motion_segments(raw, mask, times, width, height, cfg, require_closed=False)
++    if not segments:
++        return None
++    return max(segments, key=lambda seg: seg[1] - seg[0])
++
++
++def centered_window_end(segment, window_seconds):
++    """Mesmo cálculo de ``window_end`` da validação: janela centrada no trecho."""
++    start, end = segment
++    return (start + end + window_seconds) / 2
+diff --git a/scripts/calibrate_segmentation_v2.py b/scripts/calibrate_segmentation_v2.py
+new file mode 100644
+index 0000000..99e5576
+--- /dev/null
++++ b/scripts/calibrate_segmentation_v2.py
+@@ -0,0 +1,67 @@
++#!/usr/bin/env python3
++"""Confere os limiares de `SegmentationConfig` nos .npz reais antes do treino.
++
++Bom sinal: quase todos os vídeos com um trecho detectado, duração típica entre
++0,6 e 2,5 s, repouso (p95) bem abaixo de `off_speed` e pico do gesto (p50)
++bem acima de `on_speed`. Rode também nos arquivos de `data/coleta/` (webcam).
++
++    ./.venv/Scripts/python.exe scripts/calibrate_segmentation_v2.py --data-dir data/landmarks/mixed_23
++"""
++from __future__ import annotations
++
++import argparse
++from collections import defaultdict
++import json
++from pathlib import Path
++import sys
++
++import numpy as np
++
++ROOT = Path(__file__).resolve().parents[1]
++if str(ROOT) not in sys.path:
++    sys.path.insert(0, str(ROOT))
++
++from ml.data.dataset_v2 import read_metadata
++from ml.features.segmentation_v2 import SegmentationConfig, main_segment, wrist_speed
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++    parser.add_argument("--data-dir", required=True, type=Path)
++    args = parser.parse_args()
++    cfg = SegmentationConfig()
++    manifest = json.loads((args.data_dir / "manifest.json").read_text(encoding="utf-8"))
++    stats = defaultdict(lambda: {"videos": 0, "sem_trecho": 0, "duracao": [], "repouso": [], "pico": []})
++    for row in manifest:
++        with np.load(args.data_dir / row["path"], allow_pickle=True) as data:
++            meta = read_metadata(data)
++            raw, mask = data["landmarks"], data["mask"].astype(bool)
++            fps = float(meta.get("fps") or 30)
++            times = data["timestamps"] if "timestamps" in data else np.arange(len(raw)) / fps
++        width, height = float(meta.get("width") or 1), float(meta.get("height") or 1)
++        origin = row.get("origin", "?")
++        item = stats[origin]
++        item["videos"] += 1
++        speed = wrist_speed(raw, mask, times, width, height, cfg.smooth_seconds)
++        rest = speed[(times - times[0] > .25) & (times - times[0] < .6)]
++        if len(rest):
++            item["repouso"].append(float(np.percentile(rest, 95)))
++        item["pico"].append(float(speed.max()))
++        segment = main_segment(raw, mask, times, width, height, cfg)
++        if segment is None:
++            item["sem_trecho"] += 1
++        else:
++            item["duracao"].append(segment[1] - segment[0])
++    print(f"limiares: on={cfg.on_speed} off={cfg.off_speed} (larguras de ombro/s)")
++    for origin, item in stats.items():
++        q = lambda values, p: round(float(np.percentile(values, p)), 2) if values else None
++        print(json.dumps({
++            "origem": origin, "videos": item["videos"], "sem_trecho": item["sem_trecho"],
++            "duracao_s_p10_p50_p90": [q(item["duracao"], p) for p in (10, 50, 90)],
++            "repouso_inicio_p95_dos_videos": q(item["repouso"], 95),
++            "pico_do_gesto_p10_p50": [q(item["pico"], p) for p in (10, 50)],
++        }, ensure_ascii=False))
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/scripts/evaluate_live_protocol_v2.py b/scripts/evaluate_live_protocol_v2.py
+new file mode 100644
+index 0000000..13e1bb8
+--- /dev/null
++++ b/scripts/evaluate_live_protocol_v2.py
+@@ -0,0 +1,106 @@
++#!/usr/bin/env python3
++"""Avalia um checkpoint v2 com o protocolo da webcam, não com a janela ideal.
++
++A validação do treino classifica uma única janela centrada no gesto, escolhida
++olhando o vídeo inteiro. Na webcam o backend recebe quadros a ~6–12 fps e
++decide sozinho quando e o que mostrar. Este script passa cada vídeo de um split
++pela mesma sessão do backend (`TemporalWindowSessionV2`), na cadência pedida, e
++conta o que o usuário veria:
++
++- primeira_correta: a primeira palavra mostrada é a correta;
++- alguma_correta: a palavra correta aparece em algum momento;
++- palavras_erradas: palavras aceitas que não são o rótulo (falsos positivos);
++- sem_resposta: nenhum sinal aceito no vídeo inteiro.
++
++Uso (Git Bash, na raiz):
++    ./.venv/Scripts/python.exe scripts/evaluate_live_protocol_v2.py \\
++        --checkpoint experiments/transformer_v2_mixed23_seed42/best.pt \\
++        --data-dir data/landmarks/mixed_23 --processed-dir data/processed/mixed_23 \\
++        --split val --fps 9 15
++"""
++from __future__ import annotations
++
++import argparse
++from collections import Counter
++import json
++from pathlib import Path
++import sys
++
++ROOT = Path(__file__).resolve().parents[1]
++if str(ROOT) not in sys.path:
++    sys.path.insert(0, str(ROOT))
++
++from backend.config import settings
++from backend.services.prediction import PredictionService
++from scripts.simulate_live_fps import npz_frames, simulate_frames
++
++
++def evaluate(service, data_dir: Path, rows, fps: float):
++    per_video, confusions = [], Counter()
++    for row in rows:
++        result = simulate_frames(service, npz_frames(data_dir / row["path"], fps))
++        accepted = [w["accepted_sign"] for w in result["windows"] if w.get("accepted_sign")]
++        wrong = [sign for sign in accepted if sign != row["label"]]
++        confusions.update((row["label"], sign) for sign in wrong)
++        per_video.append({
++            "path": row["path"], "label": row["label"], "origin": row.get("origin", "?"),
++            "accepted": accepted,
++            "first_correct": bool(accepted) and accepted[0] == row["label"],
++            "any_correct": row["label"] in accepted,
++            "wrong": len(wrong),
++            "seconds": result["windows"][-1]["end_seconds"] if result["windows"] else 0.,
++        })
++    return per_video, confusions
++
++
++def summarize(videos):
++    n = len(videos)
++    if n == 0:
++        return {}
++    minutes = sum(v["seconds"] for v in videos) / 60 or 1
++    return {
++        "videos": n,
++        "primeira_correta": round(sum(v["first_correct"] for v in videos) / n, 3),
++        "alguma_correta": round(sum(v["any_correct"] for v in videos) / n, 3),
++        "sem_resposta": round(sum(not v["accepted"] for v in videos) / n, 3),
++        "palavras_erradas": sum(v["wrong"] for v in videos),
++        "palavras_erradas_por_minuto": round(sum(v["wrong"] for v in videos) / minutes, 2),
++    }
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++    parser.add_argument("--checkpoint", required=True)
++    parser.add_argument("--data-dir", required=True, type=Path)
++    parser.add_argument("--processed-dir", required=True, type=Path)
++    parser.add_argument("--split", default="val", choices=["train", "val", "test"])
++    parser.add_argument("--fps", type=float, nargs="+", default=[9.0])
++    parser.add_argument("--output", type=Path)
++    args = parser.parse_args()
++
++    settings.device = "cpu"
++    service = PredictionService()
++    service.load_model(args.checkpoint)
++    if not service.is_loaded or service.pipeline_version != 2:
++        raise SystemExit("Informe um checkpoint v2")
++    manifest = json.loads((args.data_dir / "manifest.json").read_text(encoding="utf-8"))
++    splits = json.loads((args.processed_dir / "splits.json").read_text(encoding="utf-8"))
++    rows = [manifest[i] for i in splits[args.split]]
++    mode = "segmentado" if getattr(service.pipeline_cfg, "segmentation", False) else "janela deslizante + EMA"
++    report = {"checkpoint": args.checkpoint, "split": args.split, "modo": mode, "por_fps": {}}
++    for fps in args.fps:
++        videos, confusions = evaluate(service, args.data_dir, rows, fps)
++        origins = sorted({v["origin"] for v in videos})
++        summary = {"geral": summarize(videos),
++                   **{origin: summarize([v for v in videos if v["origin"] == origin]) for origin in origins},
++                   "confusoes_mais_frequentes": [f"{a} → {b}: {c}" for (a, b), c in confusions.most_common(10)]}
++        report["por_fps"][str(fps)] = {"resumo": summary, "videos": videos}
++        print(f"\n=== {args.split} | {fps:g} fps | {mode} ===")
++        print(json.dumps(summary, ensure_ascii=False, indent=2))
++    if args.output:
++        args.output.parent.mkdir(parents=True, exist_ok=True)
++        args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/tests/test_segmentation_v2.py b/tests/test_segmentation_v2.py
+new file mode 100644
+index 0000000..243ea7b
+--- /dev/null
++++ b/tests/test_segmentation_v2.py
+@@ -0,0 +1,61 @@
++"""Revisão 2026-11-13: segmentação compartilhada e features sem profundidade global."""
++import numpy as np
++
++from ml.features.pipeline_v2 import PipelineV2Config, build_features_v2
++from ml.features.segmentation_v2 import centered_window_end, main_segment, motion_segments
++
++
++def gesto(fps, repouso=1.5, sinal=1.2, depois=2.5, seed=0):
++    rng = np.random.default_rng(seed)
++    t = np.arange(int((repouso + sinal + depois) * fps)) / fps
++    pose = np.zeros((len(t), 25, 4), np.float32)
++    pose[:, 5, :2], pose[:, 6, :2], pose[:, :, 3] = [.4, .4], [.6, .4], 1
++    fase = np.clip((t - repouso) / sinal, 0, 1) * ((t >= repouso) & (t < repouso + sinal))
++    pose[:, 9, 0], pose[:, 9, 1] = .42, .8 - .25 * np.sin(np.pi * fase)
++    pose[:, 10, :2] = [.58, .8]
++    pose[:, :, :2] += rng.normal(0, .003, pose[:, :, :2].shape)
++    raw = np.zeros((len(t), 346), np.float32)
++    raw[:, 126:226] = pose.reshape(len(t), 100)
++    mask = np.ones((len(t), 4), bool)
++    mask[:, :2] = False
++    return raw, mask, t
++
++
++def test_segmento_igual_em_fps_diferentes():
++    centros = []
++    for fps in (6, 9, 15, 30):
++        segmento = main_segment(*gesto(fps), 640, 480)
++        assert segmento is not None
++        assert 1.3 < segmento[0] < 1.95 and 2.5 < segmento[1] < 3.0
++        centros.append(centered_window_end(segmento, 3.2))
++    assert max(centros) - min(centros) < .25
++
++
++def test_repouso_nao_gera_segmento():
++    raw, mask, t = gesto(15, sinal=0.0001)
++    assert motion_segments(raw, mask, t, 640, 480, require_closed=False) == []
++
++
++def test_profundidade_da_pose_nao_altera_features_revisadas():
++    rng = np.random.default_rng(1)
++    raw = rng.uniform(0, 1, (48, 346)).astype(np.float32)
++    mask = np.ones((48, 4), bool)
++    t = np.arange(48) / 15
++    outro = raw.copy()
++    outro[:, 126:226].reshape(48, 25, 4)[:, :, 2] -= .7
++    cfg = PipelineV2Config(global_depth=False, scale_2d=True)
++    assert np.allclose(build_features_v2(raw, mask, t, 640, 480, cfg),
++                       build_features_v2(outro, mask, t, 640, 480, cfg))
++    # O padrão continua igual ao checkpoint já treinado (sensível ao z).
++    assert not np.allclose(build_features_v2(raw, mask, t, 640, 480),
++                           build_features_v2(outro, mask, t, 640, 480))
++
++
++def test_pontos_do_braco_fora_do_quadro_sao_zerados():
++    rng = np.random.default_rng(2)
++    raw = rng.uniform(.2, .8, (48, 346)).astype(np.float32)
++    raw[:, 126:226].reshape(48, 25, 4)[:, 7:17, 3] = .1   # cotovelos/punhos invisíveis
++    mask = np.ones((48, 4), bool)
++    t = np.arange(48) / 15
++    features = build_features_v2(raw, mask, t, 640, 480, PipelineV2Config(point_visibility=True))
++    assert np.all(features[:, 126:177].reshape(48, 17, 3)[:, 7:] == 0)
+-- 
+2.43.0
+
