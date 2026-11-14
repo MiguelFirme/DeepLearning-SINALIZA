@@ -24,6 +24,12 @@ class Settings(BaseSettings):
     # Sequência
     target_frames: int = 48
 
+    # IA (montagem de frases, Google Gemini). Sem chave, o backend usa um fallback simples.
+    gemini_api_key: str | None = None
+    llm_model: str = "gemini-3.1-flash-lite"
+    llm_timeout_s: float = 30.0
+    llm_max_words: int = 20
+
     # CORS
     cors_origins: list[str] = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]
 
