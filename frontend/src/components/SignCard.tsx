@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Play } from "lucide-react";
 import type { DictionaryEntry } from "../services/api";
 import VideoLightbox from "./VideoLightbox";
 import styles from "./SignCard.module.css";
@@ -20,6 +21,7 @@ export default function SignCard({ entry }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [playing, setPlaying] = useState(false);
 
   const hasVideo = Boolean(entry.example_video_url) && !failed;
   const hasImage = Boolean(entry.image_url);
@@ -77,6 +79,8 @@ export default function SignCard({ entry }: Props) {
             playsInline
             preload="none"
             aria-label={`Sinal de ${entry.name} em Libras`}
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
             onError={() => setFailed(true)}
           />
         ) : hasImage ? (
@@ -88,6 +92,16 @@ export default function SignCard({ entry }: Props) {
           />
         ) : (
           <span className={styles.emoji}>🤟</span>
+        )}
+
+        {/* Bolinha de "play": avisa que o card tem vídeo e que dá para clicar */}
+        {hasVideo && (
+          <span
+            className={`${styles.playBadge} ${playing ? styles.playBadgeHidden : ""}`}
+            aria-hidden="true"
+          >
+            <Play size={22} fill="currentColor" />
+          </span>
         )}
       </div>
 
