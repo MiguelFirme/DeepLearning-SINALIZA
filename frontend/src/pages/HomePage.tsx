@@ -2,6 +2,7 @@ import { useRef, useCallback, useState, useEffect } from "react";
 import { Camera, CameraOff } from "lucide-react";
 import WebcamView, { type WebcamViewHandle } from "../components/WebcamView";
 import TranslationDisplay from "../components/TranslationDisplay";
+import SentenceBuilder from "../components/SentenceBuilder";
 import { useWebSocket } from "../hooks/useWebSocket";
 import styles from "./HomePage.module.css";
 
@@ -17,15 +18,37 @@ export default function HomePage() {
   const handleFrame = useCallback((jpeg: Blob, capturedAt: number, captureEncodeMs: number) =>
     ws.sendFrame(jpeg, capturedAt, captureEncodeMs), [ws.sendFrame]);
 
+  /* Sinal que o usuário acabou de apagar: não volta por alguns segundos,
+     mesmo que o modelo continue reconhecendo o mesmo sinal. */
+  const ignoredRef = useRef<{ sign: string; until: number } | null>(null);
+  const IGNORE_MS = 4000;
+
   /* Montar frase progressivamente */
   useEffect(() => {
-    if (ws.prediction?.sign && !ws.prediction.is_cooldown) {
-      setSentence((prev) => {
-        const last = prev[prev.length - 1];
-        if (last === ws.prediction!.sign) return prev;
-        return [...prev.slice(-19), ws.prediction!.sign!];
-      });
-    }
+    const sign = ws.prediction?.sign;
+    if (!sign || ws.prediction?.is_cooldown) return;
+    const ignored = ignoredRef.current;
+    if (ignored && ignored.sign === sign && Date.now() < ignored.until) return;
+    setSentence((prev) => {
+      if (prev[prev.length - 1] === sign) return prev;
+      return [...prev.slice(-19), sign];
+    });
+  }, [ws.prediction]);
+
+  /* Apagar uma palavra específica (ex.: reconhecida errado) */
+  const removeWord = useCallback((index: number) => {
+    setSentence((prev) => {
+      if (index < 0 || index >= prev.length) return prev;
+      ignoredRef.current = { sign: prev[index], until: Date.now() + IGNORE_MS };
+      return prev.filter((_, i) => i !== index);
+    });
+  }, []);
+
+  /* Limpar todas as palavras */
+  const clearSentence = useCallback(() => {
+    const current = ws.prediction?.sign;
+    if (current) ignoredRef.current = { sign: current, until: Date.now() + IGNORE_MS };
+    setSentence([]);
   }, [ws.prediction]);
 
   /* Toggle da câmera */
@@ -110,6 +133,7 @@ export default function HomePage() {
 
         {/* Coluna direita — Painel */}
         <div className={styles.sideCol}>
+          <SentenceBuilder words={sentence} onRemove={removeWord} onClear={clearSentence} />
           <TranslationDisplay
             prediction={ws.prediction}
             latency={ws.latency}
