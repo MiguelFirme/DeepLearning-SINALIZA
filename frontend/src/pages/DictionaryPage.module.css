@@ -155,6 +155,46 @@
   padding-right: 56px;
 }
 
+/* Botão de limpar a busca (fica ao lado do microfone) */
+.withClear {
+  padding-right: 48px;
+}
+
+.withMic.withClear {
+  padding-right: 96px;
+}
+
+.clearBtn {
+  position: absolute;
+  top: 50%;
+  right: 52px; /* logo à esquerda do microfone */
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+
+.clearBtn:hover {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+
+.clearBtn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Sem microfone (navegador sem suporte): o botão vai para a ponta */
+.clearAlone {
+  right: 10px;
+}
+
 .micBtn {
   position: absolute;
   top: 50%;
