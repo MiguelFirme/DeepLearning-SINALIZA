@@ -61,6 +61,11 @@ export interface ModelInfoResponse {
   pipeline_version: number;
 }
 
+export interface SentenceResponse {
+  sentence: string;
+  source: "llm" | "fallback";
+}
+
 /* ---------- Helpers ---------- */
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
@@ -86,6 +91,12 @@ export const api = {
     request<PredictResponse>("/predict", {
       method: "POST",
       body: JSON.stringify({ landmarks, mask }),
+    }),
+
+  sentence: (words: string[]) =>
+    request<SentenceResponse>("/sentence", {
+      method: "POST",
+      body: JSON.stringify({ words }),
     }),
 
   resetPredictor: () =>
