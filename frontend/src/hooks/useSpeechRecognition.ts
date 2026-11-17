@@ -242,5 +242,5 @@ export function useSpeechRecognition({ lang = "pt-BR", onResult }: Options) {
   /* Ao sair da página, solta o microfone */
   useEffect(() => teardown, [teardown]);
 
-  return { supported, listening, interim, error, start, stop, toggle };
+  return { supported, listening, interim, error, start, stop, toggle, cancel: teardown };
 }

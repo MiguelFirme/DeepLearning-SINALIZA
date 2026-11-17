@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { Mic, MicOff, Search } from "lucide-react";
+import { Mic, MicOff, Search, X } from "lucide-react";
 import api, { type DictionaryEntry } from "../services/api";
 import SignCard from "../components/SignCard";
 import { useSpeechRecognition } from "../hooks/useSpeechRecognition";
@@ -48,6 +48,15 @@ export default function DictionaryPage() {
   const voice = useSpeechRecognition({
     onResult: (text) => setSearchTerm(text),
   });
+
+  /* Botão de limpar: aparece quando há texto na busca (digitado ou falado) */
+  const inputRef = useRef<HTMLInputElement>(null);
+  const hasText = Boolean(searchTerm) || (voice.listening && Boolean(voice.interim));
+  const clearSearch = () => {
+    voice.cancel(); // para de ouvir sem devolver o texto falado
+    setSearchTerm("");
+    inputRef.current?.focus();
+  };
 
   const fetchEntries = useCallback(
     async (reset = false) => {
@@ -137,12 +146,26 @@ export default function DictionaryPage() {
       <div className={styles.searchWrapper}>
         <Search size={18} className={styles.searchIcon} />
         <input
+          ref={inputRef}
           type="text"
           placeholder={voice.listening ? "Ouvindo... fale o sinal" : "Buscar um sinal..."}
-          className={`${styles.searchInput} ${voice.supported ? styles.withMic : ""}`}
+          className={`${styles.searchInput} ${voice.supported ? styles.withMic : ""} ${
+            hasText ? styles.withClear : ""
+          }`}
           value={voice.listening && voice.interim ? voice.interim : searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+        {hasText && (
+          <button
+            type="button"
+            className={`${styles.clearBtn} ${voice.supported ? "" : styles.clearAlone}`}
+            onClick={clearSearch}
+            aria-label="Limpar busca"
+            title="Limpar busca"
+          >
+            <X size={16} />
+          </button>
+        )}
         {voice.supported && (
           <button
             type="button"

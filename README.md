@@ -162,6 +162,13 @@ npm run build
 
 Na ativação da fusão de 25 classes, **122 testes passaram**, incluindo inicialização da API e transmissão de 48 quadros por WebSocket. O reconhecimento ao vivo com pessoas novas ainda precisa ser medido. O teste antigo com o MP4 `Banheiro` e 79,2% de confiança pertencia ao modelo histórico de oito classes.
 
+## Frase com IA (Gemini)
+1. Crie uma chave gratuita em https://aistudio.google.com/apikey
+2. No `.env`  cole a sua chave em COLAR CHAVE AQUI 
+3. Rode `iniciar.bat` (Windows)
+
+Sem a chave, o app funciona normalmente e monta a frase de forma simples, sem IA.
+
 Há configuração de Docker Compose no repositório, mas a execução em contêiner não foi validada nesta atualização.
 
 ## Documentação

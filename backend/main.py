@@ -13,7 +13,7 @@ from fastapi.staticfiles import StaticFiles
 
 from backend.config import settings
 from backend.middleware.cors import RequestLoggingMiddleware
-from backend.routers import health_router, predict_router, dictionary_router, websocket_router
+from backend.routers import health_router, predict_router, dictionary_router, websocket_router, sentence_router
 from backend.routers.dictionary import DICTIONARY_DIR, MEDIA_URL_PREFIX
 from backend.services.prediction import prediction_service
 
@@ -51,6 +51,7 @@ app.add_middleware(RequestLoggingMiddleware)
 app.include_router(health_router, prefix="/api")
 app.include_router(predict_router, prefix="/api")
 app.include_router(dictionary_router, prefix="/api")
+app.include_router(sentence_router, prefix="/api")
 app.include_router(websocket_router, prefix="/api")
 
 # Mídia do dicionário (vídeos e imagens). A pasta pode estar vazia; o app continua funcionando.
