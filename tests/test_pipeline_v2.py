@@ -1,7 +1,25 @@
 """Invariâncias físicas e ausência de partes no construtor v2."""
 import numpy as np
+import pytest
 
 from ml.features.pipeline_v2 import PipelineV2Config, build_features_v2
+
+
+def test_metadados_auditoria_preservam_features_originais():
+    raw, mask, times = amostra()
+    cfg = PipelineV2Config(global_depth=True, scale_2d=False,
+                           point_visibility=False, segmentation=False,
+                           visibility_threshold=0.5)
+    np.testing.assert_array_equal(build_features_v2(raw, mask, times, 640, 480, cfg),
+                                  build_features_v2(raw, mask, times, 640, 480))
+
+
+@pytest.mark.parametrize("opcao", [dict(global_depth=False), dict(scale_2d=True),
+                                     dict(point_visibility=True), dict(segmentation=True),
+                                     dict(visibility_threshold=0.7)])
+def test_recusa_variante_geometrica_nao_implementada(opcao):
+    with pytest.raises(ValueError, match="Variante experimental"):
+        PipelineV2Config(**opcao)
 
 
 def amostra(n=48, fps=15):

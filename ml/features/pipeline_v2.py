@@ -31,8 +31,20 @@ class PipelineV2Config:
     window_seconds: float = 3.2
     max_gap: int = 5
     epsilon: float = 1e-6
+    # Compatibilidade com checkpoints da auditoria: somente a geometria v2
+    # original está implementada aqui. Recusar variantes evita inferência distinta
+    # do treino; estes valores equivalem ao construtor de 725 features abaixo.
+    global_depth: bool = True
+    scale_2d: bool = False
+    point_visibility: bool = False
+    segmentation: bool = False
+    visibility_threshold: float = 0.5
 
     def __post_init__(self):
+        if (self.global_depth is not True or self.scale_2d is not False
+                or self.point_visibility is not False or self.segmentation is not False
+                or self.visibility_threshold != 0.5):
+            raise ValueError("Variante experimental de geometria não suportada neste pipeline v2")
         if self.target_fps <= 0 or self.window_seconds <= 0 or self.max_gap < 0:
             raise ValueError("FPS, duração e tamanho de lacuna inválidos")
         if self.epsilon <= 0 or self.n_samples < 2:

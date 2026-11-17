@@ -2,7 +2,7 @@
 
 Implementação em fases conforme [plano](PLANO_PIPELINE_V2.md). A extração continua com 346 valores e máscara `(T,4)`. Os arquivos brutos não são modificados.
 
-**Estado atual em 13/11/2026:** o Transformer v2 real de 23 classes está definido como padrão em `Modelos salvos/transformer_v2_mixed23_full/best.pt`, com 60/75 acertos de validação. Não é mais necessário selecionar a v2 por variável de ambiente ao iniciar. Veja a [ativação e verificação](ATIVACAO_TRANSFORMER_V2_PADRAO_2026-11-13.md). Os registros por fase abaixo descrevem a implementação original.
+**Estado atual em 17/11/2026:** o Transformer v2 real de 41 classes está definido como padrão em `Modelos salvos/transformer_v2_grupo41_full/best.pt`, com 70/93 acertos de validação. Não é necessário selecionar a v2 por variável de ambiente ao iniciar. Veja a [ativação e verificação](ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md). Os registros por fase abaixo descrevem a implementação original.
 
 ## Features e ordem
 
@@ -58,7 +58,7 @@ Também não foram validados webcam humana, FPS do MediaPipe em vídeo real nem 
 
 ## Treinar e avaliar por pessoa
 
-**Vocabulário atual após a remoção de classes (12/11/2026):** para usar as 13 classes MINDS restantes e os vídeos em `data/raw/Videos do grupo`, siga [Treino v2 mixed23 com o grupo](TREINO_V2_MIXED23_GRUPO_2026-11-12.md). São 23 classes, 590 exemplos e splits 440/75/75. Os comandos mixed25 abaixo documentam a reprodução do vocabulário anterior e não devem ser usados nesse conjunto reduzido.
+**Vocabulário ampliado (17/11/2026):** 13 classes MINDS e 28 do grupo, 715 exemplos e splits 529/93/93. Use os [comandos de reprodução de 41 classes](ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md). O [treino mixed23](TREINO_V2_MIXED23_GRUPO_2026-11-12.md) e os comandos mixed25 abaixo documentam vocabulários anteriores; não use seus índices no conjunto ampliado.
 
 Para baixar novamente os vídeos públicos e extrair os landmarks dentro de `data`, siga [Recuperar vídeos MINDS](RECUPERAR_VIDEOS_MINDS_2026-11-11.md). As dez palavras gravadas pelo grupo precisam ser recuperadas separadamente.
 
@@ -94,7 +94,7 @@ Configuração: Transformer 128/4 cabeças/3 camadas/dropout 0,15, AdamW 1e-3/L2
 SINALIZA_FUSION_MANIFEST_PATH='' SINALIZA_MODEL_PATH=experiments/transformer_v2_mixed25_seed42/best.pt ./.venv/Scripts/python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-O comando acima é um exemplo para escolher um checkpoint de outro experimento; ajuste o caminho para um arquivo existente. Desde 13/11, **sem essas variáveis a aplicação carrega o Transformer v2 mixed23 arquivado**, e basta iniciar o Uvicorn normalmente. A fusão v1 e a dupla ConvBiLSTM continuam selecionáveis por seus manifestos. `/api/model/info` informa versão, dimensão e parâmetros temporais. A v2 exige timestamps e dimensões reais; o REST `/api/predict` aceita esses campos e máscara por parte. A webcam os fornece automaticamente. A classe opcional `_nenhum_sinal`, quando treinada, produz `no_sign` se vencer o top 1 suavizado. O checkpoint mixed23 atual não contém essa classe.
+O comando acima é um exemplo para escolher um checkpoint de outro experimento; ajuste o caminho para um arquivo existente. Desde 17/11, **sem essas variáveis a aplicação carrega o Transformer v2 de 41 classes arquivado**, e basta iniciar o Uvicorn normalmente. A fusão v1 e a dupla ConvBiLSTM continuam selecionáveis por seus manifestos. `/api/model/info` informa versão, dimensão e parâmetros temporais. A v2 exige timestamps e dimensões reais; o REST `/api/predict` aceita esses campos e máscara por parte. A webcam os fornece automaticamente. A classe opcional `_nenhum_sinal`, quando treinada, produz `no_sign` se vencer o top 1 suavizado. O checkpoint atual não contém essa classe.
 
 ## Aumentos somente no treino
 

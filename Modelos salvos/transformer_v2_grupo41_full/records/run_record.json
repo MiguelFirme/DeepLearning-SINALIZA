@@ -1,0 +1,111 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-17T14:54:11.881330",
+  "config": {
+    "pipeline_version": 2,
+    "seed": 42,
+    "pipeline": {
+      "target_fps": 15.0,
+      "window_seconds": 3.2,
+      "max_gap": 5,
+      "global_depth": true,
+      "scale_2d": false,
+      "point_visibility": false,
+      "segmentation": false
+    },
+    "model": {
+      "type": "transformer",
+      "params": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 3,
+        "dim_feedforward": 256,
+        "dropout": 0.15,
+        "max_seq_len": 48,
+        "classifier_hidden": 128
+      }
+    },
+    "data": {
+      "num_workers": 0
+    },
+    "augmentation_file": "augmentation_v2.yaml",
+    "training": {
+      "optimizer": "adamw",
+      "learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "scheduler": "cosine",
+      "warmup_epochs": 5,
+      "epochs": 150,
+      "batch_size": 16,
+      "label_smoothing": 0.1,
+      "balanced_sampler": true,
+      "monitor": "val_f1",
+      "patience": 25,
+      "use_amp": true
+    }
+  },
+  "training": {
+    "optimizer_type": "adamw",
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "scheduler_type": "cosine",
+    "plateau_patience": 5,
+    "plateau_factor": 0.5,
+    "min_lr": 1e-07,
+    "warmup_epochs": 5,
+    "epochs": 150,
+    "gradient_clip_val": 1.0,
+    "gradient_accumulation_steps": 1,
+    "use_amp": true,
+    "early_stopping": true,
+    "patience": 25,
+    "monitor": "val_f1",
+    "mode": "max",
+    "save_dir": "experiments",
+    "experiment_name": "transformer_v2_grupo_expandido_20261117_seed42",
+    "save_top_k": 1
+  },
+  "pipeline": {
+    "target_fps": 15.0,
+    "window_seconds": 3.2,
+    "max_gap": 5,
+    "epsilon": 1e-06,
+    "global_depth": true,
+    "scale_2d": false,
+    "point_visibility": false,
+    "segmentation": false,
+    "visibility_threshold": 0.5
+  },
+  "seed": 42,
+  "metadata_issues": {
+    "train": {
+      "fps": 0,
+      "dimensions": 0
+    },
+    "val": {
+      "fps": 0,
+      "dimensions": 0
+    },
+    "test": {
+      "fps": 0,
+      "dimensions": 0
+    }
+  },
+  "hashes": {
+    "data\\landmarks\\mixed_grupo_20261117\\manifest.json": "68fb1f17c8c8ba014323b1e1604d2b3074c965f3414c082b2024727d0d56fd18",
+    "data\\processed\\mixed_grupo_20261117\\splits.json": "8e49fc8a5b7290435cac782f368c09792924f82e450d5063abdba97e5525a514",
+    "data\\processed\\mixed_grupo_20261117\\label_map.json": "f5dfcdfbc0e02a5a53ee9aa2f6e48fa9e12cdf612149d04e0e9dff3c0d41b0dd"
+  },
+  "result": {
+    "best_epoch": 80,
+    "best_metric": 0.7512195121951221,
+    "total_epochs": 105,
+    "elapsed_seconds": 465.5073447227478,
+    "save_dir": "experiments\\transformer_v2_grupo_expandido_20261117_seed42"
+  },
+  "finished_at": "2026-11-17T15:01:59.759163"
+}

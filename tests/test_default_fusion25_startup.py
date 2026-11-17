@@ -39,9 +39,10 @@ def test_default_startup_uses_trained_transformer_v2(monkeypatch):
     monkeypatch.setattr(settings, "model_path", defaults.model_path)
     with TestClient(app) as client:
         health, info = client.get("/api/health").json(), client.get("/api/model/info").json()
-        assert health["model_loaded"] is True and health["num_classes"] == 23
+        assert health["model_loaded"] is True and health["num_classes"] == 41
         assert info["model_type"] == "transformer_v2" and info["pipeline_version"] == 2
         assert info["feature_dim"] == 725 and info["target_fps"] == 15 and info["window_seconds"] == 3.2
-        assert len(info["labels"]) == 23
+        assert len(info["labels"]) == 41
+        assert {"Diretoria", "Escola", "Dor", "Querer"} <= set(info["labels"])
         assert "Água" in info["labels"] and "Cinco" not in info["labels"] and "Espelho" not in info["labels"]
         assert prediction_service._fusion is None
