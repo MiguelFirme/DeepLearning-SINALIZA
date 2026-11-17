@@ -1,0 +1,17 @@
+﻿[
+    {
+        "source":  "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\Videos do grupo\\Errado\\ERRADO.mp4",
+        "destination":  "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\Videos do grupo\\Errado\\ErradoSinalizador07.mp4",
+        "sha256":  "DFF680A5103FB865B6DC448F8DAA54241F2CE1968CFDA8065D0EEF1E881CEE86"
+    },
+    {
+        "source":  "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\Videos do grupo\\Diretoria\\DiretorSinalizador06.mp4",
+        "destination":  "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\Videos do grupo\\Diretoria\\DiretoriaSinalizador06.mp4",
+        "sha256":  "6026129B1D85640F89014D39BE0CEE3A9BB995CCC2F8904FA911B9898C449A38"
+    },
+    {
+        "source":  "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\Videos do grupo\\Diretoria\\DiretorSinalizador07.mp4",
+        "destination":  "C:\\Users\\migue\\DeepLearning-SINALIZA\\data\\raw\\Videos do grupo\\Diretoria\\DiretoriaSinalizador07.mp4",
+        "sha256":  "D0815E8A2CB70955E47DFD0B7F1324206FF1250BEC1BE6BF6D1928A5D56C5DED"
+    }
+]

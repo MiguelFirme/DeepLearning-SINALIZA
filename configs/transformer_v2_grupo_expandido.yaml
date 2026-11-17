@@ -1,0 +1,8 @@
+# Mantém a arquitetura e o pré-processamento do checkpoint padrão de 23 classes.
+# O novo número de saídas é obtido do label_map ampliado, não do nome do YAML.
+_base_: transformer_v2_mixed23.yaml
+pipeline:
+  global_depth: true
+  scale_2d: false
+  point_visibility: false
+  segmentation: false
