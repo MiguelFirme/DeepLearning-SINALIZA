@@ -19,9 +19,13 @@ Dimensão e offsets: coordenadas globais `0:297` (126 mãos + 51 pose + 120 face
 - Fase 5: `pytest tests -q`: **132 passaram, 8 ignorados**; build TypeScript/Vite passou (1.593 módulos). Coleta por WebSocket, consentimento obrigatório, igualdade dos landmarks salvos, timestamps e splits por pessoa foram verificados. Câmera humana e contagem na interface ainda precisam de execução manual.
 - Fase 6: `pytest tests -q`: **134 passaram, 8 ignorados, zero falhas**. A sessão v2 percorreu 6/9/15/30 FPS com checkpoint sintético, janelas por tempo e velocidades equivalentes. Também passou pelo caminho JPEG do backend com relógio controlado. A preparação de todos os folds por pessoa foi verificada sem depender de `annotations.csv`. Dois avisos de descontinuação preexistentes (Pydantic e Starlette/httpx) permanecem.
 
-## Coleta na interface
+## Coleta (histórico; página removida em 18/11/2026)
 
-Inicie backend e frontend normalmente e abra **Coleta** (`http://localhost:5173/collection`). A coleta funciona com v1 ou v2 carregada. Inicie a câmera, use IDs estáveis como `P01` e `sessao01`, escolha uma palavra do mapa do modelo ou `_nenhum_sinal`, informe a duração (padrão 4 s) e confirme consentimento. Clique **Gravar exemplo**, aguarde 3 s e execute o gesto completo. **Cancelar e descartar** não salva uma gravação parcial. Se a conexão cair, repita a tentativa. O backend pode finalizar pela duração ou por controle explícito; precisa de pelo menos dois quadros.
+A aba Coleta foi removida por solicitação da equipe em 18/11/2026. O endereço
+`/collection` redireciona para Início. O componente de gravação e seu CSS foram
+excluídos; dados já coletados e suporte técnico no backend foram preservados.
+Os resultados da Fase 5 acima descrevem a implementação histórica. Consulte o
+[registro da remoção](REMOCAO_ABA_COLETA_2026-11-18.md).
 
 São salvos apenas landmarks, máscaras e horários — não vídeo nem áudio — em `data/coleta/<pessoa>/<palavra>/<timestamp>.npz`, no computador do backend. Metadados: largura/altura, pessoa, sessão, palavra, data UTC, versão do app, FPS observado, duração solicitada/observada e consentimento. As colunas são exatamente as mesmas da inferência, antes de qualquer aumento ou feature. O relógio é monotônico; empates de ticks são desambiguados pelo menor incremento representável. O diretório está no `.gitignore`.
 

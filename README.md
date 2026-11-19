@@ -6,7 +6,7 @@ Protótipo de um projeto de extensão para reconhecer **sinais isolados de Libra
 
 - A aplicação web usa **React/Vite** no frontend e **FastAPI** no backend.
 - O backend carrega por padrão **um Transformer v2 de 41 classes**, arquivado em `Modelos salvos/transformer_v2_grupo41_full/best.pt`. A [ativação](docs/ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md) usa os pesos da época 80, com pose, face e mãos, sem precisar escolher o modelo ao iniciar.
-- A página **Coleta** grava landmarks, máscaras e timestamps do mesmo fluxo usado na inferência, com consentimento e campos de pessoa/sessão/palavra. Os arquivos ficam em `data/coleta/`, ignorada pelo Git.
+- A interface oferece Início, Dicionário e Configurações. A aba de captura/coleta foi [removida a pedido da equipe](docs/REMOCAO_ABA_COLETA_2026-11-18.md); o reconhecimento pela webcam continua na página inicial.
 - A webcam envia quadros JPEG pelo WebSocket. O backend extrai landmarks com MediaPipe Holistic, prepara sequências de 48 quadros e devolve o sinal, a confiança e os candidatos.
 - Não há filtro de movimento para cenas paradas: uma janela com pose/face detectada pode receber uma das 41 palavras mesmo sem um sinal. O experimento anterior de rejeição por movimento foi revertido a pedido do usuário.
 - O dicionário da interface é um catálogo separado e **não indica quais palavras o modelo reconhece**. No estado atual, a API do dicionário lê `data/processed/label_map.json` quando presente, que pertence ao histórico do V-Librasil.
@@ -61,7 +61,7 @@ Para reproduzir o vocabulário ampliado, use os índices e a configuração arqu
 ./.venv/Scripts/python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Confira `pipeline_version: 2` e `feature_dim: 725` em `/api/model/info`. Abra **Coleta** para gravar novos exemplos e negativos `_nenhum_sinal`. Comandos completos de CV por pessoa, preparo de coleta, simulação a 6/9/15/30 FPS e limites estão em [docs/PIPELINE_V2.md](docs/PIPELINE_V2.md).
+Confira `pipeline_version: 2` e `feature_dim: 725` em `/api/model/info`. Comandos completos de CV por pessoa, preparo de dados de coleta existentes, simulação a 6/9/15/30 FPS e limites estão em [docs/PIPELINE_V2.md](docs/PIPELINE_V2.md). A interface não oferece mais gravação de exemplos.
 
 Para testar o pipeline com um vídeo existente, sem webcam:
 

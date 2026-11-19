@@ -140,7 +140,7 @@ export default function DictionaryPage() {
 
   return (
     <div className={`container ${styles.page}`}>
-      <h1 className={styles.title}>Dicionário de Libras</h1>
+      <h1 className={styles.title}>Sinalário de Libras</h1>
 
       {/* Search */}
       <div className={styles.searchWrapper}>

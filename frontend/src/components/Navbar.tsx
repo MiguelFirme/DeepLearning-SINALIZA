@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import { Home, BookOpen, Settings, Camera } from "lucide-react";
+import { Home, BookOpen, Settings } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -17,9 +17,6 @@ export default function Navbar() {
         </NavLink>
 
         <nav className={styles.nav} aria-label="Navegação principal">
-          <NavLink to="/collection" className={({isActive}) => `${styles.link} ${isActive ? styles.active : ""}`}>
-            <Camera size={16} /><span>Coleta</span>
-          </NavLink>
           <NavLink
             to="/"
             end
@@ -38,7 +35,7 @@ export default function Navbar() {
             }
           >
             <BookOpen size={16} />
-            <span>Dicionário</span>
+            <span>Sinalário</span>
           </NavLink>
 
           <NavLink
