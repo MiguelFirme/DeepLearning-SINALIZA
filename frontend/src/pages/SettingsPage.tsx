@@ -1,4 +1,4 @@
-import { useState, type KeyboardEvent } from "react";
+import { useEffect, useState, type KeyboardEvent } from "react";
 import {
   Info,
   Headphones,
@@ -18,6 +18,7 @@ import {
   Hourglass,
 } from "lucide-react";
 import styles from "./SettingsPage.module.css";
+import api from "../services/api";
  
 type Tab = "sobre" | "guia" | "ajuda" | "suporte";
  
@@ -59,17 +60,22 @@ const CONTACTS = [
   },
 ];
  
+const sortPt = (list: string[]) =>
+  [...list].sort((a, b) => a.localeCompare(b, "pt-BR"));
+
 /**
- * Sinais que o tradutor reconhece (as 25 classes do modelo treinado).
- * Vem de "Modelos salvos/transformer_mixed25_full/data_split/label_map.json".
- * Se o modelo for retreinado com outros sinais, atualize esta lista.
+ * Lista de reserva, usada só se o backend não responder.
+ * Normalmente os sinais vêm de /api/model/info (o que o modelo ativo realmente reconhece).
+ * Fonte: "Modelos salvos/transformer_v2_grupo41_full/data_split/label_map.json" (41 classes).
  */
-const RECOGNIZED_SIGNS = [
+const FALLBACK_SIGNS = sortPt([
   "Acontecer", "Ajudar", "Aluno", "Amarelo", "Amigo", "Aprender", "Aproveitar",
   "Banco", "Banheiro", "Barulho", "Beber", "Brincar", "Cansado", "Certo",
-  "Cinco", "Comer", "Conhecer", "Diretor", "Espelho", "Filho", "Medo", "Ruim",
-  "Vacina", "Vontade", "Água",
-].sort((a, b) => a.localeCompare(b, "pt-BR"));
+  "Comer", "Conhecer", "Diretor", "Diretoria", "Dor", "Dormir", "Dúvida",
+  "Entristecer", "Errado", "Escola", "Escrever", "Estudar", "Eu", "Feliz",
+  "Filho", "Medo", "Meu", "Mãe", "Pai", "Perguntar", "Professor", "Querer",
+  "Querer-não", "Ruim", "Vacina", "Vontade", "Água",
+]);
  
 const CAMERA_TIPS = [
   {
@@ -122,7 +128,7 @@ const FAQ = [
   },
   {
     q: "O meu sinal não é reconhecido",
-    a: "O tradutor reconhece apenas os 25 sinais listados na aba Guia; os outros não são traduzidos. Já o Dicionário tem muitos sinais para você consultar e aprender.",
+    a: "O tradutor reconhece apenas os sinais listados na aba Guia; os outros não são traduzidos. Já o Dicionário tem muitos sinais para você consultar e aprender.",
   },
   {
     q: "Aparece “Conectando” ou “Erro na tradução”",
@@ -162,6 +168,23 @@ function PanelHero({
  
 export default function SettingsPage() {
   const [tab, setTab] = useState<Tab>("sobre");
+  const [signs, setSigns] = useState<string[]>(FALLBACK_SIGNS);
+
+  /* Busca no backend os sinais do modelo ativo, para a lista nunca ficar desatualizada */
+  useEffect(() => {
+    let cancelled = false;
+    api
+      .modelInfo()
+      .then((info) => {
+        if (!cancelled && info.labels?.length) setSigns(sortPt(info.labels));
+      })
+      .catch(() => {
+        /* mantém a lista de reserva */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
  
   /* Setas do teclado trocam de aba (padrão de acessibilidade para abas) */
   const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
@@ -303,14 +326,14 @@ export default function SettingsPage() {
               <div className={`card ${styles.section}`}>
                 <div className={styles.sectionHead}>
                   <h3 className={styles.sectionTitle}>Sinais reconhecidos</h3>
-                  <span className={styles.count}>{RECOGNIZED_SIGNS.length} sinais</span>
+                  <span className={styles.count}>{signs.length} sinais</span>
                 </div>
                 <p className={styles.sectionText}>
                   O tradutor foi treinado para reconhecer estes sinais. O
                   Dicionário tem muitos outros para consultar e aprender.
                 </p>
                 <ul className={styles.chips}>
-                  {RECOGNIZED_SIGNS.map((sign) => (
+                  {signs.map((sign) => (
                     <li key={sign} className={styles.chip}>
                       {sign}
                     </li>

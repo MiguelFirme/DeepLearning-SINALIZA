@@ -1,4 +1,3 @@
-
 import { NavLink } from "react-router-dom";
 import { Home, BookOpen, Settings } from "lucide-react";
 import styles from "./Navbar.module.css";
