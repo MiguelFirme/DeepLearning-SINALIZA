@@ -60,7 +60,7 @@ Para parar, pressione `Ctrl+C` em cada terminal.
 
 ## Estado atual da tradução ao vivo
 
-- Desde 17/11/2026, o padrão é o checkpoint único `Modelos salvos/transformer_v2_grupo41_full/best.pt`. Confira `model_loaded: true`, `num_classes: 41` e, em `/api/model/info`, `model_type: transformer_v2`, `pipeline_version: 2` e `feature_dim: 725`. Não é preciso definir variáveis a cada execução. Variáveis antigas e `.env` têm prioridade sobre o padrão; remova seus overrides se necessário. A fusão antiga continua selecionável por manifesto. Consulte a [ativação v2](ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md).
+- Desde 20/11/2026, o padrão é o checkpoint único `Modelos salvos/transformer_v2_grupo39_full/best.pt`, sem Cinco, Vacina e Amarelo. Confira `model_loaded: true`, `num_classes: 39` e, em `/api/model/info`, `model_type: transformer_v2`, `pipeline_version: 2` e `feature_dim: 725`. Não é preciso definir variáveis a cada execução. Variáveis antigas e `.env` têm prioridade sobre o padrão; remova seus overrides se necessário. A fusão antiga continua selecionável por manifesto. Consulte o [retreino e ativação](RETREINO_GRUPO39_2026-11-20.md).
 - O frontend envia JPEGs a `/api/ws/predict`; a v2 mantém uma janela temporal e aguarda 3,2 segundos de cobertura antes da primeira classificação, com grade de 48 amostras a 15 FPS.
 - A integração e o teste com vídeo gravado estão documentados em [PLANO_INTEGRACAO_WEB_8_CLASSES.md](PLANO_INTEGRACAO_WEB_8_CLASSES.md). A avaliação com a webcam do usuário ainda precisa ser feita no navegador.
 - O filtro de movimento para cenas paradas foi revertido; a confiança mínima voltou a 30%. O histórico da experiência está em [PLANO_REJEICAO_SEM_SINAL.md](PLANO_REJEICAO_SEM_SINAL.md).

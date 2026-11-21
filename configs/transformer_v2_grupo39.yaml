@@ -1,0 +1,3 @@
+# Mesma arquitetura e técnicas do Transformer v2 de 41 classes.
+# Exclusões e número de classes são definidos pelos novos índices de dados.
+_base_: transformer_v2_grupo_expandido.yaml

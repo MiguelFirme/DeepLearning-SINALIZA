@@ -2,11 +2,12 @@
 
 Este diretório arquiva os checkpoints `best.pt`. Os históricos v1 foram selecionados por menor perda de validação; a v2 atual usa **maior F1 macro da validação**. Os experimentos originais em `experiments/` continuam intactos.
 
-O padrão atual é `transformer_v2_grupo41_full/best.pt`, com 41 classes e pipeline_version 2. Veja a [ativação v2](../docs/ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md). O modelo de 23 classes e as fusões Transformer e ConvBiLSTM históricas continuam disponíveis.
+O padrão atual é `transformer_v2_grupo39_full/best.pt`, com 39 classes e pipeline_version 2, sem Cinco, Vacina e Amarelo. Veja o [retreino e ativação](../docs/RETREINO_GRUPO39_2026-11-20.md). Os modelos anteriores continuam disponíveis.
 
 | Modelo | Classes | Validação | Teste | Documentação |
 |---|---:|---:|---:|---|
-| **Transformer v2 `full` — padrão** | 41 | 70/93 (75,27%) | Não avaliado | [README do modelo atual](transformer_v2_grupo41_full/README.md) |
+| **Transformer v2 `full` — padrão** | 39 | 52/83 (62,65%) | Não avaliado | [README do modelo atual](transformer_v2_grupo39_full/README.md) |
+| Transformer v2 `full` anterior | 41 | 70/93 (75,27%) | Não avaliado | [README do modelo anterior](transformer_v2_grupo41_full/README.md) |
 | Transformer v2 `full` anterior | 23 | 60/75 (80%) | Não avaliado | [README do modelo anterior](transformer_v2_mixed23_full/README.md) |
 | Transformer MINDS `pose_face` | 8 | 40/40 (100%) | 37/40 (92,5%) | [README do modelo de 8 classes](transformer_minds_8_classes_pose_face/README.md) |
 | Transformer MINDS `hands_only` | 8 | 5/40 (12,5%) | 6/40 (15%), exploratório | [README do modelo de mãos](transformer_minds_8_classes_hands_only/README.md) |

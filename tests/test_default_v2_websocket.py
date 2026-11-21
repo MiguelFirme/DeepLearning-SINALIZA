@@ -29,7 +29,7 @@ def test_websocket_default_v2_aguarda_janela_em_segundos(monkeypatch):
     with TestClient(app) as client:
         with client.websocket_connect("/api/ws/predict") as ws:
             ready = ws.receive_json()
-            assert ready["data"]["num_classes"] == 41 and ready["data"]["feature_mode"] == "full"
+            assert ready["data"]["num_classes"] == 39 and ready["data"]["feature_mode"] == "full"
             for index in range(1, 50):
                 ws.send_bytes(jpeg.tobytes())
                 ack = ws.receive_json()

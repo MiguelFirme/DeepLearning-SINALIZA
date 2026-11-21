@@ -2,22 +2,22 @@
 
 Protótipo de um projeto de extensão para reconhecer **sinais isolados de Libras** pela webcam e apresentar a palavra identificada em português. O objetivo de longo prazo é apoiar a comunicação em escolas, casas e recepções. A versão atual ainda não traduz frases nem está validada para uso com pessoas novas.
 
-## Estado do projeto — 17/11/2026
+## Estado do projeto — 20/11/2026
 
 - A aplicação web usa **React/Vite** no frontend e **FastAPI** no backend.
-- O backend carrega por padrão **um Transformer v2 de 41 classes**, arquivado em `Modelos salvos/transformer_v2_grupo41_full/best.pt`. A [ativação](docs/ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md) usa os pesos da época 80, com pose, face e mãos, sem precisar escolher o modelo ao iniciar.
-- A interface oferece Início, Dicionário e Configurações. A aba de captura/coleta foi [removida a pedido da equipe](docs/REMOCAO_ABA_COLETA_2026-11-18.md); o reconhecimento pela webcam continua na página inicial.
+- O backend carrega por padrão **um Transformer v2 de 39 classes**, arquivado em `Modelos salvos/transformer_v2_grupo39_full/best.pt`. O [retreino e ativação](docs/RETREINO_GRUPO39_2026-11-20.md) usa os pesos da época 57, com pose, face e mãos, sem precisar escolher o modelo ao iniciar.
+- A interface oferece Início, Sinalário e Configurações. A aba de captura/coleta foi [removida a pedido da equipe](docs/REMOCAO_ABA_COLETA_2026-11-18.md); o reconhecimento pela webcam continua na página inicial.
 - A webcam envia quadros JPEG pelo WebSocket. O backend extrai landmarks com MediaPipe Holistic, prepara sequências de 48 quadros e devolve o sinal, a confiança e os candidatos.
-- Não há filtro de movimento para cenas paradas: uma janela com pose/face detectada pode receber uma das 41 palavras mesmo sem um sinal. O experimento anterior de rejeição por movimento foi revertido a pedido do usuário.
+- Não há filtro de movimento para cenas paradas: uma janela com pose/face detectada pode receber uma das 39 palavras mesmo sem um sinal. O experimento anterior de rejeição por movimento foi revertido a pedido do usuário.
 - O dicionário da interface é um catálogo separado e **não indica quais palavras o modelo reconhece**. No estado atual, a API do dicionário lê `data/processed/label_map.json` quando presente, que pertence ao histórico do V-Librasil.
 
 ### Palavras reconhecidas pelo modelo ativo
 
-O padrão v2 reconhece **41 classes**: 13 sinais MINDS restantes e 28 gravados pelo grupo. O mapa está dentro do checkpoint e arquivado em `Modelos salvos/transformer_v2_grupo41_full/data_split/label_map.json`. `/api/health` informa a quantidade de classes; `/api/model/info` lista rótulos e versão. Cinco e Espelho não pertencem ao modelo atual.
+O padrão v2 reconhece **39 classes**: 11 sinais MINDS restantes e 28 gravados pelo grupo. O mapa está dentro do checkpoint e arquivado em `Modelos salvos/transformer_v2_grupo39_full/data_split/label_map.json`. `/api/health` informa a quantidade de classes; `/api/model/info` lista rótulos e versão. Cinco, Vacina e Amarelo estão fora; Cinco já estava ausente antes deste retreino. Espelho também não pertence ao modelo atual.
 
 ## Rodar localmente no Git Bash do VS Code
 
-Execute os comandos a partir da **raiz do projeto** (`DeepLearning-SINALIZA`). Para abrir a aplicação, não é preciso baixar vídeos nem refazer o treinamento; o checkpoint padrão precisa estar presente em `Modelos salvos/transformer_v2_grupo41_full/best.pt`.
+Execute os comandos a partir da **raiz do projeto** (`DeepLearning-SINALIZA`). Para abrir a aplicação, não é preciso baixar vídeos nem refazer o treinamento; o checkpoint padrão precisa estar presente em `Modelos salvos/transformer_v2_grupo39_full/best.pt`.
 
 Pré-requisitos: **Python 3.11**, **Node.js 18+** com npm e acesso à webcam. A GPU não é necessária para usar a aplicação; o backend usa CPU por padrão.
 
@@ -46,17 +46,17 @@ cd frontend
 npm run dev
 ```
 
-Abra **http://localhost:5173**, clique em **Iniciar Câmera** e autorize a webcam. Confira **http://127.0.0.1:8000/api/health**: `"model_loaded": true` e `"num_classes": 41`. Em **http://127.0.0.1:8000/api/model/info**, espere `model_type: transformer_v2`, `pipeline_version: 2`, `feature_dim: 725`, `target_fps: 15` e `window_seconds: 3.2`. A janela inicial exige 3,2 segundos de quadros recebidos; as seguintes são tentadas a cada 0,4 s. Use `Ctrl+C` em cada terminal para parar.
+Abra **http://localhost:5173**, clique em **Iniciar Câmera** e autorize a webcam. Confira **http://127.0.0.1:8000/api/health**: `"model_loaded": true` e `"num_classes": 39`. Em **http://127.0.0.1:8000/api/model/info**, espere `model_type: transformer_v2`, `pipeline_version: 2`, `feature_dim: 725`, `target_fps: 15` e `window_seconds: 3.2`. A janela inicial exige 3,2 segundos de quadros recebidos; as seguintes são tentadas a cada 0,4 s. Use `Ctrl+C` em cada terminal para parar.
 
 ### Pipeline v2: modelo atual e reprodução
 
-O pipeline usa uma grade de **15 FPS por 3,2 s**, aspecto corrigido e **725 features** (pose superior sem visibilidade, posição e forma local das mãos, face, distâncias e velocidade por segundo). Treino e backend usam o mesmo construtor. O checkpoint atual teve **70/93 acertos (75,27%) na validação e F1 macro 0,7512**; o teste ainda não foi avaliado. Veja o [resultado do treino](docs/RESULTADO_RETREINO_GRUPO_2026-11-17.md). Não é uma métrica de webcam.
+O pipeline usa uma grade de **15 FPS por 3,2 s**, aspecto corrigido e **725 features** (pose superior sem visibilidade, posição e forma local das mãos, face, distâncias e velocidade por segundo). Treino e backend usam o mesmo construtor. O checkpoint atual teve **52/83 acertos (62,65%) na validação e F1 macro 0,6737**; o teste ainda não foi avaliado. Veja o [resultado do retreino](docs/RETREINO_GRUPO39_2026-11-20.md). Não é uma métrica de webcam. O modelo anterior teve 75,27% em outro vocabulário de 41 classes e continua arquivado; a exclusão não trouxe melhora nesta execução.
 
-Para reproduzir o vocabulário ampliado, use os índices e a configuração arquivados, conforme a [ativação de 41 classes](docs/ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md). As reproduções mixed23 e mixed25 documentam vocabulários anteriores.
+Para reproduzir o vocabulário atual, use os índices e a configuração arquivados, conforme o [retreino de 39 classes](docs/RETREINO_GRUPO39_2026-11-20.md). As reproduções mixed23, mixed25 e grupo41 documentam vocabulários anteriores.
 
 ```bash
 # Reprodução em experimento separado, com os dados ampliados disponíveis:
-./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_grupo_expandido.yaml --data-dir data/landmarks/mixed_grupo_20261117 --processed-dir data/processed/mixed_grupo_20261117 --experiment transformer_v2_grupo41_seed42_repro --num-workers 0 --skip-test
+./.venv/Scripts/python.exe scripts/train.py --config configs/transformer_v2_grupo39.yaml --data-dir data/landmarks/mixed_grupo39_20261120 --processed-dir data/processed/mixed_grupo39_20261120 --experiment transformer_v2_grupo39_seed42_repro --num-workers 0 --skip-test
 # Iniciar o checkpoint padrão já treinado (não precisa retreinar):
 ./.venv/Scripts/python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
@@ -95,7 +95,7 @@ O backend não classifica janelas com detecção insuficiente de pose/face. Para
 
 ### Fusões históricas de 25 classes
 
-O conjunto histórico de 25 classes tinha 670 vídeos (500/85/85). `configs/fusion25_frozen.json` conserva dois Transformers `pose_face` e `full`, com top 5 e pesos 22%/78%; pode ser selecionado por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_frozen.json`. A dupla ConvBiLSTM permanece selecionável por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_conv_bilstm_default.json`. O padrão atual é o checkpoint único v2 de 41 classes.
+O conjunto histórico de 25 classes tinha 670 vídeos (500/85/85). `configs/fusion25_frozen.json` conserva dois Transformers `pose_face` e `full`, com top 5 e pesos 22%/78%; pode ser selecionado por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_frozen.json`. A dupla ConvBiLSTM permanece selecionável por `SINALIZA_FUSION_MANIFEST_PATH=configs/fusion25_conv_bilstm_default.json`. O padrão atual é o checkpoint único v2 de 39 classes.
 
 Os estudos históricos registraram 50/85 na validação e 56/85 no teste exploratório para a fusão Transformer v1; ConvBiLSTM registrou 47/85 e 65/85. Não são resultados v2 nem comprovação com pessoas novas. A auditoria marcou 168/670 vídeos para revisão, principalmente por ausência da mão ativa. Não existem negativos reais revisados nos pesos históricos; a v2 permite coletá-los e treinar `_nenhum_sinal`. O [relatório ConvBiLSTM](docs/RELATORIO_CONV_BILSTM_ATENCAO_MIXED25_2026-11-04.md) traz o protocolo antigo.
 
@@ -109,7 +109,7 @@ A [fusão híbrida invertida face40 + modelo completo de 16 pontos](docs/RELATOR
 
 A [simulação de fusão sequencial dos dois modelos de 15 classes](docs/EXPERIMENTO_FUSAO_SEQUENCIAL_15_CLASSES_2026-10-21.md) acertou 52/75 vídeos na validação e 44/75 no teste exploratório com top 5. A inversão da ordem não mudou as previsões top 5 neste conjunto. É uma avaliação offline; o backend ativo não foi alterado.
 
-O MINDS-Libras original tem 20 classes, 800 vídeos, 8 sinalizadores e 40 vídeos por classe; o subconjunto histórico de 8 classes tem 320 vídeos. O modelo atual de 41 classes usa 13 classes MINDS e 28 do grupo, com **529/93/93** vídeos (715 no total; falta o vídeo Escola da pessoa 04). MINDS: pessoas 01/02/05/06/08/10 no treino, 11 na validação e 12 no teste. Grupo: 01–05 no treino, 06 na validação e 07 no teste. A v2 aplica augmentation dinâmica somente no treino.
+O MINDS-Libras original tem 20 classes, 800 vídeos, 8 sinalizadores e 40 vídeos por classe; o subconjunto histórico de 8 classes tem 320 vídeos. O modelo atual de 39 classes usa 11 classes MINDS e 28 do grupo, com **469/83/83** vídeos (635 no total; falta o vídeo Escola da pessoa 04). MINDS: pessoas 01/02/05/06/08/10 no treino, 11 na validação e 12 no teste. Grupo: 01–05 no treino, 06 na validação e 07 no teste. A v2 aplica augmentation dinâmica somente no treino.
 
 | Checkpoint arquivado | Vídeos treino/validação/teste | Validação top-1 | Teste top-1 | Uso atual |
 |---|---:|---:|---:|---|
@@ -173,7 +173,8 @@ Há configuração de Docker Compose no repositório, mas a execução em contê
 
 ## Documentação
 
-- [Ativação do Transformer v2 de 41 classes como padrão atual](docs/ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md)
+- [Retreino e ativação do Transformer v2 de 39 classes como padrão atual](docs/RETREINO_GRUPO39_2026-11-20.md)
+- [Ativação histórica do Transformer v2 de 41 classes](docs/ATIVACAO_TRANSFORMER_V2_41_CLASSES_2026-11-17.md)
 - [Ativação histórica do Transformer v2 de 23 classes](docs/ATIVACAO_TRANSFORMER_V2_PADRAO_2026-11-13.md)
 - [Pipeline v2: features, treino, validação por pessoa, coleta e simulação de FPS](docs/PIPELINE_V2.md)
 - [Plano e relatório do experimento de 25 classes](docs/RELATORIO_QUALIDADE_FUSAO_25_CLASSES_2026-10-27.md)

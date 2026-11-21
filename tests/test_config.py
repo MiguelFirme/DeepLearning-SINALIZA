@@ -14,7 +14,7 @@ def test_settings_defaults():
     assert s.target_frames == 48
     assert s.device in ("cpu", "cuda", "mps", "auto")
     assert s.fusion_manifest_path is None
-    assert s.model_path == "Modelos salvos/transformer_v2_grupo41_full/best.pt"
+    assert s.model_path == "Modelos salvos/transformer_v2_grupo39_full/best.pt"
 
 
 def test_settings_env_override(monkeypatch):
