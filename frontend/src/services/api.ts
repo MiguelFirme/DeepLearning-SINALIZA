@@ -2,7 +2,7 @@
  * Cliente HTTP para a API Sinaliza.
  */
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? "/api";
+import { apiUrls } from "./apiUrls";
 
 /* ---------- Tipos ---------- */
 
@@ -69,7 +69,7 @@ export interface SentenceResponse {
 /* ---------- Helpers ---------- */
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`, {
+  const res = await fetch(apiUrls.http(path), {
     headers: { "Content-Type": "application/json" },
     ...init,
   });
@@ -114,7 +114,15 @@ export const api = {
     if (params?.skip !== undefined) sp.set("offset", String(params.skip));
     if (params?.limit !== undefined) sp.set("limit", String(params.limit));
     const qs = sp.toString();
-    return request<DictionaryResponse>(`/dictionary${qs ? `?${qs}` : ""}`);
+    return request<DictionaryResponse>(`/dictionary${qs ? `?${qs}` : ""}`).then((data) => ({
+      ...data,
+      entries: data.entries.map((entry) => ({
+        ...entry,
+        example_video_url: apiUrls.media(entry.example_video_url),
+        poster_url: apiUrls.media(entry.poster_url),
+        image_url: apiUrls.media(entry.image_url),
+      })),
+    }));
   },
 };
 

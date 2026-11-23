@@ -13,7 +13,6 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/dictionary" element={<DictionaryPage />} />
           <Route path="/settings" element={<SettingsPage />} />
-
           <Route path="/collection" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

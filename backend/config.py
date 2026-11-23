@@ -32,6 +32,8 @@ class Settings(BaseSettings):
 
     # CORS
     cors_origins: list[str] = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]
+    # Opcional, para previews de um projeto específico; não liberar toda a Vercel.
+    cors_origin_regex: str | None = None
 
     # WebSocket
     ws_max_connections: int = 10

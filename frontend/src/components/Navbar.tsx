@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className={styles.inner}>
         <NavLink to="/" className={styles.logo} aria-label="Sinaliza - Início">
           <img
-            src="/logos/Logo%20Maos.jpeg"
+            src={`${import.meta.env.BASE_URL}logos/logo-maos.jpeg`}
             alt="Logo Sinaliza"
             className={styles.logoImage}
           />

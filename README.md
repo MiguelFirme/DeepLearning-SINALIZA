@@ -17,6 +17,8 @@ O padrão v2 reconhece **39 classes**: 11 sinais MINDS restantes e 28 gravados p
 
 ## Rodar localmente no Git Bash do VS Code
 
+Para o site público, consulte o [guia de produção Vercel + Render](docs/DEPLOY_VERCEL_RENDER.md): variáveis, CORS, WebSocket, logo, mídia e passos após o push. O frontend usa `VITE_API_URL` para HTTP, WebSocket e vídeos, inclusive em domínios separados.
+
 Execute os comandos a partir da **raiz do projeto** (`DeepLearning-SINALIZA`). Para abrir a aplicação, não é preciso baixar vídeos nem refazer o treinamento; o checkpoint padrão precisa estar presente em `Modelos salvos/transformer_v2_grupo39_full/best.pt`.
 
 Pré-requisitos: **Python 3.11**, **Node.js 18+** com npm e acesso à webcam. A GPU não é necessária para usar a aplicação; o backend usa CPU por padrão.

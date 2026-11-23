@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 import type { PredictResponse, TrackingOverlay } from "../services/api";
+import { apiUrls } from "../services/apiUrls";
 import { flushPerfSummary, perfLog, recordPerfFrame, resetPerfSummary, PERF_DETAIL, PERF_LOGGING } from "../utils/perfLogging";
 
 interface PendingFrame {
@@ -44,8 +45,7 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
         wsRef.current?.readyState === WebSocket.CONNECTING) return;
     clearTimeout(reconnectTimer.current);
     serverReady.current = false;
-    const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-    const ws = new WebSocket(`${protocol}//${window.location.host}/api/ws/predict`);
+    const ws = new WebSocket(apiUrls.websocket());
     wsRef.current = ws;
 
     ws.onmessage = (event) => {
@@ -132,7 +132,7 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
       }
     };
     ws.onerror = () => {
-      setError("Não foi possível conectar à API na porta 8000");
+      setError("Não foi possível conectar ao servidor de reconhecimento. Verifique a conexão e tente novamente.");
       ws.close();
     };
   }, []);
