@@ -32,6 +32,14 @@
   width: 100%;
 }
 
+.videoCol > :first-child,
+.videoCol > :first-child video,
+.videoCol > :first-child canvas {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
 .sentenceBar {
   background: rgba(26, 26, 46, 0.85);
   color: #fff;
