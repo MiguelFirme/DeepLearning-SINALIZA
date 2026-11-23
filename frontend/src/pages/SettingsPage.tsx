@@ -51,12 +51,12 @@ const CONTACTS = [
   {
     icon: Mail,
     title: "Contato Geral",
-    email: "contato@sinaliza.com",
+    email: "lara.873420@alunosatc.edu.br",
   },
   {
     icon: Headphones,
     title: "Suporte Técnico",
-    email: "suporte@sinaliza.com",
+    email: "lara.873420@alunosatc.edu.br",
   },
 ];
  
