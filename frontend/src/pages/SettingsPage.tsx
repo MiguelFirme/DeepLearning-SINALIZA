@@ -72,7 +72,7 @@ const FALLBACK_SIGNS = sortPt([
   "Acontecer", "Ajudar", "Aluno", "Amarelo", "Amigo", "Aprender", "Aproveitar",
   "Banco", "Banheiro", "Barulho", "Beber", "Brincar", "Cansado", "Certo",
   "Comer", "Conhecer", "Diretor", "Diretoria", "Dor", "Dormir", "Dúvida",
-  "Entristecer", "Errado", "Escola", "Escrever", "Estudar", "Eu", "Feliz",
+  "Entristecer", "Escola", "Escrever", "Estudar", "Eu", "Feliz",
   "Filho", "Medo", "Meu", "Mãe", "Pai", "Perguntar", "Professor", "Querer",
   "Querer-não", "Ruim", "Vacina", "Vontade", "Água",
 ]);
