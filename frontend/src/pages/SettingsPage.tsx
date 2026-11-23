@@ -128,14 +128,14 @@ const FAQ = [
   },
   {
     q: "O meu sinal não é reconhecido",
-    a: "O tradutor reconhece apenas os sinais listados na aba Guia; os outros não são traduzidos. Já o Dicionário tem muitos sinais para você consultar e aprender.",
+    a: "O tradutor reconhece apenas os sinais listados na aba Guia; os outros não são traduzidos. Já o Sinalário tem muitos sinais para você consultar e aprender.",
   },
   {
     q: "Aparece “Conectando” ou “Erro na tradução”",
     a: "O aplicativo não conseguiu falar com o serviço de tradução. Verifique a sua internet, recarregue a página e tente de novo. Se continuar, fale com o suporte na aba Suporte.",
   },
   {
-    q: "A busca por voz do Dicionário não funciona",
+    q: "A busca por voz do Sinalário não funciona",
     a: "Use o Google Chrome e permita o microfone quando o navegador pedir; é preciso estar conectado à internet. Alguns navegadores não suportam esse recurso (o Brave, por exemplo, e o Edge pode falhar). Se o botão de microfone nem aparece, o navegador não é compatível.",
   },
   {
@@ -330,7 +330,7 @@ export default function SettingsPage() {
                 </div>
                 <p className={styles.sectionText}>
                   O tradutor foi treinado para reconhecer estes sinais. O
-                  Dicionário tem muitos outros para consultar e aprender.
+                  Sinalário tem muitos outros para consultar e aprender.
                 </p>
                 <ul className={styles.chips}>
                   {signs.map((sign) => (
