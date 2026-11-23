@@ -1,5 +1,6 @@
 /* Sinaliza — Design System */
 :root {
+  --app-header-height: 72px;
   --primary: #b5176d;
   --primary-light: #d4438f;
   --primary-dark: #8a1155;
@@ -49,6 +50,21 @@ button {
   max-width: none;
   margin: 0;
   padding: 0 24px;
+}
+
+.appMain {
+  padding-top: calc(var(--app-header-height) + 8px);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --app-header-height: 120px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 /* Cards */

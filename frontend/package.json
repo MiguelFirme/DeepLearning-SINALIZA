@@ -8,6 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test:urls": "node --test tests/urls.test.mjs",
+    "test:stability": "node --test tests/predictionStabilizer.test.mjs",
+    "test:responsive": "node tests/check-responsive.mjs",
     "lint": "eslint . --ext ts,tsx"
   },
   "dependencies": {

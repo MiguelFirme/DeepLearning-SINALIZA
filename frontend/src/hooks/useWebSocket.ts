@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 import type { PredictResponse, TrackingOverlay } from "../services/api";
 import { apiUrls } from "../services/apiUrls";
+import { PredictionStabilizer, stabilizationOptions } from "../utils/predictionStabilizer";
 import { flushPerfSummary, perfLog, recordPerfFrame, resetPerfSummary, PERF_DETAIL, PERF_LOGGING } from "../utils/perfLogging";
 
 interface PendingFrame {
@@ -34,6 +35,11 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
   const roundTripTotal = useRef(0);
   const [connected, setConnected] = useState(false);
   const [prediction, setPrediction] = useState<PredictResponse | null>(null);
+  const [latestPrediction, setLatestPrediction] = useState<PredictResponse | null>(null);
+  const stabilizer = useRef(new PredictionStabilizer(stabilizationOptions(
+    import.meta.env.VITE_TRANSLATION_CONFIRMATIONS,
+    import.meta.env.VITE_TRANSLATION_MIN_INTERVAL_MS,
+  )));
   const [latency, setLatency] = useState(0);
   const [backendFps, setBackendFps] = useState(0);
   const [frameProcessingMs, setFrameProcessingMs] = useState(0);
@@ -53,6 +59,9 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
       try {
         const message = JSON.parse(event.data) as WsMessage;
         if (message.type === "ready") {
+          stabilizer.current.reset();
+          setPrediction(null);
+          setLatestPrediction(null);
           resetPerfSummary();
           serverReady.current = true;
           framesInFlight.current = 0;
@@ -102,7 +111,10 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
             });
           }
         } else if (message.type === "prediction") {
-          setPrediction(message.data as PredictResponse);
+          const current = message.data as PredictResponse;
+          setLatestPrediction(current);
+          const accepted = stabilizer.current.update(current, performance.now());
+          if (accepted) setPrediction(accepted);
         } else if (message.type === "collection") {
           onCollectionRef.current?.(message.data);
         } else if (message.type === "error") {
@@ -115,6 +127,9 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
     ws.onclose = () => {
       if (wsRef.current !== ws) return;
       wsRef.current = null;
+      stabilizer.current.reset();
+      setPrediction(null);
+      setLatestPrediction(null);
       resetPerfSummary();
       serverReady.current = false;
       setConnected(false);
@@ -146,6 +161,8 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
     serverReady.current = false;
     setConnected(false);
     setPrediction(null);
+    setLatestPrediction(null);
+    stabilizer.current.reset();
     onOverlayRef.current?.(null);
     framesInFlight.current = 0;
     sentAt.current = [];
@@ -206,5 +223,5 @@ export function useWebSocket(onOverlay?: (overlay: TrackingOverlay | null, ageMs
     wsRef.current?.close();
   }, []);
 
-  return { prediction, connected, error, sendFrame, canSendFrame, connect, disconnect, latency, backendFps, frameProcessingMs, sendControl };
+  return { prediction, latestPrediction, connected, error, sendFrame, canSendFrame, connect, disconnect, latency, backendFps, frameProcessingMs, sendControl };
 }

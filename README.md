@@ -8,6 +8,8 @@ Protótipo de um projeto de extensão para reconhecer **sinais isolados de Libra
 - O backend carrega por padrão **um Transformer v2 de 39 classes**, arquivado em `Modelos salvos/transformer_v2_grupo39_full/best.pt`. O [retreino e ativação](docs/RETREINO_GRUPO39_2026-11-20.md) usa os pesos da época 57, com pose, face e mãos, sem precisar escolher o modelo ao iniciar.
 - A interface oferece Início, Sinalário e Configurações. A aba de captura/coleta foi [removida a pedido da equipe](docs/REMOCAO_ABA_COLETA_2026-11-18.md); o reconhecimento pela webcam continua na página inicial.
 - A webcam envia quadros JPEG pelo WebSocket. O backend extrai landmarks com MediaPipe Holistic, prepara sequências de 48 quadros e devolve o sinal, a confiança e os candidatos.
+- A interface [estabiliza as traduções](docs/ESTABILIZACAO_TRADUCAO_2026-11-23.md): duas previsões consecutivas concordantes, intervalo mínimo de 1,5 s entre palavras novas e nenhuma repetição consecutiva. A câmera e os landmarks continuam atualizando normalmente.
+- O [sinalário responsivo](docs/SINALARIO_RESPONSIVO_2026-11-23.md) mantém as categorias no fluxo da página no celular, evitando sobreposição durante a rolagem; no desktop, elas ficam na coluna lateral.
 - Não há filtro de movimento para cenas paradas: uma janela com pose/face detectada pode receber uma das 39 palavras mesmo sem um sinal. O experimento anterior de rejeição por movimento foi revertido a pedido do usuário.
 - O dicionário da interface é um catálogo separado e **não indica quais palavras o modelo reconhece**. No estado atual, a API do dicionário lê `data/processed/label_map.json` quando presente, que pertence ao histórico do V-Librasil.
 

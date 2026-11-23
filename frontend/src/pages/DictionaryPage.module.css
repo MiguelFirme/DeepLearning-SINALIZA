@@ -43,14 +43,8 @@
 /* Layout */
 .grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 24px;
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Sidebar */
@@ -61,7 +55,8 @@
   border: 1px solid var(--border);
   align-self: start;
   position: sticky;
-  top: 80px;
+  top: calc(var(--app-header-height) + 16px);
+  min-width: 0;
 }
 
 .sideTitle {
@@ -110,6 +105,14 @@
 /* Main content */
 .main {
   min-height: 400px;
+  min-width: 0;
+}
+
+.catTitleRow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 12px;
 }
 
 .catHeader {
@@ -123,6 +126,8 @@
   font-size: 22px;
   font-weight: 700;
   color: var(--text);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .catDesc {
@@ -134,7 +139,7 @@
 /* Cards grid */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
   gap: 16px;
 }
 
@@ -259,4 +264,43 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  /* No celular, categorias e vídeos ocupam a mesma coluna: não sobrepor ao rolar. */
+  .sidebar {
+    position: static;
+    top: auto;
+    padding: 16px;
+  }
+
+  .catList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .catBtn {
+    min-height: 44px;
+    padding: 8px;
+    gap: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .catIcon {
+    flex-shrink: 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .searchInput {
+    font-size: 16px;
+  }
 }

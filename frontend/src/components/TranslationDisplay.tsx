@@ -4,6 +4,7 @@ import styles from "./TranslationDisplay.module.css";
 
 interface Props {
   prediction: PredictResponse | null;
+  latestPrediction: PredictResponse | null;
   latency: number;
   frameProcessingMs: number;
   connected: boolean;
@@ -11,29 +12,29 @@ interface Props {
   cameraOn: boolean;
 }
 
-export default function TranslationDisplay({ prediction, latency, frameProcessingMs, connected, error, cameraOn }: Props) {
+export default function TranslationDisplay({ prediction, latestPrediction, latency, frameProcessingMs, connected, error, cameraOn }: Props) {
+  const current = latestPrediction;
   const translationStatus = error
     ? { label: "Erro na tradução", detail: error, tone: "error" }
     : !cameraOn
       ? { label: "Câmera desligada", detail: "Inicie a câmera para começar a tradução.", tone: "neutral" }
       : !connected
         ? { label: "Conectando", detail: "Estabelecendo conexão com o serviço de tradução.", tone: "warning" }
-        : prediction?.status === "poor_tracking"
+        : current?.status === "poor_tracking"
           ? { label: "Rastreamento insuficiente", detail: "Mantenha o tronco e o rosto visíveis e ajuste o enquadramento.", tone: "warning" }
-          : prediction?.status === "no_sign"
+          : current?.status === "no_sign"
             ? { label: "Nenhum sinal", detail: "O modelo classificou esta janela como nenhum sinal.", tone: "neutral" }
-          : prediction?.status === "idle"
+          : current?.status === "idle"
             ? { label: "Aguardando sinal", detail: "Faça o sinal em frente à câmera.", tone: "neutral" }
-            : prediction?.status === "recognized" && prediction.sign
+            : current?.status === "recognized" && current.sign !== prediction?.sign
+              ? { label: "Confirmando sinal", detail: "Aguarde a confirmação antes da próxima palavra.", tone: "active" }
+            : current?.status === "recognized" && prediction?.sign
               ? { label: "Tradução identificada", detail: "O modelo reconheceu um sinal.", tone: "success" }
-              : prediction?.status === "uncertain"
+              : current?.status === "uncertain"
                 ? { label: "Analisando sinal", detail: "O sinal ainda não foi identificado com confiança suficiente.", tone: "warning" }
                 : { label: "Capturando sinais", detail: "Câmera ativa. Os quadros estão sendo enviados para análise.", tone: "active" };
 
-  const sign = prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
-    : prediction?.status === "no_sign" ? "Nenhum sinal"
-    : prediction?.status === "uncertain" ? "Sinal incerto"
-    : prediction?.sign ?? "—";
+  const sign = prediction?.sign ?? "—";
   const confidence = prediction?.confidence ?? 0;
   const pct = Math.round(confidence * 100);
 
@@ -114,7 +115,7 @@ export default function TranslationDisplay({ prediction, latency, frameProcessin
           <div>
             <span className={styles.statLabel}>Modelos</span>
             <span className={styles.statValue}>
-              {prediction?.processing_time_ms?.toFixed(0) ?? 0}ms
+              {current?.processing_time_ms?.toFixed(0) ?? 0}ms
             </span>
           </div>
           <div>

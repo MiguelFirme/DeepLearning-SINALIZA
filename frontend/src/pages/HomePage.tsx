@@ -69,10 +69,10 @@ export default function HomePage() {
     }
   };
 
-  const displaySentence = ws.prediction?.status === "poor_tracking" ? "Ajuste o enquadramento"
-    : ws.prediction?.status === "no_sign" ? "Nenhum sinal"
-    : ws.prediction?.status === "uncertain" ? "Sinal incerto"
-    : sentence.join(", ");
+  // A frase contém somente palavras aceitas; os avisos atuais aparecem abaixo.
+  const displaySentence = sentence.join(", ");
+  const currentStatus = ws.latestPrediction?.status;
+  const confirming = ws.latestPrediction?.sign && ws.latestPrediction.sign !== ws.prediction?.sign;
 
   return (
     <div className={`container ${styles.page}`}>
@@ -90,15 +90,15 @@ export default function HomePage() {
               {cameraOn
                 ? !ws.connected
                   ? "Conectando ao serviço de tradução…"
-                  : ws.prediction?.status === "poor_tracking"
+                  : currentStatus === "poor_tracking"
                     ? "Não foi possível rastrear o corpo — ajuste o enquadramento"
-                    : ws.prediction?.status === "no_sign"
+                    : currentStatus === "no_sign"
                       ? "Nenhum sinal reconhecido nesta janela"
-                    : ws.prediction?.status === "idle"
+                    : currentStatus === "idle"
                       ? "Aguardando movimento das mãos e braços"
-                      : ws.prediction?.status === "recognized"
-                        ? "Sinal reconhecido"
-                        : ws.prediction?.status === "uncertain"
+                      : currentStatus === "recognized"
+                        ? confirming ? "Confirmando sinal…" : "Sinal reconhecido"
+                        : currentStatus === "uncertain"
                           ? "Sinal não identificado com confiança suficiente"
                           : "Capturando sinais e analisando movimentos…"
                 : "Câmera desligada"}
@@ -136,6 +136,7 @@ export default function HomePage() {
           <SentenceBuilder words={sentence} onRemove={removeWord} onClear={clearSentence} />
           <TranslationDisplay
             prediction={ws.prediction}
+            latestPrediction={ws.latestPrediction}
             latency={ws.latency}
             frameProcessingMs={ws.frameProcessingMs}
             connected={ws.connected}
