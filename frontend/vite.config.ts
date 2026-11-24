@@ -9,6 +9,8 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    host: true,
+    allowedHosts: ['sinaliza.devilatech.com.br'],
     proxy: {
       '/api/ws': { target: 'ws://localhost:8000', ws: true },
       '/api': { target: 'http://localhost:8000', changeOrigin: true },
